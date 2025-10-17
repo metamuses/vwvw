@@ -1,0 +1,43 @@
+/* navbar - TO FIX maiuscole?, stile box dropdown (no fascia illuminata per hover ma cambio colore testo), font size maggiore e più distanza tra li così dropdown ben distribuiti + vorrei FIXED*/ 
+.navbar .dropdown-toggle::after { /* per eliminare freccia di dropdown e fare apparire li a hover */
+    display: none;
+}
+
+@media (min-width: 992px) { /* lg breakpoint */
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; 
+    }
+}
+
+.navbar .dropdown-menu {
+    right: 0; /* per li più a destra che superavano viewport*/
+    left: auto;
+}
+
+
+
+
+/* footer - TO FIX colori, font weight e size, centratura verticale e padding */
+footer {
+	background-color: #bfbcbd;
+	color: black;
+	font-size: 1.5vw !important;
+    text-align: center;
+}
+
+.footer-cont {
+	margin: 0;
+	padding: 2%;
+}
+
+.github-icon {
+    width: 2%;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: border 0.3s ease;
+}
+
+.github-icon:hover {
+    border: 1px solid white;
+}
