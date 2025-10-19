@@ -22,11 +22,10 @@ function switchTheme(themeName) {
     var items = document.querySelectorAll("#theme-menu .dropdown-item");
     items.forEach(function (item) {
       // remove old checkmark
-      var text = item.textContent.replace(/^✓\s*/, "");
       if (item.dataset.theme === themeName) {
-        item.textContent = "✓ " + text;
+        item.style.fontWeight = "bold";
       } else {
-        item.textContent = text;
+        item.style.fontWeight = "normal";
       }
     });
   };
