@@ -1,90 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta name="description" content="Website about Vivienne Westwood's heritage created as a group project for the Information Modeling and Web Technologies 2024/25 course at UniBo.">
-	<meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VWVW</title>
+    <meta name="description" content="Website about Vivienne Westwood's heritage created as a group project for the Information Modeling and Web Technologies 2024/25 course at UniBo.">
+    <meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style/basics.css"> <!-- change for different styles? -->
-	<link rel="shortcut icon" type="image/x-icon" href=""> <!-- add favicon logo-->
+    <link rel="icon" href="favicon.png" type="image/png"><!-- add favicon logo-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/basics.css"> <!-- change for different styles? -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Anton&family=GFS+Didot&family=Oooh+Baby&family=Ranga:wght@400;700&display=swap" rel="stylesheet"> <!-- google fonts link to be updated -->
-
-    <title>VWVW</title>
-</head>
-<body>
-<!-- header con nav -->
+  </head>
+  <body>
+    <!-- header con nav -->
     <header>
-        <nav class="navbar navbar-expand-lg container-fluid">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">
-                    <img src="img/logo.svg" title="Logo" alt="Logo VWVW" class="img-header"> <!-- add logo and class in basics.css for its dimensions and placement -->
+      <nav class="navbar navbar-expand-lg container-fluid">
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">
+            <img src="img/logo.svg" title="Logo" alt="Logo VWVW" class="img-header"> <!-- add logo and class in basics.css for its dimensions and placement -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> <!-- cambia icona hamburger con fontawesome? -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  collections
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> <!-- cambia icona hamburger con fontawesome? -->
-                <div class="collapse navbar-collapse" id="navbarNavDropdown" >
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              collections
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">chronicles of fashion</a></li> <!-- oppure Westwood timeline -->
-                              <li><a class="dropdown-item" href="#">Made by Vivienne</a></li>
-                              <li><a class="dropdown-item" href="#">past and future</a></li> <!-- tutta frase troppo lunga -->
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              info
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">documentation</a></li>
-                              <li><a class="dropdown-item" href="#">disclaimer</a></li>
-                              <li><a class="dropdown-item" href="#">team</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              styles
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                              <li><a class="dropdown-item" href="#">1700, France</a></li>
-                              <li><a class="dropdown-item" href="#">at the dawn of photography</a></li>
-                              <li><a class="dropdown-item" href="#">Art Nouveau</a></li>
-                              <li><a class="dropdown-item" href="#">70s british punk</a></li>
-                              <li><a class="dropdown-item" href="#">90s italian cyberpunk</a></li>
-                              <li><a class="dropdown-item" href="#">dystopian anime future</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">chronicles of fashion</a></li> <!-- oppure Westwood timeline -->
+                  <li><a class="dropdown-item" href="#">Made by Vivienne</a></li>
+                  <li><a class="dropdown-item" href="#">past and future</a></li> <!-- tutta frase troppo lunga -->
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">documentation</a></li>
+                  <li><a class="dropdown-item" href="#">disclaimer</a></li>
+                  <li><a class="dropdown-item" href="#">team</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  styles
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">1700, France</a></li>
+                  <li><a class="dropdown-item" href="#">at the dawn of photography</a></li>
+                  <li><a class="dropdown-item" href="#">Art Nouveau</a></li>
+                  <li><a class="dropdown-item" href="#">70s british punk</a></li>
+                  <li><a class="dropdown-item" href="#">90s italian cyberpunk</a></li>
+                  <li><a class="dropdown-item" href="#">dystopian anime future</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- main -->
     <main>
 
-
-
-
     </main>
 
     <!-- footer -->
     <footer class="container-fluid">
-        <div class="footer-cont"> <!-- lascerei questa classe, a cui tutti css assegneranno stesso colore sfondo e testo -->
-            <p>© VWVW 2025 <a href="https://github.com/metamuses/vwvw"><img src="img/github.png" alt="Github icon" class="github-icon"></a></p> <!-- keep the class -->
-        </div>
+      <div class="footer-cont"> <!-- lascerei questa classe, a cui tutti css assegneranno stesso colore sfondo e testo -->
+        <p>© VWVW 2025 <a href="https://github.com/metamuses/vwvw"><img src="img/github.png" alt="Github icon" class="github-icon"></a></p> <!-- keep the class -->
+      </div>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
