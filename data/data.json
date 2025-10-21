@@ -2,7 +2,17 @@
   "items": {
     "apple": {
       "title": "Apple",
-      "description": "A red fruit"
+      "description": "A red fruit",
+      "texts": {
+        "kid-amateur-short": "",
+        "kid-amateur-long": "",
+        "kid-expert-short": "",
+        "kid-expert-long": "",
+        "adult-amateur-short": "",
+        "adult-amateur-long": "",
+        "adult-expert-short": "",
+        "adult-expert-long": ""
+      }
     },
     "banana": {
       "title": "Banana",
