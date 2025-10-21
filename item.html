@@ -17,6 +17,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Anton&family=GFS+Didot&family=Oooh+Baby&family=Ranga:wght@400;700&display=swap" rel="stylesheet"> <!-- google fonts link to be updated -->
+    <!--bootstrap-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"> <!--closing tag not mandatory for link-->
   </head>
   <body>
     <!-- header con nav -->
@@ -71,14 +75,110 @@
     </header>
 
     <!-- main -->
-    <main>
-      <h2 id="item-title"></h2>
-      <p id="item-description"></p>
+    <main class="container py-4">
 
-      <div id="item-nav">
-        <button type="button" class="btn btn-primary" id="back-button"></button>
-        <button type="button" class="btn btn-primary" id="forward-button"></button>
-      </div>
+      <!-- TITLE + DESCRIPTION -->
+      <h2 id="item-title" class="mb-3">Item Title</h2>
+      <p id="item-description" class="mb-4">
+        This is the item description text loaded dynamically.
+      </p>
+
+      <!-- ROW 1: Metadata + Image -->
+      <section class="row align-items-start mb-5">
+        <!-- IMAGE COLUMN (left) -->
+        <div class="col-md-6 text-center">
+          <div class="border rounded p-3 bg-white">
+            <img
+              src="https://placehold.co/400x400/png"
+              alt="Item Image"
+              class="img-fluid rounded mb-3"
+              id="item-image"
+            />
+
+            <!-- NAVIGATION BUTTONS under the image -->
+            <div id="item-nav" class="d-flex justify-content-between">
+              <button type="button" class="btn btn-primary" id="back-button">Back</button>
+              <button type="button" class="btn btn-primary" id="forward-button">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- METADATA COLUMN (right) -->
+        <div class="col-md-6">
+          <table class="table table-bordered">
+            <tbody>
+              <tr><th>Category</th><td>Example</td></tr>
+              <tr><th>Author</th><td>John Doe</td></tr>
+              <tr><th>Year</th><td>2025</td></tr>
+              <tr><th>Dimensions</th><td>30×40 cm</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ROW 2: TEXT SECTION -->
+      <section class="card mb-5 shadow-sm">
+        <div class="card-body">
+          <h3 class="h5 mb-3">Text</h3>
+          <p>
+            Additional detailed text or contextual notes about this item can go here.
+          </p>
+        </div>
+      </section>
+
+      <!-- ROW 3: RELATED MEDIA CAROUSEL -->
+      <!--<section class="mb-5 container">-->
+        <div class="card shadow-sm border">
+          <div class="card-body p-0">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
+
+              <!-- Indicators -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+
+              <!-- Slides --> <!--n.b. on smaller viewport the caption is not shown-->
+              <!--TO BE FIX: decided about the carousel, cause if the widht is as big as the other container than the image inside looks weird cause it cannot be stretched (?)-->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://placehold.co/600x400/png" class="d-block mx-auto img-fluid" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://placehold.co/600x400/png" class="d-block mx-auto img-fluid" alt="Second slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://placehold.co/600x400/png" class="d-block mx-auto img-fluid" alt="Third slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <button class="carousel-control-prev bg-dark bg-opacity-50" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next bg-dark bg-opacity-50" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      <!--</section>-->
     </main>
 
     <!-- footer -->
