@@ -37,7 +37,7 @@
       "description": "This is the historical narrative.",
       "items": ["banana", "apple", "grape", "kiwi", "orange"]
     },
-    "madeby": {
+    "made-by": {
       "title": "Made by Vivienne narrative",
       "description": "This is the made by Vivienne narrative.",
       "items": ["banana", "kiwi", "orange"]
