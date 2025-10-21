@@ -188,5 +188,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // reload the item when browser back/forward changes the fragment
     window.addEventListener("hashchange", loadItem);
+
+    // === DETAILS TEXT LOGIC: Adult / Kid buttons ===
+    const btnAdult = document.getElementById("btn-adult");
+    const btnKid = document.getElementById("btn-kid");
+    const textTitle = document.getElementById("text-title");
+    const textContent = document.getElementById("text-content");
+
+    // Check localStorage for last selection
+    let lastSelection = localStorage.getItem("textType") || "adult";
+
+    // Function to update text
+    function setText(type) {
+      if (type === "adult") {
+        textTitle.textContent = "Adult Text";
+        textContent.textContent = "This is the adult version of the text. Click Kid to switch.";
+      } else if (type === "kid") {
+        textTitle.textContent = "Kid Text";
+        textContent.textContent = "This is the kid-friendly version of the text. Click Adult to switch.";
+      }
+      // save selection
+      localStorage.setItem("textType", type);
+    }
+
+    //Initialize with last selection
+    setText(lastSelection);
+
+    //Add click events
+    btnAdult?.addEventListener("click", () => setText("adult"));
+    btnKid?.addEventListener("click", () => setText("kid"));
   }
 });

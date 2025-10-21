@@ -117,11 +117,18 @@
       </section>
 
       <!-- ROW 2: TEXT SECTION -->
-      <section class="card mb-5 shadow-sm">
+      <section class="card mb-5 shadow-sm position-relative">
+        <!-- Top-left buttons -->
+        <div class="position-absolute top-0 start-0 p-2 d-flex gap-2" style="z-index:10;">
+          <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
+        </div>
+
+        <!-- Card body -->
         <div class="card-body">
-          <h3 class="h5 mb-3">Text</h3>
-          <p>
-            Additional detailed text or contextual notes about this item can go here.
+          <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
+          <p id="text-content">
+            This is the kid-friendly version of the text. Click Adult to switch.
           </p>
         </div>
       </section>
