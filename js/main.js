@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check localStorage for last selection
     let lastSelection = localStorage.getItem("textType") || "adult";
 
-    // Function to update text
+    // Function to update text (to be put in JSON!)
     function setText(type) {
       if (type === "adult") {
         textTitle.textContent = "Adult Text";
