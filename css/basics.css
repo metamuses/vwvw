@@ -15,6 +15,26 @@
   left: auto;
 }
 
+.navbar {
+  padding-left: 0;   /* rimuove padding di default per align logo left*/
+  padding-right: 0;
+}
+
+.navbar-brand {
+  margin-left: 0;    
+  padding-left: 0;  
+  display: flex;
+  align-items: center; 
+}
+
+.img-header { /* è responsive su mobile? */
+  width: 30vw;          
+  height: auto;         
+  max-height: 10vh;  
+  display: block;  
+}
+
+
 /* footer - TO FIX colori, font weight e size, centratura verticale e padding */
 footer {
   background-color: #bfbcbd;
@@ -37,4 +57,31 @@ footer {
 
 .github-icon:hover {
   border: 1px solid white;
+}
+
+
+/* hero - TO FIX tutte misure, da giustificare e rendere responsive */
+.hero {
+  min-height: 70vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5vh 2vw; 
+}
+
+.hero h1 {
+  font-size: 3rem; 
+}
+
+.hero .lead {
+  font-size: 1.5rem; 
+  font-weight: 400;
+}
+
+.hero .intro-text {
+  max-width: 45rem; 
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto;
 }
