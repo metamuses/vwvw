@@ -3,32 +3,104 @@
     "apple": {
       "title": "Apple",
       "description": "A red fruit",
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia"
+      },
       "texts": {
-        "kid-amateur-short": "",
-        "kid-amateur-long": "",
-        "kid-expert-short": "",
-        "kid-expert-long": "",
-        "adult-amateur-short": "",
-        "adult-amateur-long": "",
-        "adult-expert-short": "",
-        "adult-expert-long": ""
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text",
+        "adult-amateur-short": "This is the adult amateur and short version of the text",
+        "adult-amateur-long": "This is the adult amateur and long version of the text",
+        "adult-expert-short": "This is the adult expert and short version of the text",
+        "adult-expert-long": "This is the adult expert and long version of the text"
       }
     },
     "banana": {
       "title": "Banana",
-      "description": "A yellow fruit"
+      "description": "A yellow fruit",
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "25x35 cm",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text",
+        "adult-amateur-short": "This is the adult amateur and short version of the text",
+        "adult-amateur-long": "This is the adult amateur and long version of the text",
+        "adult-expert-short": "This is the adult expert and short version of the text",
+        "adult-expert-long": "This is the adult expert and long version of the text"
+      }
     },
     "orange": {
       "title": "Orange",
-      "description": "A orange fruit"
+      "description": "A orange fruit",
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "source": "Wikipedia"
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text",
+        "adult-amateur-short": "This is the adult amateur and short version of the text",
+        "adult-amateur-long": "This is the adult amateur and long version of the text",
+        "adult-expert-short": "This is the adult expert and short version of the text",
+        "adult-expert-long": "This is the adult expert and long version of the text"
+      }
     },
     "grape": {
       "title": "Grape",
-      "description": "A small purple fruit"
+      "description": "A small purple fruit",
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "source": "Wikipedia"
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text",
+        "adult-amateur-short": "This is the adult amateur and short version of the text",
+        "adult-amateur-long": "This is the adult amateur and long version of the text",
+        "adult-expert-short": "This is the adult expert and short version of the text",
+        "adult-expert-long": "This is the adult expert and long version of the text"
+      }
     },
     "kiwi": {
       "title": "Kiwi",
-      "description": "A brown fruit"
+      "description": "A brown fruit",
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia"
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text",
+        "adult-amateur-short": "This is the adult amateur and short version of the text",
+        "adult-amateur-long": "This is the adult amateur and long version of the text",
+        "adult-expert-short": "This is the adult expert and short version of the text",
+        "adult-expert-long": "This is the adult expert and long version of the text"
+      }
     }
   },
   "narratives": {

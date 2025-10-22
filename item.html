@@ -105,33 +105,83 @@
 
         <!-- METADATA COLUMN (right) -->
         <div class="col-md-6">
-          <table class="table table-bordered">
+          <table class="table table-bordered" id="metadata-table">
             <tbody>
-              <tr><th>Category</th><td>Example</td></tr>
-              <tr><th>Author</th><td>John Doe</td></tr>
-              <tr><th>Year</th><td>2025</td></tr>
-              <tr><th>Dimensions</th><td>30×40 cm</td></tr>
+              <tr data-key="category">
+                <th style="width: 35%;">Category</th>
+                <td style="width: 65%;"></td>
+              </tr>
+              <tr data-key="author">
+                <th style="width: 35%;">Author</th>
+                <td style="width: 65%;"></td>
+              </tr>
+              <tr data-key="year">
+                <th style="width: 35%;">Year</th>
+                <td style="width: 65%;"></td>
+              </tr>
+              <tr data-key="dimensions">
+                <th style="width: 35%;">Dimensions</th>
+                <td style="width: 65%;"></td>
+              </tr>
+              <tr data-key="source">
+                <th style="width: 35%;">Source</th>
+                <td style="width: 65%;"></td>
+              </tr>
+              <tr data-key="other-narrative">
+                <th style="width: 35%;">Other Narrative</th>
+                <td style="width: 65%;"></td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
 
       <!-- ROW 2: TEXT SECTION -->
-      <section class="card mb-5 shadow-sm position-relative">
-        <!-- Top-left buttons -->
-        <div class="position-absolute top-0 start-0 p-2 d-flex gap-2" style="z-index:10;">
-          <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
-        </div>
+      <section class="card mb-5 shadow-sm">
+        <div class="d-flex">
+          <!-- Side button: Too Hard -->
+          <button
+            type="button"
+            class="btn btn-outline-secondary align-self-stretch me-2"
+            id="btn-decrease-difficulty"
+            style="display:none;"
+          >
+            Too Hard
+          </button>
 
-        <!-- Card body -->
-        <div class="card-body">
-          <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
-          <p id="text-content">
-            This is the kid-friendly version of the text. Click Adult to switch.
-          </p>
+          <!-- Card body with text -->
+          <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
+            <!-- Top-left buttons: Adult / Kid -->
+            <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
+              <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
+            </div>
+
+            <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
+            <p id="text-content">
+              This is the kid-friendly version of the text. Click Adult to switch.
+            </p>
+
+            <!-- Read more / less button -->
+            <div class="d-flex justify-content-end mt-auto">
+              <button type="button" class="btn btn-sm btn-outline-primary" id="btn-toggle-length">
+                Read More
+              </button>
+            </div>
+          </div>
+
+          <!-- Side button: Too Easy -->
+          <button
+            type="button"
+            class="btn btn-outline-secondary align-self-stretch ms-2"
+            id="btn-increase-difficulty"
+          >
+            Too Easy
+          </button>
         </div>
       </section>
+
+
 
       <!-- ROW 3: RELATED MEDIA CAROUSEL -->
       <!--<section class="mb-5 container">-->

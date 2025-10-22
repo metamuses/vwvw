@@ -175,12 +175,149 @@ document.addEventListener("DOMContentLoaded", function () {
           forwardBtn.onclick = function () {
             if (nextItem) window.location.hash = nextItem;
           };
+
+          // --- METADATA POPULATION ---
+          const metadataTable = document.getElementById("metadata-table");
+          const metadataRows = metadataTable.querySelectorAll("tbody tr");
+          const metadata = item.metadata || {};
+
+          // Iterate over standard metadata keys
+          ["category", "author", "year", "dimensions", "source"].forEach(key => {
+            const row = metadataTable.querySelector(`tr[data-key="${key}"]`);
+            if (row) {
+              const value = metadata[key];
+              if (value) {
+                row.querySelector("td").textContent = value;
+                row.style.display = ""; // show row
+              } else {
+                row.style.display = "none"; // hide if missing
+              }
+            }
+          });
+
+          // Handle Other Narrative links
+          const rowOtherNarrative = metadataTable.querySelector(`tr[data-key="other-narrative"]`);
+          if (rowOtherNarrative) {
+            const narratives = metadata.narratives || [];
+            const otherNarratives = narratives.filter(n => n !== activeNarrative);
+
+            if (otherNarratives.length) {
+              const td = rowOtherNarrative.querySelector("td");
+              td.innerHTML = ""; // clear previous content
+
+              otherNarratives.forEach((narr, index) => {
+                const link = document.createElement("a");
+                link.href = "#"; // keep page, no full reload
+                link.textContent = narr.replace(/-/g, " ");
+                link.classList.add("text-decoration-none");
+
+                link.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  console.log("Switching to narrative:", narr);
+                  localStorage.setItem("activeNarrative", narr);
+                  activeNarrative = narr; // update current narrative in JS
+
+                  // Regenerate the item page in the new narrative
+                  loadItem(); // call your existing loadItem() function
+                });
+
+                td.appendChild(link);
+                if (index < otherNarratives.length - 1) {
+                  td.appendChild(document.createTextNode(", "));
+                }
+              });
+
+              rowOtherNarrative.style.display = ""; // show row
+            } else {
+              rowOtherNarrative.style.display = "none";
+            }
+          }
+
+          // === MULTI-AXIS TEXT LOGIC (Kid/Adult, Amateur/Expert, Short/Long) ===
+          const btnAdult = document.getElementById("btn-adult");
+          const btnKid = document.getElementById("btn-kid");
+          const btnIncreaseDifficulty = document.getElementById("btn-increase-difficulty");
+          const btnDecreaseDifficulty = document.getElementById("btn-decrease-difficulty");
+          const btnToggleLength = document.getElementById("btn-toggle-length");
+          const textTitle = document.getElementById("text-title");
+          const textContent = document.getElementById("text-content");
+
+          const itemTexts = item.texts || {};
+
+          // Load last settings or defaults
+          let audience = localStorage.getItem("textAudience") || "kid"; // kid/adult
+          let difficulty = localStorage.getItem("textDifficulty") || "amateur"; // amateur/expert
+          let length = localStorage.getItem("textLength") || "short"; // short/long
+
+          function updateTextDisplay() {
+            const key = `${audience}-${difficulty}-${length}`;
+            const value = itemTexts[key] || "No text available for this version.";
+
+            // Update visible text
+            textTitle.textContent = `${audience.charAt(0).toUpperCase() + audience.slice(1)} Text`;
+            textContent.textContent = value;
+
+            // Highlight active audience button
+            if (audience === "adult") {
+              btnAdult.classList.remove("btn-outline-primary");
+              btnAdult.classList.add("btn-primary");
+              btnKid.classList.remove("btn-secondary");
+              btnKid.classList.add("btn-outline-secondary");
+            } else {
+              btnKid.classList.remove("btn-outline-secondary");
+              btnKid.classList.add("btn-secondary");
+              btnAdult.classList.remove("btn-primary");
+              btnAdult.classList.add("btn-outline-primary");
+            }
+
+            // Show correct difficulty button
+            btnIncreaseDifficulty.style.display = difficulty === "amateur" ? "block" : "none";
+            btnDecreaseDifficulty.style.display = difficulty === "expert" ? "block" : "none";
+
+            // Update bottom toggle button
+            btnToggleLength.textContent = length === "short" ? "Read More" : "Read Less";
+
+              // Save state
+            localStorage.setItem("textAudience", audience);
+            localStorage.setItem("textDifficulty", difficulty);
+            localStorage.setItem("textLength", length);
+          }
+
+          // --- Button Handlers ---
+          btnAdult.onclick = () => {
+            audience = "adult";
+            updateTextDisplay();
+          };
+
+          btnKid.onclick = () => {
+            audience = "kid";
+            updateTextDisplay();
+          };
+
+          btnIncreaseDifficulty.onclick = () => {
+            difficulty = "expert";
+            updateTextDisplay();
+          };
+
+          btnDecreaseDifficulty.onclick = () => {
+            difficulty = "amateur";
+            updateTextDisplay();
+          };
+
+          btnToggleLength.onclick = () => {
+            length = length === "short" ? "long" : "short";
+            updateTextDisplay();
+          };
+
+          // Initialize display on load
+          updateTextDisplay();
         })
-        .catch(function (error) {
-          console.log("Error loading item:", error);
-          document.getElementById("item-title").textContent = "Error loading item";
-          document.getElementById("item-description").textContent = "";
-        });
+
+          .catch(function (error) {
+            console.log("Error loading item:", error);
+            document.getElementById("item-title").textContent = "Error loading item";
+            document.getElementById("item-description").textContent = "";
+          });
     }
 
     // load the item when ready
@@ -189,33 +326,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // reload the item when browser back/forward changes the fragment
     window.addEventListener("hashchange", loadItem);
 
-    // === DETAILS TEXT LOGIC: Adult / Kid buttons ===
-    const btnAdult = document.getElementById("btn-adult");
-    const btnKid = document.getElementById("btn-kid");
-    const textTitle = document.getElementById("text-title");
-    const textContent = document.getElementById("text-content");
-
-    // Check localStorage for last selection
-    let lastSelection = localStorage.getItem("textType") || "adult";
-
-    // Function to update text (to be put in JSON!)
-    function setText(type) {
-      if (type === "adult") {
-        textTitle.textContent = "Adult Text";
-        textContent.textContent = "This is the adult version of the text. Click Kid to switch.";
-      } else if (type === "kid") {
-        textTitle.textContent = "Kid Text";
-        textContent.textContent = "This is the kid-friendly version of the text. Click Adult to switch.";
-      }
-      // save selection
-      localStorage.setItem("textType", type);
-    }
-
-    //Initialize with last selection
-    setText(lastSelection);
-
-    //Add click events
-    btnAdult?.addEventListener("click", () => setText("adult"));
-    btnKid?.addEventListener("click", () => setText("kid"));
   }
 });
