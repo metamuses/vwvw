@@ -37,8 +37,122 @@ function switchTheme(themeName) {
   }
 }
 
+
+// === leaflet map function  ===
+async function initializeMuseumMap() {
+  try {
+      // load JSON data
+      const response = await fetch("data/data.json");
+      const data = await response.json();
+      const items = data.items;
+      
+      // --- 1. static map configuration ---
+      // arbitrary coordinates from [0, 0] to [100, 100]
+      const mapBounds = [[0, 0], [100, 100]]; 
+      
+      // initialize map with L.CRS.Simple for non geografic coordinates
+      const map = L.map('map', {
+          crs: L.CRS.Simple,
+          minZoom: -2,
+          maxZoom: 2,
+          center: [50, 50], // center of the map
+          zoom: 0,
+          attributionControl: false,
+          maxBounds: mapBounds, // avoids excessive panning 
+          maxBoundsViscosity: 1.0 
+      });
+      
+      // adds map image (ImageOverlay)
+      const imageUrl = 'img/map-example.jpg'; 
+      L.imageOverlay(imageUrl, mapBounds).addTo(map);
+      
+      // adapts to image bounds
+      map.fitBounds(mapBounds);
+
+      const itemMarkers = [];
+      
+      // item marker on map
+      const customIcon = L.divIcon({
+          className: 'item-marker',
+          iconSize: [12, 12],
+          iconAnchor: [6, 6],
+      });
+      
+      // --- 2. add marker for 21 items ---
+      Object.entries(items).forEach(([itemId, item]) => {
+          // skip items with no position or narrative
+          if (!item.location || !item.metadata || !item.metadata.narratives) {
+              return; 
+          }
+          
+          const [lat, lon] = item.location;
+          
+          // content of card on hover with name and image
+          const tooltipContent = `
+              <div class="item-card-hover">
+                  <p class="m-0 fw-bold">${item.title}</p>
+                  <img src="${item.image || 'placeholder.jpg'}" alt="${item.title}" class="img-fluid">
+              </div>
+          `;
+          
+          // create marker
+          const marker = L.marker([lat, lon], { 
+              icon: customIcon,
+              narratives: item.metadata.narratives
+          })
+          .addTo(map)
+          // Hover: use bindTooltip for card
+          .bindTooltip(tooltipContent, { 
+              permanent: false, 
+              direction: 'top', 
+              className: 'item-custom-tooltip' //  tooltip style class
+          })
+          // Click to item page
+          .on('click', () => {
+              window.location.href = `item.html#${itemId}`;
+          });
+          
+          // save marker and DOM element for CSS
+          marker.itemId = itemId;
+          marker.domElement = marker._icon;
+          itemMarkers.push(marker);
+      });
+
+      // --- 3. on card hover the path lights up ---
+      const narrativeCards = document.querySelectorAll('.path-card');
+      
+      narrativeCards.forEach(card => {
+          const narrativeId = card.getAttribute('data-narrative-id');
+
+          card.addEventListener('mouseenter', () => {
+              itemMarkers.forEach(marker => {
+                  // check if marker belongs to narrative
+                  if (marker.options.narratives.includes(narrativeId)) {
+                      marker.domElement.classList.add('highlighted');
+                  }
+              });
+          });
+
+          card.addEventListener('mouseleave', () => {
+              itemMarkers.forEach(marker => {
+                  marker.domElement.classList.remove('highlighted');
+              });
+          });
+      });
+
+  } catch (error) {
+      console.error("Error loading map data or initializing map:", error);
+  }
+}
+
+
 // on page load logic
 document.addEventListener("DOMContentLoaded", function () {
+  // === MAP LOGIC ===
+  // initialize map if  div 'map' exist (in index.html and narratives)
+  if (document.getElementById('map')) {
+    initializeMuseumMap();
+  }
   // === THEME LOGIC ===
   var defaultTheme = "70s-punk";
   var activeTheme = localStorage.getItem("activeTheme");

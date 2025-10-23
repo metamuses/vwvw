@@ -10,7 +10,8 @@
         "author": "Nature",
         "year": "2025",
         "dimensions": "30x40 cm",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "narratives":["made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
