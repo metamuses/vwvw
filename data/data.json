@@ -50,7 +50,7 @@
       "media": [
         {
           "type": "image",
-          "source": "https://placehold.co/400x250/png",
+          "source": "https://placehold.co/400x400/png",
           "caption": "Vivienne Westwood’s Banana Print, 1978",
           "link": "https://example.com/vivienne-westwood-banana"
         },
@@ -62,7 +62,7 @@
         },
         {
           "type": "image",
-          "source": "https://placehold.co/400x250/png",
+          "source": "https://placehold.co/600x250/png",
           "caption": "Vivienne Westwood’s Banana Print, 1978",
           "link": "https://example.com/vivienne-westwood-banana"
         },

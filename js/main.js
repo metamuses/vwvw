@@ -440,12 +440,9 @@ document.addEventListener("DOMContentLoaded", function () {
               let mediaElement = "";
 
               if (media.type === "image") {
-                mediaElement = `<img src="${media.source}" class="card-img-top" alt="${media.caption}">`;
+                mediaElement = `<img src="${media.source}" alt="${media.caption}">`;
               } else if (media.type === "video") {
-                mediaElement = `
-                  <div class="ratio ratio-16x9">
-                    <iframe src="${media.source}" title="${media.caption}" frameborder="0" allowfullscreen></iframe>
-                  </div>`;
+                mediaElement = `<iframe src="${media.source}" title="${media.caption}" allowfullscreen></iframe>`;
               }
 
               const wrapper = document.createElement("div");
@@ -456,7 +453,7 @@ document.addEventListener("DOMContentLoaded", function () {
               card.target = "_blank";
               card.className = "card text-decoration-none text-dark";
               card.innerHTML = `
-                ${mediaElement}
+                <div class="media-content">${mediaElement}</div>
                 <div class="card-body">
                   <h6 class="card-title mb-1">${media.caption}</h6>
                 </div>

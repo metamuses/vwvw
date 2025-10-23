@@ -93,16 +93,16 @@ footer {
 
 #map-section .container {
   /* Rimuove padding extra del container Bootstrap per far respirare la mappa */
-  padding: 0; 
+  padding: 0;
 }
 
 /* 1. La mappa occupa l'intera grandezza della sezione */
 #map {
   /* Altezza basata sulla viewport (70% dell'altezza dello schermo) */
-  height: 70vh; 
+  height: 70vh;
   width: 100%;
   /* Bordo definito in unità relative (rem) */
-  border: 0.3rem solid #343a40; 
+  border: 0.3rem solid #343a40;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -111,7 +111,7 @@ footer {
 
 /* Dimensione base per schermi grandi (desktop) */
 .leaflet-marker-icon.item-marker {
-  background-color: #e60073; 
+  background-color: #e60073;
   border-radius: 50%;
   width: 0.8rem; /* 12px circa */
   height: 0.8rem;
@@ -124,16 +124,16 @@ footer {
 /* 2. Effetto di Illuminazione (Highlight) */
 .item-marker.highlighted {
   /* Aumenta la dimensione in unità relative */
-  width: 1.3rem; 
+  width: 1.3rem;
   height: 1.3rem;
-  
+
   /* Bordo luminoso e box-shadow basati su rem */
-  border: 0.2rem solid #ffcc00; 
-  background-color: #ffcc00; 
+  border: 0.2rem solid #ffcc00;
+  background-color: #ffcc00;
   box-shadow: 0 0 0.8rem #ffcc00, 0 0 1.5rem rgba(255, 204, 0, 0.5);
-  
+
   /* Ricentrare: la metà della differenza di dimensione (1.3rem - 0.8rem) / 2 = 0.25rem */
-  margin-left: -0.25rem; 
+  margin-left: -0.25rem;
   margin-top: -0.25rem;
 }
 
@@ -155,7 +155,7 @@ footer {
 
 .item-card-hover img {
   /* Dimensione massima dell'immagine relativa al contenitore del tooltip */
-  max-width: 80%; 
+  max-width: 80%;
   height: auto;
   margin-top: 0.3rem;
   border-radius: 0.2rem;
@@ -163,27 +163,27 @@ footer {
 
 /* --- Media Query per Dispositivi Mobili (Adattamento Responsivo) --- */
 @media (max-width: 768px) {
-  
+
   /* Riduci l'altezza della mappa su schermi piccoli per non occupare troppo spazio verticale */
   #map {
-      height: 55vh; 
+      height: 55vh;
       border-radius: 0.75rem;
   }
 
   /* Riduci leggermente la dimensione base dei pallini per mobile */
   .leaflet-marker-icon.item-marker {
-      width: 0.6rem; 
+      width: 0.6rem;
       height: 0.6rem;
   }
 
   /* Adatta l'illuminazione per mobile */
   .item-marker.highlighted {
-      width: 1.1rem; 
+      width: 1.1rem;
       height: 1.1rem;
-      border: 0.15rem solid #ffcc00; 
+      border: 0.15rem solid #ffcc00;
       box-shadow: 0 0 0.6rem #ffcc00;
       /* Ricentrare in base alle nuove dimensioni */
-      margin-left: -0.25rem; 
+      margin-left: -0.25rem;
       margin-top: -0.25rem;
   }
 
@@ -199,16 +199,6 @@ footer {
 
 
 /*related MEDIA SHELF*/
-/* Hide scrollbar */
-.shelf-container::-webkit-scrollbar {
-  display: none;
-}
-.shelf-container {
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  position: relative; /* for z-indexed children */
-}
-
 /* Arrows */
 .shelf-arrow {
   z-index: 10;
@@ -218,36 +208,94 @@ footer {
 .shelf-arrow:hover {
   opacity: 1;
 }
-
-/* Card wrapper */
-.shelf-card-wrapper {
-  flex-shrink: 0;
-  width: 220px;
+/* --- SHELF CONTAINER --- */
+.shelf-container {
   display: flex;
-  flex-direction: column;
-  margin-top: 0; /* safe space for hover shadow */
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-behavior: smooth;
 }
 
-/* Card hover */
+.shelf-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- CARD WRAPPER --- */
+.shelf-card-wrapper {
+  flex: 0 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+/* --- CARD --- */
 .shelf-card-wrapper .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 260px; /* fixed total height */
+  width: auto; /* adapt width as needed */
+  min-width: 220px; /* base width for square-ish items */
+  max-width: 320px; /* limit too-wide videos */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  position: relative; /* z-index works */
 }
 
 .shelf-card-wrapper .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
-  z-index: 5;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  position: relative;
 }
 
-/* Image/video fit */
-.shelf-card-wrapper .card img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* --- MEDIA CONTENT --- */
+.media-content {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #f8f9fa;
+  height: 70%; /* main area */
 }
 
-.shelf-card-wrapper .card .ratio {
+/* image: fills entire area */
+.media-content img {
   width: 100%;
+  height: 100%;
+  object-fit: contain; /*or cover if we want them to expand to the card*/
+  background: #f8f9fa; /* optional neutral background behind transparent space */
+
+}
+
+/* video: keeps ratio, height fixed, width adapts */
+.media-content iframe {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  flex-shrink: 0;
+}
+
+/* --- CAPTION AREA --- */
+.card-body {
+  flex: 0 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.2;
+}
+
+.card-body h6 {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-body small,
+.card-body p {
+  font-size: 0.8rem;
+  color: #6c757d;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
