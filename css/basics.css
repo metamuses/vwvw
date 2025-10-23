@@ -98,56 +98,58 @@ footer {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
-
-
-/*related media section- shelf*/
+/*related media shelf*/
+/* Hide scrollbar */
 .shelf-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for clean look */
+  display: none;
 }
-
 .shelf-container {
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
 }
 
+/* Arrows */
 .shelf-arrow {
   z-index: 10;
   opacity: 0.6;
   transition: opacity 0.2s;
 }
-
 .shelf-arrow:hover {
   opacity: 1;
 }
 
-.shelf-card-wrapper {
-  overflow: visible; /* allows inner card shadow to extend */
+/* Wrapper around scroll to allow shadows */
+.shelf-wrapper {
+  overflow: visible;
 }
 
+/* Shelf card wrapper */
+.shelf-card-wrapper {
+  flex-shrink: 0;
+  width: 220px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card styling */
 .shelf-card-wrapper .card {
+  height: 300px; /* enforce equal height for images/videos */
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative; /* z-index works */
 }
 
 .shelf-card-wrapper .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-  z-index: 2;
-  position: relative; /* required so z-index works */
+  z-index: 5; /* bring above siblings */
 }
 
-/* Shelf container should allow overflow for shadows */
-#related-media-shelf {
-  overflow: visible; /* Instead of hidden or auto */
-}
-
-/* Shelf card hover effect */
-#related-media-shelf .card {
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-#related-media-shelf .card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transform: translateY(-4px); /* subtle lift */
-  z-index: 2; /* bring hovered card above others */
+/* Make video ratio fill card height */
+.shelf-card-wrapper .card .ratio {
+  flex-grow: 1;
+  height: 100%;
 }
