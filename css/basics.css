@@ -87,18 +87,118 @@ footer {
 }
 
 
-/* hover of cards to display path of items on map */
-.path-card {
+
+/* MAP: hover of cards to display path of items on map */
+/* Stili per la Mappa Interattiva */
+
+#map-section .container {
+  /* Rimuove padding extra del container Bootstrap per far respirare la mappa */
+  padding: 0; 
+}
+
+/* 1. La mappa occupa l'intera grandezza della sezione */
+#map {
+  /* Altezza basata sulla viewport (70% dell'altezza dello schermo) */
+  height: 70vh; 
+  width: 100%;
+  /* Bordo definito in unità relative (rem) */
+  border: 0.3rem solid #343a40; 
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* --- Stili per il Marker Personalizzato (Pallino) --- */
+
+/* Dimensione base per schermi grandi (desktop) */
+.leaflet-marker-icon.item-marker {
+  background-color: #e60073; 
+  border-radius: 50%;
+  width: 0.8rem; /* 12px circa */
+  height: 0.8rem;
+  display: block;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5); /* Ombra relativa */
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease-in-out;
 }
 
-.path-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+/* 2. Effetto di Illuminazione (Highlight) */
+.item-marker.highlighted {
+  /* Aumenta la dimensione in unità relative */
+  width: 1.3rem; 
+  height: 1.3rem;
+  
+  /* Bordo luminoso e box-shadow basati su rem */
+  border: 0.2rem solid #ffcc00; 
+  background-color: #ffcc00; 
+  box-shadow: 0 0 0.8rem #ffcc00, 0 0 1.5rem rgba(255, 204, 0, 0.5);
+  
+  /* Ricentrare: la metà della differenza di dimensione (1.3rem - 0.8rem) / 2 = 0.25rem */
+  margin-left: -0.25rem; 
+  margin-top: -0.25rem;
 }
 
-/*related media shelf*/
+/* --- Stili per il Tooltip/Card su Hover --- */
+
+.item-custom-tooltip {
+  /* La grandezza dei font e il padding sono basati su rem */
+  font-size: 0.8rem !important;
+  padding: 0.4rem !important;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+  /* Altri stili di sfondo omessi per mantenere la pulizia, usa quelli di Leaflet o definiscili qui */
+}
+
+.item-card-hover {
+  font-size: 0.8rem;
+  text-align: center;
+  width: 7rem; /* Larghezza della card in unità relative */
+}
+
+.item-card-hover img {
+  /* Dimensione massima dell'immagine relativa al contenitore del tooltip */
+  max-width: 80%; 
+  height: auto;
+  margin-top: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+/* --- Media Query per Dispositivi Mobili (Adattamento Responsivo) --- */
+@media (max-width: 768px) {
+  
+  /* Riduci l'altezza della mappa su schermi piccoli per non occupare troppo spazio verticale */
+  #map {
+      height: 55vh; 
+      border-radius: 0.75rem;
+  }
+
+  /* Riduci leggermente la dimensione base dei pallini per mobile */
+  .leaflet-marker-icon.item-marker {
+      width: 0.6rem; 
+      height: 0.6rem;
+  }
+
+  /* Adatta l'illuminazione per mobile */
+  .item-marker.highlighted {
+      width: 1.1rem; 
+      height: 1.1rem;
+      border: 0.15rem solid #ffcc00; 
+      box-shadow: 0 0 0.6rem #ffcc00;
+      /* Ricentrare in base alle nuove dimensioni */
+      margin-left: -0.25rem; 
+      margin-top: -0.25rem;
+  }
+
+  /* Riduci la dimensione del tooltip su mobile */
+  .item-card-hover {
+      font-size: 0.7rem;
+      width: 6rem;
+  }
+}
+
+
+
+
+
+/*related MEDIA SHELF*/
 /* Hide scrollbar */
 .shelf-container::-webkit-scrollbar {
   display: none;
