@@ -334,10 +334,8 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>`;
               }
 
-              // Wrapper div to allow shadow overflow
               const wrapper = document.createElement("div");
-              wrapper.className = "shelf-card-wrapper flex-shrink-0";
-              wrapper.style.width = "220px";
+              wrapper.className = "shelf-card-wrapper";
 
               const card = document.createElement("a");
               card.href = media.link;
@@ -355,17 +353,14 @@ document.addEventListener("DOMContentLoaded", function () {
             });
           }
 
-          // --- Shelf arrows scrolling ---
-          const arrowLeft = document.querySelector(".shelf-arrow.left");
-          const arrowRight = document.querySelector(".shelf-arrow.right");
-
-          arrowLeft.addEventListener("click", () => {
-            mediaShelf.scrollBy({ left: -300, behavior: "smooth" });
+          // Scroll arrows
+          document.querySelector(".shelf-arrow.left").addEventListener("click", () => {
+            mediaShelf.scrollBy({ left: -250, behavior: "smooth" });
+          });
+          document.querySelector(".shelf-arrow.right").addEventListener("click", () => {
+            mediaShelf.scrollBy({ left: 250, behavior: "smooth" });
           });
 
-          arrowRight.addEventListener("click", () => {
-            mediaShelf.scrollBy({ left: 300, behavior: "smooth" });
-          });
         })
 
         .catch(function (error) {

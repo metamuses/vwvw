@@ -179,7 +179,6 @@
           <h5 class="mb-0">Related Media</h5>
         </div>
         <div class="card-body position-relative py-4">
-          <!-- Left arrow -->
           <button
             class="btn btn-outline-secondary shelf-arrow left position-absolute top-50 start-0 translate-middle-y ms-2"
             aria-label="Scroll left"
@@ -187,14 +186,11 @@
             ←
           </button>
 
-          <!-- Scrollable wrapper -->
-          <div class="shelf-wrapper overflow-visible">
-            <div class="shelf-container d-flex gap-3 px-5" id="related-media-shelf">
-              <!-- Cards will be dynamically injected here -->
-            </div>
+          <!-- Scroll container -->
+          <div class="shelf-container d-flex gap-3 px-5 overflow-auto" id="related-media-shelf">
+            <!-- Cards injected here -->
           </div>
 
-          <!-- Right arrow -->
           <button
             class="btn btn-outline-secondary shelf-arrow right position-absolute top-50 end-0 translate-middle-y me-2"
             aria-label="Scroll right"
