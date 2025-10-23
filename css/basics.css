@@ -105,7 +105,8 @@ footer {
 }
 .shelf-container {
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  position: relative; /* for z-indexed children */
 }
 
 /* Arrows */
@@ -118,38 +119,35 @@ footer {
   opacity: 1;
 }
 
-/* Wrapper around scroll to allow shadows */
-.shelf-wrapper {
-  overflow: visible;
-}
-
-/* Shelf card wrapper */
+/* Card wrapper */
 .shelf-card-wrapper {
   flex-shrink: 0;
   width: 220px;
-  overflow: visible;
   display: flex;
   flex-direction: column;
+  margin-top: 0; /* safe space for hover shadow */
 }
 
-/* Card styling */
+/* Card hover */
 .shelf-card-wrapper .card {
-  height: 300px; /* enforce equal height for images/videos */
-  display: flex;
-  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative; /* z-index works */
 }
 
 .shelf-card-wrapper .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-  z-index: 5; /* bring above siblings */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  z-index: 5;
 }
 
-/* Make video ratio fill card height */
+/* Image/video fit */
+.shelf-card-wrapper .card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .shelf-card-wrapper .card .ratio {
-  flex-grow: 1;
-  height: 100%;
+  width: 100%;
 }
