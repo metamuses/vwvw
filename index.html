@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Anton&family=GFS+Didot&family=Oooh+Baby&family=Ranga:wght@400;700&display=swap" rel="stylesheet"> <!-- google fonts link to be updated -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   </head>
   <body>
     <!-- header con nav -->
@@ -86,12 +87,12 @@
       
 
       <!-- card narrative-->
-      <section class="container-fluid py-5"> <!-- è giusto padding qui? -->
+      <section class="container-fluid py-5">
         <div class="container">
-          <div class="row g-4"> 
-            
-            <div class="col-12 col-md-6 col-lg-4"> <!-- in css riduci grandezza card e ombra in hover -->
-              <div class="card h-100 border-0 shadow-sm">
+          <div class="row g-4">
+      
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm path-card" data-path="path1">
                 <a href="#" class="stretched-link text-decoration-none text-dark">
                   <img src="img/card1.png" class="card-img-top" alt="Chronicles of Fashion">
                   <div class="card-body">
@@ -103,9 +104,9 @@
                 </a>
               </div>
             </div>
-
+      
             <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm">
+              <div class="card h-100 border-0 shadow-sm path-card" data-path="path2">
                 <a href="#" class="stretched-link text-decoration-none text-dark">
                   <img src="img/card2.jpg" class="card-img-top" alt="Made by Vivienne">
                   <div class="card-body">
@@ -119,7 +120,7 @@
             </div>
       
             <div class="col-12 col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm">
+              <div class="card h-100 border-0 shadow-sm path-card" data-path="path3">
                 <a href="#" class="stretched-link text-decoration-none text-dark">
                   <img src="img/card3.jpg" class="card-img-top" alt="Enter the Future">
                   <div class="card-body">
@@ -131,14 +132,19 @@
                 </a>
               </div>
             </div>
+      
           </div>
         </div>
       </section>
       
-      <!-- map-->
-      <section>
-
+      <!-- map section -->
+      <section id="museum-map" class="container-fluid py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center fw-bold mb-4">Interactive Museum Map</h2>
+          <div id="map" style="height: 70vh; border-radius: 1rem;"></div>
+        </div>
       </section>
+      
     </main>
 
     <!-- footer -->
@@ -150,5 +156,79 @@
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Inizializza la mappa
+  const map = L.map("map").setView([44.4949, 11.3426], 16); // es. Bologna
+
+  // Tile layer base
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  // Dati delle opere
+  const artworks = [
+    {
+      id: "item1",
+      name: "Corset Dress (1982)",
+      coords: [44.4955, 11.3431],
+      path: "path1",
+      url: "item1.html"
+    },
+    {
+      id: "item2",
+      name: "Pirate Collection Jacket (1981)",
+      coords: [44.4948, 11.3429],
+      path: "path2",
+      url: "item2.html"
+    },
+    {
+      id: "item3",
+      name: "Digital Punk Ensemble (1995)",
+      coords: [44.4951, 11.3435],
+      path: "path3",
+      url: "item3.html"
+    }
+  ];
+
+  // Crea i marker
+  const markers = artworks.map(a => {
+    const marker = L.circleMarker(a.coords, {
+      radius: 8,
+      color: "#222",
+      fillColor: "#e60073",
+      fillOpacity: 0.8
+    })
+      .bindTooltip(`<strong>${a.name}</strong>`, { direction: "top" })
+      .on("click", () => window.location.href = a.url)
+      .addTo(map);
+    marker.path = a.path;
+    return marker;
+  });
+
+  // Evidenzia tappe in base alla card hover
+  document.querySelectorAll(".path-card").forEach(card => {
+    const path = card.dataset.path;
+
+    card.addEventListener("mouseenter", () => {
+      markers.forEach(m => {
+        if (m.path === path) {
+          m.setStyle({ fillColor: "#ffcc00", radius: 10 });
+        } else {
+          m.setStyle({ fillColor: "#ccc", radius: 6 });
+        }
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      markers.forEach(m =>
+        m.setStyle({ fillColor: "#e60073", radius: 8 })
+      );
+    });
+  });
+});
+</script>
   </body>
 </html>

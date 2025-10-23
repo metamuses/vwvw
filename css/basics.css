@@ -85,3 +85,15 @@ footer {
   line-height: 1.6;
   margin: 0 auto;
 }
+
+
+/* hover of cards to display path of items on map */
+.path-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.path-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
