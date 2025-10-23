@@ -316,15 +316,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Initialize display on load
           updateTextDisplay();
+
+          // --- Media shelf logic ---
+          const mediaShelf = document.getElementById("related-media-shelf");
+          mediaShelf.innerHTML = ""; // clear old content
+
+          if (item.media && item.media.length > 0) {
+            item.media.forEach(media => {
+              let mediaElement = "";
+
+              if (media.type === "image") {
+                mediaElement = `<img src="${media.source}" class="card-img-top" alt="${media.caption}">`;
+              } else if (media.type === "video") {
+                mediaElement = `
+                  <div class="ratio ratio-16x9">
+                    <iframe src="${media.source}" title="${media.caption}" frameborder="0" allowfullscreen></iframe>
+                  </div>`;
+              }
+
+              // Wrapper div to allow shadow overflow
+              const wrapper = document.createElement("div");
+              wrapper.className = "shelf-card-wrapper flex-shrink-0";
+              wrapper.style.width = "220px";
+
+              const card = document.createElement("a");
+              card.href = media.link;
+              card.target = "_blank";
+              card.className = "card text-decoration-none text-dark";
+              card.innerHTML = `
+                ${mediaElement}
+                <div class="card-body">
+                  <h6 class="card-title mb-1">${media.caption}</h6>
+                </div>
+              `;
+
+              wrapper.appendChild(card);
+              mediaShelf.appendChild(wrapper);
+            });
+          }
+
+          // --- Shelf arrows scrolling ---
+          const arrowLeft = document.querySelector(".shelf-arrow.left");
+          const arrowRight = document.querySelector(".shelf-arrow.right");
+
+          arrowLeft.addEventListener("click", () => {
+            mediaShelf.scrollBy({ left: -300, behavior: "smooth" });
+          });
+
+          arrowRight.addEventListener("click", () => {
+            mediaShelf.scrollBy({ left: 300, behavior: "smooth" });
+          });
         })
 
-          .catch(function (error) {
-            console.log("Error loading item:", error);
-            document.getElementById("item-title").textContent = "Error loading item";
-            document.getElementById("item-description").textContent = "";
-          });
+        .catch(function (error) {
+          console.log("Error loading item:", error);
+          document.getElementById("item-title").textContent = "Error loading item";
+          document.getElementById("item-description").textContent = "";
+        });
     }
-
     // load the item when ready
     loadItem();
 

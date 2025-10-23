@@ -40,7 +40,34 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+
+      "media": [
+        {
+          "type": "image",
+          "source": "https://placehold.co/400x250/png",
+          "caption": "Vivienne Westwood’s Banana Print, 1978",
+          "link": "https://example.com/vivienne-westwood-banana"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "caption": "Banana in Popular Culture",
+          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        },
+        {
+          "type": "image",
+          "source": "https://placehold.co/400x250/png",
+          "caption": "Vivienne Westwood’s Banana Print, 1978",
+          "link": "https://example.com/vivienne-westwood-banana"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+          "caption": "Banana in Popular Culture",
+          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        }
+      ]
     },
     "orange": {
       "title": "Orange",
