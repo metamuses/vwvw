@@ -138,104 +138,112 @@
 
       <!-- ROW 2: TEXT SECTION -->
       <section class="card mb-5 shadow-sm">
-        <div class="d-flex">
-          <!-- Side button: Too Hard -->
-          <button
-            type="button"
-            class="btn btn-outline-secondary align-self-stretch me-2"
-            id="btn-decrease-difficulty"
-            style="display:none;"
-          >
-            Too Hard
-          </button>
-
-          <!-- Card body with text -->
-          <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
-            <!-- Top-left buttons: Adult / Kid -->
-            <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
-              <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
-              <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
-            </div>
-
-            <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
-            <p id="text-content">
-              This is the kid-friendly version of the text. Click Adult to switch.
-            </p>
-
-            <!-- Read more / less button -->
-            <div class="d-flex justify-content-end mt-auto">
-              <button type="button" class="btn btn-sm btn-outline-primary" id="btn-toggle-length">
-                Read More
-              </button>
-            </div>
+        <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
+          <!-- Top-left buttons: Adult / Kid -->
+          <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
+            <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
           </div>
 
-          <!-- Side button: Too Easy -->
-          <button
-            type="button"
-            class="btn btn-outline-secondary align-self-stretch ms-2"
-            id="btn-increase-difficulty"
-          >
-            Too Easy
-          </button>
+          <!-- Text Content -->
+          <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
+          <p id="text-content">
+            This is the kid-friendly version of the text. Click Adult to switch.
+            <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">Read More</a>
+          </p>
+
+          <!-- Bottom control buttons: Difficulty -->
+          <div class="d-flex justify-content-end gap-2 mt-3">
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+              id="btn-decrease-difficulty"
+              style="display:none;"
+            >
+              Too Hard
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+              id="btn-increase-difficulty"
+            >
+              Too Easy
+            </button>
+          </div>
         </div>
       </section>
 
 
+      <!-- ROW 3: RELATED MEDIA SHELF -->
+      <div class="card shadow-sm border mb-5">
+        <div class="card-header bg-light">
+          <h5 class="mb-0">Related Media</h5>
+        </div>
+        <div class="card-body position-relative py-4">
+          <!-- Left arrow -->
+          <button
+            class="btn btn-outline-secondary shelf-arrow left position-absolute top-50 start-0 translate-middle-y ms-2"
+            aria-label="Scroll left"
+          >
+            ←
+          </button>
 
-      <!-- ROW 3: RELATED MEDIA CAROUSEL -->
-      <!--<section class="mb-5 container">-->
-      <div class="card shadow-sm border">
-        <div class="card-body p-0">
-          <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
-
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-
-            <!-- Slides --> <!--n.b. on smaller viewport the caption is not shown-->
-            <!--TO BE FIX: decided about the carousel, maybe is better to do like a portfolio carousel ?-->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://placehold.co/800x400/png" class="d-block mx-auto img-fluid" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="https://placehold.co/600x400/png" class="d-block mx-auto img-fluid" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="https://placehold.co/600x400/png" class="d-block mx-auto img-fluid" alt="Third slide">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+          <!-- Scrollable container -->
+          <div class="shelf-container d-flex overflow-auto gap-3 px-5" id="related-media-shelf">
+            <!-- Example cards -->
+            <div class="shelf-container d-flex gap-3 px-5" id="related-media-shelf">
+              <div class="shelf-card-wrapper flex-shrink-0" style="width: 220px;">
+                <img
+                  src="https://placehold.co/1280x720/png"
+                  class="card-img-top"
+                  alt="Related item 1"
+                />
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Sweater</h6>
+                  <small class="text-muted">Vivienne Westwood, 1978</small>
                 </div>
               </div>
             </div>
 
-            <!-- Controls -->
-            <button class="carousel-control-prev bg-dark bg-opacity-50" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next bg-dark bg-opacity-50" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="shelf-container d-flex gap-3 px-5" id="related-media-shelf">
+              <div class="shelf-card-wrapper flex-shrink-0" style="width: 220px;">
+                <img
+                  src="https://placehold.co/400x250/png"
+                  class="card-img-top"
+                  alt="Related item 2"
+                />
+                <div class="card-body">
+                  <h6 class="card-title mb-1">T-shirt</h6>
+                  <small class="text-muted">Malcolm McLaren, 1976</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="shelf-container d-flex gap-3 px-5" id="related-media-shelf">
+              <div class="shelf-card-wrapper flex-shrink-0" style="width: 220px;">
+                <img
+                  src="https://placehold.co/1280x720/png"
+                  class="card-img-top"
+                  alt="Related item 1"
+                />
+                <div class="card-body">
+                  <h6 class="card-title mb-1">Sweater</h6>
+                  <small class="text-muted">Vivienne Westwood, 1978</small>
+                </div>
+              </div>
+            </div>
 
           </div>
+
+          <!-- Right arrow -->
+          <button
+            class="btn btn-outline-secondary shelf-arrow right position-absolute top-50 end-0 translate-middle-y me-2"
+            aria-label="Scroll right"
+          >
+            →
+          </button>
         </div>
       </div>
-    <!--</section>-->
     </main>
 
     <!-- footer -->

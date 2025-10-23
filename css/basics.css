@@ -21,17 +21,17 @@
 }
 
 .navbar-brand {
-  margin-left: 0;    
-  padding-left: 0;  
+  margin-left: 0;
+  padding-left: 0;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .img-header { /* è responsive su mobile? */
-  width: 30vw;          
-  height: auto;         
-  max-height: 10vh;  
-  display: block;  
+  width: 30vw;
+  height: auto;
+  max-height: 10vh;
+  display: block;
 }
 
 
@@ -62,25 +62,25 @@ footer {
 
 /* hero - TO FIX tutte misure, da giustificare e rendere responsive */
 .hero {
-  min-height: 70vh; 
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 5vh 2vw; 
+  padding: 5vh 2vw;
 }
 
 .hero h1 {
-  font-size: 3rem; 
+  font-size: 3rem;
 }
 
 .hero .lead {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
 .hero .intro-text {
-  max-width: 45rem; 
+  max-width: 45rem;
   font-size: 1.1rem;
   line-height: 1.6;
   margin: 0 auto;
@@ -96,4 +96,58 @@ footer {
 .path-card:hover {
   transform: scale(1.03);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+
+
+/*related media section- shelf*/
+.shelf-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for clean look */
+}
+
+.shelf-container {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.shelf-arrow {
+  z-index: 10;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.shelf-arrow:hover {
+  opacity: 1;
+}
+
+.shelf-card-wrapper {
+  overflow: visible; /* allows inner card shadow to extend */
+}
+
+.shelf-card-wrapper .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shelf-card-wrapper .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  z-index: 2;
+  position: relative; /* required so z-index works */
+}
+
+/* Shelf container should allow overflow for shadows */
+#related-media-shelf {
+  overflow: visible; /* Instead of hidden or auto */
+}
+
+/* Shelf card hover effect */
+#related-media-shelf .card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+#related-media-shelf .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px); /* subtle lift */
+  z-index: 2; /* bring hovered card above others */
 }
