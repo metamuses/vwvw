@@ -87,7 +87,7 @@ footer {
 }
 
 
-
+/* hover of cards to display path of items on map */
 .path-card {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
