@@ -3,6 +3,8 @@
     "apple": {
       "title": "Apple",
       "description": "A red fruit",
+      "image": "img/items/apple.jpg",
+      "location": [20, 30],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -24,6 +26,8 @@
     "banana": {
       "title": "Banana",
       "description": "A yellow fruit",
+      "image": "img/items/apple.jpg",
+      "location": [70, 45],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -72,6 +76,8 @@
     "orange": {
       "title": "Orange",
       "description": "A orange fruit",
+      "image": "img/items/apple.jpg",
+      "location": [50, 75],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -92,6 +98,8 @@
     "grape": {
       "title": "Grape",
       "description": "A small purple fruit",
+      "image": "img/items/apple.jpg",
+      "location": [35, 80],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -111,6 +119,8 @@
     "kiwi": {
       "title": "Kiwi",
       "description": "A brown fruit",
+      "image": "img/items/apple.jpg",
+      "location": [80, 20],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
