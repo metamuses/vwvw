@@ -233,32 +233,35 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           }
 
-          // === MULTI-AXIS TEXT LOGIC (Kid/Adult, Amateur/Expert, Short/Long) ===
+          // === MULTI-AXIS TEXT LOGIC ===
           const btnAdult = document.getElementById("btn-adult");
           const btnKid = document.getElementById("btn-kid");
-          const btnIncreaseDifficulty = document.getElementById("btn-increase-difficulty");
-          const btnDecreaseDifficulty = document.getElementById("btn-decrease-difficulty");
-          const btnToggleLength = document.getElementById("btn-toggle-length");
+          const btnIncreaseCompetence = document.getElementById("btn-increase-difficulty"); // keeps old id
+          const btnDecreaseCompetence = document.getElementById("btn-decrease-difficulty"); // keeps old id
           const textTitle = document.getElementById("text-title");
           const textContent = document.getElementById("text-content");
 
+          // itemTexts taken from item
           const itemTexts = item.texts || {};
 
           // Load last settings or defaults
-          let audience = localStorage.getItem("textAudience") || "kid"; // kid/adult
-          let difficulty = localStorage.getItem("textDifficulty") || "amateur"; // amateur/expert
-          let length = localStorage.getItem("textLength") || "short"; // short/long
+          let tone = localStorage.getItem("activeTone") || "kid";            // (kid/adult)
+          let competence = localStorage.getItem("activeCompetence") || "amateur"; // (amateur/expert)
+          let length = localStorage.getItem("activeLength") || "short";     // (short/long)
 
           function updateTextDisplay() {
-            const key = `${audience}-${difficulty}-${length}`;
+            const key = `${tone}-${competence}-${length}`;
             const value = itemTexts[key] || "No text available for this version.";
 
-            // Update visible text
-            textTitle.textContent = `${audience.charAt(0).toUpperCase() + audience.slice(1)} Text`;
-            textContent.textContent = value;
+            // Build inline Read More / Read Less link (recreated each render)
+            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${length === "short" ? "Read More" : "Read Less"}</a>`;
 
-            // Highlight active audience button
-            if (audience === "adult") {
+            // Set title and paragraph (use innerHTML because we need the inline link)
+            textTitle.textContent = `${tone.charAt(0).toUpperCase() + tone.slice(1)} Text`;
+            textContent.innerHTML = `${value}${readMoreHtml}`;
+
+            // Highlight active audience/tone button (only Adult/Kid highlighted)
+            if (tone === "adult") {
               btnAdult.classList.remove("btn-outline-primary");
               btnAdult.classList.add("btn-primary");
               btnKid.classList.remove("btn-secondary");
@@ -270,42 +273,44 @@ document.addEventListener("DOMContentLoaded", function () {
               btnAdult.classList.add("btn-outline-primary");
             }
 
-            // Show correct difficulty button
-            btnIncreaseDifficulty.style.display = difficulty === "amateur" ? "block" : "none";
-            btnDecreaseDifficulty.style.display = difficulty === "expert" ? "block" : "none";
+            // Show correct competence (difficulty) button
+            btnIncreaseCompetence.style.display = competence === "amateur" ? "block" : "none";
+            btnDecreaseCompetence.style.display = competence === "expert" ? "block" : "none";
 
-            // Update bottom toggle button
-            btnToggleLength.textContent = length === "short" ? "Read More" : "Read Less";
+            // Attach click handler to newly rendered inline toggle link
+            const btnToggleLength = document.getElementById("btn-toggle-length");
+            if (btnToggleLength) {
+              // remove previous listeners by cloning (defensive) to avoid duplicates
+              const newBtn = btnToggleLength.cloneNode(true);
+              btnToggleLength.parentNode.replaceChild(newBtn, btnToggleLength);
+              newBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                length = length === "short" ? "long" : "short";
+                updateTextDisplay();
+              });
+            }
 
-              // Save state
-            localStorage.setItem("textAudience", audience);
-            localStorage.setItem("textDifficulty", difficulty);
-            localStorage.setItem("textLength", length);
+            // Save current state under the renamed keys
+            localStorage.setItem("activeTone", tone);
+            localStorage.setItem("activeCompetence", competence);
+            localStorage.setItem("activeLength", length);
           }
 
-          // --- Button Handlers ---
+          // Button handlers (use renamed vars)
           btnAdult.onclick = () => {
-            audience = "adult";
+            tone = "adult";
             updateTextDisplay();
           };
-
           btnKid.onclick = () => {
-            audience = "kid";
+            tone = "kid";
             updateTextDisplay();
           };
-
-          btnIncreaseDifficulty.onclick = () => {
-            difficulty = "expert";
+          btnIncreaseCompetence.onclick = () => {
+            competence = "expert";
             updateTextDisplay();
           };
-
-          btnDecreaseDifficulty.onclick = () => {
-            difficulty = "amateur";
-            updateTextDisplay();
-          };
-
-          btnToggleLength.onclick = () => {
-            length = length === "short" ? "long" : "short";
+          btnDecreaseCompetence.onclick = () => {
+            competence = "amateur";
             updateTextDisplay();
           };
 
