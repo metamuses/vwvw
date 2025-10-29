@@ -27,7 +27,7 @@
     "banana": {
       "title": "Banana",
       "description": "A yellow fruit",
-      "image": "img/items/apple.jpg",
+      "image": "img/items/banana.jpg",
       "location": [70, 45],
       "metadata": {
         "category": "Fruit",
