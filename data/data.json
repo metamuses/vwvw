@@ -122,7 +122,7 @@
     "angus_photo": {
       "title": "Vivienne Westwood by Angus McBean",
       "description": "...",
-      "image": "img/items/vivienne_queen.png",
+      "image": "img/items/angus_photo.jpg",
       "location": [80, 20],
       "metadata": {
         "category": "Fruit",
@@ -194,7 +194,7 @@
     "parr_photo": {
       "title": "Vivienne Westwood by Martin Parr",
       "description": "...",
-      "image": "img/items/parr_photo.png",
+      "image": "img/items/parr_photo.jpg",
       "location": [80, 20],
       "metadata": {
         "category": "Fruit",
@@ -218,7 +218,7 @@
     "moon_photo": {
       "title": "Dame Vivienne Westwood and Andreas Kronthaler with a new generation of activists, advocates, rebels and punks.",
       "description": "...",
-      "image": "img/items/activism_photo.png",
+      "image": "img/items/activism_photo.jpg",
       "location": [80, 20],
       "metadata": {
         "category": "Fruit",
@@ -434,7 +434,7 @@
     "underpants": {
       "title": "Underpants, briefs by Vivienne Westwood",
       "description": "...",
-      "image": "img/items/underpants.png",
+      "image": "img/items/underpants.jpeg",
       "location": [80, 20],
       "metadata": {
         "category": "Fruit",
@@ -482,7 +482,7 @@
     "dress": {
       "title": "Dress by Vivienne Westwood",
       "description": "...",
-      "image": "img/items/dress.png",
+      "image": "img/items/dress.jpeg",
       "location": [80, 20],
       "metadata": {
         "category": "Fruit",

@@ -196,6 +196,17 @@ footer {
 
 
 
+/* ITEM IMAGE WRAPPER (around #item-image) */
+#item-image {
+  width: 100%;
+  max-width: 400px; /* keep square size */
+  aspect-ratio: 1 / 1; /* force 1:1 ratio */
+  object-fit: contain; /* or 'cover' for full fill */
+  background-color: white;
+  border-radius: 0.5rem; /* match Bootstrap rounded */
+  display: block;
+  margin: 0 auto 1rem; /* center and space below */
+}
 
 
 /*related MEDIA SHELF*/
