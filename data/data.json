@@ -1,9 +1,9 @@
 {
   "items": {
-    "apple": {
-      "title": "Apple",
-      "description": "A red fruit",
-      "image": "img/items/apple.jpg",
+    "single": {
+      "title": "God Save the Queen single",
+      "description": "...",
+      "image": "img/items/sex_pistols_single.jpg",
       "location": [20, 30],
       "metadata": {
         "category": "Fruit",
@@ -11,7 +11,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives":["made-by", "past-future"]
+        "narratives":["historical", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -24,10 +24,10 @@
         "adult-expert-long": "This is the adult expert and long version of the text."
       }
     },
-    "banana": {
-      "title": "Banana",
-      "description": "A yellow fruit",
-      "image": "img/items/banana.jpg",
+    "tartan": {
+      "title": "Westwood MacAndreas tartan",
+      "description": "...",
+      "image": "img/items/tartan_macandreas.jpeg",
       "location": [70, 45],
       "metadata": {
         "category": "Fruit",
@@ -74,16 +74,17 @@
         }
       ]
     },
-    "orange": {
-      "title": "Orange",
-      "description": "A orange fruit",
-      "image": "img/items/apple.jpg",
+    "top": {
+      "title": "God Save the Queen top",
+      "description": "...",
+      "image": "img/items/god_save_queen_top.jpg",
       "location": [50, 75],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
         "year": "2025",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -96,15 +97,16 @@
         "adult-expert-long": "This is the adult expert and long version of the text."
       }
     },
-    "grape": {
-      "title": "Grape",
-      "description": "A small purple fruit",
-      "image": "img/items/apple.jpg",
+    "earring": {
+      "title": "SEX earring",
+      "description": "...",
+      "image": "img/items/sex_earring.jpg",
       "location": [35, 80],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -117,17 +119,378 @@
         "adult-expert-long": "This is the adult expert and long version of the text."
       }
     },
-    "kiwi": {
-      "title": "Kiwi",
-      "description": "A brown fruit",
-      "image": "img/items/apple.jpg",
+    "angus_photo": {
+      "title": "Vivienne Westwood by Angus McBean",
+      "description": "...",
+      "image": "img/items/vivienne_queen.png",
       "location": [80, 20],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
         "year": "2025",
         "dimensions": "30x40 cm",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "shoes": {
+      "title": "Studded shoes",
+      "description": "...",
+      "image": "img/items/shoes.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "t-shirt": {
+      "title": "Destroy T-shirt",
+      "description": "...",
+      "image": "img/items/destroy_tshirt.jpeg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "parr_photo": {
+      "title": "Vivienne Westwood by Martin Parr",
+      "description": "...",
+      "image": "img/items/parr_photo.png",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "moon_photo": {
+      "title": "Dame Vivienne Westwood and Andreas Kronthaler with a new generation of activists, advocates, rebels and punks.",
+      "description": "...",
+      "image": "img/items/activism_photo.png",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "note": {
+      "title": "From 'Letters to Earth' speech given by Vivienne at Shakespeare's Globe.",
+      "description": "...",
+      "image": "img/items/sos_note.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "carrie": {
+      "title": "Sarah Jessica Parker in Sex and the City",
+      "description": "...",
+      "image": "img/items/carrie.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "platform_shoes": {
+      "title": "Platform shoes",
+      "description": "...",
+      "image": "img/items/platform_shoes.jpeg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "trousers": {
+      "title": "Tartan trousers",
+      "description": "...",
+      "image": "",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "necklace": {
+      "title": "Pearls necklace",
+      "description": "...",
+      "image": "img/items/necklace.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "corset": {
+      "title": "Corset",
+      "description": "...",
+      "image": "img/items/corset.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "boucher_painting": {
+      "title": "Daphins and Chloe painting",
+      "description": "...",
+      "image": "img/items/boucher_paint.jpeg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "david_painting": {
+      "title": "Henriette de Verninac by David",
+      "description": "...",
+      "image": "img/items/david_painting.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "underpants": {
+      "title": "Underpants, briefs by Vivienne Westwood",
+      "description": "...",
+      "image": "img/items/underpants.png",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "petticoat": {
+      "title": "Woman's Hoop Petticoat (Pannier)",
+      "description": "...",
+      "image": "img/items/petticoat.jpg",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
+    "dress": {
+      "title": "Dress by Vivienne Westwood",
+      "description": "...",
+      "image": "img/items/dress.png",
+      "location": [80, 20],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -145,17 +508,17 @@
     "historical": {
       "title": "Historical narrative",
       "description": "This is the historical narrative.",
-      "items": ["banana", "apple", "grape", "kiwi", "orange"]
+      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
     },
     "made-by": {
       "title": "Made by Vivienne narrative",
       "description": "This is the made by Vivienne narrative.",
-      "items": ["banana", "kiwi", "orange"]
+      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress"]
     },
     "past-future": {
       "title": "Past and Future narrative",
       "description": "This is the past and future narrative.",
-      "items": ["grape", "apple", "orange"]
+      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "boucher_painting", "david_painting", "petticoat"]
     }
   }
 }
