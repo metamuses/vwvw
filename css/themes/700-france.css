@@ -30,7 +30,13 @@ footer {
   padding-bottom: 1.5rem;
 }
 
-/* === HEADER ORNATE GOLD FRAME === */
+/* ===============================
+    HEADER BOTTOM FRAME
+    =============================== */
+header {
+  position: relative;
+}
+
 header::after {
   content: "";
   position: absolute;
@@ -38,8 +44,10 @@ header::after {
   left: 0;
   width: 100%;
   height: 14px;
+  z-index: 2;
+  pointer-events: none;
+
   background:
-    /* carved relief lines */
     repeating-linear-gradient(
       to bottom,
       rgba(0,0,0,0.15) 0px,
@@ -49,7 +57,6 @@ header::after {
       transparent 2px,
       transparent 4px
     ),
-    /* metallic depth + shadow */
     linear-gradient(
       to bottom,
       #d1b350 0%,
@@ -59,13 +66,20 @@ header::after {
       #4a3a12 100%
     );
   background-blend-mode: overlay;
+
   box-shadow:
     inset 0 2px 2px rgba(255,255,255,0.3),
     inset 0 -2px 4px rgba(0,0,0,0.4),
     0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* === FOOTER ORNATE GOLD FRAME === */
+/* ===============================
+    FOOTER TOP FRAME
+    =============================== */
+footer {
+  position: relative;
+}
+
 footer::before {
   content: "";
   position: absolute;
@@ -73,87 +87,9 @@ footer::before {
   left: 0;
   width: 100%;
   height: 14px;
-  background:
-    /* carved relief lines */
-    repeating-linear-gradient(
-      to top,
-      rgba(0,0,0,0.15) 0px,
-      rgba(0,0,0,0.15) 1px,
-      rgba(255,255,255,0.1) 1px,
-      rgba(255,255,255,0.1) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    /* metallic depth + highlight */
-    linear-gradient(
-      to top,
-      #d1b350 0%,
-      #b89635 20%,
-      #8c6e22 50%,
-      #c3a041 75%,
-      #4a3a12 100%
-    );
-  background-blend-mode: overlay;
-  box-shadow:
-    inset 0 -2px 2px rgba(255,255,255,0.3),
-    inset 0 2px 4px rgba(0,0,0,0.4),
-    0 -2px 6px rgba(0,0,0,0.3);
-}
-
-/*modanatura per le sezioni con sfondo bianco che non hanno card o section ulteriori*/
-/* Make sure sections are positioned relative for pseudo-elements */
-.hero,
-#map-section,
-.container-fluid.py-5.bg-light {
-  position: relative;
-}
-
-/* Bottom frame for hero and narrative sections */
-.hero::after,
-.container-fluid.py-5.bg-light:last-of-type::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 14px;
   z-index: 2;
   pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.15) 0px,
-      rgba(0,0,0,0.15) 1px,
-      rgba(255,255,255,0.1) 1px,
-      rgba(255,255,255,0.1) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    linear-gradient(
-      to bottom,
-      #d1b350 0%,
-      #b89635 20%,
-      #8c6e22 50%,
-      #c3a041 75%,
-      #4a3a12 100%
-    );
-  background-blend-mode: overlay;
-  box-shadow:
-    inset 0 2px 2px rgba(255,255,255,0.3),
-    inset 0 -2px 4px rgba(0,0,0,0.4),
-    0 2px 6px rgba(0,0,0,0.3);
-}
 
-/* Top frame for map section */
-#map-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 14px;
-  z-index: 2;
-  pointer-events: none;
   background:
     repeating-linear-gradient(
       to top,
@@ -173,6 +109,7 @@ footer::before {
       #4a3a12 100%
     );
   background-blend-mode: overlay;
+
   box-shadow:
     inset 0 -2px 2px rgba(255,255,255,0.3),
     inset 0 2px 4px rgba(0,0,0,0.4),
