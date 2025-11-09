@@ -33,9 +33,6 @@ footer {
 /* ===============================
     HEADER BOTTOM FRAME
     =============================== */
-header {
-  position: relative;
-}
 
 header::after {
   content: "";
@@ -76,9 +73,6 @@ header::after {
 /* ===============================
     FOOTER TOP FRAME
     =============================== */
-footer {
-  position: relative;
-}
 
 footer::before {
   content: "";
