@@ -310,3 +310,25 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+/*adding the following snippet cause the footer had fixed lenght meaning when the main is shorter than the viewport it didn't strech to the bottom of the "page"*/
+/* Full-height layout fix */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let main take up available vertical space */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer stays at bottom */
+footer {
+  flex-shrink: 0;
+}
