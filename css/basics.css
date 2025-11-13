@@ -98,14 +98,20 @@ footer {
 
 /* 1. La mappa occupa l'intera grandezza della sezione */
 #map {
-  /* Altezza basata sulla viewport (70% dell'altezza dello schermo) */
-  height: 70vh;
   width: 100%;
-  /* Bordo definito in unità relative (rem) */
+  max-width: 100%;
+  aspect-ratio: 29 / 12; /* rapporto immagine */
   border: 0.3rem solid #343a40;
   border-radius: 1rem;
   overflow: hidden;
+  margin: 0 auto;
+  display: block;
+  /* 👇 piccolo "zoom out" visuale */
+  transform: scale(0.95);
+  transform-origin: center center;
 }
+
+
 
 /* --- Stili per il Marker Personalizzato (Pallino) --- */
 

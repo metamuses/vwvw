@@ -46,28 +46,75 @@ async function initializeMuseumMap() {
       const data = await response.json();
       const items = data.items;
 
-      // --- 1. static map configuration ---
-      // arbitrary coordinates from [0, 0] to [100, 100]
-      const mapBounds = [[0, 0], [100, 100]];
+        // --- 1. Configurazione Statica della Mappa ---
+        
+        // Dimensioni dell'immagine di sfondo della mappa (importante per il calcolo dei limiti)
+      const imageWidth = 2718;
+      const imageHeight = 1109;
+        
+        // Limiti stretti della mappa (bounding box dell'immagine)
+      const mapBounds = [[0, 0], [imageHeight, imageWidth]];
+      const center = [imageHeight / 2, imageWidth / 2]; //
 
-      // initialize map with L.CRS.Simple for non geografic coordinates
-      const map = L.map('map', {
-          crs: L.CRS.Simple,
-          minZoom: -2,
-          maxZoom: 2,
-          center: [50, 50], // center of the map
-          zoom: 0,
-          attributionControl: false,
-          maxBounds: mapBounds, // avoids excessive panning
-          maxBoundsViscosity: 1.0
-      });
+        // Margine di sicurezza per i limiti (usato su mobile per permettere più panning)
+      const BOUNDS_PADDING = 50; 
+      const maxBoundsPadded = [
+            [0 - BOUNDS_PADDING, 0 - BOUNDS_PADDING],
+            [imageHeight + BOUNDS_PADDING, imageWidth + BOUNDS_PADDING]
+      ];
+        
+        // Breakpoint definito in CSS per mobile (768px)
+      const MOBILE_BREAKPOINT = 768; 
 
-      // adds map image (ImageOverlay)
-      const imageUrl = 'img/map-example.jpg';
-      L.imageOverlay(imageUrl, mapBounds).addTo(map);
+        /**
+         * Funzione per aggiornare i limiti di trascinamento della mappa 
+         * in base alla larghezza dello schermo.
+         */
+      function updateMapBounds(map) {
+          const screenWidth = window.innerWidth;
+          if (screenWidth > MOBILE_BREAKPOINT) {
+            // Desktop: Blocco totale del movimento sui bordi (Viscosità 1.0)
+            // 🛑 MANTENIAMO IL TRASCINAMENTO ABILITATO per lo zoom
+            map.setMaxBounds(mapBounds, { maxBoundsViscosity: 1.0 });
+          } else {
+            // Mobile: Permetti elasticità (Viscosità 0.0) e i limiti 'imbottiti'
+            map.setMaxBounds(maxBoundsPadded, { maxBoundsViscosity: 0.0 });
+          }
+        }
 
-      // adapts to image bounds
-      map.fitBounds(mapBounds);
+        // Inizializza la mappa con L.CRS.Simple per coordinate non geografiche
+        const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -1,
+            maxZoom: 2,
+            center: [imageHeight / 2, imageWidth / 2], // Centro della mappa
+            zoom: 0,
+            attributionControl: false,
+            // Imposta i limiti iniziali in base allo schermo
+            maxBoundsViscosity: window.innerWidth > MOBILE_BREAKPOINT ? 1.0 : 0.0,
+            maxBounds: window.innerWidth > MOBILE_BREAKPOINT ? mapBounds : maxBoundsPadded
+        });
+
+        // Aggiunge l'immagine della mappa (ImageOverlay)
+        const imageUrl = 'img/frontal_map_from_svg.png';
+        const image = L.imageOverlay(imageUrl, mapBounds, { noWrap: true }).addTo(map);
+
+        // Aspetta che l'immagine sia caricata prima di adattare i bounds
+        image.once('load', () => {
+           map.fitBounds(mapBounds);
+           // Riconfigura i limiti dopo che fitBounds ha resettato la vista
+           updateMapBounds(map);
+        });
+        
+        // Listener per il ridimensionamento della finestra
+        window.addEventListener('resize', () => {
+            // Aggiorna i limiti di panning dinamicamente
+            updateMapBounds(map);
+            // Su schermi grandi, assicurati che la mappa sia centrata correttamente
+            if (window.innerWidth > MOBILE_BREAKPOINT) {
+                 map.fitBounds(mapBounds); 
+            }
+        });
 
       const itemMarkers = [];
 
