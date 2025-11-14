@@ -338,3 +338,31 @@ main {
 footer {
   flex-shrink: 0;
 }
+
+
+/*for the narrative item card*/
+/* --- Narrative Cards Layout --- */
+.path-card-wrapper .card {
+  height: 280px;              /* fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+/* --- Image behavior (same as item page square) --- */
+.path-card-wrapper .card-img-top {
+  width: 100%;
+  aspect-ratio: 1 / 1;        /* always square box */
+  object-fit: contain;        /* keep full image visible */
+  background-color: white;    /* behind transparent areas */
+  padding: 0.5rem;            /* breathing space */
+}
+
+/* --- Title area stays aligned --- */
+.path-card-wrapper .card-body {
+  flex: 0 0 auto;
+  text-align: center;
+}
+

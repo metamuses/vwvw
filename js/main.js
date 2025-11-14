@@ -47,27 +47,27 @@ async function initializeMuseumMap() {
       const items = data.items;
 
         // --- 1. Configurazione Statica della Mappa ---
-        
+
         // Dimensioni dell'immagine di sfondo della mappa (importante per il calcolo dei limiti)
       const imageWidth = 2718;
       const imageHeight = 1109;
-        
+
         // Limiti stretti della mappa (bounding box dell'immagine)
       const mapBounds = [[0, 0], [imageHeight, imageWidth]];
       const center = [imageHeight / 2, imageWidth / 2]; //
 
         // Margine di sicurezza per i limiti (usato su mobile per permettere più panning)
-      const BOUNDS_PADDING = 50; 
+      const BOUNDS_PADDING = 50;
       const maxBoundsPadded = [
             [0 - BOUNDS_PADDING, 0 - BOUNDS_PADDING],
             [imageHeight + BOUNDS_PADDING, imageWidth + BOUNDS_PADDING]
       ];
-        
+
         // Breakpoint definito in CSS per mobile (768px)
-      const MOBILE_BREAKPOINT = 768; 
+      const MOBILE_BREAKPOINT = 768;
 
         /**
-         * Funzione per aggiornare i limiti di trascinamento della mappa 
+         * Funzione per aggiornare i limiti di trascinamento della mappa
          * in base alla larghezza dello schermo.
          */
       function updateMapBounds(map) {
@@ -105,14 +105,14 @@ async function initializeMuseumMap() {
            // Riconfigura i limiti dopo che fitBounds ha resettato la vista
            updateMapBounds(map);
         });
-        
+
         // Listener per il ridimensionamento della finestra
         window.addEventListener('resize', () => {
             // Aggiorna i limiti di panning dinamicamente
             updateMapBounds(map);
             // Su schermi grandi, assicurati che la mappa sia centrata correttamente
             if (window.innerWidth > MOBILE_BREAKPOINT) {
-                 map.fitBounds(mapBounds); 
+                 map.fitBounds(mapBounds);
             }
         });
 
@@ -248,20 +248,50 @@ document.addEventListener("DOMContentLoaded", function () {
         title.textContent = narrative.title;
         description.textContent = narrative.description;
 
-        // populate items list
-        var ul = document.getElementById("narrative-items");
-        ul.innerHTML = "";
+        // populate items card
+        // Load items inside narrative page
+        const itemsContainer = document.getElementById("narrative-items");
+        itemsContainer.innerHTML = ""; // clear old items
 
-        narrative.items.forEach(function (itemKey) {
-          var item = data.items[itemKey];
-          if (item) {
-            var li = document.createElement("li");
-            var link = document.createElement("a");
-            link.href = "/item.html#" + itemKey;
-            link.textContent = item.title + ": " + item.description;
-            li.appendChild(link);
-            ul.appendChild(li);
-          }
+        narrative.items.forEach(itemKey => {
+        const item = data.items[itemKey];
+        if (!item) return;
+
+        // --- column wrapper (Bootstrap grid) ---
+        const col = document.createElement("div");
+        col.className = "col-12 col-md-6 col-lg-4";
+
+        // --- wrapper (matching your media-shelf pattern) ---
+        const wrapper = document.createElement("div");
+        wrapper.className = "path-card-wrapper h-100"; // you can style this if you want
+
+        // --- Create card ---
+        const card = document.createElement("a");
+        card.href = "item.html#" + itemKey;
+        card.className = "card h-100 border-0 shadow-sm text-decoration-none text-dark";
+
+        // --- IMAGE ---
+        const img = document.createElement("img");
+        img.src = item.image || "https://placehold.co/400x400/png";
+        img.alt = item.title || "Placeholder image";
+        img.className = "card-img-top";
+
+        // --- CARD BODY ---
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const title = document.createElement("h5");
+        title.className = "card-title fw-bold";
+        title.textContent = item.title;
+
+        // Append items
+        body.appendChild(title);
+        card.appendChild(img);
+        card.appendChild(body);
+
+        wrapper.appendChild(card);
+        col.appendChild(wrapper);
+        itemsContainer.appendChild(col);
         });
       })
       .catch(function (error) {
