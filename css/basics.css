@@ -340,29 +340,62 @@ footer {
 }
 
 
-/*for the narrative item card*/
-/* --- Narrative Cards Layout --- */
+/* ================================
+   NARRATIVE ITEM CARDS
+   ================================ */
+
+/* Wrapper behaves like shelf-card-wrapper */
+.path-card-wrapper {
+  flex: 0 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+/* Card: same hover animation as media shelf */
 .path-card-wrapper .card {
-  height: 280px;              /* fixed height for all cards */
+  height: 280px; /* fixed height */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
   border-radius: 0.5rem;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;  /* same UX */
+  overflow: hidden; /* prevents stretched shadows */
 }
 
-/* --- Image behavior (same as item page square) --- */
+/* Hover effect (same as media shelf) */
+.path-card-wrapper .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  position: relative;
+}
+
+/* ================================
+   IMAGE BEHAVIOR (same as item page)
+   ================================ */
 .path-card-wrapper .card-img-top {
   width: 100%;
-  aspect-ratio: 1 / 1;        /* always square box */
-  object-fit: contain;        /* keep full image visible */
-  background-color: white;    /* behind transparent areas */
-  padding: 0.5rem;            /* breathing space */
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: white;
+  padding: 0.5rem;
 }
 
-/* --- Title area stays aligned --- */
+/* ================================
+   TITLE AREA
+   ================================ */
 .path-card-wrapper .card-body {
   flex: 0 0 auto;
   text-align: center;
+  padding: 0.75rem;
 }
+
+.path-card-wrapper .card-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
 
