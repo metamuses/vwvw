@@ -1,6 +1,7 @@
 a.nav-link.dropdown-toggle {
   color: blue;
 }
+/*wallpaper background*/
 body {
   background-color: #b6cdd8;
   background-image:
@@ -22,7 +23,7 @@ body {
 /* HEADER + FOOTER BASE */
 header,
 footer {
-  background-color: #b6cdd8;
+  background-color: #b6cdd8 !important;
   position: relative;
   z-index: 2;
   overflow: visible;
@@ -108,4 +109,49 @@ footer::before {
     inset 0 -2px 2px rgba(255,255,255,0.3),
     inset 0 2px 4px rgba(0,0,0,0.4),
     0 -2px 6px rgba(0,0,0,0.3);
+}
+
+/*cornice narrative card index.html*/
+/* Outer frame: squared and opaque */
+.card[data-narrative-id]::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  background: linear-gradient(
+    to top,
+    #d1b350 0%,
+    #b89635 20%,
+    #8c6e22 50%,
+    #c3a041 75%,
+    #4a3a12 100%
+  );
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Inner cutout: match card background */
+.card[data-narrative-id]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: white; /* match your card */
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Hover effect */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.35),
+    inset 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
