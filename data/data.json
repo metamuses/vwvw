@@ -4,7 +4,7 @@
       "title": "God Save the Queen single",
       "description": "...",
       "image": "img/items/sex_pistols_single.jpg",
-      "location": [20, 30],
+      "location": [485, 540],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -28,7 +28,7 @@
       "title": "Westwood MacAndreas tartan",
       "description": "...",
       "image": "img/items/tartan_macandreas.jpeg",
-      "location": [70, 45],
+      "location": [360, 130],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -78,7 +78,7 @@
       "title": "God Save the Queen top",
       "description": "...",
       "image": "img/items/god_save_queen_top.jpg",
-      "location": [50, 75],
+      "location": [360, 375],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -101,7 +101,7 @@
       "title": "SEX earring",
       "description": "...",
       "image": "img/items/sex_earring.jpg",
-      "location": [35, 80],
+      "location": [230, 480],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -123,7 +123,7 @@
       "title": "Vivienne Westwood by Angus McBean",
       "description": "...",
       "image": "img/items/angus_photo.jpg",
-      "location": [80, 20],
+      "location": [500, 300],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -147,7 +147,7 @@
       "title": "Studded shoes",
       "description": "...",
       "image": "img/items/shoes.jpg",
-      "location": [80, 20],
+      "location": [95, 705],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -171,7 +171,7 @@
       "title": "Destroy T-shirt",
       "description": "...",
       "image": "img/items/destroy_tshirt.jpeg",
-      "location": [80, 20],
+      "location": [360, 640],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -195,7 +195,7 @@
       "title": "Vivienne Westwood by Martin Parr",
       "description": "...",
       "image": "img/items/parr_photo.jpg",
-      "location": [80, 20],
+      "location": [370, 1365],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -219,7 +219,7 @@
       "title": "Dame Vivienne Westwood and Andreas Kronthaler with a new generation of activists, advocates, rebels and punks.",
       "description": "...",
       "image": "img/items/activism_photo.jpg",
-      "location": [80, 20],
+      "location": [570, 1132],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -243,7 +243,7 @@
       "title": "From 'Letters to Earth' speech given by Vivienne at Shakespeare's Globe.",
       "description": "...",
       "image": "img/items/sos_note.jpg",
-      "location": [80, 20],
+      "location": [380, 1592],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -267,7 +267,7 @@
       "title": "Sarah Jessica Parker in Sex and the City",
       "description": "...",
       "image": "img/items/carrie.jpg",
-      "location": [80, 20],
+      "location": [680, 1445],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -291,7 +291,7 @@
       "title": "Platform shoes",
       "description": "...",
       "image": "img/items/platform_shoes.jpeg",
-      "location": [80, 20],
+      "location": [270, 1245],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -315,7 +315,7 @@
       "title": "Tartan trousers",
       "description": "...",
       "image": "",
-      "location": [80, 20],
+      "location": [230, 1113],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -335,11 +335,35 @@
         "adult-expert-long": "This is the adult expert and long version of the text."
       }
     },
+    "ring": {
+      "title": "Armour Ring",
+      "description": "...",
+      "image": "",
+      "location": [210, 1465],
+      "metadata": {
+        "category": "Fruit",
+        "author": "Nature",
+        "year": "2025",
+        "dimensions": "30x40 cm",
+        "source": "Wikipedia",
+        "narratives": ["historical", "made-by", "past-future"]
+      },
+      "texts": {
+        "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
+        "kid-amateur-long": "This is the kid-friendly amateur and long version of the text.",
+        "kid-expert-short": "This is the kid-friendly expert and short version of the text.",
+        "kid-expert-long": "This is the kid-friendly expert and long version of the text.",
+        "adult-amateur-short": "This is the adult amateur and short version of the text.",
+        "adult-amateur-long": "This is the adult amateur and long version of the text.",
+        "adult-expert-short": "This is the adult expert and short version of the text.",
+        "adult-expert-long": "This is the adult expert and long version of the text."
+      }
+    },
     "necklace": {
       "title": "Pearls necklace",
       "description": "...",
       "image": "img/items/necklace.jpg",
-      "location": [80, 20],
+      "location": [280, 1932],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -363,7 +387,7 @@
       "title": "Corset",
       "description": "...",
       "image": "img/items/corset.jpg",
-      "location": [80, 20],
+      "location": [300, 2510],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -387,7 +411,7 @@
       "title": "Daphins and Chloe painting",
       "description": "...",
       "image": "img/items/boucher_paint.jpeg",
-      "location": [80, 20],
+      "location": [600, 2500],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -411,7 +435,7 @@
       "title": "Henriette de Verninac by David",
       "description": "...",
       "image": "img/items/david_painting.jpg",
-      "location": [80, 20],
+      "location": [620, 2060],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -435,7 +459,7 @@
       "title": "Underpants, briefs by Vivienne Westwood",
       "description": "...",
       "image": "img/items/underpants.jpeg",
-      "location": [80, 20],
+      "location": [300, 2180],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -459,7 +483,7 @@
       "title": "Woman's Hoop Petticoat (Pannier)",
       "description": "...",
       "image": "img/items/petticoat.jpg",
-      "location": [80, 20],
+      "location": [390, 2290],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
@@ -483,7 +507,7 @@
       "title": "Dress by Vivienne Westwood",
       "description": "...",
       "image": "img/items/dress.jpeg",
-      "location": [80, 20],
+      "location": [390, 2055],
       "metadata": {
         "category": "Fruit",
         "author": "Nature",
