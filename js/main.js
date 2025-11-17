@@ -50,7 +50,7 @@ async function initializeMuseumMap() {
       const imageWidth = 2718;
       const imageHeight = 1109;
       const mapBounds = [[0, 0], [imageHeight, imageWidth]];
-    
+
       const map = L.map("map", {
         crs: L.CRS.Simple,
         minZoom: -2,
@@ -62,10 +62,10 @@ async function initializeMuseumMap() {
         dragging: true
       });
 
-      
-    
+
+
       const image = L.imageOverlay("img/frontal_map_from_svg.png", mapBounds).addTo(map);
-    
+
       function applyResponsiveFit() {
         const isMobile = window.innerWidth <= 768;
 
@@ -83,22 +83,22 @@ async function initializeMuseumMap() {
           ]);
         }
       }
-    
+
       image.once("load", () => {
         // Prima imposta il fitting
         applyResponsiveFit();
-    
+
         // Primo invalidate immediato
         map.invalidateSize();
-    
+
         // Secondo invalidate dopo che il browser ha disegnato la pagina (fix DEFINITIVO)
         setTimeout(() => {
             map.invalidateSize(true);
             applyResponsiveFit(); // riblocca i bounds se servono
         }, 150);
       });
-    
-    
+
+
     // debounce resize
       let resizeTimer;
       window.addEventListener("resize", () => {
@@ -108,7 +108,7 @@ async function initializeMuseumMap() {
           applyResponsiveFit();
         }, 200);
       });
-    
+
 
 
       const itemMarkers = [];
@@ -152,7 +152,7 @@ async function initializeMuseumMap() {
             offset: [0, -10],       // piccolo margine sopra il marker
             opacity: 1
            });
-        
+
           marker.itemId = itemId;
 
         // Mobile: gestisce tap singolo e doppio tap
@@ -203,7 +203,7 @@ async function initializeMuseumMap() {
           card.addEventListener('mouseenter', () => {
             highlightMarkersForNarrative(narrativeId, true);
           });
-    
+
           card.addEventListener('mouseleave', () => {
             highlightMarkersForNarrative(narrativeId, false);
           });
@@ -245,6 +245,17 @@ document.addEventListener("DOMContentLoaded", function () {
       var narrative = e.target.dataset.narrative;
       localStorage.setItem("activeNarrative", narrative);
       console.log("Narrative '" + narrative + "' selected.");
+      window.location.href = "narrative.html";
+    });
+  });
+  // === CARD CLICK LOGIC (INDEX.HTML) ===
+  var narrativeCards = document.querySelectorAll(".path-card");
+  narrativeCards.forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      e.preventDefault(); // evita che il link # faccia scrollare in alto
+      var narrative = card.dataset.narrativeId;
+      localStorage.setItem("activeNarrative", narrative);
+      console.log("Narrative from card:", narrative);
       window.location.href = "narrative.html";
     });
   });
