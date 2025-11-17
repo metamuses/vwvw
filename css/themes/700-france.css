@@ -115,27 +115,17 @@ footer::before {
     INDEX.HTML
     =============================== */
 /*cornice narrative card index.html*/
-/* Outer frame: squared and opaque */
-.card[data-narrative-id]::before {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  right: -7px;
-  bottom: -7px;
-  background: radial-gradient(
-    circle,
-    #e0c77a 0%,
-    #c9a84f 20%,
-    #a37d27 50%,
-    #5a4218 100%
-  );
-  pointer-events: none;
-  z-index: -2;
+/* Base card: rounded like item.html */
+.card[data-narrative-id] {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;
+  background: white;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Inner cutout: match card background */
-.card[data-narrative-id]::after {
+/* Baroque-style frame (same as item.html) */
+.card[data-narrative-id]::before {
   content: "";
   position: absolute;
   top: 0;
@@ -143,18 +133,38 @@ footer::before {
   right: 0;
   bottom: 0;
   border-radius: 12px;
-  background: white; /* match your card */
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
+
+  /* same exact gold frame style as item.html */
+  box-shadow:
+    0 0 0 4px #d4af37,        /* main gold border */
+    0 0 0 6px #f9e79f,        /* highlight */
+    0 0 0 8px #b8860b,        /* darker edge */
+    0 2px 4px rgba(0,0,0,0.3), /* outer shadow */
+    inset 0 2px 4px rgba(255,255,255,0.3); /* inner light */
 }
 
-/* Hover effect */
+/* Inner matting (white background matching item.html) */
+.card[data-narrative-id]::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border-radius: 8px;
+  background: white;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hover effect consistent with item.html richness */
 .card[data-narrative-id]:hover {
   transform: translateY(-4px);
   box-shadow:
     0 10px 24px rgba(0,0,0,0.35),
-    inset 0 0 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    inset 0 0 12px rgba(0,0,0,0.18);
   cursor: pointer;
 }
 
@@ -356,56 +366,59 @@ footer::before {
   cursor: pointer;
 }
 /* ===============================
-  NARRATIVE.HTML
+  ITEM.HTML
     =============================== */
 /* ------------------------------
    Baroque frame for dynamically existing IDs
    ------------------------------ */
 
-/* Common style: frame wrapper */
-#item-image-wrapper,
-#metadata-table,
-#item-text-section,
-#item-related-media {
-  position: relative;
-  border-radius: 12px;
-  overflow: visible;     /* allow shadows outside */
-  background: white;     /* inner mat */
-  padding: 12px;         /* space between content and frame */
-  margin-bottom: 1rem;
-  z-index: 1;
-}
+/* ===============================
+  ITEM.HTML - Updated Frame Logic
+  =============================== */
 
-/* Outer baroque frame */
-#item-image-wrapper::before,
-#metadata-table::before,
-#item-text-section::before,
-#item-related-media::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 12px;
-  pointer-events: none;
-  z-index: 0;
+  #item-image-wrapper,
+  #item-text-section,
+  #item-related-media,
+  #metadata-table-wrapper {
+    position: relative;
+    border-radius: 12px;   /* Rounded frame */
+    overflow: visible;
+    background: white;
+    padding: 12px;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
 
-  /* Baroque border illusion only */
-  box-shadow:
-    0 0 0 4px #d4af37,        /* main gold border */
-    0 0 0 6px #f9e79f,        /* highlight */
-    0 0 0 8px #b8860b,        /* darker edge */
-    0 2px 4px rgba(0,0,0,0.3), /* outer shadow */
-    inset 0 2px 4px rgba(255,255,255,0.3); /* inner highlight */
-}
+  /* Baroque frame */
+  #item-image-wrapper::before,
+  #item-text-section::before,
+  #item-related-media::before,
+  #metadata-table-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 0;
+    box-shadow:
+      0 0 0 4px #d4af37,
+      0 0 0 6px #f9e79f,
+      0 0 0 8px #b8860b,
+      0 2px 4px rgba(0,0,0,0.3),
+      inset 0 2px 4px rgba(255,255,255,0.3);
+  }
 
-/* Ensure content sits above the frame */
-#item-image-wrapper > *,
-#metadata-table > *,
-#item-text-section > *,
-#item-related-media > * {
-  position: relative;
-  z-index: 2;
-}
+  /* Content above the frame */
+  #item-image-wrapper > *,
+  #item-text-section > *,
+  #item-related-media > *,
+  #metadata-table-wrapper > * {
+    position: relative;
+    z-index: 2;
+  }
 
+  /* --- MAKE THE TABLE SQUARE --- */
+  #metadata-table {
+    border-radius: 0 !important;  /* force square */
+    overflow: hidden;
+  }
