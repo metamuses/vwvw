@@ -50,7 +50,7 @@ async function initializeMuseumMap() {
       const imageWidth = 2718;
       const imageHeight = 1109;
       const mapBounds = [[0, 0], [imageHeight, imageWidth]];
-    
+
       const map = L.map("map", {
         crs: L.CRS.Simple,
         minZoom: -2,
@@ -62,10 +62,10 @@ async function initializeMuseumMap() {
         dragging: true
       });
 
-      
-    
+
+
       const image = L.imageOverlay("img/frontal_map_from_svg.png", mapBounds).addTo(map);
-    
+
       function applyResponsiveFit() {
         const isMobile = window.innerWidth <= 768;
 
@@ -83,22 +83,22 @@ async function initializeMuseumMap() {
           ]);
         }
       }
-    
+
       image.once("load", () => {
         // Prima imposta il fitting
         applyResponsiveFit();
-    
+
         // Primo invalidate immediato
         map.invalidateSize();
-    
+
         // Secondo invalidate dopo che il browser ha disegnato la pagina (fix DEFINITIVO)
         setTimeout(() => {
             map.invalidateSize(true);
             applyResponsiveFit(); // riblocca i bounds se servono
         }, 150);
       });
-    
-    
+
+
     // debounce resize
       let resizeTimer;
       window.addEventListener("resize", () => {
@@ -108,7 +108,7 @@ async function initializeMuseumMap() {
           applyResponsiveFit();
         }, 200);
       });
-    
+
 
 
       const itemMarkers = [];
