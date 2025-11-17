@@ -23,10 +23,10 @@ footer,
 header .navbar {
   background-color: #b6cdd8 !important;
   position: relative;
-  z-index: 2;
+  z-index: auto;
   overflow: visible;
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 /* For header */
 header.bg-light,
@@ -39,7 +39,68 @@ footer.bg-light,
 footer.bg-light .container {
   background-color: #b6cdd8 !important;
 }
+/* Mobile full-width dropdown */
+@media (max-width: 991.98px) { /* Bootstrap lg breakpoint */
+  .navbar .dropdown-menu {
+    position: static;      /* let it flow inside collapse container */
+    width: 100%;           /* full width of navbar container */
+    left: 0;               /* reset any left/right offsets */
+    right: 0;
+    border-radius: 0;      /* optional: remove rounded corners */
+  }
+}
+/* ===============================
+   NAVBAR & SUB-NAV LINKS — dropdown behavior
+   =============================== */
 
+/* Main links */
+.navbar a.nav-link {
+  color: #513c22; /* dark brown text */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect on main links */
+.navbar a.nav-link:hover {
+  color: #000;                     /* black text */
+  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
+  border-radius: 6px;
+}
+
+/* Dropdown toggle (e.g., 'Collection') */
+.navbar .dropdown-toggle {
+  color: #000; /* black text like requested */
+}
+
+/* Dropdown menu items (sub-nav) */
+.navbar .dropdown-menu .dropdown-item {
+  color: #000; /* black text static */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover on dropdown items */
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
+  color: #000;                               /* black text */
+}
+
+/* ===============================
+   RESPONSIVE NAVBAR & DROPDOWN BORDERS — semi-transparent dark brown
+   =============================== */
+
+/* Responsive navbar collapse (mobile menu) */
+.navbar-toggler {
+  border: 2px solid rgba(81, 60, 34, 0.5); /* semi-transparent dark brown */
+  border-radius: 6px; /* subtle rounding */
+}
+
+/* Dropdown menu (sub-nav) */
+.navbar .dropdown-menu {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(81, 60, 34, 0.3); /* semi-transparent dark brown */
+  border-radius: 6px;
+  background-color: #fff; /* keep white background */
+}
 
 /* ===============================
     HEADER BOTTOM FRAME
@@ -52,7 +113,7 @@ header::after {
   left: 0;
   width: 100%;
   height: 14px;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 
   background:
@@ -647,53 +708,3 @@ h2, h3, h4, h5, h6 {
      #narrative-info::after { right: -9px; }
    }
 
-/* ===============================
-   NAVBAR & SUB-NAV LINKS — dropdown behavior
-   =============================== */
-
-/* Main links */
-.navbar a.nav-link {
-  color: #513c22; /* dark brown text */
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover effect on main links */
-.navbar a.nav-link:hover {
-  color: #000;                     /* black text */
-  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
-  border-radius: 6px;
-}
-
-/* Dropdown toggle (e.g., 'Collection') */
-.navbar .dropdown-toggle {
-  color: #000; /* black text like requested */
-}
-
-/* Dropdown menu items (sub-nav) */
-.navbar .dropdown-menu .dropdown-item {
-  color: #000; /* black text static */
-  transition: background-color 0.3s ease;
-}
-
-/* Hover on dropdown items */
-.navbar .dropdown-menu .dropdown-item:hover {
-  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
-  color: #000;                               /* black text */
-}
-
-/* ===============================
-   RESPONSIVE NAVBAR & DROPDOWN BORDERS — semi-transparent dark brown
-   =============================== */
-
-/* Responsive navbar collapse (mobile menu) */
-.navbar-toggler {
-  border: 2px solid rgba(81, 60, 34, 0.5); /* semi-transparent dark brown */
-  border-radius: 6px; /* subtle rounding */
-}
-
-/* Dropdown menu (sub-nav) */
-.navbar .dropdown-menu {
-  border: 1px solid rgba(81, 60, 34, 0.3); /* semi-transparent dark brown */
-  border-radius: 6px;
-  background-color: #fff; /* keep white background */
-}
