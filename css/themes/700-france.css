@@ -1,6 +1,3 @@
-a.nav-link.dropdown-toggle {
-  color: #8c6e22;
-}
 /*wallpaper background*/
 body {
   background-color: #b6cdd8;
@@ -636,3 +633,54 @@ h2, h3, h4, h5, h6 {
      #item-header::after,
      #narrative-info::after { right: -9px; }
    }
+
+/* ===============================
+   NAVBAR & SUB-NAV LINKS — dropdown behavior
+   =============================== */
+
+/* Main links */
+.navbar a.nav-link {
+  color: #513c22; /* dark brown text */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect on main links */
+.navbar a.nav-link:hover {
+  color: #000;                     /* black text */
+  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
+  border-radius: 6px;
+}
+
+/* Dropdown toggle (e.g., 'Collection') */
+.navbar .dropdown-toggle {
+  color: #000; /* black text like requested */
+}
+
+/* Dropdown menu items (sub-nav) */
+.navbar .dropdown-menu .dropdown-item {
+  color: #000; /* black text static */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover on dropdown items */
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
+  color: #000;                               /* black text */
+}
+
+/* ===============================
+   RESPONSIVE NAVBAR & DROPDOWN BORDERS — semi-transparent dark brown
+   =============================== */
+
+/* Responsive navbar collapse (mobile menu) */
+.navbar-toggler {
+  border: 2px solid rgba(81, 60, 34, 0.5); /* semi-transparent dark brown */
+  border-radius: 6px; /* subtle rounding */
+}
+
+/* Dropdown menu (sub-nav) */
+.navbar .dropdown-menu {
+  border: 1px solid rgba(81, 60, 34, 0.3); /* semi-transparent dark brown */
+  border-radius: 6px;
+  background-color: #fff; /* keep white background */
+}
