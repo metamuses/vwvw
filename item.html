@@ -79,7 +79,7 @@
 
       <!-- TITLE + DESCRIPTION -->
       <!--added a section for architecture reasons-->
-      <section>
+      <section id="item-header">
         <h2 id="item-title" class="mb-3">Item Title</h2>
         <p id="item-description" class="mb-4">
           This is the item description text loaded dynamically.
@@ -87,10 +87,10 @@
       </section>
 
       <!-- ROW 1: Metadata + Image -->
-      <section class="row align-items-start mb-5">
+      <section class="row align-items-start mb-5" id="item-main">
         <!-- IMAGE COLUMN (left) -->
-        <div class="col-md-6 text-center">
-          <div class="border rounded p-3 bg-white">
+        <div class="col-md-6 text-center" id="item-image-column">
+          <div class="border rounded p-3 bg-white" id="item-image-wrapper">
             <!-- Placeholder image -->
             <img
               src="https://placehold.co/400x400/png"
@@ -108,7 +108,7 @@
         </div>
 
         <!-- METADATA COLUMN (right) -->
-        <div class="col-md-6">
+        <div class="col-md-6" id="item-metadata-column">
           <table class="table table-bordered" id="metadata-table">
             <tbody>
               <tr data-key="category">
@@ -141,7 +141,7 @@
       </section>
 
       <!-- ROW 2: TEXT SECTION -->
-      <section class="card mb-5 shadow-sm">
+      <section class="card mb-5 shadow-sm" id="item-text-section">
         <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
           <!-- Top-left buttons: Adult / Kid -->
           <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
@@ -178,7 +178,7 @@
       </section>
 
       <!-- ROW 3: RELATED MEDIA SHELF -->
-      <div class="card shadow-sm border mb-5">
+      <div class="card shadow-sm border mb-5" id="item-related-media">
         <div class="card-header bg-light">
           <h5 class="mb-0">Related Media</h5>
         </div>

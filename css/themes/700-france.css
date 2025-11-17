@@ -111,6 +111,9 @@ footer::before {
     0 -2px 6px rgba(0,0,0,0.3);
 }
 
+/* ===============================
+    INDEX.HTML
+    =============================== */
 /*cornice narrative card index.html*/
 /* Outer frame: squared and opaque */
 .card[data-narrative-id]::before {
@@ -120,13 +123,12 @@ footer::before {
   left: -7px;
   right: -7px;
   bottom: -7px;
-  background: linear-gradient(
-    to top,
-    #d1b350 0%,
-    #b89635 20%,
-    #8c6e22 50%,
-    #c3a041 75%,
-    #4a3a12 100%
+  background: radial-gradient(
+    circle,
+    #e0c77a 0%,
+    #c9a84f 20%,
+    #a37d27 50%,
+    #5a4218 100%
   );
   pointer-events: none;
   z-index: -2;
@@ -155,3 +157,255 @@ footer::before {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+
+/*HERO section*/
+.hero {
+  position: relative;
+  overflow: visible;
+}
+
+/* hero ::after */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  pointer-events: none;
+  z-index: 2;
+
+  background:
+    /* original colored molding */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15) 0px,
+      rgba(0,0,0,0.15) 1px,
+      rgba(255,255,255,0.1) 1px,
+      rgba(255,255,255,0.1) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #d1b350 0%,
+      #b89635 20%,
+      #8c6e22 50%,
+      #c3a041 75%,
+      #4a3a12 100%
+    );
+
+  background-blend-mode: overlay;
+
+  box-shadow:
+  inset 0 1px 1px rgba(255,255,255,0.3),
+  inset 0 -1px 2px rgba(0,0,0,0.4),
+  0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+    INDEX.HTML e NARRATIVE.HMTL
+    =============================== */
+/* MAP SECTION TOP MOLDING */
+#map-section {
+  position: relative; /* needed for pseudo-element */
+  overflow: visible;  /* allow molding to show outside */
+}
+
+#map-section::before {
+  content: "";
+  position: absolute;
+  top: 0;           /* attach to top */
+  left: 0;
+  width: 100%;
+  height: 14px;     /* same height as header frame */
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to top,                    /* flipped from header bottom */
+      rgba(0,0,0,0.15) 0px,
+      rgba(0,0,0,0.15) 1px,
+      rgba(255,255,255,0.1) 1px,
+      rgba(255,255,255,0.1) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to top,                    /* same gradient direction as header bottom flipped */
+      #d1b350 0%,
+      #b89635 20%,
+      #8c6e22 50%,
+      #c3a041 75%,
+      #4a3a12 100%
+    );
+
+  background-blend-mode: overlay;
+
+  box-shadow:
+    inset 0 -2px 2px rgba(255,255,255,0.3),
+    inset 0 2px 4px rgba(0,0,0,0.4),
+    0 -2px 6px rgba(0,0,0,0.3);
+}
+
+#map-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;        /* attach to bottom */
+  left: 0;
+  width: 100%;
+  height: 14px;     /* same as header bottom frame */
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.15) 0px,
+      rgba(0,0,0,0.15) 1px,
+      rgba(255,255,255,0.1) 1px,
+      rgba(255,255,255,0.1) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #d1b350 0%,
+      #b89635 20%,
+      #8c6e22 50%,
+      #c3a041 75%,
+      #4a3a12 100%
+    );
+
+  background-blend-mode: overlay;
+
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,0.3),
+    inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+  NARRATIVE.HTML
+    =============================== */
+/* ==============================
+   Narrative items cards - Baroque Frame
+   ============================== */
+
+/* Card wrapper */
+#narrative-items .card {
+  position: relative;  /* required for ::before positioning */
+  display: block;      /* ensures stacking context for <a> */
+  z-index: 1;          /* stacking context */
+  border-radius: 12px;
+  overflow: visible;   /* let frame extend outside card */
+  text-decoration: none; /* remove underline */
+}
+
+/* Outer gold baroque frame */
+/* Enhanced Baroque Frame for Narrative Cards */
+#narrative-items .card {
+  position: relative;
+  display: block;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: visible;
+  text-decoration: none;
+  background: white; /* keep content visible */
+}
+
+/* Outer gold frame with depth */
+#narrative-items .card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+
+  /* layered gradients for 3D metallic look */
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.2), transparent 50%),
+    linear-gradient(to bottom, #f9e79f 0%, #d4af37 30%, #b8860b 60%, #8c6e22 100%);
+  background-blend-mode: overlay;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure images and body are above frame */
+#narrative-items .card > img,
+#narrative-items .card > .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effect for extra depth */
+#narrative-items .card:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+/* ===============================
+  NARRATIVE.HTML
+    =============================== */
+/* ------------------------------
+   Baroque frame for dynamically existing IDs
+   ------------------------------ */
+
+/* Common style: frame wrapper */
+#item-image-wrapper,
+#metadata-table,
+#item-text-section,
+#item-related-media {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;     /* allow shadows outside */
+  background: white;     /* inner mat */
+  padding: 12px;         /* space between content and frame */
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+/* Outer baroque frame */
+#item-image-wrapper::before,
+#metadata-table::before,
+#item-text-section::before,
+#item-related-media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Baroque border illusion only */
+  box-shadow:
+    0 0 0 4px #d4af37,        /* main gold border */
+    0 0 0 6px #f9e79f,        /* highlight */
+    0 0 0 8px #b8860b,        /* darker edge */
+    0 2px 4px rgba(0,0,0,0.3), /* outer shadow */
+    inset 0 2px 4px rgba(255,255,255,0.3); /* inner highlight */
+}
+
+/* Ensure content sits above the frame */
+#item-image-wrapper > *,
+#metadata-table > *,
+#item-text-section > *,
+#item-related-media > * {
+  position: relative;
+  z-index: 2;
+}
+
