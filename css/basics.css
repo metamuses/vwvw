@@ -429,4 +429,17 @@ footer {
   #item-main #item-nav button {
     min-width: 120px;  /* ensures buttons don’t shrink too much */
   }
+/* =======================================
+   ITEM PAGE — space between adult/kid
+   button and text
+   ======================================= */
+  /* Add spacing between absolute buttons and content */
+  #item-text-section #text-title {
+    margin-top: 16px; /* push the title down from the top buttons */
+  }
+
+  /* Optional: adjust paragraph spacing */
+  #item-text-section #text-content {
+    margin-top: 0.5rem;
+  }
 
