@@ -436,6 +436,12 @@ footer::before {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+#narrative-items .card .card-body,
+#narrative-items .card .card-body * {
+  color: #E3C382 !important;
+}
+
+
 /* ===============================
   ITEM.HTML
     =============================== */
@@ -488,6 +494,77 @@ footer::before {
   border-radius: 0 !important;  /* force square */
   overflow: hidden;
 }
+/* ------------------------------
+    Buttons and links color
+   ------------------------------ */
+/* ============================
+   GOLD BUTTON STYLE
+   ============================ */
+
+/* gold filled button */
+#adult-kid-buttons .btn-primary {
+  background-color: #d4af37 !important;  /* oro */
+  border-color: #d4af37 !important;
+  color: #fff !important;
+}
+
+/* gold outline button */
+#adult-kid-buttons .btn-outline-primary {
+  border-color: #d4af37 !important;
+  color: #d4af37 !important;
+}
+
+#adult-kid-buttons .btn-outline-primary:hover {
+  background-color: #d4af37 !important;
+  color: #fff !important;
+}
+/* ===============================
+   Navigation buttons: gold always
+   =============================== */
+
+/* Default style: gold fill, black text */
+#item-nav .btn-primary {
+  background-color: #d4af37; /* gold fill */
+  border-color: #d4af37;
+  color: #000;               /* black text */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover state: slightly darker gold */
+#item-nav .btn-primary:hover:not(:disabled) {
+  background-color: #c49b30; /* slightly darker gold */
+  border-color: #c49b30;
+  transform: translateY(-1px); /* optional subtle lift */
+}
+
+/* Disabled buttons: muted gold */
+#item-nav .btn-primary:disabled {
+  background-color: #f5e1a4; /* pale gold */
+  border-color: #f5e1a4;
+  color: #ccc;
+}
+/* ===============================
+   Links styled like gold buttons
+   =============================== */
+
+/* Apply to dynamically generated Read More / Read Less links and other narrative links */
+#text-content a,
+#text-content a#btn-toggle-length,
+tr[data-key="other-narrative"] a {
+  color: #d4af37 !important;        /* gold text, override Bootstrap */
+  text-decoration: none !important; /* remove underline */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover state: slightly darker gold */
+#text-content a:hover,
+#text-content a#btn-toggle-length:hover,
+tr[data-key="other-narrative"] a:hover {
+  color: #c49b30 !important;        /* darker gold */
+  transform: translateY(-1px);      /* subtle lift */
+}
+
+
 
 /* ===============================
    TYPOGRAPHY — Custom Baskerville
