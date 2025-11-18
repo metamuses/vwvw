@@ -120,7 +120,7 @@ footer {
 
 /* MARKER */
 .leaflet-marker-icon.item-marker {
-  background-color: #e60073;
+  background-color: grey;
   border-radius: 50%;
   width: 0.8rem;
   height: 0.8rem;
@@ -133,9 +133,9 @@ footer {
 .item-marker.highlighted {
   width: 1.3rem;
   height: 1.3rem;
-  border: 0.2rem solid #ffcc00;
-  background-color: #ffcc00;
-  box-shadow: 0 0 0.8rem #ffcc00;
+  border: 0.2rem solid black;
+  background-color: black;
+  box-shadow: 0 0 0.8rem black;
   margin-left: -0.25rem;
   margin-top: -0.25rem;
 }
@@ -174,7 +174,7 @@ footer {
   max-height: 6rem;     /* Altezza massima | RELATIVA */
   object-fit: contain;  /* Nessun taglio */
   border-radius: 0.4rem;
-  background: #f5f5f5;  /* per evitare buchi se l’immagine non riempie */
+  background: transparent;  /* per evitare buchi se l’immagine non riempie */
 }
 
 .leaflet-tooltip.item-custom-tooltip {
