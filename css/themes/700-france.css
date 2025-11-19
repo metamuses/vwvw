@@ -721,10 +721,12 @@ h2, h3, h4, h5, h6 {
 /* ITEM PAGE: left-aligned */
 #item-header {
   display: block;
-  margin: 2rem 0;  /* vertical spacing */
-  width: 48%;      /* roughly match image column */
+  position: relative; /* needed for side bumps */
+  width: 48%;         /* desktop width */
+  margin: 2rem 0;     /* vertical spacing */
 }
 
+/* || MOBILE LAYOUT ||*/
 /* NARRATIVE PAGE: centered */
 #narrative-info {
   display: block;
@@ -735,12 +737,20 @@ h2, h3, h4, h5, h6 {
 
 /* mobile responsivness */
 @media (max-width: 768px) {
-  #item-header,
   #narrative-info {
     width: 95%;       /* almost full width */
     margin-left: auto;
     margin-right: auto;
     padding: 1rem 1.5rem;
+  }
+
+  #item-header {
+    width: 100%;         /* full width of container */
+    max-width: 700px;    /* optional max width */
+    margin: 2rem auto;   /* vertical + horizontal centering */
+    padding: 1rem 1.5rem;
+    left: 0;
+    right: 0;
   }
 
   /* Adjust bumps for smaller width */
