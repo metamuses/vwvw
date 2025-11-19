@@ -145,40 +145,67 @@ async function initializeMuseumMap() {
           .addTo(map)
           // Hover: use bindTooltip for card
           .bindTooltip(tooltipContent, {
-              permanent: false,
-              direction: 'top',
-              className: 'item-custom-tooltip' //  tooltip style class
-          })
-          // Click to item page
-          .on('click', () => {
+            permanent: false,
+            sticky: true,
+            direction: "auto",      // Leaflet sceglie il lato migliore
+            className: "item-custom-tooltip",
+            offset: [0, -10],       // piccolo margine sopra il marker
+            opacity: 1
+           });
+
+          marker.itemId = itemId;
+
+        // Mobile: gestisce tap singolo e doppio tap
+          let tapTimeout = null;
+          let lastTap = 0;
+          const isMobile = window.innerWidth <= 768;
+
+          marker.on('click', (e) => {
+            if (!isMobile) {
               window.location.href = `item.html#${itemId}`;
+              return;
+            }
+            const currentTime = new Date().getTime();
+            if (currentTime - lastTap < 300) {
+            // doppio tap → redirect
+              window.location.href = `item.html#${itemId}`;
+              lastTap = 0;
+              return;
+            }
+            lastTap = currentTime;
+          // singolo tap → mostra tooltip
+            marker.openTooltip();
           });
 
-          // save marker and DOM element for CSS
-          marker.itemId = itemId;
-          marker.domElement = marker._icon;
           itemMarkers.push(marker);
       });
+
 
       // --- 3. on card hover the path lights up ---
       const narrativeCards = document.querySelectorAll('.path-card');
 
+      function highlightMarkersForNarrative(narrativeId, addClass) {
+        itemMarkers.forEach(marker => {
+          // skip marker se non ancora con DOM
+          const dom = marker.domElement || (typeof marker.getElement === 'function' ? marker.getElement() : marker._icon);
+          if (!dom) return;
+          if (marker.options && Array.isArray(marker.options.narratives) && marker.options.narratives.includes(narrativeId)) {
+            if (addClass) dom.classList.add('highlighted');
+            else dom.classList.remove('highlighted');
+          }
+        });
+      }
+
       narrativeCards.forEach(card => {
           const narrativeId = card.getAttribute('data-narrative-id');
+          if (!narrativeId) return;
 
           card.addEventListener('mouseenter', () => {
-              itemMarkers.forEach(marker => {
-                  // check if marker belongs to narrative
-                  if (marker.options.narratives.includes(narrativeId)) {
-                      marker.domElement.classList.add('highlighted');
-                  }
-              });
+            highlightMarkersForNarrative(narrativeId, true);
           });
 
           card.addEventListener('mouseleave', () => {
-              itemMarkers.forEach(marker => {
-                  marker.domElement.classList.remove('highlighted');
-              });
+            highlightMarkersForNarrative(narrativeId, false);
           });
       });
 
@@ -218,6 +245,17 @@ document.addEventListener("DOMContentLoaded", function () {
       var narrative = e.target.dataset.narrative;
       localStorage.setItem("activeNarrative", narrative);
       console.log("Narrative '" + narrative + "' selected.");
+      window.location.href = "narrative.html";
+    });
+  });
+  // === CARD CLICK LOGIC (INDEX.HTML) ===
+  var narrativeCards = document.querySelectorAll(".path-card");
+  narrativeCards.forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      e.preventDefault(); // evita che il link # faccia scrollare in alto
+      var narrative = card.dataset.narrativeId;
+      localStorage.setItem("activeNarrative", narrative);
+      console.log("Narrative from card:", narrative);
       window.location.href = "narrative.html";
     });
   });
