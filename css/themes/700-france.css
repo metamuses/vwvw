@@ -1,3 +1,4 @@
+/* || GENERAL STYLES ||*/
 /*wallpaper background*/
 body {
   background-color: #b6cdd8;
@@ -16,8 +17,8 @@ body {
       #b6cdd8 20px
     )
 }
-/*modanatura, frame molding*/
-/* HEADER + FOOTER BASE */
+
+/* HEADER + FOOTER BASE+ NAVBAR color background*/
 header,
 footer,
 header .navbar {
@@ -28,6 +29,7 @@ header .navbar {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+
 /* For header */
 header.bg-light,
 header.bg-light nav.navbar {
@@ -39,58 +41,53 @@ footer.bg-light,
 footer.bg-light .container {
   background-color: #b6cdd8 !important;
 }
+
+/*NAVBAR responsivness and styling*/
 /* Mobile full-width dropdown */
-@media (max-width: 991.98px) { /* Bootstrap lg breakpoint */
+@media (max-width: 991.98px) {
   .navbar .dropdown-menu {
-    position: static;      /* let it flow inside collapse container */
-    width: 100%;           /* full width of navbar container */
-    left: 0;               /* reset any left/right offsets */
+    position: static;
+    width: 100%;
+    left: 0;
     right: 0;
-    border-radius: 0;      /* optional: remove rounded corners */
+    border-radius: 0;
   }
 }
-/* ===============================
-   NAVBAR & SUB-NAV LINKS — dropdown behavior
-   =============================== */
 
 /* Main links */
 .navbar a.nav-link {
-  color: #513c22; /* dark brown text */
+  color: #513c22;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Hover effect on main links */
 .navbar a.nav-link:hover {
-  color: #000;                     /* black text */
-  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
+  color: #000;
+  background-color: rgba(131, 97, 49, 0.3);
   border-radius: 6px;
 }
 
-/* Dropdown toggle (e.g., 'Collection') */
+/* Dropdown toggle*/
 .navbar .dropdown-toggle {
-  color: #000; /* black text like requested */
+  color: #000;
 }
 
 /* Dropdown menu items (sub-nav) */
 .navbar .dropdown-menu .dropdown-item {
-  color: #000; /* black text static */
+  color: #000;
   transition: background-color 0.3s ease;
 }
 
 /* Hover on dropdown items */
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: rgba(131, 97, 49, 0.3); /* semi-transparent hover brown */
-  color: #000;                               /* black text */
+  background-color: rgba(131, 97, 49, 0.3);
+  color: #000;
 }
 
-/* ===============================
-   RESPONSIVE NAVBAR & DROPDOWN BORDERS — semi-transparent dark brown
-   =============================== */
-
-/* Responsive navbar collapse (mobile menu) */
+/* Responsive navbar collapse border (mobile menu, hamburger) */
 .navbar-toggler {
-  border: 2px solid rgba(81, 60, 34, 0.5); /* semi-transparent dark brown */
-  border-radius: 6px; /* subtle rounding */
+  border: 2px solid rgba(81, 60, 34, 0.5);
+  border-radius: 6px;
 }
 
 /* Dropdown menu (sub-nav) */
@@ -102,10 +99,14 @@ footer.bg-light .container {
   background-color: #fff; /* keep white background */
 }
 
-/* ===============================
-    HEADER BOTTOM FRAME
-    =============================== */
+/* Restore breathing space on hover */
+.navbar a.nav-link {
+  display: block;               /* full width again */
+  padding: 0.5rem 1rem !important; /* restores breathing space */
+  border-radius: 0;             /* not needed when full width */
+}
 
+/*HEADER (bottom) fake moulding styling*/
 header::after {
   content: "";
   position: absolute;
@@ -142,10 +143,7 @@ header::after {
     0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* ===============================
-    FOOTER TOP FRAME
-    =============================== */
-
+/*FOOTER (top) fake moulding styling */
 footer::before {
   content: "";
   position: absolute;
@@ -182,10 +180,8 @@ footer::before {
     0 -2px 6px rgba(0,0,0,0.3);
 }
 
-/* ===============================
-    INDEX.HTML
-    =============================== */
-/*cornice narrative card index.html*/
+/* || INDEX.HMTL STYLING || */
+/*NARRATIVE CARD framing*/
 /* Base card: rounded like item.html */
 .card[data-narrative-id] {
   position: relative;
@@ -195,7 +191,7 @@ footer::before {
   z-index: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Baroque-style frame (same as item.html) */
+/* Baroque-style frame*/
 .card[data-narrative-id]::before {
   content: "";
   position: absolute;
@@ -207,7 +203,7 @@ footer::before {
   pointer-events: none;
   z-index: 0;
 
-  /* same exact gold frame style as item.html */
+  /* same exact gold frame style*/
   box-shadow:
     0 0 0 4px #d4af37,        /* main gold border */
     0 0 0 6px #f9e79f,        /* highlight */
@@ -216,7 +212,7 @@ footer::before {
     inset 0 2px 4px rgba(255,255,255,0.3); /* inner light */
 }
 
-/* Inner matting (white background matching item.html) */
+/* Inner matting */
 .card[data-narrative-id]::after {
   content: "";
   position: absolute;
@@ -230,7 +226,7 @@ footer::before {
   pointer-events: none;
 }
 
-/* Hover effect consistent with item.html richness */
+/* Hover effect */
 .card[data-narrative-id]:hover {
   transform: translateY(-4px);
   box-shadow:
@@ -239,13 +235,13 @@ footer::before {
   cursor: pointer;
 }
 
-/*HERO section*/
+/*HERO section fake wall moulding styling*/
 .hero {
   position: relative;
   overflow: visible;
 }
 
-/* hero ::after */
+/* hero (bottom) moulding styling */
 .hero::after {
   content: "";
   position: absolute;
@@ -284,10 +280,8 @@ footer::before {
   0 1px 3px rgba(0,0,0,0.3);
 }
 
-/* ===============================
-    INDEX.HTML e NARRATIVE.HMTL
-    =============================== */
-/* MAP SECTION TOP MOLDING */
+/* || MAP SECTION STYLING (index.html, narrative.html)*/
+/* MAP SECTION (top and bottom) fake moulding*/
 #map-section {
   position: relative; /* needed for pseudo-element */
   overflow: visible;  /* allow molding to show outside */
@@ -367,12 +361,8 @@ footer::before {
     0 2px 6px rgba(0,0,0,0.3);
 }
 
-/* ===============================
-  NARRATIVE.HTML
-    =============================== */
-/* ==============================
-   Narrative items cards - Baroque Frame
-   ============================== */
+/* || NARRATIVE.HMTL STYLING */
+/* ITEMS CARD frame styling */
 
 /* Card wrapper */
 #narrative-items .card {
@@ -442,12 +432,8 @@ footer::before {
 }
 
 
-/* ===============================
-  ITEM.HTML
-    =============================== */
-/* ------------------------------
-   Baroque frame for dynamically existing IDs
-   ------------------------------ */
+/* || ITEM.HTML STYLING*/
+/* SECTIONs baroque frame stylings */
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
@@ -489,18 +475,13 @@ footer::before {
   z-index: 2;
 }
 
-/* --- MAKE THE TABLE SQUARE --- */
+/*squared metadata table*/
 #metadata-table {
   border-radius: 0 !important;  /* force square */
   overflow: hidden;
 }
-/* ------------------------------
-    Buttons and links color
-   ------------------------------ */
-/* ============================
-   GOLD BUTTON STYLE
-   ============================ */
 
+/*|| BUTTONS AND LINKS STYLING in item.html ||*/
 /* gold filled button */
 #adult-kid-buttons .btn-primary {
   background-color: #d4af37 !important;  /* oro */
@@ -518,10 +499,7 @@ footer::before {
   background-color: #d4af37 !important;
   color: #fff !important;
 }
-/* ===============================
-   Navigation buttons: gold always
-   =============================== */
-
+/* under image navigation button*/
 /* Default style: gold fill, black text */
 #item-nav .btn-primary {
   background-color: #d4af37; /* gold fill */
@@ -543,10 +521,7 @@ footer::before {
   border-color: #f5e1a4;
   color: #ccc;
 }
-/* ===============================
-   Links styled like gold buttons
-   =============================== */
-
+/* links */
 /* Apply to dynamically generated Read More / Read Less links and other narrative links */
 #text-content a,
 #text-content a#btn-toggle-length,
@@ -566,10 +541,8 @@ tr[data-key="other-narrative"] a:hover {
 
 
 
-/* ===============================
-   TYPOGRAPHY — Custom Baskerville
-   =============================== */
-
+/* || TYPOGRAPHY ||*/
+/*TITLE STYLING*/
 /* Hero section titles */
 .hero h1,
 .hero p.lead {
@@ -640,10 +613,7 @@ tr[data-key="other-narrative"] a:hover {
   font-weight: 600;
 }
 
-/* ===============================
-   CAPTIONS — Tangerine
-   =============================== */
-
+/*CAPTIONS STYLING*/
 /* Narrative items card titles (captions) */
 #narrative-items .card-title {
   font-family: 'Tangerine', cursive !important;
@@ -670,10 +640,7 @@ tr[data-key="other-narrative"] a:hover {
   color: #333;
 }
 
-/* ===============================
-   BODY TEXT — Source Serif 4
-   =============================== */
-
+/* BODY TEXT STYLING*/
 /* Default text */
 body,
 p,
@@ -696,92 +663,84 @@ h2, h3, h4, h5, h6 {
 }
 
 
-/* ===============================
-   PLAQUE-LIKE BACKGROUND FOR TITLE + DESCRIPTION SECTIONS
-   =============================== */
-   #item-header,
-   #narrative-info {
-     position: relative;
-     padding: 1.2rem 2rem;      /* inside plaque */
-     border-radius: 12px;
-     background:
-       radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4), transparent 30%),
-       radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.2), transparent 50%),
-       linear-gradient(to bottom, #f9e79f 0%, #d4af37 30%, #b8860b 60%, #8c6e22 100%);
-     background-blend-mode: overlay;
-     box-shadow:
-       inset 0 2px 4px rgba(255, 255, 255, 0.5),
-       inset 0 -2px 6px rgba(0, 0, 0, 0.4),
-       0 4px 10px rgba(0, 0, 0, 0.3);
-   }
+/* || PLAQUE LIKE STYLING of title + description in narrative.html and item.html ||  */
+#item-header,
+#narrative-info {
+  position: relative;
+  padding: 1.2rem 2rem;      /* inside plaque */
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.2), transparent 50%),
+    linear-gradient(to bottom, #f9e79f 0%, #d4af37 30%, #b8860b 60%, #8c6e22 100%);
+  background-blend-mode: overlay;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-   /* Side bumps */
-   #item-header::before,
-   #item-header::after,
-   #narrative-info::before,
-   #narrative-info::after {
-     content: "";
-     position: absolute;
-     top: 50%;
-     width: 24px;
-     height: 24px;
-     border-radius: 50%;
-     background: inherit;
-     transform: translateY(-50%);
-     z-index: -1;
-     box-shadow:
-       inset 0 2px 4px rgba(255, 255, 255, 0.5),
-       inset 0 -2px 6px rgba(0, 0, 0, 0.4);
-   }
+/* Side bumps */
+#item-header::before,
+#item-header::after,
+#narrative-info::before,
+#narrative-info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateY(-50%);
+  z-index: -1;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
 
-   #item-header::before,
-   #narrative-info::before { left: -12px; }
-   #item-header::after,
-   #narrative-info::after { right: -12px; }
+#item-header::before,
+#narrative-info::before { left: -12px; }
+#item-header::after,
+#narrative-info::after { right: -12px; }
 
-   /* ===============================
-      PAGE SPECIFIC LAYOUT
-      =============================== */
+/* ITEM PAGE: left-aligned */
+#item-header {
+  display: block;
+  margin: 2rem 0;  /* vertical spacing */
+  width: 48%;      /* roughly match image column */
+}
 
-   /* ITEM PAGE: left-aligned */
-   #item-header {
-     display: block;
-     margin: 2rem 0;  /* vertical spacing */
-     width: 48%;      /* roughly match image column */
-   }
+/* NARRATIVE PAGE: centered */
+#narrative-info {
+  display: block;
+  margin: 4rem auto; /* vertical + center */
+  max-width: 700px;
+  width: 90%;
+}
 
-   /* NARRATIVE PAGE: centered */
-   #narrative-info {
-     display: block;
-     margin: 4rem auto; /* vertical + center */
-     max-width: 700px;
-     width: 90%;
-   }
+/* mobile responsivness */
+@media (max-width: 768px) {
+  #item-header,
+  #narrative-info {
+    width: 95%;       /* almost full width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1.5rem;
+  }
 
-   /* ===============================
-      RESPONSIVE — mobile
-      =============================== */
-   @media (max-width: 768px) {
-     #item-header,
-     #narrative-info {
-       width: 95%;       /* almost full width */
-       margin-left: auto;
-       margin-right: auto;
-       padding: 1rem 1.5rem;
-     }
+  /* Adjust bumps for smaller width */
+  #item-header::before,
+  #item-header::after,
+  #narrative-info::before,
+  #narrative-info::after {
+    width: 18px;
+    height: 18px;
+  }
 
-     /* Adjust bumps for smaller width */
-     #item-header::before,
-     #item-header::after,
-     #narrative-info::before,
-     #narrative-info::after {
-       width: 18px;
-       height: 18px;
-     }
-
-     #item-header::before,
-     #narrative-info::before { left: -9px; }
-     #item-header::after,
-     #narrative-info::after { right: -9px; }
-   }
+  #item-header::before,
+  #narrative-info::before { left: -9px; }
+  #item-header::after,
+  #narrative-info::after { right: -9px; }
+}
 
