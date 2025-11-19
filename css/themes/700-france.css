@@ -481,6 +481,11 @@ footer::before {
   overflow: hidden;
 }
 
+/*TEXT SECTION FONT SIZE*/
+#item-text-section #text-content {
+  font-size: 15px;
+}
+
 /*|| BUTTONS AND LINKS STYLING in item.html ||*/
 /* gold filled button */
 #adult-kid-buttons .btn-primary {

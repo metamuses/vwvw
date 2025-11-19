@@ -339,7 +339,7 @@ footer::before {
 /* Card text color */
 #narrative-items .card .card-body,
 #narrative-items .card .card-body * {
-  color: #E3C382 !important;
+  color:  #5b6156 !important;
 }
 
 /* || ITEM.HTML STYLING*/
@@ -523,6 +523,7 @@ th,
   font-family: 'Glass Antiqua', serif !important;
   font-weight: 400;
   line-height: 1.6;
+  font-size: 20px;
 }
 
 /* Optional: headings that aren’t main titles */
