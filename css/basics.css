@@ -1,0 +1,486 @@
+/* navbar - TO FIX maiuscole?, stile box dropdown (no fascia illuminata per hover ma cambio colore testo), font size maggiore e più distanza tra li così dropdown ben distribuiti + vorrei FIXED*/
+.navbar .dropdown-toggle::after { /* per eliminare freccia di dropdown e fare apparire li a hover */
+  display: none;
+}
+
+@media (min-width: 992px) { /* lg breakpoint */
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.navbar .dropdown-menu {
+  right: 0; /* per li più a destra che superavano viewport*/
+  left: auto;
+}
+
+.navbar {
+  padding-left: 0;   /* rimuove padding di default per align logo left*/
+  padding-right: 0;
+}
+
+.navbar-brand {
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.img-header { /* è responsive su mobile? */
+  width: 30vw;
+  height: auto;
+  max-height: 10vh;
+  display: block;
+}
+
+
+/* footer - TO FIX colori, font weight e size, centratura verticale e padding */
+footer {
+  background-color: #bfbcbd;
+  color: black;
+  font-size: 1.5vw !important;
+  text-align: center;
+}
+
+.footer-cont {
+  margin: 0;
+  padding: 2%;
+}
+
+.github-icon {
+  width: 2%;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: border 0.3s ease;
+}
+
+.github-icon:hover {
+  border: 1px solid white;
+}
+
+
+/* hero - TO FIX tutte misure, da giustificare e rendere responsive */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5vh 2vw;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero .lead {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.hero .intro-text {
+  max-width: 45rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+
+
+/* MAP: hover of cards to display path of items on map */
+/* Stili per la Mappa Interattiva */
+
+/* Contenitore della mappa: nessun padding */
+/* Rimuove padding che deforma il layout */
+#map-section .container {
+  padding: 0;
+}
+
+/* La sezione mappa si adatta al contenuto */
+#map-section {
+  padding: 4;
+}
+
+/* MAPPA: si adatta al contenitore SENZA distorcersi */
+#map {
+  width: 100%;
+  aspect-ratio: 29 / 12; /* mantiene proporzioni ORIGINALI */
+  height: auto;
+  border: 0.3rem solid #343a40;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: block;
+}
+
+/* evita il blocco nero se Leaflet inizializza in ritardo */
+.leaflet-container {
+  background: transparent !important;
+}
+
+/* MARKER */
+.leaflet-marker-icon.item-marker {
+  background-color: grey;
+  border-radius: 50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  display: block;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.item-marker.highlighted {
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 0.2rem solid black;
+  background-color: black;
+  box-shadow: 0 0 0.8rem black;
+  margin-left: -0.25rem;
+  margin-top: -0.25rem;
+}
+
+/* Tooltip container */
+.item-custom-tooltip {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.25);
+
+  width: 12rem;        /* larghezza card */
+  max-width: 12rem;
+  white-space: normal;
+}
+
+/* Layout interno */
+.item-card-hover {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Titolo dell’item */
+.item-card-hover p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  white-space: normal;
+  text-align: center;
+}
+
+/* Immagine: sempre interamente visibile, non tagliata */
+.item-card-hover img {
+  width: 100%;
+  max-height: 6rem;     /* Altezza massima | RELATIVA */
+  object-fit: contain;  /* Nessun taglio */
+  border-radius: 0.4rem;
+  background: transparent;  /* per evitare buchi se l’immagine non riempie */
+}
+
+.leaflet-tooltip.item-custom-tooltip {
+  margin: 1% !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  #map {
+    width: 100%;
+    height: 100vw;   /* diventa quadrata */
+    aspect-ratio: unset; /* rimuove proporzione desktop */
+    border-radius: 0.8rem;
+  }
+
+  .leaflet-marker-icon.item-marker {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  .item-marker.highlighted {
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 0.15rem solid #ffcc00;
+  }
+}
+
+
+
+
+/* ITEM IMAGE WRAPPER (around #item-image) */
+#item-image {
+  width: 100%;
+  max-width: 400px; /* keep square size */
+  aspect-ratio: 1 / 1; /* force 1:1 ratio */
+  object-fit: contain; /* or 'cover' for full fill */
+  background-color: white;
+  border-radius: 0.5rem; /* match Bootstrap rounded */
+  display: block;
+  margin: 0 auto 1rem; /* center and space below */
+}
+
+
+/*related MEDIA SHELF*/
+/* Arrows */
+.shelf-arrow {
+  z-index: 10;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.shelf-arrow:hover {
+  opacity: 1;
+}
+/* --- SHELF CONTAINER --- */
+.shelf-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-behavior: smooth;
+}
+
+.shelf-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- CARD WRAPPER --- */
+.shelf-card-wrapper {
+  flex: 0 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+/* --- CARD --- */
+.shelf-card-wrapper .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 260px; /* fixed total height */
+  width: auto; /* adapt width as needed */
+  min-width: 220px; /* base width for square-ish items */
+  max-width: 320px; /* limit too-wide videos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.shelf-card-wrapper .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  position: relative;
+}
+
+/* --- MEDIA CONTENT --- */
+.media-content {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #f8f9fa;
+  height: 70%; /* main area */
+}
+
+/* image: fills entire area */
+.media-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /*or cover if we want them to expand to the card*/
+  background: #f8f9fa; /* optional neutral background behind transparent space */
+
+}
+
+/* video: keeps ratio, height fixed, width adapts */
+.media-content iframe {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  flex-shrink: 0;
+}
+
+/* --- CAPTION AREA --- */
+.card-body {
+  flex: 0 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding: 0.5rem 0.75rem;
+  line-height: 1.2;
+}
+
+.card-body h6 {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-body small,
+.card-body p {
+  font-size: 0.8rem;
+  color: #6c757d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*adding the following snippet cause the footer had fixed lenght meaning when the main is shorter than the viewport it didn't strech to the bottom of the "page"*/
+/* Full-height layout fix */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let main take up available vertical space */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer stays at bottom */
+footer {
+  flex-shrink: 0;
+}
+
+
+/* ================================
+   NARRATIVE ITEM CARDS
+   ================================ */
+
+/* Wrapper behaves like shelf-card-wrapper */
+.path-card-wrapper {
+  flex: 0 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+/* Card: same hover animation as media shelf */
+.path-card-wrapper .card {
+  height: 280px; /* fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;  /* same UX */
+  overflow: hidden; /* prevents stretched shadows */
+}
+
+/* Hover effect (same as media shelf) */
+.path-card-wrapper .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  position: relative;
+}
+
+/* ================================
+   IMAGE BEHAVIOR (same as item page)
+   ================================ */
+.path-card-wrapper .card-img-top {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+/* ================================
+   TITLE AREA
+   ================================ */
+.path-card-wrapper .card-body {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.path-card-wrapper .card-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+
+/* ===============================
+   MOBILE UNIFIED PAGE SIDE MARGINS
+   (uguali a quelli delle card nell'index)
+   =============================== */
+
+   @media (max-width: 768px) {
+
+    /* CARD nella Narrative Page */
+    .path-card-wrapper {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+    /* =======================================
+   ITEM PAGE — uniform mobile side margins
+   Same horizontal spacing as index cards
+   ======================================= */
+  @media (max-width: 768px) {
+
+  /* Main wrapper margin */
+  body .container,
+  main.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Title + description */
+  #item-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Main section (image + metadata) */
+  #item-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+/* MOBILE PADDING FIX — apply same horizontal spacing as index cards */
+@media (max-width: 576px) {
+  /* narrative page cards → OK (già fatto) */
+
+  /* item page: text section */
+  #item-text-section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* item page: related media block */
+  #item-related-media {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+  /* =======================================
+   ITEM PAGE — space between buttons
+   ======================================= */
+
+   /* Space between navigation buttons under item image */
+   #item-main #item-nav {
+    justify-content: space-between; /* already applied by Bootstrap, keeps buttons apart */
+    gap: 1rem; /* adds consistent space between buttons */
+    padding: 0 0.5rem; /* optional: add some padding so buttons aren't at container edges */
+  }
+  #item-main #item-nav button {
+    min-width: 120px;  /* ensures buttons don’t shrink too much */
+  }
+/* =======================================
+   ITEM PAGE — space between adult/kid
+   button and text
+   ======================================= */
+  /* Add spacing between absolute buttons and content */
+  #item-text-section #text-title {
+    margin-top: 16px; /* push the title down from the top buttons */
+  }
+
+  /* Optional: adjust paragraph spacing */
+  #item-text-section #text-content {
+    margin-top: 0.5rem;
+  }
+

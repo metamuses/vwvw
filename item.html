@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VWVW</title>
+    <meta name="description" content="Website about Vivienne Westwood's heritage created as a group project for the Information Modeling and Web Technologies 2024/25 course at UniBo.">
+    <meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="favicon.png" type="image/png"><!-- add favicon logo-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/basics.css"> <!-- change for different styles? -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Anton&family=GFS+Didot&family=Oooh+Baby&family=Ranga:wght@400;700&display=swap" rel="stylesheet"> <!-- google fonts link to be updated -->
+    <!---700-france theme font-->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+    <!---Art Noveau theme font-->
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aubrey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+    <!--bootstrap-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"> <!--closing tag not mandatory for link-->
+  </head>
+  <body>
+    <!-- header con nav -->
+    <header class="bg-light py-2">
+      <nav class="navbar navbar-expand-lg container-fluid bg-light">
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">
+            <img src="logo/logo_inline_reflected.svg" title="vwvw logo" alt="Logo VWVW" class="img-header"> <!-- add logo and class in basics.css for its dimensions and placement -->
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> <!-- cambia icona hamburger con fontawesome? -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  collections
+                </a>
+                <ul class="dropdown-menu" id="narrative-menu">
+                  <li><a class="dropdown-item" data-narrative="historical" role="button">chronicles of fashion</a></li> <!-- oppure Westwood timeline -->
+                  <li><a class="dropdown-item" data-narrative="made-by" role="button">Made by Vivienne</a></li>
+                  <li><a class="dropdown-item" data-narrative="past-future" role="button">past and future</a></li> <!-- tutta frase troppo lunga -->
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">documentation</a></li>
+                  <li><a class="dropdown-item" href="#">disclaimer</a></li>
+                  <li><a class="dropdown-item" href="#">team</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  styles
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" id="theme-menu">
+                  <li><a class="dropdown-item" data-theme="700-france" role="button">1700, France</a></li>
+                  <li><a class="dropdown-item" data-theme="daguerreotype" role="button">at the dawn of photography</a></li>
+                  <li><a class="dropdown-item" data-theme="art-nouveau" role="button">Art Nouveau</a></li>
+                  <li><a class="dropdown-item" data-theme="70s-punk" role="button">70s british punk</a></li>
+                  <li><a class="dropdown-item" data-theme="90s-cyberpunk" role="button">90s italian cyberpunk</a></li>
+                  <li><a class="dropdown-item" data-theme="dystopian-anime" role="button">dystopian anime future</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main -->
+    <main class="container py-4">
+
+      <!-- TITLE + DESCRIPTION -->
+      <!--added a section for architecture reasons-->
+      <section id="item-header">
+        <h2 id="item-title" class="mb-3">Item Title</h2>
+        <p id="item-description" class="mb-4">
+          This is the item description text loaded dynamically.
+        </p>
+      </section>
+
+      <!-- ROW 1: Metadata + Image -->
+      <section class="row align-items-start mb-5" id="item-main">
+        <!-- IMAGE COLUMN (left) -->
+        <div class="col-md-6 text-center" id="item-image-column">
+          <div class="border rounded p-3 bg-white" id="item-image-wrapper">
+            <!-- Placeholder image -->
+            <img
+              src="https://placehold.co/400x400/png"
+              alt="Item Image"
+              class="img-fluid rounded mb-3"
+              id="item-image"
+            />
+
+            <!-- NAVIGATION BUTTONS under the image -->
+            <div id="item-nav" class="d-flex justify-content-between">
+              <button type="button" class="btn btn-primary" id="back-button">Back</button>
+              <button type="button" class="btn btn-primary" id="forward-button">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- METADATA COLUMN (right) -->
+        <div class="col-md-6" id="item-metadata-column">
+          <div id="metadata-table-wrapper">
+            <table class="table table-bordered" id="metadata-table">
+              <tbody>
+                <tr data-key="category">
+                  <th style="width: 35%;">Category</th>
+                  <td style="width: 65%;"></td>
+                </tr>
+                <tr data-key="author">
+                  <th style="width: 35%;">Author</th>
+                  <td style="width: 65%;"></td>
+                </tr>
+                <tr data-key="year">
+                  <th style="width: 35%;">Year</th>
+                  <td style="width: 65%;"></td>
+                </tr>
+                <tr data-key="dimensions">
+                  <th style="width: 35%;">Dimensions</th>
+                  <td style="width: 65%;"></td>
+                </tr>
+                <tr data-key="source">
+                  <th style="width: 35%;">Source</th>
+                  <td style="width: 65%;"></td>
+                </tr>
+                <tr data-key="other-narrative">
+                  <th style="width: 35%;">Other Narrative</th>
+                  <td style="width: 65%;"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROW 2: TEXT SECTION -->
+      <section class="card mb-5 shadow-sm" id="item-text-section">
+        <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
+          <!-- Top-left buttons: Adult / Kid -->
+          <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
+            <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
+          </div>
+
+          <!-- Text Content -->
+          <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
+          <p id="text-content">
+            This is the kid-friendly version of the text. Click Adult to switch.
+            <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">Read More</a>
+          </p>
+
+          <!-- Bottom control buttons: Difficulty -->
+          <div class="d-flex justify-content-end gap-2 mt-3">
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+              id="btn-decrease-difficulty"
+              style="display:none;"
+            >
+              Too Hard
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary btn-sm"
+              id="btn-increase-difficulty"
+            >
+              Too Easy
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROW 3: RELATED MEDIA SHELF -->
+      <div class="card shadow-sm border mb-5" id="item-related-media">
+        <div class="card-header bg-light">
+          <h5 class="mb-0">Related Media</h5>
+        </div>
+        <div class="card-body position-relative py-4">
+          <button
+            class="btn btn-outline-secondary shelf-arrow left position-absolute top-50 start-0 translate-middle-y ms-2"
+            aria-label="Scroll left"
+          >
+            ←
+          </button>
+
+          <!-- Scroll container -->
+          <div class="shelf-container d-flex gap-3 px-5 py-5 overflow-auto" id="related-media-shelf">
+            <!-- Cards injected here -->
+          </div>
+
+          <button
+            class="btn btn-outline-secondary shelf-arrow right position-absolute top-50 end-0 translate-middle-y me-2"
+            aria-label="Scroll right"
+          >
+            →
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="container-fluid">
+      <div class="footer-cont"> <!-- lascerei questa classe, a cui tutti css assegneranno stesso colore sfondo e testo -->
+        <p>© VWVW 2025 <a href="https://github.com/metamuses/vwvw"><img src="img/github.svg" alt="Github icon" class="github-icon"></a></p> <!-- keep the class -->
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
