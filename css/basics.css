@@ -144,7 +144,7 @@ footer {
 @media (max-width: 768px) {
   #map {
     width: 100%;
-    height: 100vw;   /* 🔥 diventa quadrata */
+    height: 100vw;   /* diventa quadrata */
     aspect-ratio: unset; /* rimuove proporzione desktop */
     border-radius: 0.8rem;
   }
