@@ -339,7 +339,7 @@ footer::before {
 /* Card text color */
 #narrative-items .card .card-body,
 #narrative-items .card .card-body * {
-  color:  #5b6156 !important;
+  color: #693427 !important;
 }
 
 /* || ITEM.HTML STYLING*/
@@ -403,8 +403,6 @@ footer::before {
   border-radius: 0 !important;  /* force square */
   overflow: hidden;
 }
-
-/*|| BUTTONS AND LINKS STYLING in item.html ||*/
 
 /* || TYPOGRAPHY ||*/
 /* TITLE STYLING */
@@ -526,6 +524,14 @@ th,
   font-size: 20px;
 }
 
+/* Override card text inside narrative cards */
+.card.path-card .card-body .card-text {
+  font-family: 'Glass Antiqua', serif !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  font-size: 20px !important;
+}
+
 /* Optional: headings that aren’t main titles */
 h2, h3, h4, h5, h6 {
   font-family: 'Glass Antiqua', serif !important;
@@ -551,6 +557,13 @@ h2, h3, h4, h5, h6 {
   color: #fff !important;
 }
 
+/* Font size for buttons */
+#adult-kid-buttons .btn,
+#item-text-section #btn-decrease-difficulty,
+#item-text-section #btn-increase-difficulty {
+  font-size: 20px;
+}
+
 /* under image navigation button*/
 /* Default style: filled, black text */
 #item-nav .btn-primary {
@@ -558,6 +571,7 @@ h2, h3, h4, h5, h6 {
   border-color: #b9b981;
   color: #000;               /* black text */
   transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 20px;
 }
 
 /* Hover state: slightly darker */
