@@ -1,3 +1,420 @@
 a.nav-link.dropdown-toggle {
   color: green;
 }
+
+/* || GENERAL STYLES ||*/
+/*wallpaper background*/
+body {
+  background-color: #f0d2aa;
+}
+/* HEADER + FOOTER BASE+ NAVBAR color background*/
+header,
+footer,
+header .navbar {
+  background-color: #b9b981 !important;
+  position: relative;
+  z-index: auto;
+  overflow: visible;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* For header */
+header.bg-light,
+header.bg-light nav.navbar {
+  background-color:#b9b981 !important;
+}
+
+/* For footer */
+footer.bg-light,
+footer.bg-light .container {
+  background-color: #b9b981 !important;
+}
+
+/*liberty-like DECORATIONS*/
+/*header (bottom)*/
+header::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:26px;
+  pointer-events: none;
+
+  background:
+    /* left arc */
+    repeating-radial-gradient(
+      circle at 10% 120%,
+      rgba(0,0,0,0.20) 0,
+      rgba(0,0,0,0.20) 4px,
+      transparent 4px,
+      transparent 12px
+    ),
+
+    /* right arc */
+    repeating-radial-gradient(
+      circle at 90% 120%,
+      rgba(0,0,0,0.20) 0,
+      rgba(0,0,0,0.20) 4px,
+      transparent 4px,
+      transparent 12px
+    ),
+
+    /* NEW 3-color Liberty gradient */
+    linear-gradient(
+      to bottom,
+      #ebab8e 0%,
+      #baa073 45%,
+      #c7c3ac 100%
+    );
+
+  box-shadow:
+    inset 0 2px 3px rgba(255,255,255,0.25),
+    inset 0 -3px 5px rgba(0,0,0,0.4);
+}
+
+/*footer (top) mirrored*/
+footer::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:26px;
+  pointer-events: none;
+
+  background:
+
+    /* left arc (mirrored vertically) */
+    repeating-radial-gradient(
+      circle at 10% -20%,
+      rgba(0,0,0,0.20) 0,
+      rgba(0,0,0,0.20) 4px,
+      transparent 4px,
+      transparent 12px
+    ),
+
+    /* right arc (mirrored vertically) */
+    repeating-radial-gradient(
+      circle at 90% -20%,
+      rgba(0,0,0,0.20) 0,
+      rgba(0,0,0,0.20) 4px,
+      transparent 4px,
+      transparent 12px
+    ),
+
+    /* SAME 3-COLOR gradient, but flipped */
+    linear-gradient(
+      to top,
+      #ebab8e 0%,
+      #baa073 45%,
+      #c7c3ac 100%
+    );
+
+  box-shadow:
+    inset 0 -2px 3px rgba(255,255,255,0.25),
+    inset 0 3px 5px rgba(0,0,0,0.4);
+}
+
+/* || INDEX.HMTL STYLING || */
+/*NARRATIVE CARD framing*/
+/* Base card */
+.card[data-narrative-id] {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;
+  background: white;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px; /* spazio interno per non far toccare la linea interna al contenuto */
+}
+
+/* Inner line*/
+.card[data-narrative-id]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  border: 2px solid #5b6156; /* inner line */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Outer line */
+.card[data-narrative-id]::after {
+  content: "";
+  position: absolute;
+  top: -4px;    /* distanza dall’inner line */
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 16px;  /* leggermente più arrotondato */
+  border: 2px solid #5b6156; /* outer line */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hover effect */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.35),
+    inset 0 0 12px rgba(0,0,0,0.18);
+  cursor: pointer;
+}
+
+
+/* || HERO SECTION SEPARATION (top and bottom) */
+.hero {
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #693427;
+  opacity: 0.9;
+}
+
+.hero::before {
+  top: 0;
+}
+
+.hero::after {
+  bottom: 0;
+}
+
+/* || MAP SECTION STYLING (index.html, narrative.html)*/
+/* MAP SECTION (top and bottom) separation*/
+#map-section {
+  position: relative;
+}
+
+#map-section::before,
+#map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #693427;
+  opacity: 0.9;
+}
+
+#map-section::before {
+  top: 0;
+}
+
+#map-section::after {
+  bottom: 0;
+}
+
+/* || NARRATIVE.HMTL STYLING */
+/* ITEMS CARD frame styling */
+/* Card wrapper */
+#narrative-items .card {
+  position: relative;      /* required for pseudo-elements */
+  display: block;          /* stacking context */
+  z-index: 1;
+  border-radius: 12px;
+  overflow: visible;       /* let frame extend outside card */
+  text-decoration: none;
+  background: white;       /* keep content visible */
+  padding: 12px;           /* prevent inner line from touching content */
+}
+
+/* Inner line (bordo vicino al contenuto) */
+#narrative-items .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  border: 2px solid #5b6156; /* inner line */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Outer line (linea esterna) */
+#narrative-items .card::after {
+  content: "";
+  position: absolute;
+  top: -4px;    /* distanza dall’inner line */
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 16px;  /* leggermente più arrotondato */
+  border: 2px solid #5b6156; /* outer line */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure images and card body are above frame */
+#narrative-items .card > img,
+#narrative-items .card > .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effect */
+#narrative-items .card:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Card text color */
+#narrative-items .card .card-body,
+#narrative-items .card .card-body * {
+  color: #E3C382 !important;
+}
+
+/* || ITEM.HTML STYLING*/
+/* SECTIONs baroque frame stylings */
+/* Base section styling */
+#item-image-wrapper,
+#item-text-section,
+#item-related-media,
+#metadata-table-wrapper {
+  position: relative;
+  border-radius: 12px;   /* Rounded frame */
+  overflow: visible;
+  background: white;
+  padding: 12px;          /* prevent inner line from touching content */
+  margin-bottom: 1rem;
+  z-index: 1;
+}
+
+/* Inner line (dentro) */
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#metadata-table-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 2px solid #5b6156; /* inner line */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Outer line (fuori) */
+#item-image-wrapper::after,
+#item-text-section::after,
+#item-related-media::after,
+#metadata-table-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 16px;     /* leggermente più arrotondato */
+  border: 2px solid #5b6156; /* outer line */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content above the frame */
+#item-image-wrapper > *,
+#item-text-section > *,
+#item-related-media > *,
+#metadata-table-wrapper > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* squared metadata table */
+#metadata-table {
+  border-radius: 0 !important;  /* force square */
+  overflow: hidden;
+}
+
+/*|| BUTTONS AND LINKS STYLING in item.html ||*/
+
+/* || TYPOGRAPHY ||*/
+/* TITLE STYLING */
+
+/* Hero section titles */
+.hero h1,
+.hero p.lead {
+  font-family: 'Amarante' !important;
+}
+
+.hero h1 {
+  letter-spacing: 1px;
+}
+
+.hero p.lead {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+/* Card titles (main titles, not captions) */
+.card-title {
+  font-family: 'Amarante' !important;
+  font-weight: 700;
+}
+
+/* Map section titles */
+#map-section h2 {
+  font-family: 'Amarante' !important;
+  font-weight: 700;
+}
+
+/* Narrative page main titles */
+#narrative-title,
+#narrative-description {
+  font-family: 'Amarante' !important;
+}
+
+#narrative-title {
+  font-weight: 400;
+}
+
+#narrative-description {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Item page title and description */
+#item-header h2,
+#item-header p {
+  font-family: 'Amarante' !important;
+}
+
+#item-header h2 {
+  font-weight: 600;
+}
+
+/* Metadata table TH labels */
+#metadata-table th {
+  font-family: 'Amarante' !important;
+  font-weight: 600;
+}
+
+/* Text section h3 titles */
+#item-text-section h3 {
+  font-family: 'Amarante' !important;
+  font-weight: 600;
+}
+
+/* Related media section h5 */
+#item-related-media h5 {
+  font-family: 'Amarante' !important;
+  font-weight: 600;
+}
