@@ -185,7 +185,7 @@ footer {
 @media (max-width: 768px) {
   #map {
     width: 100%;
-    height: 100vw;   /* 🔥 diventa quadrata */
+    height: 100vw;   /* diventa quadrata */
     aspect-ratio: unset; /* rimuove proporzione desktop */
     border-radius: 0.8rem;
   }
@@ -401,4 +401,86 @@ footer {
   line-height: 1.2;
 }
 
+
+/* ===============================
+   MOBILE UNIFIED PAGE SIDE MARGINS
+   (uguali a quelli delle card nell'index)
+   =============================== */
+
+   @media (max-width: 768px) {
+
+    /* CARD nella Narrative Page */
+    .path-card-wrapper {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+    /* =======================================
+   ITEM PAGE — uniform mobile side margins
+   Same horizontal spacing as index cards
+   ======================================= */
+  @media (max-width: 768px) {
+
+  /* Main wrapper margin */
+  body .container,
+  main.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Title + description */
+  #item-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Main section (image + metadata) */
+  #item-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+/* MOBILE PADDING FIX — apply same horizontal spacing as index cards */
+@media (max-width: 576px) {
+  /* narrative page cards → OK (già fatto) */
+
+  /* item page: text section */
+  #item-text-section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* item page: related media block */
+  #item-related-media {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+  /* =======================================
+   ITEM PAGE — space between buttons
+   ======================================= */
+
+   /* Space between navigation buttons under item image */
+   #item-main #item-nav {
+    justify-content: space-between; /* already applied by Bootstrap, keeps buttons apart */
+    gap: 1rem; /* adds consistent space between buttons */
+    padding: 0 0.5rem; /* optional: add some padding so buttons aren't at container edges */
+  }
+  #item-main #item-nav button {
+    min-width: 120px;  /* ensures buttons don’t shrink too much */
+  }
+/* =======================================
+   ITEM PAGE — space between adult/kid
+   button and text
+   ======================================= */
+  /* Add spacing between absolute buttons and content */
+  #item-text-section #text-title {
+    margin-top: 16px; /* push the title down from the top buttons */
+  }
+
+  /* Optional: adjust paragraph spacing */
+  #item-text-section #text-content {
+    margin-top: 0.5rem;
+  }
 
