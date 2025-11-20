@@ -1,1 +1,612 @@
+/* || GENERAL STYLES ||*/
+/* background*/
+/* Default (if needed) */
+body {
+  background-color: white;
+}
 
+/* Home / index page */
+body.home-page {
+  background-color: #3262b2 !important;
+}
+
+/* Narrative page */
+body.narrative-page {
+  background-color: white !important;
+}
+
+/* Item page */
+body.item-page {
+  background-color: white !important;
+}
+
+/* HEADER + FOOTER BASE+ NAVBAR color background*/
+header,
+footer,
+header .navbar {
+  background-color: #3262b2 !important;
+  position: relative;
+  z-index: auto;
+  overflow: visible;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* For header */
+header.bg-light,
+header.bg-light nav.navbar {
+  background-color:#3262b2 !important;
+}
+
+/* For footer */
+footer.bg-light,
+footer.bg-light .container {
+  background-color: #3262b2 !important;
+}
+
+/*new color for header logo!*/
+.img-header {
+  filter: invert(86%) sepia(76%) saturate(2130%) hue-rotate(0deg) brightness(104%) contrast(101%);
+}
+
+/*NAVBAR responsivness and styling*/
+/* Mobile full-width dropdown */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+}
+
+/* MAIN NAV LINKS*/
+.navbar a.nav-link {
+  color: #fddb00 !important;       /* yellow default */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: block;
+  padding: 0.5rem 1rem !important;
+}
+
+/* Hover = yellow background, black text */
+.navbar a.nav-link:hover {
+  background-color:  #fff200 !important;
+  color: #000 !important;
+  border-radius: 6px;
+}
+
+/* Active/selected = black */
+.navbar .nav-link.active,
+.navbar .nav-link.show,
+.navbar .nav-link:focus {
+  color: #000 !important;
+}
+
+/* DROPDOWN TOGGLE */
+.navbar .dropdown-toggle {
+  color: #000; /* Bootstrap default or adjust to yellow if you want */
+}
+
+/*DROPDOWN MENU ITEMS*/
+.navbar .dropdown-menu .dropdown-item {
+  color: #000; /* black default */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover submenu */
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(253, 219, 0, 0.3) !important;
+  color: #000 !important;
+}
+
+/* Mobile hamburger border */
+.navbar-toggler {
+  border: 2px solid rgba(105, 52, 39, 0.5);
+  border-radius: 6px;
+}
+
+/* Dropdown panel */
+.navbar .dropdown-menu {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(105, 52, 39, 0.3);
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/*SEPARATION DECORATION*/
+
+/*header (bottom)*/
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;        /* thickness of the line */
+  background-color: #000;  /* black */
+}
+
+/*footer (top)*/
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;        /* same thickness */
+  background-color: #000;
+}
+
+/* || INDEX.HMTL STYLING || */
+/* NARRATIVE CARD framing (squared) */
+
+/* Base card */
+.card[data-narrative-id] {
+  position: relative;
+  border-radius: 0;      /* squared corners */
+  overflow: visible;
+  background: white;
+  z-index: 1;
+  padding: 12px;
+  display: block;        /* ensures block layout */
+}
+
+/* Black border */
+.card[data-narrative-id]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0;      /* squared border */
+  border: 2px solid black;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Hover effect */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.35),
+    inset 0 0 12px rgba(0,0,0,0.18);
+  cursor: pointer;
+}
+
+/* || HERO SECTION SEPARATION (top and bottom) */
+.hero {
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: black; /* solid black line */
+}
+
+.hero::before {
+  top: 0;
+}
+
+.hero::after {
+  bottom: 0;
+}
+
+/* || MAP SECTION STYLING (index.html, narrative.html) */
+#map-section {
+  position: relative;
+}
+
+#map-section::before,
+#map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: black; /* solid black line */
+}
+
+#map-section::before {
+  top: 0;
+}
+
+#map-section::after {
+  bottom: 0;
+}
+
+/* || NARRATIVE.HTML STYLING || */
+/* ITEMS CARD frame styling (squared) */
+
+/* Card wrapper */
+#narrative-items .card {
+  position: relative;      /* required for pseudo-elements */
+  display: block;
+  z-index: 1;
+  border-radius: 0;        /* squared corners */
+  overflow: visible;       /* allow frame to extend outside card */
+  text-decoration: none;
+  background: white;       /* keep content visible */
+  padding: 12px;           /* prevent border from touching content */
+  color: black;            /* card text color */
+}
+
+/* Single black line frame */
+#narrative-items .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;        /* squared border */
+  border: 2px solid black; /* black frame */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure images and card body are above the frame */
+#narrative-items .card > img,
+#narrative-items .card > .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effect */
+#narrative-items .card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform
+}
+
+/* || MAP SECTION STYLING || */
+/* Map container squared border */
+#map {
+  width: 100%;
+  height: 600px;           /* adjust height as needed */
+  border: 2px solid black; /* black border */
+  border-radius: 0;        /* squared corners */
+  overflow: hidden;        /* clip anything outside */
+}
+
+/* || ITEM.HTML STYLING */
+/* SECTIONs squared black frame using ::before */
+#item-image-wrapper,
+#item-text-section,
+#item-related-media,
+#metadata-table-wrapper {
+  position: relative;
+  border-radius: 0;        /* squared corners */
+  overflow: visible;
+  background: white;
+  padding: 12px;
+  margin-bottom: 1rem;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* Simple black border via ::before */
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#metadata-table-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;               /* top:0; left:0; right:0; bottom:0; */
+  border-radius: 0;       /* squared corners */
+  border: 2px solid black; /* single black border */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content is above border */
+#item-image-wrapper > *,
+#item-text-section > *,
+#item-related-media > *,
+#metadata-table-wrapper > * {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Squared metadata table */
+#metadata-table {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+/*|| BUTTONS AND LINKS STYLING in item.html ||*/
+/* UNDER IMAGE NAVIGATION BUTTONS*/
+/* Default: yellow fill, red border, black text */
+#item-nav .btn-primary {
+  background-color: #fddb00;  /* yellow, same as logo */
+  border: 2px solid #de0313;  /* red border */
+  color: #000;                 /* black text */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover: slightly darker yellow */
+#item-nav .btn-primary:hover:not(:disabled) {
+  background-color: #f5d100;  /* slightly darker yellow */
+  border-color: #de0313;      /* keep red border */
+  transform: translateY(-1px); /* subtle lift */
+}
+
+/* Disabled buttons: pale yellow */
+#item-nav .btn-primary:disabled {
+  background-color: #fff8b0;
+  border-color: #de0313;
+  color: #ccc;
+}
+
+/* ADULT / KID BUTTONS STYLING */
+/* Adult button default (outline) */
+#adult-kid-buttons #btn-adult {
+  border: 2px solid #de0313; /* red border */
+  color: #de0313;            /* red text */
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.2s ease;
+}
+
+/* Adult button hover / focus / active */
+#adult-kid-buttons #btn-adult:hover,
+#adult-kid-buttons #btn-adult:focus,
+#adult-kid-buttons #btn-adult.active {
+  background-color: #fddb00; /* yellow fill (same as logo) */
+  color: #000 !important;    /* black text */
+  border-color: #de0313;     /* red border */
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* Kid button default (grey like Too Hard / Too Easy) */
+#adult-kid-buttons #btn-kid {
+  border: 2px solid #6c757d; /* Bootstrap grey */
+  color: #6c757d;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.2s ease;
+}
+
+/* Kid button hover / focus / active */
+#adult-kid-buttons #btn-kid:hover,
+#adult-kid-buttons #btn-kid:focus,
+#adult-kid-buttons #btn-kid.active {
+  background-color: #6c757d; /* grey fill */
+  color: #fff !important;    /* white text */
+  border-color: #6c757d;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* TEXT SECTION LINKS */
+/* Default: red text */
+#text-content a,
+#text-content a#btn-toggle-length,
+tr[data-key="other-narrative"] a {
+  color: #de0313 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover: darker red */
+#text-content a:hover,
+#text-content a#btn-toggle-length:hover,
+tr[data-key="other-narrative"] a:hover {
+  color: #a8000f !important;  /* darker red */
+  transform: translateY(-1px);
+}
+
+/* || TYPOGRAPHY ||*/
+
+/*================= TITLE STYLING =================*/
+
+/* Hero section titles */
+.hero h1 {
+  font-family: 'Bangers', cursive !important;  /* comic style */
+  font-size: 4rem;                              /* adjust size for hero */
+  line-height: 1.1;
+  letter-spacing: 5px;                          /* more spacing for readability */
+  color: #f7e13d;                               /* yellow fill */
+  -webkit-text-stroke: 2px #de0313;            /* red border/stroke */
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 1rem;
+}
+
+.hero p.lead {
+  font-family: 'Bangers', cursive !important;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+/* Card titles (main titles, not captions) */
+.card-title {
+  font-family: 'Bangers', cursive !important;
+  font-weight: 700;
+}
+
+/* Narrative page main titles */
+#narrative-title {
+  font-family: 'Bangers', cursive !important;
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: #f7e13d;
+  -webkit-text-stroke: 2px #de0313;
+  -webkit-font-smoothing: antialiased;
+}
+
+#narrative-description {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/* Item page title and description */
+#item-header p {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/* Metadata table TH labels */
+#metadata-table th {
+  font-family: 'Bangers', cursive !important;
+  font-weight: 600;
+  font-size: 20px !important;
+}
+
+/* Text section h3 titles */
+#item-text-section h3 {
+  font-family: 'Bangers', cursive !important;
+  font-weight: 600;
+  font-size: 30px !important;
+}
+
+/* Related media section h5 */
+#item-related-media h5 {
+  font-family: 'Bangers', cursive !important;
+  font-weight: 600;
+  font-size: 30px !important;
+}
+
+/*================= CAPTIONS STYLING =================*/
+
+/* Narrative items card titles (captions) */
+#narrative-items .card-title {
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.2;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Related media card titles */
+#item-related-media .card-title {
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.2;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Map tooltip card titles */
+#map-section .item-card-hover p {
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0;
+  line-height: 1.2;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/*================= BODY TEXT STYLING =================*/
+
+/* Default text */
+body,
+p,
+li,
+td,
+th,
+#item-description,
+#text-content,
+.card-text,
+.item-card-hover img + p {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+  text-transform: uppercase; /* make all text uppercase */
+}
+
+/* Override card text inside narrative cards */
+.card.path-card .card-body .card-text {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  font-size: 15px !important;
+  text-transform: uppercase !important;
+}
+
+/* Optional: headings that aren’t main titles */
+h2, h3, h4, h5, h6 {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+/* || COMIC CAPTION-LIKE SQUARED STYLING FOR ITEM HEADER + MAP TITLE || */
+#item-header,
+#map-section h2 {
+  position: relative;
+  display: inline-block;        /* tight plaque around text */
+  padding: 1rem 2rem;
+  background-color: #f7e13d;   /* yellow fill */
+  border: 3px solid black;      /* black border */
+  border-radius: 0;             /* squared corners */
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: #000;                  /* black text */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* || MOBILE LAYOUT ||*/
+/* NARRATIVE PAGE: centered */
+#narrative-info {
+  display: block;
+  margin: 4rem auto; /* vertical + center */
+  max-width: 700px;
+  width: 90%;
+}
+
+/* mobile responsivness */
+@media (max-width: 768px) {
+  #narrative-info {
+    width: 95%;       /* almost full width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 1.5rem;
+  }
+
+  #item-header {
+    width: 100%;         /* full width of container */
+    max-width: 700px;    /* optional max width */
+    margin: 2rem auto;   /* vertical + horizontal centering */
+    padding: 1rem 1.5rem;
+    left: 0;
+    right: 0;
+  }
+
+  /* Adjust bumps for smaller width */
+  #item-header::before,
+  #item-header::after,
+  #narrative-info::before,
+  #narrative-info::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  #item-header::before,
+  #narrative-info::before { left: -9px; }
+  #item-header::after,
+  #narrative-info::after { right: -9px; }
+}
