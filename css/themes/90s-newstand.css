@@ -443,7 +443,7 @@ tr[data-key="other-narrative"] a:hover {
 /* Narrative page main titles */
 #narrative-title {
   font-family: 'Bangers', cursive !important;
-  font-size: 3rem;
+  font-size: 5rem;
   line-height: 1.2;
   letter-spacing: 2px;
 }
@@ -581,6 +581,50 @@ h2, h3, h4, h5, h6 {
   position: relative; /* needed for side bumps */
   width: 48%;         /* desktop width */
   margin: 2rem 0;     /* vertical spacing */
+}
+
+/* || COMIC BALLOON CAPTION FOR NARRATIVE CARDS || */
+/* || COMIC BALLOON CAPTION FOR NARRATIVE CARDS || */
+#narrative-items .card-title {
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: #000;
+  background-color: #fff;      /* white balloon */
+  border: 2px solid #000;      /* black outline */
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Black outline for pointer */
+#narrative-items .card-title::before {
+  content: "";
+  position: absolute;
+  top: -12px;       /* distance from balloon */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 12px 10px;  /* triangle size */
+  border-style: solid;
+  border-color: transparent transparent #000 transparent; /* black pointer */
+  z-index: 0;
+}
+
+/* White inner pointer */
+#narrative-items .card-title::after {
+  content: "";
+  position: absolute;
+  top: -10px;       /* slightly below the black outline */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 10px 8px;   /* slightly smaller than black outline */
+  border-style: solid;
+  border-color: transparent transparent #fff transparent; /* match balloon bg */
+  z-index: 1;
 }
 
 /* || MOBILE LAYOUT ||*/
