@@ -412,8 +412,16 @@ tr[data-key="other-narrative"] a:hover {
   font-size: 4rem;                              /* adjust size for hero */
   line-height: 1.1;
   letter-spacing: 5px;                          /* more spacing for readability */
-  color: black;                               /* yellow fill */
   margin-bottom: 1rem;
+}
+
+.outlined {
+  color: #f7e13d;
+  text-shadow:
+    2px 2px 0 #de0313,
+   -2px 2px 0 #de0313,
+    2px -2px 0 #de0313,
+   -2px -2px 0 #de0313;
 }
 
 .hero p.lead {
@@ -435,7 +443,6 @@ tr[data-key="other-narrative"] a:hover {
   font-size: 3rem;
   line-height: 1.2;
   letter-spacing: 2px;
-  color: black;
 }
 
 #narrative-description {
