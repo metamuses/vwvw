@@ -1,4 +1,7 @@
 /* || GENERAL STYLES ||*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief&display=swap');
 /* background*/
 /* Default (if needed) */
 body {
@@ -409,7 +412,7 @@ tr[data-key="other-narrative"] a:hover {
 /* Hero section titles */
 .hero h1 {
   font-family: 'Bangers', cursive !important;  /* comic style */
-  font-size: 4rem;                              /* adjust size for hero */
+  font-size: 8rem;                              /* adjust size for hero */
   line-height: 1.1;
   letter-spacing: 5px;                          /* more spacing for readability */
   margin-bottom: 1rem;
