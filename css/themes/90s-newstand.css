@@ -412,9 +412,7 @@ tr[data-key="other-narrative"] a:hover {
   font-size: 4rem;                              /* adjust size for hero */
   line-height: 1.1;
   letter-spacing: 5px;                          /* more spacing for readability */
-  color: #f7e13d;                               /* yellow fill */
-  -webkit-text-stroke: 2px #de0313;            /* red border/stroke */
-  -webkit-font-smoothing: antialiased;
+  color: black;                               /* yellow fill */
   margin-bottom: 1rem;
 }
 
@@ -437,9 +435,7 @@ tr[data-key="other-narrative"] a:hover {
   font-size: 3rem;
   line-height: 1.2;
   letter-spacing: 2px;
-  color: #f7e13d;
-  -webkit-text-stroke: 2px #de0313;
-  -webkit-font-smoothing: antialiased;
+  color: black;
 }
 
 #narrative-description {
@@ -551,22 +547,30 @@ h2, h3, h4, h5, h6 {
 }
 
 /* || COMIC CAPTION-LIKE SQUARED STYLING FOR ITEM HEADER + MAP TITLE || */
-#item-header,
-#map-section h2 {
-  position: relative;
-  display: inline-block;        /* tight plaque around text */
-  padding: 1rem 2rem;
-  background-color: #f7e13d;   /* yellow fill */
-  border: 3px solid black;      /* black border */
-  border-radius: 0;             /* squared corners */
+#map-section h2,
+#item-header {
+  display: block;             /* span full width */
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #f7e13d; /* yellow fill */
+  border: 3px solid black;    /* black border */
+  border-radius: 0;           /* squared corners */
   font-family: 'Comic Neue', cursive !important;
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 1.2;
   letter-spacing: 2px;
-  color: #000;                  /* black text */
+  color: #000;                /* black text */
   text-align: center;
   margin-bottom: 2rem;
+}
+
+/* ITEM PAGE: left-aligned */
+#item-header {
+  display: block;
+  position: relative; /* needed for side bumps */
+  width: 48%;         /* desktop width */
+  margin: 2rem 0;     /* vertical spacing */
 }
 
 /* || MOBILE LAYOUT ||*/
