@@ -23,26 +23,13 @@ body {
 
 /* HEADER + FOOTER BASE+ NAVBAR color background*/
 header,
-footer,
-header .navbar {
+footer {
   background-color: #b6cdd8 !important;
   position: relative;
   z-index: auto;
   overflow: visible;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-/* For header */
-header.bg-light,
-header.bg-light nav.navbar {
-  background-color: #b6cdd8 !important;
-}
-
-/* For footer */
-footer.bg-light,
-footer.bg-light .container {
-  background-color: #b6cdd8 !important;
 }
 
 /*NAVBAR responsivness and styling*/

@@ -25,26 +25,13 @@ body.item-page {
 
 /* HEADER + FOOTER BASE+ NAVBAR color background*/
 header,
-footer,
-header .navbar {
+footer {
   background-color: #3262b2 !important;
   position: relative;
   z-index: auto;
   overflow: visible;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-/* For header */
-header.bg-light,
-header.bg-light nav.navbar {
-  background-color:#3262b2 !important;
-}
-
-/* For footer */
-footer.bg-light,
-footer.bg-light .container {
-  background-color: #3262b2 !important;
 }
 
 /*new color for header logo!*/

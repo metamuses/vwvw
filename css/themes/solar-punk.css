@@ -1,3 +1,41 @@
-a.nav-link.dropdown-toggle {
-  color: orange;
+/* || GENERAL STYLES ||*/
+/* HEADER + FOOTER BASE+ NAVBAR color background*/
+header {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* copre tutta l’altezza e larghezza */
+  margin: 0;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: auto;
+}
+
+footer {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.15), rgba(131, 72, 44, 0) 70%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.12), rgba(131, 72, 44, 0) 75%),
+    #83482c;
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* For footer */
+footer.bg-light,
+footer.bg-light .container {
+  background-color: #83482c !important;
+}
+
+/*NAVBAR responsivness and styling*/
+/* Mobile full-width dropdown */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
 }
