@@ -74,7 +74,7 @@ footer.bg-light .container {
 
 /* Responsive navbar collapse border (mobile menu, hamburger) */
 .navbar-toggler {
-  border: 2px solid rgba(105, 52, 39, 0.5);
+  border: 2px solid rgba(105, 52, 39, 0.5) !important;
   border-radius: 6px;
 }
 
