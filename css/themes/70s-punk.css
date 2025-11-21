@@ -1,3 +1,37 @@
-a.nav-link.dropdown-toggle {
-  color: grey;
+body {
+  background-color: #fafafa;
+  color: #494949 !important;
+  font-family: 'Special Elite';
+}
+
+footer, header, nav.navbar {
+  background-color: #FC6392 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gloria Hallelujah' !important;
+}
+
+.lead {
+  font-family: 'Gloria Hallelujah' !important;
+}
+
+/*map section*/
+#map {
+  background-color: #E3F041 !important;
+}
+
+.leaflet-marker-icon.item-marker {
+  background-color: #f89bb7;
+  box-shadow: 0 0 0.2rem #f89bb7;
+}
+
+.item-marker.highlighted {
+  background-color: #FC6392;
+  box-shadow: 0 0 0.8rem #FC6392 !important;
+}
+
+.item-card-hover p {
+  font-family: 'Gloria Hallelujah';
+  background-color: #fafafa;
 }
