@@ -55,10 +55,16 @@ footer {
   transition: border 0.3s ease;
 }
 
+/* Mobile view — increase icon size */
+@media (max-width: 768px) {
+  .github-icon {
+    width: 5%;
+  }
+}
+
 .github-icon:hover {
   border: 1px solid white;
 }
-
 
 /* hero - TO FIX tutte misure, da giustificare e rendere responsive */
 .hero {
