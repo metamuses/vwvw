@@ -13,19 +13,24 @@ header {
 }
 
 footer {
-  background:
-    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.15), rgba(131, 72, 44, 0) 70%),
-    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.12), rgba(131, 72, 44, 0) 75%),
-    #83482c;
   position: relative;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
+  padding: 2rem 1rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #83482c;
 
-/* For footer */
-footer.bg-light,
-footer.bg-light .container {
-  background-color: #83482c !important;
+  /* Roots effect with darker/taller roots */
+  background-image:
+    radial-gradient(ellipse 8px 90px at 5% 100%, #4b2e1f 0%, transparent 70%),   /* tall & dark */
+    radial-gradient(ellipse 6px 50px at 15% 100%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
+    radial-gradient(ellipse 10px 100px at 25% 100%, #3f2617 0%, transparent 70%),/* taller & darkest */
+    radial-gradient(ellipse 8px 70px at 40% 100%, #59341f 0%, transparent 70%),  /* medium */
+    radial-gradient(ellipse 6px 60px at 60% 100%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
+    radial-gradient(ellipse 10px 90px at 75% 100%, #4b2e1f 0%, transparent 70%), /* tall & dark */
+    radial-gradient(ellipse 8px 80px at 90% 100%, #59341f 0%, transparent 70%);  /* medium-tall */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /*NAVBAR responsivness and styling*/
