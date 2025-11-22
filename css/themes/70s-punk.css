@@ -1,3 +1,4 @@
+/* GENERAL RULES */
 body {
   background-color: #fafafa;
   color: #494949 !important;
@@ -6,6 +7,7 @@ body {
 
 footer, header, nav.navbar {
   background-color: #FC6392 !important;
+  font-family: 'Special Elite';
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,3 +37,181 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Gloria Hallelujah';
   background-color: #fafafa;
 }
+
+/* all images made fanzine style*/
+img {
+  filter: 
+    grayscale(100%)     
+    contrast(180%)      
+    brightness(100%)     
+    saturate(20%);       
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+
+/*CARD STYLE FOR ALL PAGES*/
+/*CARD for index and narrative page */
+.card-dynamic {
+  background: #ffffff;
+  border: none;
+  padding: 1.25rem;                
+  position: relative;
+  border-radius: 0 !important;
+  transform: rotate(-2deg);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  box-shadow: 0 0.75rem 1.1rem rgba(0,0,0,0.30)!important;
+  overflow: visible !important;
+}
+
+.card-dynamic:nth-child(odd) {
+  transform: rotate(1.5deg);
+}
+
+.card-dynamic:nth-child(3n) {
+  transform: rotate(-3deg);
+}
+
+.card-dynamic:hover {
+  transform: rotate(0deg) translateY(-0.375rem) !important;    
+  box-shadow: 0 1.125rem 1.75rem rgba(0,0,0,0.45) !important;  
+}
+
+/*noise effect*/
+.card-dynamic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image: url("/img/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+}
+
+/*safety pin on top*/
+.card-dynamic::before {
+  content: "";
+  position: absolute;
+  top: -1.75rem;       
+  left: -0.625rem;     
+  width: 4.375rem;    
+  height: 4.375rem;   
+  background-image: url("/img/safetypin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+/*CARD for item page - text and media sections- to avoid hover*/
+.card {
+  background: #ffffff;
+  border: none;
+  padding: 1.25rem;                
+  position: relative;
+  border-radius: 0 !important;
+  transform: rotate(-2deg);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  overflow: visible !important;
+}
+
+.card:nth-child(odd) {
+  transform: rotate(1.5deg);
+}
+
+.card:nth-child(3n) {
+  transform: rotate(-3deg);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("/img/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -1.75rem;       
+  left: -0.625rem;     
+  width: 4.375rem;     
+  height: 4.375rem;    
+  background-image: url("/img/safetypin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+
+/*NARRATIVE PAGE*/
+#narrative-description {
+  font-family: 'Special Elite' !important;
+}
+
+
+/*ITEM PAGE*/
+/*ITEM wrapper*/
+#item-image-wrapper {
+  position: relative;
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  padding: 1.56rem !important;    
+  box-shadow: 0.5rem 0.75rem 1.25rem rgba(0,0,0,0.35);  
+  transform: rotate(-2deg);
+  overflow: hidden; 
+}
+
+/*soft noise*/
+#item-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/img/noise.png");
+  background-size: 18.75rem;      
+  background-repeat: repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/*safety pin*/
+#item-image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -1.375rem;       
+  left: -1.375rem;    
+  width: 5.625rem;      
+  height: 5.625rem;    
+  background-image: url("/img/safetypin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/*METADATA wrapper*/
+#metadata-table-wrapper th {
+  font-family: 'Gloria Hallelujah';
+}
+#metadata-table-wrapper td {
+  font-family: 'Special Elite';
+}
+
+/*BOTTONI E CAMBIO COLORI LINK*/

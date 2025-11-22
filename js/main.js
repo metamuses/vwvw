@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // --- Create card ---
         const card = document.createElement("a");
         card.href = "item.html#" + itemKey;
-        card.className = "card h-100 border-0 shadow-sm text-decoration-none text-dark";
+        card.className = "card card-dynamic h-100 border-0 shadow-sm text-decoration-none text-dark";
 
         // --- IMAGE ---
         const img = document.createElement("img");
