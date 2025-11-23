@@ -12,6 +12,13 @@ header {
   z-index: auto;
 }
 
+/* For header */
+header.bg-light nav.navbar {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%) !important;
+  background-repeat: no-repeat;
+}
+
 footer {
   position: relative;
   padding: 2rem 1rem;
@@ -44,3 +51,218 @@ footer {
     border-radius: 0;
   }
 }
+
+/* Main links */
+.navbar a.nav-link {
+  color: #83482c;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect on main links */
+.navbar a.nav-link:hover {
+  color: #000;
+  background-color: rgba(131, 72, 44, 0.3);
+  border-radius: 6px;
+}
+
+/* Dropdown toggle */
+.navbar .dropdown-toggle {
+  color: #000;
+}
+
+/* Dropdown menu items (sub-nav) */
+.navbar .dropdown-menu .dropdown-item {
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover on dropdown items */
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(131, 72, 44, 0.3);
+  color: #000;
+}
+
+/* Responsive navbar collapse border (mobile menu, hamburger) */
+.navbar-toggler {
+  border: 2px solid rgba(131, 72, 44, 0.5) !important;
+  border-radius: 6px;
+}
+
+/* Dropdown menu (sub-nav) */
+.navbar .dropdown-menu {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(131, 72, 44, 0.3); /* semi-transparent #83482c */
+  border-radius: 6px;
+  background-color: #fff; /* keep white background */
+}
+
+/* Restore breathing space on hover */
+.navbar a.nav-link {
+  display: block;               /* full width again */
+  padding: 0.5rem 1rem !important; /* restores breathing space */
+  border-radius: 0;             /* not needed when full width */
+}
+
+/*SEPARATION DECORATION*/
+/*header (bottom)*/
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;        /* thickness of the line */
+  background-color: #000;  /* black */
+}
+
+/*footer (top)*/
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;        /* same thickness */
+  background-color: #000;
+}
+
+/* || INDEX.HMTL STYLING || */
+/*HERO SECTION sky-like*/
+.hero {
+  position: relative;
+  background-color: #4b89c4!important; /* base sky blue */
+  background-image:
+    /* small, light clouds */
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 40% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 85% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%)!important;
+
+  background-repeat: no-repeat;
+  background-size: cover; /* fill the section */
+  color: white;
+  min-height: 60vh; /* ensure hero has enough height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* || HERO SECTION SEPARATION (top and bottom) */
+.hero {
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black; /* solid black line */
+}
+
+.hero::before {
+  top: 0;
+}
+
+.hero::after {
+  bottom: 0;
+}
+
+/* NARRATIVE CARD*/
+/* Modern grey concrete background for narrative cards section */
+.container-fluid.py-5 {
+  background-color: #d1d3d4; /* soft grey base */
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.03) 100%);
+  /* subtle vertical gradient for depth */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* NARRATIVE CARD framing*/
+/* Base card: rounded */
+.card[data-narrative-id] {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;
+  background: white;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px;
+}
+
+/* Leafy-style frame (outside the card, like a border) */
+.card[data-narrative-id]::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 16px; /* slightly larger than card */
+  pointer-events: none;
+  z-index: -1;
+
+  background: linear-gradient(
+    135deg,
+    #aabf66 0%,
+    #8ca343 40%,
+    #c2d574 70%,
+    #aabf66 100%
+  );
+
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.3),
+    inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+/* Inner matting stays inside */
+.card[data-narrative-id]::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border-radius: 8px;
+  background: white;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* TO BE DONE: Hover effect */
+
+
+/* || MAP SECTION STYLING (index.html, narrative.html) */
+#map-section {
+  position: relative;
+}
+
+#map-section::before,
+#map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black; /* solid black line */
+}
+
+#map-section::before {
+  top: 0;
+}
+
+#map-section::after {
+  bottom: 0;
+}
+

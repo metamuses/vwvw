@@ -34,6 +34,19 @@ footer {
   padding-bottom: 1.5rem;
 }
 
+/* For header */
+header.bg-light,
+header.bg-light nav.navbar {
+  background-color:#3262b2 !important;
+}
+
+/* For footer */
+footer.bg-light,
+footer.bg-light .container {
+  background-color: #3262b2 !important;
+}
+
+
 /*new color for header logo!*/
 .img-header {
   filter: invert(86%) sepia(76%) saturate(2130%) hue-rotate(0deg) brightness(104%) contrast(101%);
@@ -106,7 +119,6 @@ footer {
 }
 
 /*SEPARATION DECORATION*/
-
 /*header (bottom)*/
 header::after {
   content: "";

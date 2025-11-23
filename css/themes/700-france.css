@@ -32,6 +32,18 @@ footer {
   padding-bottom: 1.5rem;
 }
 
+/* For header */
+header.bg-light,
+header.bg-light nav.navbar {
+  background-color: #b6cdd8 !important;
+}
+
+/* For footer */
+footer.bg-light,
+footer.bg-light .container {
+  background-color: #b6cdd8 !important;
+}
+
 /*NAVBAR responsivness and styling*/
 /* Mobile full-width dropdown */
 @media (max-width: 991.98px) {
