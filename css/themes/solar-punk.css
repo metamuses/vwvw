@@ -27,15 +27,16 @@ footer {
   box-sizing: border-box;
   background-color: #83482c;
 
-  /* Roots effect with darker/taller roots */
+  /* Roots effect coming from the TOP now */
   background-image:
-    radial-gradient(ellipse 8px 90px at 5% 100%, #4b2e1f 0%, transparent 70%),   /* tall & dark */
-    radial-gradient(ellipse 6px 50px at 15% 100%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
-    radial-gradient(ellipse 10px 100px at 25% 100%, #3f2617 0%, transparent 70%),/* taller & darkest */
-    radial-gradient(ellipse 8px 70px at 40% 100%, #59341f 0%, transparent 70%),  /* medium */
-    radial-gradient(ellipse 6px 60px at 60% 100%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
-    radial-gradient(ellipse 10px 90px at 75% 100%, #4b2e1f 0%, transparent 70%), /* tall & dark */
-    radial-gradient(ellipse 8px 80px at 90% 100%, #59341f 0%, transparent 70%);  /* medium-tall */
+    radial-gradient(ellipse 8px 90px at 5% 0%, #4b2e1f 0%, transparent 70%),   /* tall & dark */
+    radial-gradient(ellipse 6px 50px at 15% 0%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
+    radial-gradient(ellipse 10px 100px at 25% 0%, #3f2617 0%, transparent 70%),/* taller & darkest */
+    radial-gradient(ellipse 8px 70px at 40% 0%, #59341f 0%, transparent 70%),  /* medium */
+    radial-gradient(ellipse 6px 60px at 60% 0%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
+    radial-gradient(ellipse 10px 90px at 75% 0%, #4b2e1f 0%, transparent 70%), /* tall & dark */
+    radial-gradient(ellipse 8px 80px at 90% 0%, #59341f 0%, transparent 70%);  /* medium-tall */
+
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -182,9 +183,6 @@ footer::before {
 /* Modern grey concrete background for narrative cards section */
 .container-fluid.py-5 {
   background-color: #d1d3d4; /* soft grey base */
-  background-image:
-    linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.03) 100%);
-  /* subtle vertical gradient for depth */
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
@@ -240,16 +238,22 @@ footer::before {
   pointer-events: none;
 }
 
-/* TO BE DONE: Hover effect */
-
+/* Hover effect */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
 
 /* || MAP SECTION STYLING (index.html, narrative.html) */
 #map-section {
   position: relative;
 }
 
-#map-section::before,
-#map-section::after {
+#map-section::before {
   content: "";
   position: absolute;
   left: 0;
@@ -266,3 +270,103 @@ footer::before {
   bottom: 0;
 }
 
+/*MAP section background color INDEX.HTML*/
+body.home-page #map-section {
+  position: relative;
+  overflow: hidden;
+
+  /* grass-like background */
+  background: linear-gradient(
+    180deg,
+    #b7d98a 0%,   /* light grass */
+    #9ac867 40%,   /* mid grass */
+    #7fb44e 100%   /* deeper green */
+  );
+}
+
+/* Grass blades at the bottom */
+body.home-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 130px; /* thickness of the grass strip */
+  pointer-events: none;
+
+  background-image:
+    /* tall dark blades */
+    radial-gradient(ellipse 14px 95px at 5% 100%,  #4f7d2f 0%, transparent 70%),
+    radial-gradient(ellipse 16px 110px at 18% 100%, #3d6b24 0%, transparent 70%),
+    radial-gradient(ellipse 12px 85px at 32% 100%, #4a752b 0%, transparent 70%),
+
+    /* medium blades */
+    radial-gradient(ellipse 10px 70px at 48% 100%, #5f8e38 0%, transparent 70%),
+    radial-gradient(ellipse 12px 75px at 63% 100%, #6aa744 0%, transparent 70%),
+
+    /* short but darker */
+    radial-gradient(ellipse 8px 55px at 78% 100%,  #527f33 0%, transparent 70%),
+    radial-gradient(ellipse 11px 65px at 92% 100%, #3f6c25 0%, transparent 70%);
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+#map {
+  background: white !important;
+  padding: 0;
+  border-radius: 12px; /* optional, looks nicer */
+}
+
+
+/* NARRATIVE.HTML STYLING*/
+/* Narrative info section — sky + clouds background */
+#narrative-info {
+  position: relative;
+  background-color: #4b89c4 !important; /* base sky blue */
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 40% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 85% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%) !important;
+
+  background-repeat: no-repeat;
+  background-size: cover; /* fill the section */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Map section — only on narrative page */
+body.narrative-page #map-section {
+  background-color: #d1d3d4 !important; /* soft grey base */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Keep the map itself white */
+body.narrative-page #map-section #map {
+  background: white;
+  border-radius: 10px;
+}
+
+/*map section in narrative page bottom border*/
+body.narrative-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: black; /* solid black line */
+}
+
+/* ITEMS CARD background and frame styling */
