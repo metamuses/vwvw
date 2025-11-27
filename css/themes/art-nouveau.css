@@ -345,6 +345,12 @@ footer::before {
 }
 
 /* || ITEM.HTML STYLING*/
+/*title header styling*/
+#item-header {
+  padding-left: 2rem;   /* space from left edge */
+  padding-right: 2rem;  /* space from right edge */
+}
+
 /* SECTIONs baroque frame stylings */
 /* Base section styling */
 #item-image-wrapper,

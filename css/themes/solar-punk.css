@@ -1,4 +1,8 @@
 /* || GENERAL STYLES ||*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap'); /* for titles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');   /* for captions */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap'); /* for body text */
+
 /* HEADER + FOOTER BASE+ NAVBAR color background*/
 header {
   background:
@@ -322,9 +326,11 @@ body.home-page #map-section::after {
 
 /* NARRATIVE.HTML STYLING*/
 /* Narrative info section — sky + clouds background */
+/* Reset section margins */
 #narrative-info {
+  margin: 0 !important;               /* remove any default section margins */
   position: relative;
-  background-color: #4b89c4 !important; /* base sky blue */
+  background-color: #4b89c4 !important;
   background-image:
     radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
     radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
@@ -336,9 +342,8 @@ body.home-page #map-section::after {
     radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
     radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%) !important;
-
   background-repeat: no-repeat;
-  background-size: cover; /* fill the section */
+  background-size: cover;
   color: white;
   display: flex;
   align-items: center;
@@ -369,4 +374,323 @@ body.narrative-page #map-section::after {
   background: black; /* solid black line */
 }
 
-/* ITEMS CARD background and frame styling */
+/*MAP border*/
+/* MAP leafy frame */
+body.narrative-page #map-section #map {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;         /* important for Leaflet tiles */
+  z-index: 1;
+}
+
+/* Outer leafy gradient frame */
+body.narrative-page #map-section #map::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 20px;       /* larger than map */
+  pointer-events: none;
+  z-index: -1;
+
+  background: linear-gradient(
+    135deg,
+    #aabf66 0%,
+    #8ca343 40%,
+    #c2d574 70%,
+    #aabf66 100%
+  );
+
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.25),
+    inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+/* Inner white matting (same as card) */
+body.narrative-page #map-section #map::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 12px;
+  background: white;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ITEMS CARD background styling */
+/* Full-page grass background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.narrative-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #c9e5a3 0%,
+    #b4d88a 25%,
+    #9cca6e 55%,
+    #82b859 80%,
+    #6fa646 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* ensures a single smooth gradient */
+  background-size: 100% 100%;   /* prevents repeating lines */
+}
+
+/* ITEMS CARD frame styling */
+/* Card wrapper */
+#narrative-items .card {
+  position: relative;  /* required for ::before positioning */
+  display: block;      /* ensures stacking context for <a> */
+  z-index: 1;          /* stacking context */
+  border-radius: 12px;
+  overflow: visible;   /* let frame extend outside card */
+  text-decoration: none; /* remove underline */
+}
+
+/* Outer frame */
+#narrative-items .card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+
+  /* Solar panel-like */
+  background-color: #0f1c2e;
+
+  /* Hex PNG overlay */
+  background-image: url('../../img/hex.png');
+  background-repeat: repeat;       /* tile the pattern */
+  background-position: center;
+  background-size: auto;           /* adjust if you want smaller/larger hexes */
+}
+
+/* Ensure images and body are above frame */
+#narrative-items .card > img,
+#narrative-items .card > .card-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effect for extra depth */
+#narrative-items .card:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.4),
+    inset 0 0 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+#narrative-items .card .card-body,
+#narrative-items .card .card-body * {
+  color: #C8C8C8 !important;
+}
+
+/* || ITEM.HTML STYLING*/
+/*body background*/
+body.item-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #e0e0e0 0%,   /* very light grey */
+    #c0c0c0 25%,  /* light grey */
+    #a0a0a0 55%,  /* medium grey */
+    #808080 80%,  /* darker grey */
+    #666666 100%  /* dark grey */
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* ensures a single smooth gradient */
+  background-size: 100% 100%;   /* prevents repeating lines */
+}
+
+/*SECTIONs styling*/
+/* SECTIONs with simple green border */
+#item-image-wrapper,
+#item-text-section,
+#item-related-media,
+#metadata-table-wrapper {
+  position: relative;
+  border-radius: 12px;   /* Rounded corners */
+  background: white;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 4px solid #8ca343 !important; /* simple green border */
+}
+
+/* squared metadata table */
+#metadata-table {
+  border-radius: 0 !important;  /* force square */
+  overflow: hidden;
+}
+
+/* || SOLAR PANEL- LIKE STYLING of title + description in item.html ||  */
+#item-header {
+  position: relative;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  background-color: #0f1c2e;
+
+  /* Hex PNG overlay */
+  background-image: url('../../img/hex.png');
+  background-repeat: repeat;       /* tile the pattern */
+  background-position: center;
+  background-size: auto;           /* adjust if you want smaller/larger hexes */
+}
+
+#item-header > * {
+  position: relative;
+  z-index: 1;                      /* keep text above the PNG */
+  color: #C8C8C8;
+}
+
+/* ITEM PAGE: left-aligned */
+#item-header {
+  display: block;
+  width: 48%;         /* desktop width */
+  margin: 2rem 0;     /* vertical spacing */
+}
+
+/*|| BUTTONS AND LINKS STYLING in item.html ||*/
+/* filled button */
+#adult-kid-buttons .btn-primary {
+  background-color: #7fb44e !important;  /* new green */
+  border-color: #7fb44e !important;
+  color: #fff !important;
+}
+
+/* outline button */
+#adult-kid-buttons .btn-outline-primary {
+  border-color: #7fb44e !important;
+  color: #7fb44e !important;
+}
+
+#adult-kid-buttons .btn-outline-primary:hover {
+  background-color: #7fb44e !important;
+  color: #fff !important;
+}
+
+/* under image navigation button*/
+/* Default style: filled, black text */
+#item-nav .btn-primary {
+  background-color: #7fb44e; /* fill */
+  border-color: #7fb44e;
+  color: #000;               /* black text */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover state: slightly darker */
+#item-nav .btn-primary:hover:not(:disabled) {
+  background-color: #69963c; /* slightly darker green */
+  border-color: #69963c;
+  transform: translateY(-1px); /* subtle lift */
+}
+
+/* Disabled buttons: muted */
+#item-nav .btn-primary:disabled {
+  background-color: #b7d3a1; /* pale green */
+  border-color: #b7d3a1;
+  color: #ccc;
+}
+
+/* links */
+/* Apply to dynamically generated Read More / Read Less links and other narrative links */
+#text-content a,
+#text-content a#btn-toggle-length,
+tr[data-key="other-narrative"] a {
+  color: #7fb44e !important;        /* new green */
+  text-decoration: none !important; /* remove underline */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover state: slightly darker */
+#text-content a:hover,
+#text-content a#btn-toggle-length:hover,
+tr[data-key="other-narrative"] a:hover {
+  color: #69963c !important;        /* darker on hover */
+  transform: translateY(-1px);      /* subtle lift */
+}
+
+/* || TYPOGRAPHY ||*/
+/*TITLE*/
+.hero h1,
+#narrative-title{
+  font-family: 'Rubik Glitch Pop', cursive !important;
+  font-size: 6rem !important;
+  line-height: 1.1;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+}
+
+/*SUBTITLE and CAPTION*/
+.hero p.lead,
+.card-title,
+#map-section h2,
+#item-title,
+#metadata-table th,
+.h5,
+.card-header{
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/*BODY*/
+body,
+p,
+li,
+td,
+th,
+#item-description,
+#text-content,
+.card-text,
+.item-card-hover img + p {
+  font-family: 'Courier Prime' !important;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* || MOBILE LAYOUT ||*/
+/* NARRATIVE PAGE: centered */
+/* mobile responsivness */
+@media (max-width: 768px) {
+  #item-header {
+    width: 100%;         /* full width of container */
+    max-width: 700px;    /* optional max width */
+    margin: 2rem auto;   /* vertical + horizontal centering */
+    padding: 1rem 1.5rem;
+    left: 0;
+    right: 0;
+  }
+
+  /* Adjust bumps for smaller width */
+  #item-header::before,
+  #item-header::after,
+  #narrative-info::before,
+  #narrative-info::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  #item-header::before,
+  #narrative-info::before { left: -9px; }
+  #item-header::after,
+  #narrative-info::after { right: -9px; }
+}
+
