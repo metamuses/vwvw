@@ -1,3 +1,52 @@
-a.nav-link.dropdown-toggle {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* GENERAL RULES */
+body {
+  background-color: #EFDFBA !important;
+  color: #2B1C0E !important;
+  font-family: 'Libre Baskerville';
+}
+
+footer, header, nav.navbar {
+  background-color: #B33A2E !important;
+  font-family: 'Libre Baskerville';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'UnifrakturMaguntia' !important;
+}
+
+.lead {
+  font-family: 'Libre Baskerville' !important;
+  color: #2B1C0E !important;
+}
+
+/* navbar */
+.dropdown-item:hover {
+  background-color: #EFDFBA;
+}
+
+
+
+
+
+/*map section*/
+#map {
+  background-color: #E3F041 !important;
+}
+
+.leaflet-marker-icon.item-marker {
+  background-color: #f89bb7;
+  box-shadow: 0 0 0.2rem #f89bb7;
+}
+
+.item-marker.highlighted {
+  background-color: #FC6392;
+  box-shadow: 0 0 0.8rem #FC6392 !important;
+}
+
+.item-card-hover p {
+  font-family: 'Libre Baskerville';
+  background-color: transparent;
 }
