@@ -2,31 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Relief&display=swap');
-/* background*/
-/* Default (if needed) */
-body {
-  background-color: white;
-}
 
-/* Home / index page */
-body.home-page {
+/* || BACKGROUNDS || */
+body { background-color: white; }
+body.home-page { background-color: #3262b2 !important; }
+body.narrative-page,
+body.item-page { background-color: white !important; }
+
+/* || LAYOUT BASICS (Header/Footer) || */
+header,
+footer,
+header.bg-light,
+header.bg-light nav.navbar,
+footer.bg-light,
+footer.bg-light .container {
   background-color: #3262b2 !important;
 }
 
-/* Narrative page */
-body.narrative-page {
-  background-color: white !important;
-}
-
-/* Item page */
-body.item-page {
-  background-color: white !important;
-}
-
-/* HEADER + FOOTER BASE+ NAVBAR color background*/
 header,
 footer {
-  background-color: #3262b2 !important;
   position: relative;
   z-index: auto;
   overflow: visible;
@@ -34,82 +28,38 @@ footer {
   padding-bottom: 1.5rem;
 }
 
-/* For header */
-header.bg-light,
-header.bg-light nav.navbar {
-  background-color:#3262b2 !important;
-}
-
-/* For footer */
-footer.bg-light,
-footer.bg-light .container {
-  background-color: #3262b2 !important;
-}
-
-
-/*new color for header logo!*/
+/* Logo Filter */
 .img-header {
   filter: invert(86%) sepia(76%) saturate(2130%) hue-rotate(0deg) brightness(104%) contrast(101%);
 }
 
-/*NAVBAR responsivness and styling*/
-/* Mobile full-width dropdown */
-@media (max-width: 991.98px) {
-  .navbar .dropdown-menu {
-    position: static;
-    width: 100%;
-    left: 0;
-    right: 0;
-    border-radius: 0;
-  }
-}
-
-/* MAIN NAV LINKS*/
+/* || NAVBAR || */
+/* Links & Toggle */
 .navbar a.nav-link {
-  color: #fddb00 !important;       /* yellow default */
-  transition: color 0.3s ease, background-color 0.3s ease;
+  color: #fddb00 !important;
   display: block;
   padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover = yellow background, black text */
-.navbar a.nav-link:hover {
-  background-color:  #fff200 !important;
-  color: #000 !important;
-  border-radius: 6px;
-}
-
-/* Active/selected = black */
+.navbar .dropdown-toggle,
+.navbar .dropdown-menu .dropdown-item,
 .navbar .nav-link.active,
 .navbar .nav-link.show,
 .navbar .nav-link:focus {
   color: #000 !important;
 }
 
-/* DROPDOWN TOGGLE */
-.navbar .dropdown-toggle {
-  color: #000; /* Bootstrap default or adjust to yellow if you want */
-}
-
-/*DROPDOWN MENU ITEMS*/
-.navbar .dropdown-menu .dropdown-item {
-  color: #000; /* black default */
-  transition: background-color 0.3s ease;
-}
-
-/* Hover submenu */
+/* Hover States */
+.navbar a.nav-link:hover,
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: rgba(253, 219, 0, 0.3) !important;
+  background-color: #fff200 !important; /* brighter yellow */
   color: #000 !important;
 }
+.navbar a.nav-link:hover { border-radius: 6px; }
+.navbar .dropdown-menu .dropdown-item:hover { background-color: rgba(253, 219, 0, 0.3) !important; }
 
-/* Mobile hamburger border */
-.navbar-toggler {
-  border: 2px solid rgba(247, 225, 61, 0.5) !important;
-  border-radius: 6px;
-}
-
-/* Dropdown panel */
+/* Dropdown Container */
 .navbar .dropdown-menu {
   position: absolute;
   z-index: 10;
@@ -118,276 +68,197 @@ footer.bg-light .container {
   background-color: #fff;
 }
 
-/*SEPARATION DECORATION*/
-/*header (bottom)*/
-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;        /* thickness of the line */
-  background-color: #000;  /* black */
+/* Toggler */
+.navbar-toggler {
+  border: 2px solid rgba(247, 225, 61, 0.5) !important;
+  border-radius: 6px;
 }
 
-/*footer (top)*/
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;        /* same thickness */
-  background-color: #000;
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+  }
 }
 
-/* || INDEX.HMTL STYLING || */
-/* NARRATIVE CARD framing (squared) */
-
-/* Base card */
-.card[data-narrative-id] {
-  position: relative;
-  border-radius: 0;      /* squared corners */
-  overflow: visible;
-  background: white;
-  z-index: 1;
-  padding: 12px;
-  display: block;        /* ensures block layout */
-}
-
-/* Black border */
-.card[data-narrative-id]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 0;      /* squared border */
-  border: 2px solid black;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Hover effect */
-.card[data-narrative-id]:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.35),
-    inset 0 0 12px rgba(0,0,0,0.18);
-  cursor: pointer;
-}
-
-/* || HERO SECTION SEPARATION (top and bottom) */
-.hero {
-  position: relative;
-}
-
+/* || SEPARATORS (Black Lines) || */
+header::after,
+footer::before,
 .hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: black; /* solid black line */
-}
-
-.hero::before {
-  top: 0;
-}
-
-.hero::after {
-  bottom: 0;
-}
-
-/* || MAP SECTION STYLING (index.html, narrative.html) */
-#map-section {
-  position: relative;
-}
-
+.hero::after,
 #map-section::before,
 #map-section::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
-  height: 6px;
-  background: black; /* solid black line */
-}
-
-#map-section::before {
-  top: 0;
-}
-
-#map-section::after {
-  bottom: 0;
-}
-
-/* || NARRATIVE.HTML STYLING || */
-/* ITEMS CARD frame styling (squared) */
-
-/* Card wrapper */
-#narrative-items .card {
-  position: relative;      /* required for pseudo-elements */
-  display: block;
-  z-index: 1;
-  border-radius: 0;        /* squared corners */
-  overflow: visible;       /* allow frame to extend outside card */
-  text-decoration: none;
-  background: white;       /* keep content visible */
-  padding: 12px;           /* prevent border from touching content */
-  color: black;            /* card text color */
-}
-
-/* Single black line frame */
-#narrative-items .card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 0;        /* squared border */
-  border: 2px solid black; /* black frame */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Ensure images and card body are above the frame */
-#narrative-items .card > img,
-#narrative-items .card > .card-body {
-  position: relative;
+  background-color: #000;
   z-index: 1;
 }
 
-/* Hover effect */
-#narrative-items .card:hover {
-  transform: translateY(-4px)!important;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.4),
-    inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
-  transition: transform
-}
+/* Thin Separators (Header/Footer) */
+header::after { bottom: 0; height: 2px; }
+footer::before { top: 0; height: 2px; }
 
-/* || MAP SECTION STYLING || */
-/* Map container squared border */
-#map {
-  width: 100%;
-  height: 600px;           /* adjust height as needed */
-  border: 2px solid black; /* black border */
-  border-radius: 0;        /* squared corners */
-  overflow: hidden;        /* clip anything outside */
-}
+/* Thick Separators (Hero/Map) */
+.hero::before, #map-section::before { top: 0; height: 6px; }
+.hero::after, #map-section::after { bottom: 0; height: 6px; }
 
-/* || ITEM.HTML STYLING */
-/* SECTIONs squared black frame using ::before */
+/* Position Contexts */
+.hero, #map-section { position: relative; }
+
+/* || FRAMES: BLACK BORDER BOXES || */
+/* Shared logic for Index Cards, Narrative Cards, and Item Sections */
+.card[data-narrative-id],
+#narrative-items .card,
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
 #metadata-table-wrapper {
   position: relative;
-  border-radius: 0;        /* squared corners */
+  border-radius: 0;
   overflow: visible;
   background: white;
-  padding: 12px;
-  margin-bottom: 1rem;
   z-index: 1;
+  padding: 12px;
+  display: block;
+}
+
+/* Specific margins */
+#item-image-wrapper,
+#item-text-section,
+#item-related-media,
+#metadata-table-wrapper {
+  margin-bottom: 1rem;
   box-sizing: border-box;
 }
 
-/* Simple black border via ::before */
+/* The Black Border Pseudo-element */
+.card[data-narrative-id]::before,
+#narrative-items .card::before,
 #item-image-wrapper::before,
 #item-text-section::before,
 #item-related-media::before,
 #metadata-table-wrapper::before {
   content: "";
   position: absolute;
-  inset: 0;               /* top:0; left:0; right:0; bottom:0; */
-  border-radius: 0;       /* squared corners */
-  border: 2px solid black; /* single black border */
+  inset: 0; /* top/right/bottom/left: 0 */
+  border-radius: 0;
+  border: 2px solid black;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2; /* Sits on top of content background but below text if z-indexed correctly */
 }
 
-/* Ensure content is above border */
+/* Fix Z-Index for content availability */
+#narrative-items .card::before,
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#metadata-table-wrapper::before {
+  z-index: 0; /* Move frame behind content for item/narrative cards */
+}
+.card[data-narrative-id]::before { z-index: 2; } /* Keep index card frame on top (border effect) */
+
+/* Content Stacking */
+#narrative-items .card > img,
+#narrative-items .card > .card-body,
 #item-image-wrapper > *,
 #item-text-section > *,
 #item-related-media > *,
 #metadata-table-wrapper > * {
   position: relative;
   z-index: 1;
-  background: transparent;
 }
 
-/* Squared metadata table */
-#metadata-table {
-  border-radius: 0 !important;
-  overflow: hidden;
+/* Hover Effects */
+.card[data-narrative-id]:hover,
+#narrative-items .card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18) !important;
+  cursor: pointer;
+}
+/* Narrative card specific shadow override */
+#narrative-items .card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
 }
 
-/*|| BUTTONS AND LINKS STYLING in item.html ||*/
-/* UNDER IMAGE NAVIGATION BUTTONS*/
-/* Default: yellow fill, red border, black text */
+
+/* || YELLOW BOX COMPONENTS || */
+/* Shared style for Item Header and Map Title */
+#item-header,
+#map-section h2 {
+  background-color: #f7e13d;
+  border: 3px solid black;
+  border-radius: 0;
+  color: #000;
+  text-align: center;
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  display: block;
+}
+
+#item-header {
+  position: relative;
+  width: 48%;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+#map-section h2 {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+
+/* || BUTTONS & LINKS || */
+/* Navigation Buttons */
 #item-nav .btn-primary {
-  background-color: #fddb00;  /* yellow, same as logo */
-  border: 2px solid #de0313;  /* red border */
-  color: #000;                 /* black text */
+  background-color: #fddb00;
+  border: 2px solid #de0313;
+  color: #000;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover: slightly darker yellow */
 #item-nav .btn-primary:hover:not(:disabled) {
-  background-color: #f5d100;  /* slightly darker yellow */
-  border-color: #de0313;      /* keep red border */
-  transform: translateY(-1px); /* subtle lift */
+  background-color: #f5d100;
+  border-color: #de0313;
+  transform: translateY(-1px);
 }
 
-/* Disabled buttons: pale yellow */
 #item-nav .btn-primary:disabled {
   background-color: #fff8b0;
   border-color: #de0313;
   color: #ccc;
 }
 
-/* ADULT / KID BUTTONS STYLING */
-/* Adult button default (outline) */
-#adult-kid-buttons #btn-adult {
-  border: 2px solid #de0313; /* red border */
-  color: #de0313;            /* red text */
+/* Adult/Kid Toggle Buttons */
+#adult-kid-buttons .btn {
   background-color: transparent;
   transition: background-color 0.3s ease, color 0.2s ease;
+  transform: none;
+  box-shadow: none;
 }
-
-/* Adult button hover / focus / active */
+/* Adult */
+#adult-kid-buttons #btn-adult { border: 2px solid #de0313; color: #de0313; }
 #adult-kid-buttons #btn-adult:hover,
 #adult-kid-buttons #btn-adult:focus,
 #adult-kid-buttons #btn-adult.active {
-  background-color: #fddb00; /* yellow fill (same as logo) */
-  color: #000 !important;    /* black text */
-  border-color: #de0313;     /* red border */
-  transform: translateY(-1px);
-  box-shadow: none;
+  background-color: #fddb00; color: #000 !important; border-color: #de0313; transform: translateY(-1px);
 }
-
-/* Kid button default (grey like Too Hard / Too Easy) */
-#adult-kid-buttons #btn-kid {
-  border: 2px solid #6c757d; /* Bootstrap grey */
-  color: #6c757d;
-  background-color: transparent;
-  transition: background-color 0.3s ease, color 0.2s ease;
-}
-
-/* Kid button hover / focus / active */
+/* Kid */
+#adult-kid-buttons #btn-kid { border: 2px solid #6c757d; color: #6c757d; }
 #adult-kid-buttons #btn-kid:hover,
 #adult-kid-buttons #btn-kid:focus,
 #adult-kid-buttons #btn-kid.active {
-  background-color: #6c757d; /* grey fill */
-  color: #fff !important;    /* white text */
-  border-color: #6c757d;
-  transform: translateY(-1px);
-  box-shadow: none;
+  background-color: #6c757d; color: #fff !important; border-color: #6c757d; transform: translateY(-1px);
 }
 
-/* TEXT SECTION LINKS */
-/* Default: red text */
+/* Text Links */
 #text-content a,
 #text-content a#btn-toggle-length,
 tr[data-key="other-narrative"] a {
@@ -396,202 +267,106 @@ tr[data-key="other-narrative"] a {
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover: darker red */
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {
-  color: #a8000f !important;  /* darker red */
+  color: #a8000f !important;
   transform: translateY(-1px);
 }
 
-/* || TYPOGRAPHY ||*/
 
-/*================= TITLE STYLING =================*/
-
-/* Hero section titles */
-.hero h1 {
-  font-family: 'Bangers', cursive !important;  /* comic style */
-  font-size: 8rem;                              /* adjust size for hero */
-  line-height: 1.1;
-  letter-spacing: 5px;                          /* more spacing for readability */
-  margin-bottom: 1rem;
+/* || MAP & TABLES || */
+#map {
+  width: 100%;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 0;
+  overflow: hidden;
 }
 
-.outlined {
-  color: #f7e13d;
-  text-shadow:
-    2px 2px 0 #de0313,
-   -2px 2px 0 #de0313,
-    2px -2px 0 #de0313,
-   -2px -2px 0 #de0313;
+#metadata-table {
+  border-radius: 0 !important;
+  overflow: hidden;
 }
 
-.hero p.lead {
-  font-family: 'Bangers', cursive !important;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1.4;
+#narrative-info {
+  display: block;
+  margin: 4rem auto;
+  max-width: 700px;
+  width: 90%;
 }
 
-/* Card titles (main titles, not captions) */
-.card-title {
-  font-family: 'Bangers', cursive !important;
-  font-weight: 700;
-}
 
-/* Narrative page main titles */
-#narrative-title {
-  font-family: 'Bangers', cursive !important;
-  font-size: 5rem;
-  line-height: 1.2;
-  letter-spacing: 2px;
-}
+/* || TYPOGRAPHY || */
 
-#narrative-description {
-  font-family: 'Comic Relief', cursive !important;
-  font-weight: 400;
-  line-height: 1.6;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-/* Item page title and description */
-#item-header p {
-  font-family: 'Comic Relief', cursive !important;
-  font-weight: 400;
-  line-height: 1.6;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-/* Metadata table TH labels */
-#metadata-table th {
-  font-family: 'Bangers', cursive !important;
-  font-weight: 600;
-  font-size: 20px !important;
-}
-
-/* Text section h3 titles */
-#item-text-section h3 {
-  font-family: 'Bangers', cursive !important;
-  font-weight: 600;
-  font-size: 30px !important;
-}
-
-/* Related media section h5 */
+/* 1. Bangers (Headings) */
+.hero h1,
+.hero p.lead,
+.card-title,
+#narrative-title,
+#metadata-table th,
+#item-text-section h3,
 #item-related-media h5 {
   font-family: 'Bangers', cursive !important;
-  font-weight: 600;
-  font-size: 30px !important;
 }
 
-/*================= CAPTIONS STYLING =================*/
-
-/* Narrative items card titles (captions) */
-#narrative-items .card-title {
-  font-family: 'Comic Neue', cursive !important;
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0;
-  line-height: 1.2;
-  color: #333;
-  text-transform: uppercase;
-}
-
-/* Related media card titles */
-#item-related-media .card-title {
-  font-family: 'Comic Neue', cursive !important;
-  font-weight: 700;
-  font-size: 1rem;
-  margin: 0;
-  line-height: 1.2;
-  color: #333;
-  text-transform: uppercase;
-}
-
-/* Map tooltip card titles */
+/* 2. Comic Neue (UI/Captions) */
+/* (Includes #item-header, #map-section h2 defined above) */
+#narrative-items .card-title,
+#item-related-media .card-title,
 #map-section .item-card-hover p {
   font-family: 'Comic Neue', cursive !important;
   font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0;
   line-height: 1.2;
-  color: #333;
   text-transform: uppercase;
 }
 
-/*================= BODY TEXT STYLING =================*/
-
-/* Default text */
+/* 3. Comic Relief (Body) */
 body,
 p,
 li,
 td,
 th,
+#narrative-description,
+#item-header p,
 #item-description,
 #text-content,
 .card-text,
-.item-card-hover img + p {
+.item-card-hover img + p,
+.card.path-card .card-body .card-text {
   font-family: 'Comic Relief', cursive !important;
   font-weight: 400;
   line-height: 1.6;
   font-size: 15px;
-  text-transform: uppercase; /* make all text uppercase */
+  text-transform: uppercase;
 }
-
-/* Override card text inside narrative cards */
-.card.path-card .card-body .card-text {
-  font-family: 'Comic Relief', cursive !important;
-  font-weight: 400 !important;
-  line-height: 1.6 !important;
-  font-size: 15px !important;
-  text-transform: uppercase !important;
-}
-
-/* Optional: headings that aren’t main titles */
+/* Heading overrides for Comic Relief base */
 h2, h3, h4, h5, h6 {
   font-family: 'Comic Relief', cursive !important;
   font-weight: 400;
   font-size: 25px;
 }
 
-/* || COMIC CAPTION-LIKE SQUARED STYLING FOR ITEM HEADER + MAP TITLE || */
-#map-section h2,
-#item-header {
-  display: block;             /* span full width */
-  width: 100%;
-  padding: 1rem 0;
-  background-color: #f7e13d; /* yellow fill */
-  border: 3px solid black;    /* black border */
-  border-radius: 0;           /* squared corners */
-  font-family: 'Comic Neue', cursive !important;
-  font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  letter-spacing: 2px;
-  color: #000;                /* black text */
-  text-align: center;
-  margin-bottom: 2rem;
+/* Specific Typographic Tweaks */
+.hero h1 { font-size: 8rem; line-height: 1.1; letter-spacing: 5px; margin-bottom: 1rem; }
+.hero p.lead { font-weight: 700; font-size: 30px; line-height: 1.4; }
+.card-title { font-weight: 700; }
+#narrative-title { font-size: 5rem; line-height: 1.2; letter-spacing: 2px; }
+#metadata-table th { font-weight: 600; font-size: 20px !important; }
+#item-text-section h3, #item-related-media h5 { font-weight: 600; font-size: 30px !important; }
+
+/* Outlined Text Effect (Hero) */
+.outlined {
+  color: #f7e13d;
+  text-shadow: 2px 2px 0 #de0313, -2px 2px 0 #de0313, 2px -2px 0 #de0313, -2px -2px 0 #de0313;
 }
 
-/* ITEM PAGE: left-aligned */
-#item-header {
-  display: block;
-  position: relative; /* needed for side bumps */
-  width: 48%;         /* desktop width */
-  margin: 2rem 0;     /* vertical spacing */
-}
-
-/* || COMIC BALLOON CAPTION FOR NARRATIVE CARDS || */
-/* || COMIC BALLOON CAPTION FOR NARRATIVE CARDS || */
+/* SPEECH BUBBLE TITLES (Narrative Items) */
 #narrative-items .card-title {
-  font-family: 'Comic Neue', cursive !important;
-  font-weight: 700;
   font-size: 1.4rem;
-  line-height: 1.2;
   color: #000;
-  background-color: #fff;      /* white balloon */
-  border: 2px solid #000;      /* black outline */
+  background-color: #fff;
+  border: 2px solid #000;
   border-radius: 12px;
   padding: 0.5rem 1rem;
   display: inline-block;
@@ -600,70 +375,48 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-/* Black outline for pointer */
 #narrative-items .card-title::before {
   content: "";
   position: absolute;
-  top: -12px;       /* distance from balloon */
-  left: 50%;
+  top: -12px; left: 50%;
   transform: translateX(-50%);
-  border-width: 0 10px 12px 10px;  /* triangle size */
+  border-width: 0 10px 12px 10px;
   border-style: solid;
-  border-color: transparent transparent #000 transparent; /* black pointer */
+  border-color: transparent transparent #000 transparent;
   z-index: 0;
 }
 
-/* White inner pointer */
 #narrative-items .card-title::after {
   content: "";
   position: absolute;
-  top: -10px;       /* slightly below the black outline */
-  left: 50%;
+  top: -10px; left: 50%;
   transform: translateX(-50%);
-  border-width: 0 8px 10px 8px;   /* slightly smaller than black outline */
+  border-width: 0 8px 10px 8px;
   border-style: solid;
-  border-color: transparent transparent #fff transparent; /* match balloon bg */
+  border-color: transparent transparent #fff transparent;
   z-index: 1;
 }
 
-/* || MOBILE LAYOUT ||*/
-/* NARRATIVE PAGE: centered */
-#narrative-info {
-  display: block;
-  margin: 4rem auto; /* vertical + center */
-  max-width: 700px;
-  width: 90%;
+/* Map Tooltip Text */
+#map-section .item-card-hover p {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #333;
 }
 
-/* mobile responsivness */
+
+/* || RESPONSIVE || */
 @media (max-width: 768px) {
   #narrative-info {
-    width: 95%;       /* almost full width */
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
     padding: 1rem 1.5rem;
   }
 
   #item-header {
-    width: 100%;         /* full width of container */
-    max-width: 700px;    /* optional max width */
-    margin: 2rem auto;   /* vertical + horizontal centering */
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
     padding: 1rem 1.5rem;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
   }
-
-  /* Adjust bumps for smaller width */
-  #item-header::before,
-  #item-header::after,
-  #narrative-info::before,
-  #narrative-info::after {
-    width: 18px;
-    height: 18px;
-  }
-
-  #item-header::before,
-  #narrative-info::before { left: -9px; }
-  #item-header::after,
-  #narrative-info::after { right: -9px; }
 }

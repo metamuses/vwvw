@@ -1,26 +1,57 @@
 /* || GENERAL STYLES ||*/
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap'); /* for titles */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');   /* for captions */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap'); /* for body text */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap'); /* Titles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');   /* Captions */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap'); /* Body */
 
-/* HEADER + FOOTER BASE+ NAVBAR color background*/
-header {
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%);
+/* || BACKGROUNDS || */
+
+/* Page Backgrounds */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Narrative Page: Green Gradient */
+body.narrative-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #c9e5a3 0%, #b4d88a 25%, #9cca6e 55%, #82b859 80%, #6fa646 100%);
   background-repeat: no-repeat;
-  background-size: 100% 100%; /* copre tutta l’altezza e larghezza */
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* Item Page: Grey Gradient */
+body.item-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 25%, #a0a0a0 55%, #808080 80%, #666666 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* Narrative Card Section Background (Index) */
+.container-fluid.py-5,
+body.narrative-page #map-section {
+  background-color: #d1d3d4; /* Soft grey base */
+}
+.container-fluid.py-5 { padding-top: 4rem; padding-bottom: 4rem; }
+
+
+/* || HEADER & FOOTER || */
+header,
+header.bg-light nav.navbar {
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%) !important;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+header {
   margin: 0;
   padding: 1.5rem 0;
   box-sizing: border-box;
   position: relative;
   z-index: auto;
-}
-
-/* For header */
-header.bg-light nav.navbar {
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%) !important;
-  background-repeat: no-repeat;
 }
 
 footer {
@@ -30,307 +61,93 @@ footer {
   width: 100%;
   box-sizing: border-box;
   background-color: #83482c;
-
-  /* Roots effect coming from the TOP now */
+  /* Roots effect */
   background-image:
-    radial-gradient(ellipse 8px 90px at 5% 0%, #4b2e1f 0%, transparent 70%),   /* tall & dark */
-    radial-gradient(ellipse 6px 50px at 15% 0%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
-    radial-gradient(ellipse 10px 100px at 25% 0%, #3f2617 0%, transparent 70%),/* taller & darkest */
-    radial-gradient(ellipse 8px 70px at 40% 0%, #59341f 0%, transparent 70%),  /* medium */
-    radial-gradient(ellipse 6px 60px at 60% 0%, #6e3f2a 0%, transparent 70%),  /* short & lighter */
-    radial-gradient(ellipse 10px 90px at 75% 0%, #4b2e1f 0%, transparent 70%), /* tall & dark */
-    radial-gradient(ellipse 8px 80px at 90% 0%, #59341f 0%, transparent 70%);  /* medium-tall */
-
+    radial-gradient(ellipse 8px 90px at 5% 0%, #4b2e1f 0%, transparent 70%),
+    radial-gradient(ellipse 6px 50px at 15% 0%, #6e3f2a 0%, transparent 70%),
+    radial-gradient(ellipse 10px 100px at 25% 0%, #3f2617 0%, transparent 70%),
+    radial-gradient(ellipse 8px 70px at 40% 0%, #59341f 0%, transparent 70%),
+    radial-gradient(ellipse 6px 60px at 60% 0%, #6e3f2a 0%, transparent 70%),
+    radial-gradient(ellipse 10px 90px at 75% 0%, #4b2e1f 0%, transparent 70%),
+    radial-gradient(ellipse 8px 80px at 90% 0%, #59341f 0%, transparent 70%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
-/*NAVBAR responsivness and styling*/
-/* Mobile full-width dropdown */
-@media (max-width: 991.98px) {
-  .navbar .dropdown-menu {
-    position: static;
-    width: 100%;
-    left: 0;
-    right: 0;
-    border-radius: 0;
-  }
-}
-
-/* Main links */
+/* || NAVBAR || */
 .navbar a.nav-link {
   color: #83482c;
   transition: color 0.3s ease, background-color 0.3s ease;
+  display: block;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0;
 }
 
-/* Hover effect on main links */
 .navbar a.nav-link:hover {
   color: #000;
   background-color: rgba(131, 72, 44, 0.3);
   border-radius: 6px;
 }
 
-/* Dropdown toggle */
-.navbar .dropdown-toggle {
-  color: #000;
-}
-
-/* Dropdown menu items (sub-nav) */
+.navbar .dropdown-toggle,
 .navbar .dropdown-menu .dropdown-item {
   color: #000;
-  transition: background-color 0.3s ease;
 }
 
-/* Hover on dropdown items */
+.navbar .dropdown-menu .dropdown-item { transition: background-color 0.3s ease; }
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: rgba(131, 72, 44, 0.3);
   color: #000;
 }
 
-/* Responsive navbar collapse border (mobile menu, hamburger) */
 .navbar-toggler {
   border: 2px solid rgba(131, 72, 44, 0.5) !important;
   border-radius: 6px;
 }
 
-/* Dropdown menu (sub-nav) */
 .navbar .dropdown-menu {
   position: absolute;
   z-index: 10;
-  border: 1px solid rgba(131, 72, 44, 0.3); /* semi-transparent #83482c */
+  border: 1px solid rgba(131, 72, 44, 0.3);
   border-radius: 6px;
-  background-color: #fff; /* keep white background */
+  background-color: #fff;
 }
 
-/* Restore breathing space on hover */
-.navbar a.nav-link {
-  display: block;               /* full width again */
-  padding: 0.5rem 1rem !important; /* restores breathing space */
-  border-radius: 0;             /* not needed when full width */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+  }
 }
 
-/*SEPARATION DECORATION*/
-/*header (bottom)*/
-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;        /* thickness of the line */
-  background-color: #000;  /* black */
-}
-
-/*footer (top)*/
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;        /* same thickness */
-  background-color: #000;
-}
-
-/* || INDEX.HMTL STYLING || */
-/*HERO SECTION sky-like*/
-.hero {
-  position: relative;
-  background-color: #4b89c4!important; /* base sky blue */
-  background-image:
-    /* small, light clouds */
-    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
-    radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 40% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 85% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%)!important;
-
-  background-repeat: no-repeat;
-  background-size: cover; /* fill the section */
-  color: white;
-  min-height: 60vh; /* ensure hero has enough height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* || HERO SECTION SEPARATION (top and bottom) */
-.hero {
-  position: relative;
-}
-
+/* || SEPARATORS (Black Lines) || */
+header::after,
+footer::before,
 .hero::before,
-.hero::after {
+.hero::after,
+#map-section::before,
+body.narrative-page #map-section::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: 2px;
-  background: black; /* solid black line */
-}
-
-.hero::before {
-  top: 0;
-}
-
-.hero::after {
-  bottom: 0;
-}
-
-/* NARRATIVE CARD*/
-/* Modern grey concrete background for narrative cards section */
-.container-fluid.py-5 {
-  background-color: #d1d3d4; /* soft grey base */
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-/* NARRATIVE CARD framing*/
-/* Base card: rounded */
-.card[data-narrative-id] {
-  position: relative;
-  border-radius: 12px;
-  overflow: visible;
-  background: white;
-  z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 12px;
-}
-
-/* Leafy-style frame (outside the card, like a border) */
-.card[data-narrative-id]::before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 16px; /* slightly larger than card */
-  pointer-events: none;
-  z-index: -1;
-
-  background: linear-gradient(
-    135deg,
-    #aabf66 0%,
-    #8ca343 40%,
-    #c2d574 70%,
-    #aabf66 100%
-  );
-
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.3),
-    inset 0 2px 4px rgba(255,255,255,0.3);
-}
-
-/* Inner matting stays inside */
-.card[data-narrative-id]::after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  border-radius: 8px;
-  background: white;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Hover effect */
-.card[data-narrative-id]:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.4),
-    inset 0 0 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-/* || MAP SECTION STYLING (index.html, narrative.html) */
-#map-section {
-  position: relative;
-}
-
-#map-section::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: black; /* solid black line */
-}
-
-#map-section::before {
-  top: 0;
-}
-
-#map-section::after {
-  bottom: 0;
-}
-
-/*MAP section background color INDEX.HTML*/
-body.home-page #map-section {
-  position: relative;
-  overflow: hidden;
-
-  /* grass-like background */
-  background: linear-gradient(
-    180deg,
-    #b7d98a 0%,   /* light grass */
-    #9ac867 40%,   /* mid grass */
-    #7fb44e 100%   /* deeper green */
-  );
-}
-
-/* Grass blades at the bottom */
-body.home-page #map-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 130px; /* thickness of the grass strip */
-  pointer-events: none;
-
-  background-image:
-    /* tall dark blades */
-    radial-gradient(ellipse 14px 95px at 5% 100%,  #4f7d2f 0%, transparent 70%),
-    radial-gradient(ellipse 16px 110px at 18% 100%, #3d6b24 0%, transparent 70%),
-    radial-gradient(ellipse 12px 85px at 32% 100%, #4a752b 0%, transparent 70%),
-
-    /* medium blades */
-    radial-gradient(ellipse 10px 70px at 48% 100%, #5f8e38 0%, transparent 70%),
-    radial-gradient(ellipse 12px 75px at 63% 100%, #6aa744 0%, transparent 70%),
-
-    /* short but darker */
-    radial-gradient(ellipse 8px 55px at 78% 100%,  #527f33 0%, transparent 70%),
-    radial-gradient(ellipse 11px 65px at 92% 100%, #3f6c25 0%, transparent 70%);
-
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-color: #000;
   z-index: 1;
 }
 
-#map {
-  background: white !important;
-  padding: 0;
-  border-radius: 12px; /* optional, looks nicer */
-}
+header::after { bottom: 0; }
+footer::before { top: 0; }
+.hero::before, #map-section::before { top: 0; }
+.hero::after, body.narrative-page #map-section::after { bottom: 0; }
 
 
-/* NARRATIVE.HTML STYLING*/
-/* Narrative info section — sky + clouds background */
-/* Reset section margins */
+/* || SKY BACKGROUNDS (Hero & Narrative Info) || */
+.hero,
 #narrative-info {
-  margin: 0 !important;               /* remove any default section margins */
   position: relative;
-  background-color: #4b89c4 !important;
+  background-color: #4b89c4 !important; /* base sky blue */
   background-image:
     radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
     radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
@@ -348,282 +165,239 @@ body.home-page #map-section::after {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero {
+  min-height: 60vh;
   text-align: center;
 }
 
-/* Map section — only on narrative page */
-body.narrative-page #map-section {
-  background-color: #d1d3d4 !important; /* soft grey base */
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+#narrative-info {
+  margin: 0 !important;
 }
 
-/* Keep the map itself white */
-body.narrative-page #map-section #map {
-  background: white;
-  border-radius: 10px;
-}
 
-/*map section in narrative page bottom border*/
-body.narrative-page #map-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: black; /* solid black line */
-}
+/* || FRAMES: LEAFY STYLE (Green Gradient) || */
+/* Used for: Index Cards, Item Sections, Narrative Map Wrapper */
 
-/*MAP border*/
-/* MAP leafy frame */
-body.narrative-page #map-section #map {
-  position: relative;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;         /* important for Leaflet tiles */
-  z-index: 1;
-}
-
-/* Outer leafy gradient frame */
-body.narrative-page #map-section #map::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
-  border-radius: 20px;       /* larger than map */
-  pointer-events: none;
-  z-index: -1;
-
-  background: linear-gradient(
-    135deg,
-    #aabf66 0%,
-    #8ca343 40%,
-    #c2d574 70%,
-    #aabf66 100%
-  );
-
-  box-shadow:
-    0 2px 6px rgba(0,0,0,0.25),
-    inset 0 2px 4px rgba(255,255,255,0.3);
-}
-
-/* Inner white matting (same as card) */
-body.narrative-page #map-section #map::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
-  border-radius: 12px;
-  background: white;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* ITEMS CARD background styling */
-/* Full-page grass background */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body.narrative-page {
-  min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    #c9e5a3 0%,
-    #b4d88a 25%,
-    #9cca6e 55%,
-    #82b859 80%,
-    #6fa646 100%
-  );
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* ensures a single smooth gradient */
-  background-size: 100% 100%;   /* prevents repeating lines */
-}
-
-/* ITEMS CARD frame styling */
-/* Card wrapper */
-#narrative-items .card {
-  position: relative;  /* required for ::before positioning */
-  display: block;      /* ensures stacking context for <a> */
-  z-index: 1;          /* stacking context */
-  border-radius: 12px;
-  overflow: visible;   /* let frame extend outside card */
-  text-decoration: none; /* remove underline */
-}
-
-/* Outer frame */
-#narrative-items .card::before {
-  content: "";
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  border-radius: 12px;
-  pointer-events: none;
-  z-index: 0;
-
-  /* Solar panel-like */
-  background-color: #0f1c2e;
-
-  /* Hex PNG overlay */
-  background-image: url('../../img/hex.png');
-  background-repeat: repeat;       /* tile the pattern */
-  background-position: center;
-  background-size: auto;           /* adjust if you want smaller/larger hexes */
-}
-
-/* Ensure images and body are above frame */
-#narrative-items .card > img,
-#narrative-items .card > .card-body {
-  position: relative;
-  z-index: 2;
-}
-
-/* Hover effect for extra depth */
-#narrative-items .card:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg)!important;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.4),
-    inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-#narrative-items .card .card-body,
-#narrative-items .card .card-body * {
-  color: #C8C8C8 !important;
-}
-
-/* || ITEM.HTML STYLING*/
-/*body background*/
-body.item-page {
-  min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    #e0e0e0 0%,   /* very light grey */
-    #c0c0c0 25%,  /* light grey */
-    #a0a0a0 55%,  /* medium grey */
-    #808080 80%,  /* darker grey */
-    #666666 100%  /* dark grey */
-  );
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* ensures a single smooth gradient */
-  background-size: 100% 100%;   /* prevents repeating lines */
-}
-
-/*SECTIONs styling*/
-/* =============================================
-   Leafy-style frames for item page sections
-   ============================================= */
+/* 1. Base Container Styling */
+.card[data-narrative-id],
 #item-image-wrapper,
 #item-text-section,
 #metadata-table-wrapper,
 #item-related-media {
   position: relative;
-  border-radius: 12px;   /* matches homepage card */
-  overflow: visible;     /* allow frame pseudo-elements */
+  border-radius: 12px;
+  overflow: visible;
   background: white;
   z-index: 1;
   padding: 12px;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Narrative Map specific */
+body.narrative-page #map-section #map {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Outer leafy frame */
+/* 2. Outer Gradient Frame (::before) */
+.card[data-narrative-id]::before,
 #item-image-wrapper::before,
 #item-text-section::before,
 #metadata-table-wrapper::before,
-#item-related-media::before {
+#item-related-media::before,
+body.narrative-page #map-section #map::before {
   content: "";
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 16px; /* slightly bigger than main section */
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 16px;
   pointer-events: none;
   z-index: -1;
-
-  background: linear-gradient(
-    135deg,
-    #aabf66 0%,
-    #8ca343 40%,
-    #c2d574 70%,
-    #aabf66 100%
-  );
-
-  box-shadow:
-    0 2px 4px rgba(0,0,0,0.3),
-    inset 0 2px 4px rgba(255,255,255,0.3);
+  background: linear-gradient(135deg, #aabf66 0%, #8ca343 40%, #c2d574 70%, #aabf66 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3);
+}
+/* Slight adjustment for map frame size */
+body.narrative-page #map-section #map::before {
+  top: -6px; left: -6px; right: -6px; bottom: -6px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25), inset 0 2px 4px rgba(255,255,255,0.3);
 }
 
-/* Inner matting stays white */
+/* 3. Inner White Matting (::after) */
+.card[data-narrative-id]::after,
 #item-image-wrapper::after,
 #item-text-section::after,
 #metadata-table-wrapper::after,
-#item-related-media::after {
+#item-related-media::after,
+body.narrative-page #map-section #map::after {
   content: "";
   position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
   border-radius: 8px;
   background: white;
   z-index: -1;
   pointer-events: none;
 }
-
-/* squared metadata table */
-#metadata-table {
-  border-radius: 0 !important;  /* force square */
-  overflow: hidden;
+/* Map matting specific */
+body.narrative-page #map-section #map::after {
+  top: 8px; left: 8px; right: 8px; bottom: 8px;
+  border-radius: 12px;
 }
 
-/* || SOLAR PANEL- LIKE STYLING of title + description in item.html ||  */
+/* 4. Hover Effects */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Item Specific Margins */
+#item-image-wrapper,
+#item-text-section,
+#metadata-table-wrapper,
+#item-related-media {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* || FRAMES: SOLAR PANEL STYLE (Dark Blue + Hex) || */
+/* Used for: Narrative Items and Item Header */
+
+/* 1. Narrative Items Card Wrapper */
+#narrative-items .card {
+  position: relative;
+  display: block;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: visible;
+  text-decoration: none;
+}
+
+/* 2. Solar Background/Frame */
+/* Applied via ::before for Cards (to allow overflow/border effect) */
+#narrative-items .card::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: -8px; right: -8px; bottom: -8px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+  background-color: #0f1c2e;
+  background-image: url('../../img/hex.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+/* Applied directly for Item Header */
 #item-header {
   position: relative;
-  padding: 1.2rem 2rem;
   border-radius: 12px;
   border: 2px solid #C8C8C8;
   color: #C8C8C8;
   background-color: #0f1c2e;
-
-  /* Hex PNG overlay */
   background-image: url('../../img/hex.png');
-  background-repeat: repeat;       /* tile the pattern */
+  background-repeat: repeat;
   background-position: center;
-  background-size: auto;           /* adjust if you want smaller/larger hexes */
+  background-size: auto;
+  display: block;
+  width: 48%;
+  margin: 2rem 0;
+  padding: 1.2rem 2rem;
+  z-index: 1;
 }
 
+/* 3. Content Visibility */
+#narrative-items .card > img,
+#narrative-items .card > .card-body,
 #item-header > * {
   position: relative;
-  z-index: 1;                      /* keep text above the PNG */
-  color: #C8C8C8;
+  z-index: 2;
 }
 
-/* ITEM PAGE: left-aligned */
-#item-header {
-  display: block;
-  width: 48%;         /* desktop width */
-  margin: 2rem 0;     /* vertical spacing */
+/* 4. Text Color Override */
+#narrative-items .card .card-body,
+#narrative-items .card .card-body *,
+#item-header > * {
+  color: #C8C8C8 !important;
 }
 
-/*|| BUTTONS AND LINKS STYLING in item.html ||*/
-/* filled button */
-#adult-kid-buttons .btn-primary {
-  background-color: #7fb44e !important;  /* new green */
+/* 5. Hover Effects */
+#narrative-items .card:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg)!important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* || MAP SECTION (Index Page) || */
+body.home-page #map-section {
+  position: relative;
+  overflow: hidden;
+  /* Grass Gradient */
+  background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
+}
+
+#map-section #map {
+  background: white !important;
+  padding: 0;
+  border-radius: 12px;
+}
+
+/* Grass Blades Decoration */
+body.home-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 130px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse 14px 95px at 5% 100%,  #4f7d2f 0%, transparent 70%),
+    radial-gradient(ellipse 16px 110px at 18% 100%, #3d6b24 0%, transparent 70%),
+    radial-gradient(ellipse 12px 85px at 32% 100%, #4a752b 0%, transparent 70%),
+    radial-gradient(ellipse 10px 70px at 48% 100%, #5f8e38 0%, transparent 70%),
+    radial-gradient(ellipse 12px 75px at 63% 100%, #6aa744 0%, transparent 70%),
+    radial-gradient(ellipse 8px 55px at 78% 100%,  #527f33 0%, transparent 70%),
+    radial-gradient(ellipse 11px 65px at 92% 100%, #3f6c25 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+
+/* || BUTTONS & LINKS (Nature Green) || */
+
+/* Filled Green Buttons */
+#adult-kid-buttons .btn-primary,
+#item-nav .btn-primary {
+  background-color: #7fb44e !important;
   border-color: #7fb44e !important;
-  color: #fff !important;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+/* Override text color for top buttons */
+#adult-kid-buttons .btn-primary { color: #fff !important; }
+
+/* Hover States */
+#item-nav .btn-primary:hover:not(:disabled) {
+  background-color: #69963c !important;
+  border-color: #69963c !important;
+  transform: translateY(-1px);
 }
 
-/* outline button */
+/* Disabled States */
+#item-nav .btn-primary:disabled {
+  background-color: #b7d3a1 !important;
+  border-color: #b7d3a1 !important;
+  color: #ccc;
+}
+
+/* Outline Buttons */
 #adult-kid-buttons .btn-outline-primary {
   border-color: #7fb44e !important;
   color: #7fb44e !important;
@@ -634,73 +408,51 @@ body.item-page {
   color: #fff !important;
 }
 
-/* under image navigation button*/
-/* Default style: filled, black text */
-#item-nav .btn-primary {
-  background-color: #7fb44e; /* fill */
-  border-color: #7fb44e;
-  color: #000;               /* black text */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover state: slightly darker */
-#item-nav .btn-primary:hover:not(:disabled) {
-  background-color: #69963c; /* slightly darker green */
-  border-color: #69963c;
-  transform: translateY(-1px); /* subtle lift */
-}
-
-/* Disabled buttons: muted */
-#item-nav .btn-primary:disabled {
-  background-color: #b7d3a1; /* pale green */
-  border-color: #b7d3a1;
-  color: #ccc;
-}
-
-/* links */
-/* Apply to dynamically generated Read More / Read Less links and other narrative links */
+/* Text Links */
 #text-content a,
 #text-content a#btn-toggle-length,
 tr[data-key="other-narrative"] a {
-  color: #7fb44e !important;        /* new green */
-  text-decoration: none !important; /* remove underline */
+  color: #7fb44e !important;
+  text-decoration: none !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover state: slightly darker */
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {
-  color: #69963c !important;        /* darker on hover */
-  transform: translateY(-1px);      /* subtle lift */
+  color: #69963c !important;
+  transform: translateY(-1px);
 }
 
-/* || TYPOGRAPHY ||*/
-/*TITLE*/
+
+/* || TYPOGRAPHY || */
+
+/* 1. Rubik Glitch Pop (Titles) */
 .hero h1,
-#narrative-title{
+#narrative-title {
   font-family: 'Rubik Glitch Pop', cursive !important;
-  font-size: 6rem !important;
+  font-size: 3.5rem !important;
   line-height: 1.1;
   letter-spacing: 5px;
   margin-bottom: 1rem;
   text-align: center;
 }
+.hero h1 { font-size: 6rem !important; }
 
-/*SUBTITLE and CAPTION*/
+/* 2. Orbitron (Subtitles/Captions) */
 .hero p.lead,
 .card-title,
 #map-section h2,
 #item-title,
 #metadata-table th,
 .h5,
-.card-header{
+.card-header {
   font-family: 'Orbitron', sans-serif !important;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-/*BODY*/
+/* 3. Courier Prime (Body) */
 body,
 p,
 li,
@@ -716,31 +468,18 @@ th,
   font-size: 15px;
 }
 
-/* || MOBILE LAYOUT ||*/
-/* NARRATIVE PAGE: centered */
-/* mobile responsivness */
-@media (max-width: 768px) {
-  #item-header {
-    width: 100%;         /* full width of container */
-    max-width: 700px;    /* optional max width */
-    margin: 2rem auto;   /* vertical + horizontal centering */
-    padding: 1rem 1.5rem;
-    left: 0;
-    right: 0;
-  }
-
-  /* Adjust bumps for smaller width */
-  #item-header::before,
-  #item-header::after,
-  #narrative-info::before,
-  #narrative-info::after {
-    width: 18px;
-    height: 18px;
-  }
-
-  #item-header::before,
-  #narrative-info::before { left: -9px; }
-  #item-header::after,
-  #narrative-info::after { right: -9px; }
+#metadata-table {
+  border-radius: 0 !important;
+  overflow: hidden;
 }
 
+/* || RESPONSIVE || */
+@media (max-width: 768px) {
+  #item-header {
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    left: 0; right: 0;
+  }
+}
