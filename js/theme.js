@@ -6,13 +6,15 @@ export function switchTheme(themeName) {
   const newLink = document.createElement("link");
   newLink.rel = "stylesheet";
   newLink.href = "css/themes/" + themeName + ".css";
-  newLink.id = "theme-css";
 
   // when the new stylesheet is loaded, remove the old one
   newLink.onload = function () {
     if (oldLink && oldLink.parentNode) {
       oldLink.parentNode.removeChild(oldLink);
     }
+
+    // assign the ID now that the old one is gone to ensure uniqueness
+    newLink.id = "theme-css";
 
     // save the selected theme to localStorage
     localStorage.setItem("activeTheme", themeName);
@@ -38,7 +40,7 @@ export function switchTheme(themeName) {
 
 export function initTheme() {
   const defaultTheme = "70s-punk";
-  const activeTheme = localStorage.getItem("activeTheme");
+  const activeTheme = localStorage.getItem("activeTheme") || defaultTheme;
 
   // add click listeners for dropdown items
   const themeMenuItems = document.querySelectorAll("#theme-menu .dropdown-item");
@@ -49,5 +51,5 @@ export function initTheme() {
     });
   });
 
-  switchTheme(activeTheme || defaultTheme);
+  switchTheme(activeTheme);
 }
