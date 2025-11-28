@@ -532,7 +532,7 @@
     "historical": {
       "title": "Historical narrative",
       "description": "This is the historical narrative.",
-      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
+      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
     },
     "made-by": {
       "title": "Made by Vivienne narrative",
