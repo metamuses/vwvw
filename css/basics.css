@@ -490,3 +490,24 @@ footer {
     margin-top: 0.5rem;
   }
 
+/* =======================================
+   INFO PAGE & UTILITIES
+   ======================================= */
+
+/* Smooth Scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor positioning offset */
+/* Ensures the Fixed Header doesn't cover the section title when scrolling */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Team Member Images */
+.team-img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
