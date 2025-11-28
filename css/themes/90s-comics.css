@@ -7,7 +7,8 @@
 body { background-color: white; }
 body.home-page { background-color: #3262b2 !important; }
 body.narrative-page,
-body.item-page { background-color: white !important; }
+body.item-page,
+body.info-page { background-color: white !important; }
 
 /* || LAYOUT BASICS (Header/Footer) || */
 header,
@@ -109,13 +110,17 @@ footer::before { top: 0; height: 2px; }
 .hero, #map-section { position: relative; }
 
 /* || FRAMES: BLACK BORDER BOXES || */
-/* Shared logic for Index Cards, Narrative Cards, and Item Sections */
+/* Shared logic for Index Cards, Narrative Cards, Item Sections, Info Sections, and Team Member Cards */
 .card[data-narrative-id],
 #narrative-items .card,
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
-#metadata-table-wrapper {
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team,
+#team .card {
   position: relative;
   border-radius: 0;
   overflow: visible;
@@ -129,7 +134,10 @@ footer::before { top: 0; height: 2px; }
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
-#metadata-table-wrapper {
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team {
   margin-bottom: 1rem;
   box-sizing: border-box;
 }
@@ -140,7 +148,11 @@ footer::before { top: 0; height: 2px; }
 #item-image-wrapper::before,
 #item-text-section::before,
 #item-related-media::before,
-#metadata-table-wrapper::before {
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
   content: "";
   position: absolute;
   inset: 0; /* top/right/bottom/left: 0 */
@@ -150,36 +162,47 @@ footer::before { top: 0; height: 2px; }
   z-index: 2; /* Sits on top of content background but below text if z-indexed correctly */
 }
 
-/* Fix Z-Index for content availability */
+/* Fix Z-Index for content availability (Move frame behind content) */
 #narrative-items .card::before,
 #item-image-wrapper::before,
 #item-text-section::before,
 #item-related-media::before,
-#metadata-table-wrapper::before {
-  z-index: 0; /* Move frame behind content for item/narrative cards */
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
+  z-index: 0;
 }
 .card[data-narrative-id]::before { z-index: 2; } /* Keep index card frame on top (border effect) */
 
 /* Content Stacking */
 #narrative-items .card > img,
 #narrative-items .card > .card-body,
+#team .card > img,
+#team .card > .card-body,
 #item-image-wrapper > *,
 #item-text-section > *,
 #item-related-media > *,
-#metadata-table-wrapper > * {
+#metadata-table-wrapper > *,
+#documentation > *,
+#disclaimer > *,
+#team > * {
   position: relative;
   z-index: 1;
 }
 
 /* Hover Effects */
 .card[data-narrative-id]:hover,
-#narrative-items .card:hover {
+#narrative-items .card:hover,
+#team .card:hover {
   transform: translateY(-4px) !important;
   box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18) !important;
   cursor: pointer;
 }
-/* Narrative card specific shadow override */
-#narrative-items .card:hover {
+/* Narrative & Team card specific shadow override */
+#narrative-items .card:hover,
+#team .card:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -306,13 +329,17 @@ tr[data-key="other-narrative"] a:hover {
 #narrative-title,
 #metadata-table th,
 #item-text-section h3,
-#item-related-media h5 {
+#item-related-media h5,
+#documentation h1,
+#disclaimer h1,
+#team h1 {
   font-family: 'Bangers', cursive !important;
 }
 
 /* 2. Comic Neue (UI/Captions) */
-/* (Includes #item-header, #map-section h2 defined above) */
+/* Includes Narrative Items and Team Member Names (Balloons) */
 #narrative-items .card-title,
+#team .card-title,
 #item-related-media .card-title,
 #map-section .item-card-hover p {
   font-family: 'Comic Neue', cursive !important;
@@ -361,8 +388,9 @@ h2, h3, h4, h5, h6 {
   text-shadow: 2px 2px 0 #de0313, -2px 2px 0 #de0313, 2px -2px 0 #de0313, -2px -2px 0 #de0313;
 }
 
-/* SPEECH BUBBLE TITLES (Narrative Items) */
-#narrative-items .card-title {
+/* SPEECH BUBBLE TITLES (Narrative Items & Team Members) */
+#narrative-items .card-title,
+#team .card-title {
   font-size: 1.4rem;
   color: #000;
   background-color: #fff;
@@ -375,7 +403,8 @@ h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-#narrative-items .card-title::before {
+#narrative-items .card-title::before,
+#team .card-title::before {
   content: "";
   position: absolute;
   top: -12px; left: 50%;
@@ -386,7 +415,8 @@ h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
-#narrative-items .card-title::after {
+#narrative-items .card-title::after,
+#team .card-title::after {
   content: "";
   position: absolute;
   top: -10px; left: 50%;

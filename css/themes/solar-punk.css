@@ -21,8 +21,9 @@ body.narrative-page {
   background-size: 100% 100%;
 }
 
-/* Item Page: Grey Gradient */
-body.item-page {
+/* Item Page & Info Page: Grey Gradient */
+body.item-page,
+body.info-page {
   min-height: 100vh;
   background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 25%, #a0a0a0 55%, #808080 80%, #666666 100%);
   background-repeat: no-repeat;
@@ -178,14 +179,17 @@ footer::before { top: 0; }
 
 
 /* || FRAMES: LEAFY STYLE (Green Gradient) || */
-/* Used for: Index Cards, Item Sections, Narrative Map Wrapper */
+/* Used for: Index Cards, Item Sections, Narrative Map Wrapper, and Info Sections */
 
 /* 1. Base Container Styling */
 .card[data-narrative-id],
 #item-image-wrapper,
 #item-text-section,
 #metadata-table-wrapper,
-#item-related-media {
+#item-related-media,
+#documentation,
+#disclaimer,
+#team {
   position: relative;
   border-radius: 12px;
   overflow: visible;
@@ -193,8 +197,9 @@ footer::before { top: 0; }
   z-index: 1;
   padding: 12px;
 }
+
 /* Narrative Map specific */
-body.narrative-page #map-section #map {
+#map-section #map {
   position: relative;
   background: white;
   border-radius: 16px;
@@ -208,6 +213,9 @@ body.narrative-page #map-section #map {
 #item-text-section::before,
 #metadata-table-wrapper::before,
 #item-related-media::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
 body.narrative-page #map-section #map::before {
   content: "";
   position: absolute;
@@ -218,6 +226,7 @@ body.narrative-page #map-section #map::before {
   background: linear-gradient(135deg, #aabf66 0%, #8ca343 40%, #c2d574 70%, #aabf66 100%);
   box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3);
 }
+
 /* Slight adjustment for map frame size */
 body.narrative-page #map-section #map::before {
   top: -6px; left: -6px; right: -6px; bottom: -6px;
@@ -231,6 +240,9 @@ body.narrative-page #map-section #map::before {
 #item-text-section::after,
 #metadata-table-wrapper::after,
 #item-related-media::after,
+#documentation::after,
+#disclaimer::after,
+#team::after,
 body.narrative-page #map-section #map::after {
   content: "";
   position: absolute;
@@ -254,21 +266,25 @@ body.narrative-page #map-section #map::after {
   cursor: pointer;
 }
 
-/* Item Specific Margins */
+/* Item/Info Specific Margins */
 #item-image-wrapper,
 #item-text-section,
 #metadata-table-wrapper,
-#item-related-media {
+#item-related-media,
+#documentation,
+#disclaimer,
+#team {
   margin-bottom: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 /* || FRAMES: SOLAR PANEL STYLE (Dark Blue + Hex) || */
-/* Used for: Narrative Items and Item Header */
+/* Used for: Narrative Items, Item Header, and Team Cards */
 
-/* 1. Narrative Items Card Wrapper */
-#narrative-items .card {
+/* 1. Card Wrappers */
+#narrative-items .card,
+#team .card {
   position: relative;
   display: block;
   z-index: 1;
@@ -279,7 +295,8 @@ body.narrative-page #map-section #map::after {
 
 /* 2. Solar Background/Frame */
 /* Applied via ::before for Cards (to allow overflow/border effect) */
-#narrative-items .card::before {
+#narrative-items .card::before,
+#team .card::before {
   content: "";
   position: absolute;
   top: -8px; left: -8px; right: -8px; bottom: -8px;
@@ -314,6 +331,8 @@ body.narrative-page #map-section #map::after {
 /* 3. Content Visibility */
 #narrative-items .card > img,
 #narrative-items .card > .card-body,
+#team .card > img,
+#team .card > .card-body,
 #item-header > * {
   position: relative;
   z-index: 2;
@@ -322,21 +341,28 @@ body.narrative-page #map-section #map::after {
 /* 4. Text Color Override */
 #narrative-items .card .card-body,
 #narrative-items .card .card-body *,
+#team .card .card-body,
+#team .card .card-body *,
 #item-header > * {
   color: #C8C8C8 !important;
 }
 
 /* 5. Hover Effects */
-#narrative-items .card:hover {
+#narrative-items .card:hover,
+#team .card:hover {
   transform: translateY(-4px) rotateX(1deg) rotateY(1deg)!important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-/* || MAP SECTION (Index Page) || */
-body.home-page #map-section {
+/* || MAP SECTION || */
+/* Added position: relative to fix missing/misplaced separator lines */
+#map-section {
   position: relative;
+}
+
+body.home-page #map-section {
   overflow: hidden;
   /* Grass Gradient */
   background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
@@ -446,7 +472,10 @@ tr[data-key="other-narrative"] a:hover {
 #item-title,
 #metadata-table th,
 .h5,
-.card-header {
+.card-header,
+#documentation h1,
+#disclaimer h1,
+#team h1 {
   font-family: 'Orbitron', sans-serif !important;
   font-weight: 700;
   text-transform: uppercase;

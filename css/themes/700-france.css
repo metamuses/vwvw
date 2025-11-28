@@ -163,12 +163,15 @@ footer::before,
 }
 
 /* || BAROQUE FRAME CONTAINERS || */
-/* Applies to Index Cards and Item Page Sections */
+/* Applies to Index Cards, Item Page Sections, and Info Page Sections */
 .card[data-narrative-id],
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
-#metadata-table-wrapper {
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team {
   position: relative;
   border-radius: 12px;
   overflow: visible;
@@ -190,7 +193,10 @@ footer::before,
 #item-image-wrapper::before,
 #item-text-section::before,
 #item-related-media::before,
-#metadata-table-wrapper::before {
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before {
   content: "";
   position: absolute;
   inset: 0; /* shorthand for top/right/bottom/left: 0 */
@@ -210,7 +216,10 @@ footer::before,
 #item-image-wrapper::after,
 #item-text-section::after,
 #item-related-media::after,
-#metadata-table-wrapper::after {
+#metadata-table-wrapper::after,
+#documentation::after,
+#disclaimer::after,
+#team::after {
   content: "";
   position: absolute;
   top: 6px; left: 6px; right: 6px; bottom: 6px;
@@ -226,7 +235,10 @@ footer::before,
 #item-image-wrapper > *,
 #item-text-section > *,
 #item-related-media > *,
-#metadata-table-wrapper > * {
+#metadata-table-wrapper > *,
+#documentation > *,
+#disclaimer > *,
+#team > * {
   position: relative;
   z-index: 2;
 }
@@ -241,8 +253,10 @@ footer::before,
   cursor: pointer;
 }
 
-/* || NARRATIVE ITEMS (Narrative.html) || */
-#narrative-items .card {
+/* || NARRATIVE ITEMS & TEAM CARDS || */
+/* Applies to Narrative Page Items and Info Page Team Cards */
+#narrative-items .card,
+#team .card {
   position: relative;
   display: block;
   z-index: 1;
@@ -250,17 +264,17 @@ footer::before,
   overflow: visible;
   text-decoration: none;
   padding: 12px;
-  /* Frame Logic */
 }
 
-#narrative-items .card::before {
+/* Frame Logic: 3D Metallic Gradient */
+#narrative-items .card::before,
+#team .card::before {
   content: "";
   position: absolute;
   top: -8px; left: -8px; right: -8px; bottom: -8px;
   border-radius: 12px;
   pointer-events: none;
   z-index: 0;
-  /* 3D Metallic Gradient */
   background:
     radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4), transparent 30%),
     radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.2), transparent 50%),
@@ -272,18 +286,26 @@ footer::before,
     0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Content Stacking */
 #narrative-items .card > img,
-#narrative-items .card > .card-body {
+#narrative-items .card > .card-body,
+#team .card > img,
+#team .card > .card-body {
   position: relative;
   z-index: 2;
 }
 
+/* Text Color Override (Gold) */
 #narrative-items .card .card-body,
-#narrative-items .card .card-body * {
+#narrative-items .card .card-body *,
+#team .card .card-body,
+#team .card .card-body * {
   color: #E3C382 !important;
 }
 
-#narrative-items .card:hover {
+/* Hover Effects */
+#narrative-items .card:hover,
+#team .card:hover {
   transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -414,12 +436,16 @@ tr[data-key="other-narrative"] a:hover {
 #item-header p,
 #metadata-table th,
 #item-text-section h3,
-#item-related-media h5 {
+#item-related-media h5,
+#documentation h1,
+#disclaimer h1,
+#team h1 {
   font-family: 'Libre Baskerville', serif !important;
 }
 
 /* Font Family: Tangerine (Captions/Script) */
 #narrative-items .card-title,
+#team .card-title,
 #item-related-media .card-title,
 #map-section .item-card-hover p {
   font-family: 'Tangerine', cursive !important;
@@ -427,7 +453,7 @@ tr[data-key="other-narrative"] a:hover {
   font-size: 1.4rem;
   line-height: 1.2;
 }
-#narrative-items .card-title { font-size: 1.5rem; }
+#narrative-items .card-title, #team .card-title { font-size: 1.5rem; }
 
 /* Font Family: Source Serif 4 (Body) */
 body,

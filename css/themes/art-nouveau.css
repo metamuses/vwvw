@@ -139,13 +139,17 @@ footer::before {
 
 
 /* || FRAMES: DOUBLE BORDER STYLE || */
-/* Shared logic for Index Cards, Narrative Cards, and Item Sections */
+/* Shared logic for Index Cards, Narrative Cards, Item Sections, Info Sections, and Team Cards */
 .card[data-narrative-id],
 #narrative-items .card,
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
-#metadata-table-wrapper {
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team,
+#team .card {
   position: relative;
   border-radius: 12px;
   overflow: visible;
@@ -154,17 +158,21 @@ footer::before {
   padding: 12px; /* Inner spacing to prevent line overlap */
 }
 
-/* Specific styling for Narrative Items (Links) */
-#narrative-items .card {
+/* Specific styling for Narrative Items & Team Cards (Links/Block) */
+#narrative-items .card,
+#team .card {
   display: block;
   text-decoration: none;
 }
 
-/* Specific styling for Item Sections (Margins) */
+/* Specific styling for Item Sections & Info Sections (Margins) */
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
-#metadata-table-wrapper {
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team {
   margin-bottom: 1rem;
 }
 
@@ -174,7 +182,11 @@ footer::before {
 #item-image-wrapper::before,
 #item-text-section::before,
 #item-related-media::before,
-#metadata-table-wrapper::before {
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
   content: "";
   position: absolute;
   inset: 0; /* top/right/bottom/left: 0 */
@@ -190,7 +202,11 @@ footer::before {
 #item-image-wrapper::after,
 #item-text-section::after,
 #item-related-media::after,
-#metadata-table-wrapper::after {
+#metadata-table-wrapper::after,
+#documentation::after,
+#disclaimer::after,
+#team::after,
+#team .card::after {
   content: "";
   position: absolute;
   top: -4px;
@@ -207,31 +223,39 @@ footer::before {
 .card[data-narrative-id] > *,
 #narrative-items .card > img,
 #narrative-items .card > .card-body,
+#team .card > img,
+#team .card > .card-body,
 #item-image-wrapper > *,
 #item-text-section > *,
 #item-related-media > *,
-#metadata-table-wrapper > * {
+#metadata-table-wrapper > *,
+#documentation > *,
+#disclaimer > *,
+#team > * {
   position: relative;
   z-index: 2;
 }
 
-/* Hover Effects (Cards only) */
-.card[data-narrative-id]:hover,
-#narrative-items .card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18) !important;
+/* Hover Effects (Index Cards) */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18);
   cursor: pointer;
 }
 
-/* Narrative Item specific hover twist */
-#narrative-items .card:hover {
+/* Narrative Item & Team Card specific hover twist */
+#narrative-items .card:hover,
+#team .card:hover {
   transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2)!important;
+  cursor: pointer;
 }
 
-/* Narrative Item Text Color override */
+/* Narrative Item & Team Card Text Color override */
 #narrative-items .card .card-body,
-#narrative-items .card .card-body * {
+#narrative-items .card .card-body *,
+#team .card .card-body,
+#team .card .card-body * {
   color: #693427 !important;
 }
 
@@ -317,6 +341,7 @@ tr[data-key="other-narrative"] a:hover {
 /* || TYPOGRAPHY || */
 
 /* Family: Amarante (Titles) */
+/* Applied to Hero, Card Titles (Index), Section Headers (Info/Item), Narrative Title */
 .hero h1,
 .hero p.lead,
 .card-title,
@@ -327,12 +352,17 @@ tr[data-key="other-narrative"] a:hover {
 #item-header p,
 #metadata-table th,
 #item-text-section h3,
-#item-related-media h5 {
+#item-related-media h5,
+#documentation h1,
+#disclaimer h1,
+#team h1 {
   font-family: 'Amarante', cursive !important;
 }
 
 /* Family: Aubrey (Captions/Subtitles) */
+/* Applied to Narrative Card Titles, Team Card Titles, Hover tooltips */
 #narrative-items .card-title,
+#team .card-title,
 #item-related-media .card-title,
 #map-section .item-card-hover p {
   font-family: 'Aubrey', cursive !important;
@@ -342,6 +372,7 @@ tr[data-key="other-narrative"] a:hover {
 }
 
 /* Family: Glass Antiqua (Body) */
+/* Applied to Body, Paragraphs, Card Text (Team/Narrative/Index) */
 body,
 p,
 li,
@@ -375,6 +406,6 @@ h2, h3, h4, h5, h6 {
 #item-text-section h3, #item-related-media h5 { font-weight: 600; }
 
 /* Aubrey sizes */
-#narrative-items .card-title { font-size: 1.5rem; }
+#narrative-items .card-title, #team .card-title { font-size: 1.5rem; }
 #item-related-media .card-title { font-size: 1rem; }
 #map-section .item-card-hover p { font-size: 1.4rem; color: #333; margin: 0; }
