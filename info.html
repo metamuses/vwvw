@@ -77,18 +77,71 @@
           <h1 class="display-5 fw-bold mb-4">Documentation</h1>
           <p class="lead text-muted">Project structure, stylistic choices, and technical implementation details.</p>
           <hr class="my-4">
+          <h2>1st step: content</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.
-            Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus
-            rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna
-            non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut
-            dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.
+            Item  research and selection: starting from the item used in the know org project we focused on three area of  items related to  Vivienne Westwood: punk 70s / XVIII sec France/ Manga,anime inspired. (n.b. third area expanded).<br>
+            Project name brainstorming: wanted to work on the MMMM from the course project specs> ended up with Vivienne Westwood Virtual World
           </p>
+          <h2>2nd step: structural choice</h2>
           <p>
-            Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue
-            lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci.
-            Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque
-            faucibus vestibulum. Nulla at nulla justo, eget luctus tortor.
+            Project logo design inspo: VWVW per richiamare gioco parole progetto; forma logo ispirato a manifesto visto da marti; utilizzo delle lettere dal logo del brand Vivienne Westwood <br>
+            In-real life museum organization: three rooms respected the themes behind the item selection (the idea is that the museum is still visitable without the web app- it has a items organization, and 3 possibile “narratives” based on the previously chosen themes)<br>
+            Web-based narratives: the web app offers alternatives narratives for browsing the collection:
+            historical> required (the original displayment of the item allows for a less intrigued visits of the collection in real life since the item are already organized based on an historical theme)
+            made by Vivienne> a visits that allow to browse only the item in the museum vivienne made. This allows for a quicker and more “vertical” visits
+            past and future heritage: a narratives that allows the user to browse between the item that inspired Vivienne’s work and the work that she has inspired.
+          </p>
+          <h2>3rd step: layout, wireframing</h2>
+          <p>
+            Starting from the website requirements from the course project specs we started sketching possible layout for the three main pages of the website that would be populated atm.
+            COVER PAGE <!--IMAGE OF THE WIREFRAMEs? Do we re-create it nicely or we use the scan of the notebook we have?-->
+            NARRATIVE PAGE
+            ITEM PAGE
+          </p>
+          <h2>4th step: styles inspirations</h2>
+          <p>
+            The project specs required six different style sheets to be applied to the whole web project based on historic periods, from the general time-period requirment we moved on to more peculiar artistic inspiration. In particular the following are the chosen historical style inspirations:<br>
+            1500-1800> the 700s in France (Corte di Re Sole)<br> <!--maybe unordered list-->
+            XIX sec > invenzione del dagherottipo<br>
+            1st half of the XX century> liberty e art noveau<br>
+            2nd half of the XX century> punk <br>
+            Late XX century- start of the XXI century > 90's italian cyberpunk <br>
+            2035 > Dystopian anime future
+          </p>
+          <h2>5th step: implementation HTML, JS, BASIC CSS</h2>
+          <p>
+            ITEM PAGE:<br>
+            first step: basic layout (navbar and footer already setted up)> MAIN: working with bootstrap grid layout> 3 rows:
+            first row (SECTION) 2 column (DIVs) (button below image already setted up by ?), left for image right for metadata (table)
+            second row, text varying based on 3 different axis and 2 option for each (23 = 8 text). INSIDE SECTION, there’s a div (WHY?) then
+            button for too hard on the left
+            card body (div) containing:
+            adult/kid button (OKAY THIS LOGICALLY IS WEIRD but it’s layout functional)
+            DEFAULT TEXT
+            READ MORE/LESS (good even logically that it is inside the text)
+            button for too easy on the right
+            third row: related media (to be changed!)<br>
+            second step: logic implementation (it did go hand in hand for the text section, in the first step only adult/kid button see github) >MEANING: JSON AND JS UPDATING BASICALLY
+            JS updating: inside the function to loadItem, inserted function for:
+            metadata population > get table, get property column, iterate over value of key “metadata” in json and upload value of the corrisponding key if existing! if not hide the row
+            narrative link: ONLY WORK FOR BANANA ATM> basically in the json there are writte all the narrative in which the item is, but with js we filter out and remains as value of Other Narrative properties only the non-active narrative. That is also a navigation tool> change active narrative and reload the item in the new narrative (change the arrow underneath the item image)
+            multi-axis text population: basically for each item the right text is written in the json file> text key. The js load the correct text crossing the setteted value (start from default: kid amateur short)> creates a key for the chosen value (if not, no text available) then also handles the highlighting of the selected button and the if chance for difficulty increase/decrease and more/less > SAVE STATE! so that onto next item these values are carried on.
+          </p>
+          <h2>6th step: themes css</h2>
+          <p>
+            Actually decided which part of the hmtl base code change: <br>
+            card <br>
+            footer, header, body background color <br>
+            typography <br>
+            <!--then add pictures of the moodboard-->
+          </p>
+          <h2>7th step <!--maybe enough with this step, just title is fine-->: code revision and cleanup</h2>
+          <p>
+            Took care of the restructuring actually of the code, both css and js
+          </p>
+          <h2>8th step: metadata and text production</h2>
+          <p>
+            bla bla bla lorem ipsum sto cazzo
           </p>
         </div>
       </section>
@@ -99,18 +152,18 @@
           <p class="lead text-muted">Legal notes and educational purpose statement.</p>
           <hr class="my-4">
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-            veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-            ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-          </p>
-          <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-            adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-            dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-            ex ea commodi consequatur.
-          </p>
+            The purpose of this web site is to explore various types of typographic and
+            layout style for musem pages, as an end-of-course project for the "Information
+            Modeling and Web technologies" course of the Master Degree in Digital Humanities
+            and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.<br>
+            The documents contained in this web site have been selected for their length and
+            complexity from XXX. Their publication here is not intended to be an alternative or
+            replace their original locations:<br>
+            • File 1: http://aouhadosuvosh <br>
+            • File 2: http://alekfpahvaoeh <br>
+            • etc. <br>
+            All copyrights and related rights on the content remain with their original owners.<br>
+            All copyright on the typographic and layout choices are 2025 © XY
         </div>
       </section>
 
