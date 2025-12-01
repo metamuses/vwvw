@@ -314,7 +314,7 @@
     "trousers": {
       "title": "Tartan trousers",
       "description": "...",
-      "image": "",
+      "image": "img/items/tartan_trousers.jpeg",
       "location": [230, 1113],
       "metadata": {
         "category": "Fruit",
@@ -338,7 +338,7 @@
     "ring": {
       "title": "Armour Ring",
       "description": "...",
-      "image": "",
+      "image": "img/items/armour_ring.jpg",
       "location": [210, 1465],
       "metadata": {
         "category": "Fruit",
@@ -537,7 +537,7 @@
     "made-by": {
       "title": "Made by Vivienne narrative",
       "description": "This is the made by Vivienne narrative.",
-      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress"]
+      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring"]
     },
     "past-future": {
       "title": "Past and Future narrative",
