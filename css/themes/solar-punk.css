@@ -397,43 +397,59 @@ body.home-page #map-section::after {
 
 /* || BUTTONS & LINKS (Nature Green) || */
 
-/* Filled Green Buttons */
+/* --- ACTIVE / PRIMARY BUTTONS --- */
 #adult-kid-buttons .btn-primary,
+#adult-kid-buttons .btn-secondary,
 #item-nav .btn-primary {
-  background-color: #7fb44e !important;
+  background-color: #7fb44e !important; /* Bright Green */
   border-color: #7fb44e !important;
-  color: #000;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #fff !important;
 }
-/* Override text color for top buttons */
-#adult-kid-buttons .btn-primary { color: #fff !important; }
+/* Nav text override */
+#item-nav .btn-primary { color: #000 !important; }
 
-/* Hover States */
+/* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
+/* Muted/Pale */
+#adult-kid-buttons .btn-outline-primary,
+#adult-kid-buttons .btn-outline-secondary {
+  background-color: #dbe6cc !important; /* Pale Green */
+  border-color: #c9d8b8 !important;
+  color: #7d9668 !important;
+}
+#adult-kid-buttons .btn-outline-primary:hover,
+#adult-kid-buttons .btn-outline-secondary:hover {
+  background-color: #cddcb8 !important;
+  color: #5e7845 !important;
+}
+
+/* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
+/* Vibrant Outline - Replaces Grey */
+#btn-decrease-difficulty,
+#btn-increase-difficulty {
+  border-color: #7fb44e !important;
+  color: #7fb44e !important;
+  background-color: transparent !important;
+}
+
+#btn-decrease-difficulty:hover,
+#btn-increase-difficulty:hover {
+  background-color: #7fb44e !important;
+  color: #fff !important;
+}
+
+/* --- NAV BUTTON STATES --- */
 #item-nav .btn-primary:hover:not(:disabled) {
   background-color: #69963c !important;
   border-color: #69963c !important;
   transform: translateY(-1px);
 }
-
-/* Disabled States */
 #item-nav .btn-primary:disabled {
   background-color: #b7d3a1 !important;
   border-color: #b7d3a1 !important;
   color: #ccc;
 }
 
-/* Outline Buttons */
-#adult-kid-buttons .btn-outline-primary {
-  border-color: #7fb44e !important;
-  color: #7fb44e !important;
-}
-
-#adult-kid-buttons .btn-outline-primary:hover {
-  background-color: #7fb44e !important;
-  color: #fff !important;
-}
-
-/* Text Links */
+/* --- TEXT LINKS --- */
 #text-content a,
 #text-content a#btn-toggle-length,
 tr[data-key="other-narrative"] a {
@@ -441,7 +457,6 @@ tr[data-key="other-narrative"] a {
   text-decoration: none !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
-
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {

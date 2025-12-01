@@ -364,44 +364,70 @@ footer::before,
 
 /* || BUTTONS & LINKS (Gold Theme) || */
 
-/* Filled Gold Buttons */
-#adult-kid-buttons .btn-primary,
-#item-nav .btn-primary {
-  background-color: #d4af37 !important;
-  border-color: #d4af37 !important;
-  color: #000;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* --- SHARED BUTTON DEFAULTS --- */
+#adult-kid-buttons .btn,
+#item-nav .btn,
+#item-text-section .btn {
+  font-family: 'Source Serif 4', serif !important;
+  font-weight: 700;
+  border-width: 2px !important;
 }
 
-/* Specific text color override for adult/kid active state */
-#adult-kid-buttons .btn-primary { color: #fff !important; }
+/* --- ACTIVE / PRIMARY BUTTONS --- */
+/* (Adult/Kid Active + Navigation Next/Back) */
+#adult-kid-buttons .btn-primary,
+#adult-kid-buttons .btn-secondary,
+#item-nav .btn-primary {
+  background-color: #d4af37 !important; /* Strong Gold */
+  border-color: #d4af37 !important;
+  color: #fff !important;
+  opacity: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
-/* Outline Gold Buttons */
-#adult-kid-buttons .btn-outline-primary {
+/* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
+/* Muted/Pale to look "disabled" */
+#adult-kid-buttons .btn-outline-primary,
+#adult-kid-buttons .btn-outline-secondary {
+  background-color: #f2e6c2 !important; /* Pale Gold */
+  border-color: #e0d0a0 !important;
+  color: #a38f45 !important; /* Muted text */
+  box-shadow: none;
+}
+#adult-kid-buttons .btn-outline-primary:hover,
+#adult-kid-buttons .btn-outline-secondary:hover {
+  background-color: #ebdcb0 !important; /* Slight hover effect */
+  color: #8c7830 !important;
+}
+
+/* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
+/* Vibrant Outline (Actionable) - Replaces Grey */
+#btn-decrease-difficulty,
+#btn-increase-difficulty {
   border-color: #d4af37 !important;
   color: #d4af37 !important;
+  background-color: transparent !important;
 }
 
-#adult-kid-buttons .btn-outline-primary:hover {
+#btn-decrease-difficulty:hover,
+#btn-increase-difficulty:hover {
   background-color: #d4af37 !important;
   color: #fff !important;
 }
 
-/* Hover States (Filled) */
+/* --- NAV BUTTON STATES --- */
 #item-nav .btn-primary:hover:not(:disabled) {
   background-color: #c49b30 !important;
   border-color: #c49b30 !important;
   transform: translateY(-1px);
 }
-
-/* Disabled State */
 #item-nav .btn-primary:disabled {
   background-color: #f5e1a4 !important;
   border-color: #f5e1a4 !important;
   color: #ccc;
 }
 
-/* Text Links */
+/* --- TEXT LINKS --- */
 #text-content a,
 #text-content a#btn-toggle-length,
 tr[data-key="other-narrative"] a {
@@ -409,7 +435,6 @@ tr[data-key="other-narrative"] a {
   text-decoration: none !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
-
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {

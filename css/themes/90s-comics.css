@@ -237,69 +237,76 @@ footer::before { top: 0; height: 2px; }
   padding: 1rem 0;
 }
 
-
 /* || BUTTONS & LINKS || */
-/* Navigation Buttons */
+
+/* --- NAVIGATION BUTTONS --- */
 #item-nav .btn-primary {
   background-color: #fddb00;
   border: 2px solid #de0313;
   color: #000;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 #item-nav .btn-primary:hover:not(:disabled) {
   background-color: #f5d100;
   border-color: #de0313;
   transform: translateY(-1px);
 }
-
 #item-nav .btn-primary:disabled {
   background-color: #fff8b0;
   border-color: #de0313;
   color: #ccc;
 }
 
-/* Adult/Kid Toggle Buttons Container Defaults */
+/* --- ADULT / KID TOGGLE BUTTONS --- */
 #adult-kid-buttons .btn {
-  background-color: transparent;
   transition: background-color 0.3s ease, color 0.2s ease;
   transform: none;
   box-shadow: none;
+  font-weight: 700;
 }
 
-/* --- ADULT BUTTON STYLES --- */
-#adult-kid-buttons #btn-adult {
-  border: 2px solid #de0313;
-  color: #de0313;
+/* 1. ACTIVE STATE (Selected) */
+/* Both Adult (Primary) and Kid (Secondary) look Vibrant Yellow/Red when active */
+#adult-kid-buttons #btn-adult.btn-primary,
+#adult-kid-buttons #btn-kid.btn-secondary {
+  background-color: #fddb00 !important; /* Bright Yellow */
+  color: #000 !important;
+  border: 2px solid #de0313 !important; /* Bright Red */
 }
 
-/* Hover, Focus, and ACTIVE State (using .btn-primary) */
-#adult-kid-buttons #btn-adult:hover,
-#adult-kid-buttons #btn-adult:focus,
-#adult-kid-buttons #btn-adult.btn-primary {
+/* 2. INACTIVE STATE (Unselected/Disabled look) */
+/* Both look Muted/Pale Yellow when inactive */
+#adult-kid-buttons #btn-adult.btn-outline-primary,
+#adult-kid-buttons #btn-kid.btn-outline-secondary {
+  background-color: #fff9cc !important; /* Washed out pale yellow */
+  color: #d6b300 !important;           /* Dimmed yellow-gold text */
+  border: 2px solid #edc2b3 !important; /* Pale red border */
+}
+
+/* Optional: Hover on Inactive */
+#adult-kid-buttons #btn-adult.btn-outline-primary:hover,
+#adult-kid-buttons #btn-kid.btn-outline-secondary:hover {
+  background-color: #fff2b3 !important; /* Slightly brighter on hover */
+  color: #de0313 !important;
+}
+
+/* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
+/* Matches the Theme Style - Red Border, Red Text */
+#btn-decrease-difficulty,
+#btn-increase-difficulty {
+  border: 2px solid #de0313 !important;
+  color: #de0313 !important;
+  background-color: transparent !important;
+}
+
+/* Hover: Yellow Background (Like Nav/Adult Active) */
+#btn-decrease-difficulty:hover,
+#btn-increase-difficulty:hover {
   background-color: #fddb00 !important;
   color: #000 !important;
-  border-color: #de0313;
-  transform: translateY(-1px);
 }
 
-/* --- KID BUTTON STYLES --- */
-#adult-kid-buttons #btn-kid {
-  border: 2px solid #6c757d;
-  color: #6c757d;
-}
-
-/* Hover, Focus, and ACTIVE State (using .btn-secondary) */
-#adult-kid-buttons #btn-kid:hover,
-#adult-kid-buttons #btn-kid:focus,
-#adult-kid-buttons #btn-kid.btn-secondary {
-  background-color: #6c757d !important;
-  color: #fff !important;
-  border-color: #6c757d;
-  transform: translateY(-1px);
-}
-
-/* Text Links */
+/* --- TEXT LINKS --- */
 #text-content a,
 #text-content a#btn-toggle-length,
 tr[data-key="other-narrative"] a {
@@ -307,14 +314,12 @@ tr[data-key="other-narrative"] a {
   text-decoration: none !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
-
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {
   color: #a8000f !important;
   transform: translateY(-1px);
 }
-
 
 /* || MAP & TABLES || */
 #map {
