@@ -542,7 +542,7 @@
     "past-future": {
       "title": "Past and Future narrative",
       "description": "This is the past and future narrative.",
-      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "boucher_painting", "david_painting", "petticoat"]
+      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "david_painting", "dress",  "boucher_painting", "corset",  "petticoat", "underpants", "necklace", "ring", "trousers"]
     }
   }
 }
