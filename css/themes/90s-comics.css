@@ -259,26 +259,44 @@ footer::before { top: 0; height: 2px; }
   color: #ccc;
 }
 
-/* Adult/Kid Toggle Buttons */
+/* Adult/Kid Toggle Buttons Container Defaults */
 #adult-kid-buttons .btn {
   background-color: transparent;
   transition: background-color 0.3s ease, color 0.2s ease;
   transform: none;
   box-shadow: none;
 }
-/* Adult */
-#adult-kid-buttons #btn-adult { border: 2px solid #de0313; color: #de0313; }
+
+/* --- ADULT BUTTON STYLES --- */
+#adult-kid-buttons #btn-adult {
+  border: 2px solid #de0313;
+  color: #de0313;
+}
+
+/* Hover, Focus, and ACTIVE State (using .btn-primary) */
 #adult-kid-buttons #btn-adult:hover,
 #adult-kid-buttons #btn-adult:focus,
-#adult-kid-buttons #btn-adult.active {
-  background-color: #fddb00; color: #000 !important; border-color: #de0313; transform: translateY(-1px);
+#adult-kid-buttons #btn-adult.btn-primary {
+  background-color: #fddb00 !important;
+  color: #000 !important;
+  border-color: #de0313;
+  transform: translateY(-1px);
 }
-/* Kid */
-#adult-kid-buttons #btn-kid { border: 2px solid #6c757d; color: #6c757d; }
+
+/* --- KID BUTTON STYLES --- */
+#adult-kid-buttons #btn-kid {
+  border: 2px solid #6c757d;
+  color: #6c757d;
+}
+
+/* Hover, Focus, and ACTIVE State (using .btn-secondary) */
 #adult-kid-buttons #btn-kid:hover,
 #adult-kid-buttons #btn-kid:focus,
-#adult-kid-buttons #btn-kid.active {
-  background-color: #6c757d; color: #fff !important; border-color: #6c757d; transform: translateY(-1px);
+#adult-kid-buttons #btn-kid.btn-secondary {
+  background-color: #6c757d !important;
+  color: #fff !important;
+  border-color: #6c757d;
+  transform: translateY(-1px);
 }
 
 /* Text Links */
