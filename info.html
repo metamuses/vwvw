@@ -77,62 +77,62 @@
           <h1 class="display-5 fw-bold mb-4">Documentation</h1>
           <p class="lead text-muted">Project structure, stylistic choices, and technical implementation details.</p>
           <hr class="my-4">
-          <h2>1st step: content</h2>
+          <h2>The (virtual) museum content</h2>
           <p>
-            Item  research and selection: starting from the item used in the know org project we focused on three area of  items related to  Vivienne Westwood: punk 70s / XVIII sec France/ Manga,anime inspired. (n.b. third area expanded).<br>
-            Project name brainstorming: wanted to work on the MMMM from the course project specs> ended up with Vivienne Westwood Virtual World
+            The first step of the project ideation has been the item's research and selection: starting from the item chosen for the <a href="https://metamuses.github.io/lod-save-the-queen/" alt="Lod save the queen project">knowledge organization project</a> called "Lod save the queen", we focused on three type of items related to Vivienne Westwood world: punk heritage from the 70s, XVIII century France inspiration and Nana, the manga and anime inheritance. Moving from these three main narrative each of us select 7 items related to the chosen thematic areas. The 21 selected item would make up the whole museum and potentially would be organized in three separate rooms. Ideally a in-person visitor would visit the museum by browsing each room and grasping the variety of Vivienne's art.</p>
+            <br>
+            <img src="img/moodboard/content_moodboard.png" class="card-img-top d-block mx-auto" alt=""><br>
+            <p>From the item selection we moved onto the project/museum name brainstorming. Inspired by the MMMM title and concept from the course project specification we came up with Vivienne Westwood Virtual World to play onto the acronym VWVW and the concept of a virtual museum experience.
           </p>
-          <h2>2nd step: structural choice</h2>
+          <h2>The virtual museum form</h2>
           <p>
-            Project logo design inspo: VWVW per richiamare gioco parole progetto; forma logo ispirato a manifesto visto da marti; utilizzo delle lettere dal logo del brand Vivienne Westwood <br>
-            In-real life museum organization: three rooms respected the themes behind the item selection (the idea is that the museum is still visitable without the web app- it has a items organization, and 3 possibile “narratives” based on the previously chosen themes)<br>
-            Web-based narratives: the web app offers alternatives narratives for browsing the collection:
-            historical> required (the original displayment of the item allows for a less intrigued visits of the collection in real life since the item are already organized based on an historical theme)
-            made by Vivienne> a visits that allow to browse only the item in the museum vivienne made. This allows for a quicker and more “vertical” visits
-            past and future heritage: a narratives that allows the user to browse between the item that inspired Vivienne’s work and the work that she has inspired.
+            We started working at the same time at the logo design and web-based narrative design. <br>
+            The final svg logo form has been inspired by various museum's logo, by the project specification's logo and by the Vivienne Westwood brand logo.
+            The result is a in-line reflected logo that report the acronym of the museum and a smaller version for the website favicon.</p>
+            <img src="img/moodboard/logo_moodboard.png" class="card-img-top d-block mx-auto" alt=""><br>
+            <p>The design of the web-based narratives was curated at the same time. The idea is that the visitor could benefit from a virtual enhanced experience. What the website does is offering three alternative narratives for browsing the collection crossing the room. This experience could be had on-line but also in person following the map that pin-point the route between items. <br>
+            Has required by the project specification one of the web-based narrative is an historical one, "Chronicles of Fashion". After collecting the original date of the art work we create the first "lists of item". The user can follow this narrative to visit the museum virtually or not in a chronological order.
+            The second web-based narrative "Made by Vivienne", allow the user to browse the museum by exploring the item Vivienne Westwood designed. This narrative allows for a quicker and more fashion-oriented visits of the museum collection.
+            Last but not least "Enter the future", this narratives allows the user to browse across the collection to explore the items that inspired Vivienne’s work and the work that she has inspired.
           </p>
-          <h2>3rd step: layout, wireframing</h2>
+          <h2>The museum website layout</h2>
           <p>
-            Starting from the website requirements from the course project specs we started sketching possible layout for the three main pages of the website that would be populated atm.
-            COVER PAGE <!--IMAGE OF THE WIREFRAMEs? Do we re-create it nicely or we use the scan of the notebook we have?-->
-            NARRATIVE PAGE
-            ITEM PAGE
+            Moving from the website requirements stated in the course's project specification, we started sketching possible layout for the three main pages of the website: homepage, narrative page, item page.<br>
+            We started with a simple wireframing.
           </p>
-          <h2>4th step: implementation HTML, JS, BASIC CSS + map design</h2>
+          <div class="row">
+              <div class="col-md-4">
+                  <img src="img/moodboard/homepage_wireframe.jpg" class="img-fluid mb-3" alt="">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/moodboard/narrative_wireframe.jpg" class="img-fluid mb-3" alt="">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/moodboard/item_wireframe.jpg" class="img-fluid mb-3" alt="">
+              </div>
+          </div>
+          <h2>The museum website implementation</h2>
           <p>
-            ITEM PAGE:<br>
-            first step: basic layout (navbar and footer already setted up)> MAIN: working with bootstrap grid layout> 3 rows:
-            first row (SECTION) 2 column (DIVs) (button below image already setted up by ?), left for image right for metadata (table)
-            second row, text varying based on 3 different axis and 2 option for each (23 = 8 text). INSIDE SECTION, there’s a div (WHY?) then
-            button for too hard on the left
-            card body (div) containing:
-            adult/kid button (OKAY THIS LOGICALLY IS WEIRD but it’s layout functional)
-            DEFAULT TEXT
-            READ MORE/LESS (good even logically that it is inside the text)
-            button for too easy on the right
-            third row: related media (to be changed!)<br>
-            second step: logic implementation (it did go hand in hand for the text section, in the first step only adult/kid button see github) >MEANING: JSON AND JS UPDATING BASICALLY
-            JS updating: inside the function to loadItem, inserted function for:
-            metadata population > get table, get property column, iterate over value of key “metadata” in json and upload value of the corrisponding key if existing! if not hide the row
-            narrative link: ONLY WORK FOR BANANA ATM> basically in the json there are writte all the narrative in which the item is, but with js we filter out and remains as value of Other Narrative properties only the non-active narrative. That is also a navigation tool> change active narrative and reload the item in the new narrative (change the arrow underneath the item image)
-            multi-axis text population: basically for each item the right text is written in the json file> text key. The js load the correct text crossing the setteted value (start from default: kid amateur short)> creates a key for the chosen value (if not, no text available) then also handles the highlighting of the selected button and the if chance for difficulty increase/decrease and more/less > SAVE STATE! so that onto next item these values are carried on.<br>
-            map-design:
+            Having the wireframes in mind we then moved onto the actual website implementation. Each of us took care of one of the webpage and started leveraging bootstrap classes in order to create a basic website layout to help us start visualizing the final website.<br>
+            At the same time each of use started working on the web page loading logic, using data organized in the json file and populate the webpage via javascript. <br>
+            It was crucial to also design a visual tool to navigate the collection and allow the user to orient themselves in the museum too. We create an svg map representing the frontal view of the museum and skecth the item's physical form and the implement it a way to navigate the collection by clicking on the item and visualizing the narrative's route</p>
+            <img src="img/frontal_map.svg" class="card-img-top d-block mx-auto" alt="">
           </p>
-          <h2>5th step: styles inspirations</h2>
+          <h2>Styles inspirations</h2>
           <p>
-            The project specs required six different style sheets to be applied to the whole web project based on historic periods, from the general time-period requirment we moved on to more peculiar artistic inspiration. In particular the following are the chosen historical style inspirations:<br>
-            <img src="img/style_moodboard/1700-france_moodboard.png" class="card-img-top d-block mx-auto" alt="700-france theme moodboard">
-            <img src="img/style_moodboard/photo_moodboard.png" class="card-img-top d-block mx-auto" alt="daguerreotype theme moodboard">
-            <img src="img/style_moodboard/art-noveau_moodboard.png" class="card-img-top d-block mx-auto" alt="art noveau theme moodboard">
-            <img src="img/style_moodboard/punk_moodboard.png" class="card-img-top d-block mx-auto" alt="punk theme moodboard">
-            <img src="img/style_moodboard/90s-comics_moodboard.png" class="card-img-top d-block mx-auto" alt="Enter the Future">
-            <img src="img/style_moodboard/2035-solar-punk_moodboard.png" class="card-img-top d-block mx-auto" alt="Enter the Future">
+            The project specifications required six different style sheets to be applied to the whole web project based on historic period. From the general time-period requirment we moved on to more peculiar artistic inspiration. In particular the following are the moodboard that explains the themes inspirations and design.<br>
+            <img src="img/moodboard/1700-france_moodboard.png" class="card-img-top d-block mx-auto" alt="700-france theme moodboard">
+            <img src="img/moodboard/photo_moodboard.png" class="card-img-top d-block mx-auto" alt="daguerreotype theme moodboard">
+            <img src="img/moodboard/art-noveau_moodboard.png" class="card-img-top d-block mx-auto" alt="art noveau theme moodboard">
+            <img src="img/moodboard/punk_moodboard.png" class="card-img-top d-block mx-auto" alt="punk theme moodboard">
+            <img src="img/moodboard/90s-comic_moodboard.png" class="card-img-top d-block mx-auto" alt="Enter the Future">
+            <img src="img/moodboard/2035-solar-punk_moodboard.png" class="card-img-top d-block mx-auto" alt="Enter the Future">
           </p>
-          <h2>6th step <!--maybe enough with this step, just title is fine-->: code revision and cleanup</h2>
+          <h2>Code revision and cleanup</h2>
           <p>
-            Took care of the restructuring actually of the code, both css and js
+            Took care of the restructuring of the code, both css and javascript.
           </p>
-          <h2>7th step: metadata and text production</h2>
+          <h2>Metadata and text production</h2>
           <p>
             bla bla bla lorem ipsum sto cazzo
           </p>

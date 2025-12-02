@@ -102,6 +102,10 @@ footer {
   padding: 0.5rem;          /* Optional: Adds a small internal margin like in narrative.html */
 }
 
+.card-title {
+  text-align: center;
+}
+
 /* MAP: hover of cards to display path of items on map */
 /* Stili per la Mappa Interattiva */
 
