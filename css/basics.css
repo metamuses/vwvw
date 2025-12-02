@@ -92,7 +92,15 @@ footer {
   margin: 0 auto;
 }
 
+/* || INDEX PAGE CARDS || */
 
+.path-card .card-img-top {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* Forces the image area to be a perfect square */
+  object-fit: contain;      /* Shrinks image to fit INSIDE the square (no cropping) */
+  background-color: white;  /* Fills the empty space with white color */
+  padding: 0.5rem;          /* Optional: Adds a small internal margin like in narrative.html */
+}
 
 /* MAP: hover of cards to display path of items on map */
 /* Stili per la Mappa Interattiva */
