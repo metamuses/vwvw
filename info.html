@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VWVW - Info</title>
+    <meta name="description" content="Information, documentation and team behind VWVW.">
+    <meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="img/favicon.png" type="favicon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/basics.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Anton&family=GFS+Didot&family=Oooh+Baby&family=Ranga:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="info-page">
+
+    <header class="bg-light py-2">
+      <nav class="navbar navbar-expand-lg container-fluid bg-light">
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand">
+            <img src="logo/logo_inline_reflected.svg" title="Logo" alt="Logo VWVW" class="img-header">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  collections
+                </a>
+                <ul class="dropdown-menu" id="narrative-menu">
+                  <li><a class="dropdown-item" data-narrative="historical" role="button">chronicles of fashion</a></li>
+                  <li><a class="dropdown-item" data-narrative="made-by" role="button">Made by Vivienne</a></li>
+                  <li><a class="dropdown-item" data-narrative="past-future" role="button">past and future</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  info
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="info.html#documentation">documentation</a></li>
+                  <li><a class="dropdown-item" href="info.html#disclaimer">disclaimer</a></li>
+                  <li><a class="dropdown-item" href="info.html#team">team</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  styles
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" id="theme-menu">
+                  <li><a class="dropdown-item" data-theme="700-france" role="button">1700, France</a></li>
+                  <li><a class="dropdown-item" data-theme="daguerreotype" role="button">at the dawn of photography</a></li>
+                  <li><a class="dropdown-item" data-theme="art-nouveau" role="button">Art Nouveau</a></li>
+                  <li><a class="dropdown-item" data-theme="70s-punk" role="button">70s british punk</a></li>
+                  <li><a class="dropdown-item" data-theme="90s-comics" role="button">90s comics</a></li>
+                  <li><a class="dropdown-item" data-theme="solar-punk" role="button">Solar punk</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container py-5">
+
+      <section id="documentation" class="card shadow-sm mb-5 border">
+        <div class="card-body p-5">
+          <h1 class="display-5 fw-bold mb-4">Documentation</h1>
+          <p class="lead text-muted">Project structure, stylistic choices, and technical implementation details.</p>
+          <hr class="my-4">
+          <h2>The (virtual) museum content</h2>
+          <p>
+            The first step of the project ideation has been the item's research and selection: starting from the item chosen for the <a href="https://metamuses.github.io/lod-save-the-queen/" alt="Lod save the queen project">knowledge organization project</a> called "Lod save the queen", we focused on three type of items related to Vivienne Westwood world: punk heritage from the 70s, XVIII century France inspiration and Nana, the manga and anime inheritance. Moving from these three main narrative each of us select 7 items related to the chosen thematic areas. The 21 selected item would make up the whole museum and potentially would be organized in three separate rooms. Ideally a in-person visitor would visit the museum by browsing each room and grasping the variety of Vivienne's art.</p>
+            <br>
+            <img src="img/moodboard/content_moodboard.png" class="card-img-top d-block mx-auto" alt=""><br>
+            <p>From the item selection we moved onto the project/museum name brainstorming. Inspired by the MMMM title and concept from the course project specification we came up with Vivienne Westwood Virtual World to play onto the acronym VWVW and the concept of a virtual museum experience.
+          </p>
+          <h2>The virtual museum form</h2>
+          <p>
+            We started working at the same time at the logo design and web-based narrative design. <br>
+            The final svg logo form has been inspired by various museum's logo, by the project specification's logo and by the Vivienne Westwood brand logo.
+            The result is a in-line reflected logo that report the acronym of the museum and a smaller version for the website favicon.</p>
+            <img src="img/moodboard/logo_moodboard.png" class="card-img-top d-block mx-auto" alt=""><br>
+            <p>The design of the web-based narratives was curated at the same time. The idea is that the visitor could benefit from a virtual enhanced experience. What the website does is offering three alternative narratives for browsing the collection crossing the room. This experience could be had on-line but also in person following the map that pin-point the route between items. <br>
+            Has required by the project specification one of the web-based narrative is an historical one, "Chronicles of Fashion". After collecting the original date of the art work we create the first "lists of item". The user can follow this narrative to visit the museum virtually or not in a chronological order.
+            The second web-based narrative "Made by Vivienne", allow the user to browse the museum by exploring the item Vivienne Westwood designed. This narrative allows for a quicker and more fashion-oriented visits of the museum collection.
+            Last but not least "Enter the future", this narratives allows the user to browse across the collection to explore the items that inspired Vivienne’s work and the work that she has inspired.
+          </p>
+          <h2>The museum website layout</h2>
+          <p>
+            Moving from the website requirements stated in the course's project specification, we started sketching possible layout for the three main pages of the website: homepage, narrative page, item page.<br>
+            We started with a simple wireframing.
+          </p>
+          <div class="row">
+              <div class="col-md-4">
+                  <img src="img/moodboard/homepage_wireframe.jpg" class="img-fluid mb-3" alt="">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/moodboard/narrative_wireframe.jpg" class="img-fluid mb-3" alt="">
+              </div>
+              <div class="col-md-4">
+                  <img src="img/moodboard/item_wireframe.jpg" class="img-fluid mb-3" alt="">
+              </div>
+          </div>
+          <h2>The museum website implementation</h2>
+          <p>
+            Having the wireframes in mind we then moved onto the actual website implementation. Each of us took care of one of the webpage and started leveraging bootstrap classes in order to create a basic website layout to help us start visualizing the final website.<br>
+            At the same time each of use started working on the web page loading logic, using data organized in the json file and populate the webpage via javascript. <br>
+            It was crucial to also design a visual tool to navigate the collection and allow the user to orient themselves in the museum too. We create an svg map representing the frontal view of the museum and skecth the item's physical form and the implement it a way to navigate the collection by clicking on the item and visualizing the narrative's route</p>
+            <img src="img/frontal_map.svg" class="card-img-top d-block mx-auto" alt="">
+          </p>
+          <h2>Styles inspirations</h2>
+          <p>
+            The project specifications required six different style sheets to be applied to the whole web project based on historic period. From the general time-period requirment we moved on to more peculiar artistic inspiration. In particular the following are the moodboard that explains the themes inspirations and design.<br>
+            Each of team member curated two of the themes css.
+            <img src="img/moodboard/1700-france_moodboard.png" class="card-img-top d-block mx-auto" alt="700-france theme moodboard">
+            <img src="img/moodboard/photo_moodboard.png" class="card-img-top d-block mx-auto" alt="daguerreotype theme moodboard">
+            <img src="img/moodboard/art-noveau_moodboard.png" class="card-img-top d-block mx-auto" alt="art noveau theme moodboard">
+            <img src="img/moodboard/punk_moodboard.png" class="card-img-top d-block mx-auto" alt="punk theme moodboard">
+            <img src="img/moodboard/90s-comic_moodboard.png" class="card-img-top d-block mx-auto" alt="Enter the Future">
+            <img src="img/moodboard/2035-solar-punk_moodboard.png" class="card-img-top d-block mx-auto" alt="Enter the Future">
+          </p>
+          <h2>Code revision and cleanup</h2>
+          <p>
+            Took care of the restructuring of the code, both css and javascript.
+          </p>
+          <h2>Metadata and text production</h2>
+          <p>
+            bla bla bla lorem ipsum sto cazzo
+          </p>
+        </div>
+      </section>
+
+      <section id="disclaimer" class="card shadow-sm mb-5 border">
+        <div class="card-body p-5">
+          <h1 class="display-5 fw-bold mb-4">Disclaimer</h1>
+          <p class="lead text-muted">Legal notes and educational purpose statement.</p>
+          <hr class="my-4">
+          <p>
+            The purpose of this web site is to explore various types of typographic and
+            layout style for musem pages, as an end-of-course project for the "Information
+            Modeling and Web technologies" course of the Master Degree in Digital Humanities
+            and Digital Knowledge of the University of Bologna, under prof. Fabio Vitali.<br>
+            The documents contained in this web site have been selected for their length and
+            complexity from XXX. Their publication here is not intended to be an alternative or
+            replace their original locations:<br></p>
+            <ul><li>File 1: http://aouhadosuvosh</li>
+            <li>File 2: http://alekfpahvaoeh </li>
+            <li>etc. </li></ul>
+            <p>
+            All copyrights and related rights on the content remain with their original owners.<br>
+            All copyright on the typographic and layout choices are 2025 © XY
+          </p>
+        </div>
+      </section>
+
+      <section id="team" class="card shadow-sm mb-5 border">
+        <div class="card-body p-5">
+          <h1 class="display-5 fw-bold mb-4">The Team</h1>
+          <p class="lead text-muted mb-5">The students behind the Vivienne Westwood Virtual World.</p>
+
+          <div class="row g-4">
+
+            <div class="col-12 col-md-4">
+              <a href="https://github.com/nicoldamelio" target="_blank" class="card h-100 border shadow-sm text-decoration-none text-dark">
+                <img src="https://placehold.co/400x400/png?text=Nicol" class="card-img-top team-img" alt="Nicol D'Amelio">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Nicol D'Amelio</h5>
+                  <p class="card-text text-muted">role</p>
+                  <p class="card-text small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Creative direction and layout.</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <a href="https://github.com/epistrephein" target="_blank" class="card h-100 border shadow-sm text-decoration-none text-dark">
+                <img src="https://placehold.co/400x400/png?text=Tommaso" class="card-img-top team-img" alt="Tommaso Barbato">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Tommaso Barbato</h5>
+                  <p class="card-text text-muted">role</p>
+                  <p class="card-text small">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Data structuring.</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <a href="https://github.com/martinaucch" target="_blank" class="card h-100 border shadow-sm text-decoration-none text-dark">
+                <img src="https://placehold.co/400x400/png?text=Martina" class="card-img-top team-img" alt="Martina Uccheddu">
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold">Martina Uccheddu</h5>
+                  <p class="card-text text-muted">role</p>
+                  <p class="card-text small">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Narrative flow.</p>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="container-fluid">
+      <div class="footer-cont">
+        <p>© VWVW 2025 <a href="https://github.com/metamuses/vwvw"><img src="img/github.svg" alt="Github icon" class="github-icon"></a></p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

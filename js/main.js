@@ -24,8 +24,11 @@ function switchTheme(themeName) {
     items.forEach(function (item) {
       if (item.dataset.theme === themeName) {
         item.style.fontWeight = "bold";
+        // Faux bold: adds a small shadow to thicken the font
+        item.style.textShadow = "0.4px 0 0 currentColor";
       } else {
         item.style.fontWeight = "normal";
+        item.style.textShadow = "none";
       }
     });
   };

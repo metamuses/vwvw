@@ -1,0 +1,528 @@
+/* || GENERAL STYLES ||*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap'); /* Titles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');   /* Captions */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap'); /* Body */
+
+/* || BACKGROUNDS || */
+/* Page Backgrounds */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Narrative Page: Green Gradient */
+body.narrative-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #c9e5a3 0%, #b4d88a 25%, #9cca6e 55%, #82b859 80%, #6fa646 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* Item Page & Info Page: Grey Gradient */
+body.item-page,
+body.info-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #e0e0e0 0%, #c0c0c0 25%, #a0a0a0 55%, #808080 80%, #666666 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* Narrative Card Section Background (Index) */
+.container-fluid.py-5,
+body.narrative-page #map-section {
+  background-color: #d1d3d4; /* Soft grey base */
+}
+.container-fluid.py-5 { padding-top: 4rem; padding-bottom: 4rem; }
+
+
+/* || HEADER & FOOTER || */
+header,
+header.bg-light nav.navbar {
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%) !important;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+header {
+  margin: 0;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: auto;
+}
+
+footer {
+  position: relative;
+  padding: 2rem 1rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #83482c;
+  /* Roots effect */
+  background-image:
+    radial-gradient(ellipse 8px 90px at 5% 0%, #4b2e1f 0%, transparent 70%),
+    radial-gradient(ellipse 6px 50px at 15% 0%, #6e3f2a 0%, transparent 70%),
+    radial-gradient(ellipse 10px 100px at 25% 0%, #3f2617 0%, transparent 70%),
+    radial-gradient(ellipse 8px 70px at 40% 0%, #59341f 0%, transparent 70%),
+    radial-gradient(ellipse 6px 60px at 60% 0%, #6e3f2a 0%, transparent 70%),
+    radial-gradient(ellipse 10px 90px at 75% 0%, #4b2e1f 0%, transparent 70%),
+    radial-gradient(ellipse 8px 80px at 90% 0%, #59341f 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* || NAVBAR || */
+.navbar a.nav-link {
+  color: #83482c;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: block;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0;
+}
+
+.navbar a.nav-link:hover {
+  color: #000;
+  background-color: rgba(131, 72, 44, 0.3);
+  border-radius: 6px;
+}
+
+.navbar .dropdown-toggle,
+.navbar .dropdown-menu .dropdown-item {
+  color: #000;
+}
+
+.navbar .dropdown-menu .dropdown-item { transition: background-color 0.3s ease; }
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(131, 72, 44, 0.3);
+  color: #000;
+}
+
+.navbar-toggler {
+  border: 2px solid rgba(131, 72, 44, 0.5) !important;
+  border-radius: 6px;
+}
+
+.navbar .dropdown-menu {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(131, 72, 44, 0.3);
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* || SEPARATORS (Black Lines) || */
+header::after,
+footer::before,
+.hero::before,
+.hero::after,
+#map-section::before,
+body.narrative-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  z-index: 1;
+}
+
+header::after { bottom: 0; }
+footer::before { top: 0; }
+.hero::before, #map-section::before { top: 0; }
+.hero::after, body.narrative-page #map-section::after { bottom: 0; }
+
+
+/* || SKY BACKGROUNDS (Hero & Narrative Info) || */
+.hero,
+#narrative-info {
+  position: relative;
+  background-color: #4b89c4 !important; /* base sky blue */
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 40% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 85% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
+    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  min-height: 60vh;
+  text-align: center;
+}
+
+#narrative-info {
+  margin: 0 !important;
+}
+
+
+/* || FRAMES: LEAFY STYLE (Green Gradient) || */
+/* Used for: Index Cards, Item Sections, Narrative Map Wrapper, and Info Sections */
+
+/* 1. Base Container Styling */
+.card[data-narrative-id],
+#item-image-wrapper,
+#item-text-section,
+#metadata-table-wrapper,
+#item-related-media,
+#documentation,
+#disclaimer,
+#team {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;
+  background: white;
+  z-index: 1;
+  padding: 12px;
+}
+
+/* Narrative Map specific */
+#map-section #map {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* 2. Outer Gradient Frame (::before) */
+.card[data-narrative-id]::before,
+#item-image-wrapper::before,
+#item-text-section::before,
+#metadata-table-wrapper::before,
+#item-related-media::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+body.narrative-page #map-section #map::before {
+  content: "";
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(135deg, #aabf66 0%, #8ca343 40%, #c2d574 70%, #aabf66 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+/* Slight adjustment for map frame size */
+body.narrative-page #map-section #map::before {
+  top: -6px; left: -6px; right: -6px; bottom: -6px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25), inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+/* 3. Inner White Matting (::after) */
+.card[data-narrative-id]::after,
+#item-image-wrapper::after,
+#item-text-section::after,
+#metadata-table-wrapper::after,
+#item-related-media::after,
+#documentation::after,
+#disclaimer::after,
+#team::after,
+body.narrative-page #map-section #map::after {
+  content: "";
+  position: absolute;
+  top: 6px; left: 6px; right: 6px; bottom: 6px;
+  border-radius: 8px;
+  background: white;
+  z-index: -1;
+  pointer-events: none;
+}
+/* Map matting specific */
+body.narrative-page #map-section #map::after {
+  top: 8px; left: 8px; right: 8px; bottom: 8px;
+  border-radius: 12px;
+}
+
+/* 4. Hover Effects */
+.card[data-narrative-id]:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Item/Info Specific Margins */
+#item-image-wrapper,
+#item-text-section,
+#metadata-table-wrapper,
+#item-related-media,
+#documentation,
+#disclaimer,
+#team {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* || FRAMES: SOLAR PANEL STYLE (Dark Blue + Hex) || */
+/* Used for: Narrative Items, Item Header, and Team Cards */
+
+/* 1. Card Wrappers */
+#narrative-items .card,
+#team .card {
+  position: relative;
+  display: block;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: visible;
+  text-decoration: none;
+}
+
+/* 2. Solar Background/Frame */
+/* Applied via ::before for Cards (to allow overflow/border effect) */
+#narrative-items .card::before,
+#team .card::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: -8px; right: -8px; bottom: -8px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
+  background-color: #0f1c2e;
+  background-image: url('../../img/hex.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+/* Applied directly for Item Header */
+#item-header {
+  position: relative;
+  border-radius: 12px;
+  border: 2px solid #C8C8C8;
+  color: #C8C8C8;
+  background-color: #0f1c2e;
+  background-image: url('../../img/hex.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+  display: block;
+  width: 48%;
+  margin: 2rem 0;
+  padding: 1.2rem 2rem;
+  z-index: 1;
+}
+
+/* 3. Content Visibility */
+#narrative-items .card > img,
+#narrative-items .card > .card-body,
+#team .card > img,
+#team .card > .card-body,
+#item-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 4. Text Color Override */
+#narrative-items .card .card-body,
+#narrative-items .card .card-body *,
+#team .card .card-body,
+#team .card .card-body *,
+#item-header > * {
+  color: #C8C8C8 !important;
+}
+
+/* 5. Hover Effects */
+#narrative-items .card:hover,
+#team .card:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg)!important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* || MAP SECTION || */
+/* Added position: relative to fix missing/misplaced separator lines */
+#map-section {
+  position: relative;
+}
+
+body.home-page #map-section {
+  overflow: hidden;
+  /* Grass Gradient */
+  background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
+}
+
+#map-section #map {
+  background: white !important;
+  padding: 0;
+  border-radius: 12px;
+}
+
+/* Grass Blades Decoration */
+body.home-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 130px;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse 14px 95px at 5% 100%,  #4f7d2f 0%, transparent 70%),
+    radial-gradient(ellipse 16px 110px at 18% 100%, #3d6b24 0%, transparent 70%),
+    radial-gradient(ellipse 12px 85px at 32% 100%, #4a752b 0%, transparent 70%),
+    radial-gradient(ellipse 10px 70px at 48% 100%, #5f8e38 0%, transparent 70%),
+    radial-gradient(ellipse 12px 75px at 63% 100%, #6aa744 0%, transparent 70%),
+    radial-gradient(ellipse 8px 55px at 78% 100%,  #527f33 0%, transparent 70%),
+    radial-gradient(ellipse 11px 65px at 92% 100%, #3f6c25 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+
+/* || BUTTONS & LINKS (Nature Green) || */
+
+/* --- ACTIVE / PRIMARY BUTTONS --- */
+#adult-kid-buttons .btn-primary,
+#adult-kid-buttons .btn-secondary,
+#item-nav .btn-primary {
+  background-color: #7fb44e !important; /* Bright Green */
+  border-color: #7fb44e !important;
+  color: #fff !important;
+}
+/* Nav text override */
+#item-nav .btn-primary { color: #000 !important; }
+
+/* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
+/* Muted/Pale */
+#adult-kid-buttons .btn-outline-primary,
+#adult-kid-buttons .btn-outline-secondary {
+  background-color: #dbe6cc !important; /* Pale Green */
+  border-color: #c9d8b8 !important;
+  color: #7d9668 !important;
+}
+#adult-kid-buttons .btn-outline-primary:hover,
+#adult-kid-buttons .btn-outline-secondary:hover {
+  background-color: #cddcb8 !important;
+  color: #5e7845 !important;
+}
+
+/* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
+/* Vibrant Outline - Replaces Grey */
+#btn-decrease-difficulty,
+#btn-increase-difficulty {
+  border-color: #7fb44e !important;
+  color: #7fb44e !important;
+  background-color: transparent !important;
+}
+
+#btn-decrease-difficulty:hover,
+#btn-increase-difficulty:hover {
+  background-color: #7fb44e !important;
+  color: #fff !important;
+}
+
+/* --- NAV BUTTON STATES --- */
+#item-nav .btn-primary:hover:not(:disabled) {
+  background-color: #69963c !important;
+  border-color: #69963c !important;
+  transform: translateY(-1px);
+}
+#item-nav .btn-primary:disabled {
+  background-color: #b7d3a1 !important;
+  border-color: #b7d3a1 !important;
+  color: #ccc;
+}
+
+/* --- TEXT LINKS --- */
+#text-content a,
+#text-content a#btn-toggle-length,
+tr[data-key="other-narrative"] a {
+  color: #7fb44e !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+#text-content a:hover,
+#text-content a#btn-toggle-length:hover,
+tr[data-key="other-narrative"] a:hover {
+  color: #69963c !important;
+  transform: translateY(-1px);
+}
+
+
+/* || TYPOGRAPHY || */
+
+/* 1. Rubik Glitch Pop (Titles) */
+.hero h1,
+#narrative-title {
+  font-family: 'Rubik Glitch Pop', cursive !important;
+  font-size: 3.5rem !important;
+  line-height: 1.1;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.hero h1 { font-size: 6rem !important; }
+
+/* 2. Orbitron (Subtitles/Captions) */
+.hero p.lead,
+.card-title,
+#map-section h2,
+#item-title,
+#metadata-table th,
+.h5,
+.card-header,
+#documentation h1,
+#disclaimer h1,
+#team h1 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 3. Courier Prime (Body) */
+body,
+p,
+li,
+td,
+th,
+#item-description,
+#text-content,
+.card-text,
+.item-card-hover img + p {
+  font-family: 'Courier Prime' !important;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+#metadata-table {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+/* || RESPONSIVE || */
+@media (max-width: 768px) {
+  #item-header {
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    left: 0; right: 0;
+  }
+}

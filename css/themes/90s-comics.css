@@ -1,0 +1,475 @@
+/* || GENERAL STYLES ||*/
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief&display=swap');
+
+/* || BACKGROUNDS || */
+body { background-color: white; }
+body.home-page { background-color: #3262b2 !important; }
+body.narrative-page,
+body.item-page,
+body.info-page { background-color: white !important; }
+
+/* || LAYOUT BASICS (Header/Footer) || */
+header,
+footer,
+header.bg-light,
+header.bg-light nav.navbar,
+footer.bg-light,
+footer.bg-light .container {
+  background-color: #3262b2 !important;
+}
+
+header,
+footer {
+  position: relative;
+  z-index: auto;
+  overflow: visible;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Logo Filter */
+.img-header {
+  filter: invert(86%) sepia(76%) saturate(2130%) hue-rotate(0deg) brightness(104%) contrast(101%);
+}
+
+/* || NAVBAR || */
+/* Links & Toggle */
+.navbar a.nav-link {
+  color: #fddb00 !important;
+  display: block;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .dropdown-toggle,
+.navbar .dropdown-menu .dropdown-item,
+.navbar .nav-link.active,
+.navbar .nav-link.show,
+.navbar .nav-link:focus {
+  color: #000 !important;
+}
+
+/* Hover States */
+.navbar a.nav-link:hover,
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #fff200 !important; /* brighter yellow */
+  color: #000 !important;
+}
+.navbar a.nav-link:hover { border-radius: 6px; }
+.navbar .dropdown-menu .dropdown-item:hover { background-color: rgba(253, 219, 0, 0.3) !important; }
+
+/* Dropdown Container */
+.navbar .dropdown-menu {
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(105, 52, 39, 0.3);
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/* Toggler */
+.navbar-toggler {
+  border: 2px solid rgba(247, 225, 61, 0.5) !important;
+  border-radius: 6px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* || SEPARATORS (Black Lines) || */
+header::after,
+footer::before,
+.hero::before,
+.hero::after,
+#map-section::before,
+#map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  z-index: 1;
+}
+
+/* Thin Separators (Header/Footer) */
+header::after { bottom: 0; height: 2px; }
+footer::before { top: 0; height: 2px; }
+
+/* Thick Separators (Hero/Map) */
+.hero::before, #map-section::before { top: 0; height: 6px; }
+.hero::after, #map-section::after { bottom: 0; height: 6px; }
+
+/* Position Contexts */
+.hero, #map-section { position: relative; }
+
+/* || FRAMES: BLACK BORDER BOXES || */
+/* Shared logic for Index Cards, Narrative Cards, Item Sections, Info Sections, and Team Member Cards */
+.card[data-narrative-id],
+#narrative-items .card,
+#item-image-wrapper,
+#item-text-section,
+#item-related-media,
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team,
+#team .card {
+  position: relative;
+  border-radius: 0;
+  overflow: visible;
+  background: white;
+  z-index: 1;
+  padding: 12px;
+  display: block;
+}
+
+/* Specific margins */
+#item-image-wrapper,
+#item-text-section,
+#item-related-media,
+#metadata-table-wrapper,
+#documentation,
+#disclaimer,
+#team {
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+/* The Black Border Pseudo-element */
+.card[data-narrative-id]::before,
+#narrative-items .card::before,
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  border-radius: 0;
+  border: 2px solid black;
+  pointer-events: none;
+  z-index: 2; /* Sits on top of content background but below text if z-indexed correctly */
+}
+
+/* Fix Z-Index for content availability (Move frame behind content) */
+#narrative-items .card::before,
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
+  z-index: 0;
+}
+.card[data-narrative-id]::before { z-index: 2; } /* Keep index card frame on top (border effect) */
+
+/* Content Stacking */
+#narrative-items .card > img,
+#narrative-items .card > .card-body,
+#team .card > img,
+#team .card > .card-body,
+#item-image-wrapper > *,
+#item-text-section > *,
+#item-related-media > *,
+#metadata-table-wrapper > *,
+#documentation > *,
+#disclaimer > *,
+#team > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover Effects */
+.card[data-narrative-id]:hover,
+#narrative-items .card:hover,
+#team .card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18) !important;
+  cursor: pointer;
+}
+/* Narrative & Team card specific shadow override */
+#narrative-items .card:hover,
+#team .card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* || YELLOW BOX COMPONENTS || */
+/* Shared style for Item Header and Map Title */
+#item-header,
+#map-section h2 {
+  background-color: #f7e13d;
+  border: 3px solid black;
+  border-radius: 0;
+  color: #000;
+  text-align: center;
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  display: block;
+}
+
+#item-header {
+  position: relative;
+  width: 48%;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+#map-section h2 {
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+/* || BUTTONS & LINKS || */
+
+/* --- NAVIGATION BUTTONS --- */
+#item-nav .btn-primary {
+  background-color: #fddb00;
+  border: 2px solid #de0313;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#item-nav .btn-primary:hover:not(:disabled) {
+  background-color: #f5d100;
+  border-color: #de0313;
+  transform: translateY(-1px);
+}
+#item-nav .btn-primary:disabled {
+  background-color: #fff8b0;
+  border-color: #de0313;
+  color: #ccc;
+}
+
+/* --- ADULT / KID TOGGLE BUTTONS --- */
+#adult-kid-buttons .btn {
+  transition: background-color 0.3s ease, color 0.2s ease;
+  transform: none;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+/* 1. ACTIVE STATE (Selected) */
+/* Both Adult (Primary) and Kid (Secondary) look Vibrant Yellow/Red when active */
+#adult-kid-buttons #btn-adult.btn-primary,
+#adult-kid-buttons #btn-kid.btn-secondary {
+  background-color: #fddb00 !important; /* Bright Yellow */
+  color: #000 !important;
+  border: 2px solid #de0313 !important; /* Bright Red */
+}
+
+/* 2. INACTIVE STATE (Unselected/Disabled look) */
+/* Both look Muted/Pale Yellow when inactive */
+#adult-kid-buttons #btn-adult.btn-outline-primary,
+#adult-kid-buttons #btn-kid.btn-outline-secondary {
+  background-color: #fff9cc !important; /* Washed out pale yellow */
+  color: #d6b300 !important;           /* Dimmed yellow-gold text */
+  border: 2px solid #edc2b3 !important; /* Pale red border */
+}
+
+/* Optional: Hover on Inactive */
+#adult-kid-buttons #btn-adult.btn-outline-primary:hover,
+#adult-kid-buttons #btn-kid.btn-outline-secondary:hover {
+  background-color: #fff2b3 !important; /* Slightly brighter on hover */
+  color: #de0313 !important;
+}
+
+/* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
+/* Matches the Theme Style - Red Border, Red Text */
+#btn-decrease-difficulty,
+#btn-increase-difficulty {
+  border: 2px solid #de0313 !important;
+  color: #de0313 !important;
+  background-color: transparent !important;
+}
+
+/* Hover: Yellow Background (Like Nav/Adult Active) */
+#btn-decrease-difficulty:hover,
+#btn-increase-difficulty:hover {
+  background-color: #fddb00 !important;
+  color: #000 !important;
+}
+
+/* --- TEXT LINKS --- */
+#text-content a,
+#text-content a#btn-toggle-length,
+tr[data-key="other-narrative"] a {
+  color: #de0313 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+#text-content a:hover,
+#text-content a#btn-toggle-length:hover,
+tr[data-key="other-narrative"] a:hover {
+  color: #a8000f !important;
+  transform: translateY(-1px);
+}
+
+/* || MAP & TABLES || */
+#map {
+  width: 100%;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+#metadata-table {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+#narrative-info {
+  display: block;
+  margin: 4rem auto;
+  max-width: 700px;
+  width: 90%;
+}
+
+
+/* || TYPOGRAPHY || */
+
+/* 1. Bangers (Headings) */
+.hero h1,
+.hero p.lead,
+.card-title,
+#narrative-title,
+#metadata-table th,
+#item-text-section h3,
+#item-related-media h5,
+#documentation h1,
+#disclaimer h1,
+#team h1 {
+  font-family: 'Bangers', cursive !important;
+}
+
+/* 2. Comic Neue (UI/Captions) */
+/* Includes Narrative Items and Team Member Names (Balloons) */
+#narrative-items .card-title,
+#team .card-title,
+#item-related-media .card-title,
+#map-section .item-card-hover p {
+  font-family: 'Comic Neue', cursive !important;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* 3. Comic Relief (Body) */
+body,
+p,
+li,
+td,
+th,
+#narrative-description,
+#item-header p,
+#item-description,
+#text-content,
+.card-text,
+.item-card-hover img + p,
+.card.path-card .card-body .card-text {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+/* Heading overrides for Comic Relief base */
+h2, h3, h4, h5, h6 {
+  font-family: 'Comic Relief', cursive !important;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+/* Specific Typographic Tweaks */
+.hero h1 { font-size: 8rem; line-height: 1.1; letter-spacing: 5px; margin-bottom: 1rem; }
+.hero p.lead { font-weight: 700; font-size: 30px; line-height: 1.4; }
+.card-title { font-weight: 700; }
+#narrative-title { font-size: 5rem; line-height: 1.2; letter-spacing: 2px; }
+#metadata-table th { font-weight: 600; font-size: 20px !important; }
+#item-text-section h3, #item-related-media h5 { font-weight: 600; font-size: 30px !important; }
+
+/* Outlined Text Effect (Hero) */
+.outlined {
+  color: #f7e13d;
+  text-shadow: 2px 2px 0 #de0313, -2px 2px 0 #de0313, 2px -2px 0 #de0313, -2px -2px 0 #de0313;
+}
+
+/* SPEECH BUBBLE TITLES (Narrative Items & Team Members) */
+#narrative-items .card-title,
+#team .card-title {
+  font-size: 1.4rem;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#narrative-items .card-title::before,
+#team .card-title::before {
+  content: "";
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 12px 10px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+  z-index: 0;
+}
+
+#narrative-items .card-title::after,
+#team .card-title::after {
+  content: "";
+  position: absolute;
+  top: -10px; left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 10px 8px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  z-index: 1;
+}
+
+/* Map Tooltip Text */
+#map-section .item-card-hover p {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #333;
+}
+
+
+/* || RESPONSIVE || */
+@media (max-width: 768px) {
+  #narrative-info {
+    width: 95%;
+    padding: 1rem 1.5rem;
+  }
+
+  #item-header {
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    left: 0; right: 0;
+  }
+}
