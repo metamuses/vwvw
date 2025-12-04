@@ -523,3 +523,9 @@ section[id] {
   height: 250px;
   width: 100%;
 }
+
+.info-page h1,
+.info-page h2,
+.info-page p {
+  text-align: justify;
+}
