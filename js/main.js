@@ -24,8 +24,11 @@ function switchTheme(themeName) {
     items.forEach(function (item) {
       if (item.dataset.theme === themeName) {
         item.style.fontWeight = "bold";
+        // Faux bold: adds a small shadow to thicken the font
+        item.style.textShadow = "0.4px 0 0 currentColor";
       } else {
         item.style.fontWeight = "normal";
+        item.style.textShadow = "none";
       }
     });
   };
@@ -580,6 +583,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 mediaElement = `<img src="${media.source}" alt="${media.caption}">`;
               } else if (media.type === "video") {
                 mediaElement = `<iframe src="${media.source}" title="${media.caption}" allowfullscreen></iframe>`;
+              } else if (media.type === "article") {
+                // API call to Microlink to generate a screenshot of the external site
+                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(media.link)}&screenshot=true&meta=false&embed=screenshot.url`;
+                mediaElement = `<img src="${previewUrl}" alt="Preview of ${media.caption}">`;
               }
 
               const wrapper = document.createElement("div");

@@ -9,7 +9,7 @@
     <meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="icon" href="favicon.png" type="image/png"><!-- add favicon logo-->
+    <link rel="icon" href="img/favicon.png" type="favicon">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/basics.css"> <!-- change for different styles? -->
@@ -18,17 +18,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body>
+  <body class="home-page">
     <!-- header con nav -->
-    <header>
-      <nav class="navbar navbar-expand-lg container-fluid">
+    <header class="bg-light py-2">
+      <nav class="navbar navbar-expand-lg container-fluid bg-light">
         <div class="container-fluid">
           <a href="index.html" class="navbar-brand">
             <img src="logo/logo_inline_reflected.svg" title="Logo" alt="Logo VWVW" class="img-header">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button> <!-- cambia icona hamburger con fontawesome? -->
+          </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown" >
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
@@ -36,9 +36,9 @@
                   collections
                 </a>
                 <ul class="dropdown-menu" id="narrative-menu">
-                  <li><a class="dropdown-item" data-narrative="historical" role="button">chronicles of fashion</a></li> <!-- oppure Westwood timeline -->
+                  <li><a class="dropdown-item" data-narrative="historical" role="button">chronicles of fashion</a></li>
                   <li><a class="dropdown-item" data-narrative="made-by" role="button">Made by Vivienne</a></li>
-                  <li><a class="dropdown-item" data-narrative="past-future" role="button">past and future</a></li> <!-- tutta frase troppo lunga -->
+                  <li><a class="dropdown-item" data-narrative="past-future" role="button">past and future</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -46,9 +46,9 @@
                   info
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">documentation</a></li>
-                  <li><a class="dropdown-item" href="#">disclaimer</a></li>
-                  <li><a class="dropdown-item" href="#">team</a></li>
+                  <li><a class="dropdown-item" href="info.html#documentation">documentation</a></li>
+                  <li><a class="dropdown-item" href="info.html#disclaimer">disclaimer</a></li>
+                  <li><a class="dropdown-item" href="info.html#team">team</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -60,8 +60,8 @@
                   <li><a class="dropdown-item" data-theme="daguerreotype" role="button">at the dawn of photography</a></li>
                   <li><a class="dropdown-item" data-theme="art-nouveau" role="button">Art Nouveau</a></li>
                   <li><a class="dropdown-item" data-theme="70s-punk" role="button">70s british punk</a></li>
-                  <li><a class="dropdown-item" data-theme="90s-cyberpunk" role="button">90s italian cyberpunk</a></li>
-                  <li><a class="dropdown-item" data-theme="dystopian-anime" role="button">dystopian anime future</a></li>
+                  <li><a class="dropdown-item" data-theme="90s-comics" role="button">90s comics</a></li>
+                  <li><a class="dropdown-item" data-theme="solar-punk" role="button">Solar punk</a></li>
                 </ul>
               </li>
             </ul>
@@ -75,7 +75,7 @@
       <!-- hero -->
       <section class="hero d-flex align-items-center justify-content-center text-center bg-light">
         <div class="container">
-          <h1 class="display-4 fw-semibold mb-3">VWVW</h1>
+          <h1 class="display-4 fw-semibold mb-3 outlined">VWVW</h1>
           <p class="lead mb-4">Vivienne Westwood Virtual World</p>
           <p class="intro-text text-muted mx-auto">
             An immersive digital journey through the creative universe of Vivienne Westwood —
@@ -93,18 +93,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card card-dynamic h-100 border-0 shadow-sm path-card" data-narrative-id="historical">
                 <a href="#" class="stretched-link text-decoration-none text-dark">
-
-                  <!-- Centered placeholder image -->
-                  <img
-                  src="https://placehold.co/400x400/png"
-                  alt="Placeholder Image"
-                  class="img-fluid rounded mx-auto d-block mb-3"
-                  style="max-width: 80%;"
-                  />
-
-                  <!-- Actual card image -->
-                  <img src="img/card1.png" class="card-img-top d-block mx-auto" alt="Chronicles of Fashion">
-                  <div class="card-body text-center">
+                  <img src="img/chronicles_of_fashion.jpg" class="card-img-top d-block mx-auto" alt="Chronicles of Fashion">
+                  <div class="card-body">
                     <h5 class="card-title fw-bold">Chronicles of Fashion</h5>
                     <p class="card-text text-muted">
                       A journey through Vivienne Westwood’s creative evolution — from her earliest inspirations to her most iconic designs.
@@ -117,18 +107,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card card-dynamic h-100 border-0 shadow-sm path-card" data-narrative-id="made-by">
                 <a href="#" class="stretched-link text-decoration-none text-dark">
-
-                  <!-- Centered placeholder image -->
-                  <img
-                  src="https://placehold.co/400x400/png"
-                  alt="Placeholder Image"
-                  class="img-fluid rounded mx-auto d-block mb-3"
-                  style="max-width: 80%;"
-                  />
-
-                  <!-- Actual card image -->
-                  <img src="img/card2.jpg" class="card-img-top d-block mx-auto" alt="Made by Vivienne">
-                  <div class="card-body text-center">
+                  <img src="img/made_by_vivienne.jpg" class="card-img-top d-block mx-auto" alt="Made by Vivienne">
+                  <div class="card-body">
                     <h5 class="card-title fw-bold">Made by Vivienne</h5>
                     <p class="card-text text-muted">
                       Explore the craftsmanship, materials, and rebellious aesthetics behind Westwood’s fashion creations.
@@ -141,18 +121,8 @@
             <div class="col-12 col-md-6 col-lg-4">
               <div class="card card-dynamic h-100 border-0 shadow-sm path-card" data-narrative-id="past-future">
                 <a href="#" class="stretched-link text-decoration-none text-dark">
-
-                  <!-- Centered placeholder image -->
-                  <img
-                  src="https://placehold.co/400x400/png"
-                  alt="Placeholder Image"
-                  class="img-fluid rounded mx-auto d-block mb-3"
-                  style="max-width: 80%;"
-                  />
-
-                  <!-- Actual card image -->
-                  <img src="img/card3.jpg" class="card-img-top d-block mx-auto" alt="Enter the Future">
-                  <div class="card-body text-center">
+                  <img src="img/enter_the_future.jpg" class="card-img-top d-block mx-auto" alt="Enter the Future">
+                  <div class="card-body">
                     <h5 class="card-title fw-bold">Enter the Future</h5>
                     <p class="card-text text-muted">
                       The lasting influence of Westwood’s vision — inspiring the next generations of fashion and cultural innovation.

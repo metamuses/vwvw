@@ -55,10 +55,16 @@ footer {
   transition: border 0.3s ease;
 }
 
+/* Mobile view — increase icon size */
+@media (max-width: 768px) {
+  .github-icon {
+    width: 5%;
+  }
+}
+
 .github-icon:hover {
   border: 1px solid white;
 }
-
 
 /* hero - TO FIX tutte misure, da giustificare e rendere responsive */
 .hero {
@@ -86,7 +92,19 @@ footer {
   margin: 0 auto;
 }
 
+/* || INDEX PAGE CARDS || */
 
+.path-card .card-img-top {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* Forces the image area to be a perfect square */
+  object-fit: contain;      /* Shrinks image to fit INSIDE the square (no cropping) */
+  background-color: white;  /* Fills the empty space with white color */
+  padding: 0.5rem;          /* Optional: Adds a small internal margin like in narrative.html */
+}
+
+.card-title {
+  text-align: center;
+}
 
 /* MAP: hover of cards to display path of items on map */
 /* Stili per la Mappa Interattiva */
@@ -483,3 +501,30 @@ footer {
     margin-top: 0.5rem;
   }
 
+/* =======================================
+   INFO PAGE & UTILITIES
+   ======================================= */
+
+/* Smooth Scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor positioning offset */
+/* Ensures the Fixed Header doesn't cover the section title when scrolling */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Team Member Images */
+.team-img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.info-page h1,
+.info-page h2,
+.info-page p {
+  text-align: justify;
+}

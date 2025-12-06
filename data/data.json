@@ -22,7 +22,87 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
+        }
+      ]
     },
     "tartan": {
       "title": "Westwood MacAndreas tartan",
@@ -49,28 +129,82 @@
 
       "media": [
         {
-          "type": "image",
-          "source": "https://placehold.co/400x400/png",
-          "caption": "Vivienne Westwood’s Banana Print, 1978",
-          "link": "https://example.com/vivienne-westwood-banana"
-        },
-        {
-          "type": "video",
-          "source": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          "caption": "Banana in Popular Culture",
-          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
         },
         {
           "type": "image",
-          "source": "https://placehold.co/600x250/png",
-          "caption": "Vivienne Westwood’s Banana Print, 1978",
-          "link": "https://example.com/vivienne-westwood-banana"
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
         },
         {
           "type": "video",
-          "source": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          "caption": "Banana in Popular Culture",
-          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
         }
       ]
     },
@@ -95,7 +229,87 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
+        }
+      ]
     },
     "earring": {
       "title": "SEX earring",
@@ -117,7 +331,87 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
+        }
+      ]
     },
     "angus_photo": {
       "title": "Vivienne Westwood by Angus McBean",
@@ -141,7 +435,87 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
+        }
+      ]
     },
     "shoes": {
       "title": "Studded shoes",
@@ -165,7 +539,87 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
+        }
+      ]
     },
     "t-shirt": {
       "title": "Destroy T-shirt",
@@ -189,7 +643,87 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOooYWs_fnRUoexxTu8EHv38PrudwGkgVW-adiFmRgDFFPxDAk79z"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/iXTyFZeTE17cu9HvQXe4oGXRWoftEGCL3eSxEZtfdgEg_WPoGkxxl6rZTwGPJDsxIe93JgZHN-P6gA8_=w544-h544-l90-rj",
+          "caption": "Sex pistols, God save the queen",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Y7i545vRlvY?si=b9xUAJ966krw6Ef7",
+          "caption": "Unboxing the most famous shoes in the world? | Naomi Campbell's platform heels by Vivienne Westwood",
+          "link": "https://youtu.be/Y7i545vRlvY?si=xE98VrvjTxlCUYks"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood (born 1941) and the Postmodern Legacy of Punk Style",
+          "link": "https://www.metmuseum.org/it/essays/vivienne-westwood-born-1941-and-the-postmodern-legacy-of-punk-style"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/150521/323974/restricted",
+          "caption": "Brassiere, designers Vivienne Westwood and Malcolm McLaren, fall/winter 1982–83",
+          "link": "https://music.youtube.com/watch?v=nE-AXzHFT1U"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/149759/323991/restricted",
+          "caption": "Hat by designer Vivienne Westwood British, fall/winter 1987–88",
+          "link": "https://www.metmuseum.org/art/collection/search/149759"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
+          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
+          "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
+          "link": "https://collections.vam.ac.uk/item/O85360/super-elevated-gillie-pair-of-platform-vivienne-westwood/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/Vl5IVo3EpCk?si=dY3LA1vG1ZsgQs_n&amp;start=607",
+          "caption": "Naomi Campbell Meets Vivienne Westwood | British Vogue",
+          "link": "https://www.youtube.com/watch?v=Vl5IVo3EpCk"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood's extreme footwear",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwoods-extreme-footwear"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw288622/Queen-Elizabeth-II-God-Save-the-Queen.jpg",
+          "caption": "Queen Elizabeth II ('God Save the Queen') by Jamie Reid",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw288622/Queen-Elizabeth-II-God-Save-the-Queen"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/vT5ssoZ80dQ?si=ldXPY34JZ2SoVdV9",
+          "caption": "Vivienne Westwood: 'Punk was just an excuse for people to run around'",
+          "link": "https://www.youtube.com/watch?v=vT5ssoZ80dQ"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionimages.npg.org.uk/std/mw83644/Dame-Vivienne-Westwood.jpg",
+          "caption": "Dame Vivienne Westwood by Philip Sayer",
+          "link": "https://www.npg.org.uk/collections/search/portrait/mw83644/Dame-Vivienne-Westwood"
+        }
+      ]
     },
     "parr_photo": {
       "title": "Vivienne Westwood by Martin Parr",
@@ -213,7 +747,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "moon_photo": {
       "title": "Dame Vivienne Westwood and Andreas Kronthaler with a new generation of activists, advocates, rebels and punks.",
@@ -237,7 +857,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "note": {
       "title": "From 'Letters to Earth' speech given by Vivienne at Shakespeare's Globe.",
@@ -261,7 +967,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "carrie": {
       "title": "Sarah Jessica Parker in Sex and the City",
@@ -285,7 +1077,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "platform_shoes": {
       "title": "Platform shoes",
@@ -309,12 +1187,98 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "trousers": {
       "title": "Tartan trousers",
       "description": "...",
-      "image": "",
+      "image": "img/items/tartan_trousers.jpeg",
       "location": [230, 1113],
       "metadata": {
         "category": "Fruit",
@@ -333,12 +1297,98 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "ring": {
       "title": "Armour Ring",
       "description": "...",
-      "image": "",
+      "image": "img/items/armour_ring.jpg",
       "location": [210, 1465],
       "metadata": {
         "category": "Fruit",
@@ -357,7 +1407,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manifesto, Save the World",
+          "link": "https://climaterevolution.co.uk/wp/The-Vivienne-Foundation-Manifesto/mobile/index.html"
+        },
+        {
+          "type": "image",
+          "source": "http://climaterevolution.co.uk/wp/wp-content/uploads/2020/07/HEARTS-7.jpg",
+          "caption": "7 of Hearts",
+          "link": "https://climaterevolution.co.uk/wp/2017/07/23/seven-of-hearts/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/rOarK1XcWBU?si=9N7T0gAqqTuyB_MJ",
+          "caption": "Manifesto Marathon 2008 - Vivienne Westwood",
+          "link": "https://youtu.be/rOarK1XcWBU"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: Fashion and Activism",
+          "link": "https://artsandculture.google.com/story/vivienne-westwood-fashion-and-activism-british-fashion-council/EAWB0Y4apC2qIg?hl=en"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX",
+          "caption": "Vivienne Westwood's Letter to the Earth",
+          "link": "https://youtu.be/LFDFqyraZmU?si=B_p02Y_DEQl7rfrX"
+        },
+        {
+          "type": "image",
+          "source": "https://lh3.googleusercontent.com/ci/AL18g_TRj6FY2OCJtlovv146PD8LTbtVq9p0TzV4lQFUmc_XXdEhzQhbS6wV9r6FHDU-POFVTxs-hy8=s1200",
+          "caption": "Vivienne Westwood Climate Revolution",
+          "link": "https://artsandculture.google.com/asset/vivienne-westwood-climate-revolution-vivienne-westwood/3wFCuFTSAwmwuQ?hl=en"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2420/full/2200,/0/default.jpg",
+          "caption": "Invitation dress",
+          "link": "https://collections.vam.ac.uk/item/O1241789/invitation-dress-dress-kumiko-uehara/"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2012FH2460/full/2200,/0/default.jpg",
+          "caption": "Petticoat",
+          "link": "https://collections.vam.ac.uk/item/O1241407/petticoat-shunsuke-hasegawa/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Nana: la storia d'amore più grande di Ai Yazawa in versione animata",
+          "link": "https://www.wired.it/play/televisione/2019/10/02/nana-anime-recensione/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.viviennewestwood.com/dw/image/v2/BJGV_PRD/on/demandware.static/-/Library-Sites-viviennewestwood-global-content/default/dw1838925f/images/blog/News/VWxNANA/News_VWxNANA_Hero_lg.jpg?sh=900&q=80",
+          "caption": "VIVIENNE WESTWOOD X NANA - In Conversation with Ai Yazawa",
+          "link": "https://www.viviennewestwood.com/it-it/westwood-world/news-and-projects/vivienne-westwood-x-nana---in-conversation-with-ai-yazawa/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.outpump.com/wp-content/uploads/2025/11/outpump-vivienne-westwood-nana.jpg",
+          "caption": "Vivienne Westwood x NANA è un cerchio che si chiude",
+          "link": "https://www.outpump.com/vivienne-westwood-nana-cerchio-chiude/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "The Story Behind Carrie Bradshaw’s Famous Vivienne Westwood Wedding Dress",
+          "link": "https://www.vogue.co.uk/article/carrie-bradshaw-vivienne-westwood-wedding-dress"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/wPPEGDVmWao?si=U2AEyn4s1fYU_qwW",
+          "caption": "Sarah Jessica Parker Talks Carrie Bradshaw",
+          "link": "https://www.youtube.com/watch?v=wPPEGDVmWao"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "And the Bride Wore… Vivienne Westwood",
+          "link": "https://www.vogue.com/slideshow/vivienne-westwood-brides"
+        }
+      ]
     },
     "necklace": {
       "title": "Pearls necklace",
@@ -381,7 +1517,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     },
     "corset": {
       "title": "Corset",
@@ -405,7 +1627,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     },
     "boucher_painting": {
       "title": "Daphins and Chloe painting",
@@ -429,7 +1737,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     },
     "david_painting": {
       "title": "Henriette de Verninac by David",
@@ -453,7 +1847,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     },
     "underpants": {
       "title": "Underpants, briefs by Vivienne Westwood",
@@ -477,7 +1957,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     },
     "petticoat": {
       "title": "Woman's Hoop Petticoat (Pannier)",
@@ -501,7 +2067,93 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     },
     "dress": {
       "title": "Dress by Vivienne Westwood",
@@ -525,24 +2177,110 @@
         "adult-amateur-long": "This is the adult amateur and long version of the text.",
         "adult-expert-short": "This is the adult expert and short version of the text.",
         "adult-expert-long": "This is the adult expert and long version of the text."
-      }
+      },
+      "media": [
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood Counterculture & Oxymoron",
+          "link": "https://www.calameo.com/books/007043623cc4655c81efd"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/v_-XK5WaZEo",
+          "caption": "Vivienne Westwood on the Wallace Collection",
+          "link": "https://youtu.be/v_-XK5WaZEo?si=U2_HT7-64UztEJET"
+        },
+        {
+          "type": "image",
+          "source": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/906304/2284758/restricted",
+          "caption": "Ensemble, Designer Vivienne Westwood British, fall/winter 1995–96",
+          "link": "https://artsandculture.google.com/asset/corset-and-shorts-ensemble-vivienne-westwood/KgFe5PPhF0Yetg?hl=en"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: punk, new romantic and beyond",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond?srsltid=AfmBOoqf9C1vWjB_LiN1YWJCVTJM7hoVL8bwM84GGT1CNXmVBwsxxYy3"
+        },
+        {
+          "type": "video",
+          "source": "https://www.youtube.com/embed/xLOiqepH_SY?si=G-X7Ici6Nj0oGYS1",
+          "caption": "The History of the Vivienne Westwood Pearl Choker, Corset, & Punk Fashion",
+          "link": "https://www.youtube.com/watch?v=xLOiqepH_SY"
+        },
+        {
+          "type": "image",
+          "source": "https://wallacelive.wallacecollection.org/eMP/eMuseumPlus?service=DynamicAsset&sp=SU5mxm4Yx%2FVbhp94nksEmWhUPPCPARCxmRF3wZoiekBYI9dLioBnZzXySIRTomizoxxT9oo9OlonT%0APnyO6EhNhnOgOpQYyGgGmp9f4Yzsn%2FRogeai2vDoqVsPJ1LPKLOrxIqE9mglfu4%3D&sp=Simage%2Fjpeg",
+          "caption": "Jean-Honoré Fragonard (1732 - 1806), The Swing",
+          "link": "https://wallacelive.wallacecollection.org:443/eMP/eMuseumPlus?service=ExternalInterface&module=collection&objectId=65364&viewType=detailView"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood: a taste for the past",
+          "link": "https://www.vam.ac.uk/articles/vivienne-westwood-a-taste-for-the-past?srsltid=AfmBOorPCh5lxVmWgQ32jIL8N_gwBdh1Xu2oi4IAcTgCAZmu-TJbCRdJ"
+        },
+        {
+          "type": "image",
+          "source": "https://collections.chateauversailles.fr/cc/imageproxy.aspx?&filename=giga/mv3893_files/10/1_1.jpg",
+          "caption": "Marie-Antoinette, reine de France (1755-1793)",
+          "link": "https://collections.chateauversailles.fr?queryid=d6a00bbb-f106-4e74-a88e-b61a2d55ac4e"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Manolo Blahnik Takes Vogue Around His New Exhibition At The Wallace Collection",
+          "link": "https://www.vogue.co.uk/article/manolo-blahnik-wallace-collection"
+        },
+        {
+          "type": "image",
+          "source": "https://framemark.vam.ac.uk/collections/2006AT4984/full/2200,/0/default.jpg",
+          "caption": "Clutch Bag, 1991",
+          "link": "https://collections.vam.ac.uk/item/O84234/portrait-clutch-bag-vivienne-westwood/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Canvas to Corsets: François Boucher as Vivienne Westwood’s Muse",
+          "link": "https://www.wallacecollection.org/explore/explore-in-depth/bouchers-paintings/yukhnovich-and-boucher/canvas-to-corsets-fran%C3%A7ois-boucher-as-vivienne-westwoods-muse/"
+        },
+        {
+          "type": "image",
+          "source": "https://www.kci.or.jp/archives/digital_archives/photos/196_xl_AC05486.jpg",
+          "caption": "Top and Skirt, Spring/Summer 1986",
+          "link": "https://www.kci.or.jp/en/archives/digital_archives/1980s/KCI_264"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood’s Eighteenth Century by Robert Wellington ",
+          "link": "https://www.journal18.org/nq/vivienne-westwoods-eighteenth-century-by-robert-wellington/"
+        },
+        {
+          "type": "article",
+          "source": "",
+          "caption": "Vivienne Westwood, FALL 1995 READY-TO-WEAR",
+          "link": "https://www.vogue.com/fashion-shows/fall-1995-ready-to-wear/vivienne-westwood"
+        }
+      ]
     }
   },
   "narratives": {
     "historical": {
       "title": "Historical narrative",
       "description": "This is the historical narrative.",
-      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
+      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
     },
     "made-by": {
       "title": "Made by Vivienne narrative",
       "description": "This is the made by Vivienne narrative.",
-      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress"]
+      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring"]
     },
     "past-future": {
       "title": "Past and Future narrative",
       "description": "This is the past and future narrative.",
-      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "boucher_painting", "david_painting", "petticoat"]
+      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "david_painting", "dress",  "boucher_painting", "corset",  "petticoat", "underpants", "necklace", "ring", "trousers"]
     }
   }
 }
