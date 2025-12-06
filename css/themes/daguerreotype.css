@@ -1,3 +1,378 @@
-a.nav-link.dropdown-toggle {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* GENERAL RULES */
+body {
+  background-color: #EFDFBA !important;
+  color: #2B1C0E !important;
+  font-family: 'Libre Baskerville';
 }
+
+footer, header, nav.navbar {
+  background-color: #B33A2E !important;
+  font-family: 'Libre Baskerville';
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'UnifrakturMaguntia' !important;
+}
+
+.lead {
+  font-family: 'Libre Baskerville' !important;
+  color: #2B1C0E !important;
+}
+
+/* navbar */
+.dropdown-item:hover {
+  background-color: #EFDFBA;
+}
+
+/*map section*/
+#map-section {
+  background-color: #EFDFBA !important;
+}
+
+.leaflet-marker-icon.item-marker {
+  background-color: #B33A2E;
+  box-shadow: 0 0 0.2rem #B33A2E;
+}
+
+.item-marker.highlighted {
+  background-color: #712620;
+  box-shadow: 0 0 0.8rem #712620 !important;
+}
+
+/* background color for cards on hover - need to assign same color to external container */
+.item-custom-tooltip {
+  background-color: #EFDFBA !important;
+}
+
+.item-custom-tooltip .leaflet-tooltip-tip {
+  background: transparent !important;
+  border: none !important;
+}
+
+.item-card-hover {
+  background-color: #EFDFBA; 
+}
+
+.item-card-hover p {
+  font-family: 'Libre Baskerville';
+}
+
+/* all images made daguerrotype style*/
+img {
+  max-width: 100%;
+  height: auto;
+  filter:
+    grayscale(100%)
+    sepia(85%)
+    contrast(110%)
+    brightness(95%)
+    saturate(120%);
+}
+
+.card img {
+  background: transparent !important;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  background-color: transparent;
+}
+
+
+/* CARD STYLE FOR ALL PAGES */
+/*CARD for index and narrative page */
+.card.card-dynamic {
+  background: #EFDFBA; 
+  border: 1px solid #C7B08B; 
+  padding: 1.5rem;                
+  position: relative;
+  border-radius: 0 !important;
+  overflow: hidden; 
+  clip-path: polygon(
+    10% 0, 90% 0, 100% 10%, 100% 90%, 
+    90% 100%, 10% 100%, 0 90%, 0 10%
+  );
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important; 
+  transition: 
+    filter 0.35s ease, 
+    transform 0.35s ease;  
+  transform: none;
+}
+
+/* golden frame */
+.card-dynamic::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem; 
+  pointer-events: none;
+  z-index: 1;
+  border: 3px solid #D4AF37; 
+  clip-path: inherit; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
+}
+
+/* noise and vignetting */
+.card-dynamic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2; 
+  background-image: url("/img/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
+  clip-path: inherit; 
+}
+
+/* ??? ombra ma non funziona */
+.card.card-dynamic:hover {
+  transform: translate(-3px, -3px) !important; 
+  filter: drop-shadow(0 2rem 3.5rem rgba(0,0,0,0.65)) !important; 
+}
+
+.card-dynamic:nth-child(odd),
+.card-dynamic:nth-child(3n) {
+  transform: none; 
+}
+
+/* ??? rimuove eventuali conflitti residui */
+.card.card-dynamic.shadow-sm {
+  box-shadow: none !important;
+}
+
+/*CARD for item page - text and media sections- to avoid hover*/
+.card {
+  background: #EFDFBA; 
+  border: 1px solid #C7B08B; 
+  clip-path: polygon(
+    3% 0, 97% 0, 100% 3%, 100% 97%, 
+    97% 100%, 3% 100%, 0 97%, 0 3%
+  );
+  padding: 1.25rem;               
+  position: relative;
+  overflow: hidden; 
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important; 
+  transition: 
+    filter 0.35s ease, 
+    transform 0.35s ease;
+  transform: none; 
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem; 
+  pointer-events: none;
+  z-index: 1;
+  border: 3px solid #D4AF37; 
+  clip-path: inherit; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2; 
+  background-image: url("/img/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
+  clip-path: inherit; 
+}
+
+.card:hover {
+  transform: none !important; 
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important; 
+}
+
+.card:nth-child(odd),
+.card:nth-child(3n) {
+  transform: none; 
+}
+
+
+/* ITEM PAGE*/
+/*ITEM wrapper*/
+#item-image-wrapper {
+  position: relative;
+  background: #EFDFBA !important;
+  border: 1px solid #C7B08B;
+  padding: 3rem !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  clip-path: polygon(
+    10% 0, 90% 0, 100% 10%, 100% 90%, 
+    90% 100%, 10% 100%, 0 90%, 0 10%
+  );
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
+  transform: none;
+}
+
+#item-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem;
+  pointer-events: none;
+  z-index: 1;
+  border: 3px solid #D4AF37;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
+  clip-path: inherit;
+}
+
+#item-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("/img/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
+  clip-path: inherit;
+}
+
+
+/*METADATA wrapper*/
+#metadata-table-wrapper th {
+  font-family: 'Libre Baskerville';
+  font-weight: 1000 !important;
+}
+
+#metadata-table-wrapper td {
+  font-family: 'Libre Baskerville';
+}
+
+#metadata-table-wrapper td a {
+  color: #B33A2E;
+  font-weight: 600;
+}
+
+#metadata-table-wrapper td a:hover {
+  color: #712620;
+}
+
+#metadata-table {
+  background: #EFDFBA !important;
+  border-radius: 0 !important;
+  position: relative;
+  overflow: hidden;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25));
+  padding: 5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent; 
+}
+
+#metadata-table th,
+#metadata-table td {
+  background: transparent;
+  border: 1px solid #8e7a55;
+  padding: 0.75rem 1rem;
+  box-shadow:
+    inset 0 0 0.4rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+#metadata-table::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("/img/ghirigoro.png");
+  background-size: contain; 
+  background-repeat: no-repeat;
+  top: -2.5rem; 
+  left: -2.5rem; 
+  right: auto;
+  bottom: auto;
+  transform: none; 
+}
+
+#metadata-table::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("/img/ghirigoro.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: auto;
+  left: auto;
+  bottom: -2.5rem; 
+  right: -2.5rem; 
+  transform: scale(-1, -1); 
+}
+
+
+/*BUTTONS*/
+.btn {
+  font-family: 'Libre Baskerville' !important;
+  color: #EFDFBA !important;
+  background-color: #B33A2E !important;
+  border-color: #EFDFBA !important;
+  border-radius: 0 !important;
+  box-shadow: 0.125em 0.125em 0.3125em rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: 0.25em 0.25em 0.625em rgba(0, 0, 0, 0.25);
+}
+
+/* active adult btn */
+#btn-adult.btn-primary {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: none !important;
+}
+
+/*active kid btn*/
+#btn-kid.btn-secondary {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: none !important;
+}
+
+/*text-content*/
+#text-content {
+  font-family: 'Libre Baskerville';
+  color: #2B1C0E;
+}
+
+#text-content a {
+  color: #B33A2E !important;
+  font-weight: 700;
+}
+
+#text-content a:hover {
+  color: #712620 !important;
+}
+
+
+
+
+
