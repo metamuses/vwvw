@@ -27,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #EFDFBA;
 }
 
-
 /*map section*/
 #map-section {
   background-color: #EFDFBA !important;
@@ -208,7 +207,7 @@ img {
   position: relative;
   background: #EFDFBA !important;
   border: 1px solid #C7B08B;
-  padding: 1.5rem !important;
+  padding: 3rem !important;
   border-radius: 0 !important;
   overflow: hidden;
   clip-path: polygon(
@@ -260,6 +259,7 @@ img {
 
 #metadata-table-wrapper td a {
   color: #B33A2E;
+  font-weight: 600;
 }
 
 #metadata-table-wrapper td a:hover {
@@ -268,11 +268,14 @@ img {
 
 #metadata-table {
   background: #EFDFBA !important;
-  border: 1px solid #C7B08B;
   border-radius: 0 !important;
   position: relative;
   overflow: hidden;
   filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25));
+  padding: 5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent; 
 }
 
 #metadata-table th,
@@ -280,48 +283,96 @@ img {
   background: transparent;
   border: 1px solid #8e7a55;
   padding: 0.75rem 1rem;
-
   box-shadow:
     inset 0 0 0.4rem rgba(0, 0, 0, 0.25);
-
   position: relative;
   z-index: 1;
 }
 
-/* to change con gemini, png line e ghirigori
 #metadata-table::before {
   content: "";
   position: absolute;
-  inset: 0.5rem;
   pointer-events: none;
   z-index: 2;
-
-  border: 3px solid #D4AF37;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
-
-  clip-path: inherit;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("/img/ghirigoro.png");
+  background-size: contain; 
+  background-repeat: no-repeat;
+  top: -2.5rem; 
+  left: -2.5rem; 
+  right: auto;
+  bottom: auto;
+  transform: none; 
 }
 
 #metadata-table::after {
   content: "";
   position: absolute;
-  inset: 0;
   pointer-events: none;
-  z-index: 3;
-
-  background-image: url("/img/noise.png");
-  background-size: cover;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-
-  box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
-
-  clip-path: inherit;
+  z-index: 2;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("/img/ghirigoro.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: auto;
+  left: auto;
+  bottom: -2.5rem; 
+  right: -2.5rem; 
+  transform: scale(-1, -1); 
 }
 
-THEN
-BUTTONS
-margins??*/
+
+/*BUTTONS*/
+.btn {
+  font-family: 'Libre Baskerville' !important;
+  color: #EFDFBA !important;
+  background-color: #B33A2E !important;
+  border-color: #EFDFBA !important;
+  border-radius: 0 !important;
+  box-shadow: 0.125em 0.125em 0.3125em rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: 0.25em 0.25em 0.625em rgba(0, 0, 0, 0.25);
+}
+
+/* active adult btn */
+#btn-adult.btn-primary {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: none !important;
+}
+
+/*active kid btn*/
+#btn-kid.btn-secondary {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: none !important;
+}
+
+/*text-content*/
+#text-content {
+  font-family: 'Libre Baskerville';
+  color: #2B1C0E;
+}
+
+#text-content a {
+  color: #B33A2E !important;
+  font-weight: 700;
+}
+
+#text-content a:hover {
+  color: #712620 !important;
+}
+
+
 
 
 
