@@ -3,13 +3,6 @@
   display: none;
 }
 
-@media (min-width: 992px) { /* lg breakpoint */
-  .navbar .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-  }
-}
-
 .navbar .dropdown-menu {
   right: 0; /* per li più a destra che superavano viewport*/
   left: auto;
