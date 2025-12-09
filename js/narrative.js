@@ -53,8 +53,7 @@ export function initNarrativePage() {
 
         const card = document.createElement("a");
         card.href = `item.html#${itemKey}`;
-        card.className =
-          "card h-100 border-0 shadow-sm text-decoration-none text-dark";
+        card.className = "card card-dynamic h-100 border-0 shadow-sm text-decoration-none text-dark";
 
         const img = document.createElement("img");
         img.src = item.image || "https://placehold.co/400x400/png";
