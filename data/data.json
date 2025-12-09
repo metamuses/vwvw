@@ -6,11 +6,12 @@
       "image": "img/items/sex_pistols_single.jpg",
       "location": [485, 540],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "God save the queen / Sex Pistols",
+        "creators": ["Matlock Glen", "Cook Paul", "Jones Steve", "Lydon John", "Sex Pistols"],
+        "type": "musical record",
+        "year": "1977",
+        "language": "english",
+        "source": "Istituto Centrale per i Beni Sonori ed Audiovisivi",
         "narratives":["historical", "past-future"]
       },
       "texts": {
@@ -110,10 +111,13 @@
       "image": "img/items/tartan_macandreas.jpeg",
       "location": [360, 130],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "25x35 cm",
+        "title": "Westwood MacAndreas",
+        "creator": "Vivienne Westwood",
+        "date": "01/01/1993",
+        "category": "fashion",
+        "notes": "Designed by the fashion designer Vivienne Westwood, for her Anglomania collection, Autumn/Winter 1993/4 and woven by Lochcarron of Scotland. Named MacAndreas after her husband, Andreas Kronthaler.",
+        "sample":"A woven sample of this tartan has been received by the Scottish Register of Tartans for permanent preservation in the National Records of Scotland.",
+        "source": "The Scottish Register of Tartans",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -214,10 +218,19 @@
       "image": "img/items/god_save_queen_top.jpg",
       "location": [360, 375],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "source": "Wikipedia",
+        "title": "Top",
+        "year": {"made": "1976"},
+        "artist/maker": ["McLaren Malcolm", "Vivienne Westwood"],
+        "place of origin": "Great Britain",
+        "object type": "top",
+        "materials and techniques":["Muslin", "Metal", "Printing"],
+        "brief description":"Top, f, white muslin, Malcolm McLaren and Vivienne Westwood, Britain, 'Seditionaries' Collection, 1976.",
+        "physical description":"White muslin long-sleeved top with Sex Pistols' 'God save the Queen' imagery printed on front. Sex pistols lyrics safety-pinned to bottom portion of front. Sleeves feature attached hardware and shirt has some rips at shoulders.",
+        "dimensions": {"bust circumference":"80 cm", "length":"54 cm"},
+        "marks and inscriptions": {"decoration": ["and the fascist regime / God save the Queen / She ain't no human being / Sex Pistols / there is no future in England's dream / don't be told what you want / don't be told what you need / no future no future no future for you / god save the queen / god save the window lane / god save human beings","Andy Warhol-type portrait of Queen Elizabeth II with safety pin through lips."], "Label": "'Malcolm McLaren / Vivienne Westwood / Seditionaries / exclusive collection' Label sewn under muslin but can be seen through front of shirt."},
+        "subject depicted":"Elizabeth II (Queen of Great Britain)",
+        "collection": "Textiles and Fashion Collection",
+        "source": "Victoria & Albert Museum",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -317,9 +330,19 @@
       "image": "img/items/sex_earring.jpg",
       "location": [230, 480],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "source": "Wikipedia",
+        "name": "Earthling",
+        "year": {"worn":"1996", "designed and made":"1992-1993"},
+        "artist/maker": "Vivienne Westwood",
+        "place of origin":{"made":"Milan", "designed": "London"},
+        "category":["David Bowie Archive", "Entertainment and Leisure"],
+        "parts":["right earring", "left earring", "pouch"],
+        "materials and techniques": ["Metal", "Suedette", "Nylon", "Casting", "Soldering", "Machine Sewing", "Printing"],
+        "brief description": "'SEX' earring by Vivienne Westwood, worn by David Bowie during performance at Brit Awards to promote Earthling, 1996",
+        "physical description":"Silver earring with letters spelling out the word 'SEX'. The stamped metal letters are in a Serif font, and are suspended vertically, linked together with small silver rings. The 'S' at the top has a thin metal post on the back. There is a silver bullet back threaded onto this post. The earring is held within a small faux suede, baby pink coloured pouch. The pouch can be tightened at the top with a piece of pink nylon string. There is a gold glittery stamp of the words 'Vivienne Westwood' and her company logo on the front of the pouch.",
+        "dimensions": {"earring":{"length":" 8cm", "width":"2.5 cm"}, "pouch":{"length":"12.4cm", "width":"11cm"}},
+        "marks and inscriptions": "VIVIENNE WESTWOOD, Note: Stamped in gold glittery font on the front of the pouch.",
+        "object history":"Worn by David Bowie in the music video for 'Hallo Spaceboy', 1996, and also at the 1996 Brit Awards.",
+        "source": "Victoria & Albert Museum",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -419,11 +442,13 @@
       "image": "img/items/angus_photo.jpg",
       "location": [500, 300],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Dame Vivienne Westwood",
+        "creator": "Angus McBean",
+        "format":"chromogenic print",
+        "date": "1988",
+        "dimensions": "12 5/8 in. x 9 7/8 in.",
+        "collection": "Photographs Collection",
+        "source": "National Portrait Gallery",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -523,11 +548,19 @@
       "image": "img/items/shoes.jpg",
       "location": [95, 705],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "name": "Pair of shoes",
+        "year": {"worn": "1974-1976", "designed and made": "1974"},
+        "artist/maker": "Vivienne Westwood, Malcolm McLaren",
+        "place of origin": {"made": "Great Britain"},
+        "category": ["Vivienne Westwood Archive", "Footwear", "Punk", "Sex Collection"],
+        "object type": "Pair of shoes",
+        "parts": ["Left Shoe", "Right Shoe"],
+        "materials and techniques": ["Leather"],
+        "brief description": "Shoes, f, black leather, Malcolm McLaren and Vivienne Westwood, Britain, 'Sex' Collection, 1974.",
+        "dimensions": {"height": "18 cm", "length": "20.5 cm", "width": "7.5 cm"},
+        "marks and inscriptions": {"stamp":"'especially for Sex, 430 Kings Rd., Chelsea / made in England'"},
+        "collection":"Textiles and Fashion Collection",
+        "source": "Victoria & Albert Museum",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -627,11 +660,14 @@
       "image": "img/items/destroy_tshirt.jpeg",
       "location": [360, 640],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "'Destroy' T-shirt",
+        "designers": ["Vivienne Westwood", "Malcom McLaren"],
+        "retailers": "Seditionaries",
+        "date": "1977",
+        "culture":"British",
+        "medium": "cotton",
+        "signatures, inscriptions and markings":{"label":"Malcolm McLaren/ Vivienne Westwood/ Seditionaries"},
+        "source": "The Met",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -731,11 +767,13 @@
       "image": "img/items/parr_photo.jpg",
       "location": [370, 1365],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Vivienne Westwood",
+        "creator": "Martin Parr",
+        "format":"pigment print",
+        "date": "2012",
+        "dimensions": "60 1/8 in. x 41 3/8 in.",
+        "collection": "Primary Collection",
+        "source": "National Portrait Gallery",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -841,11 +879,13 @@
       "image": "img/items/activism_photo.jpg",
       "location": [570, 1132],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Dame Vivienne Westwood and Andreas Kronthaler with a new generation of activists, advocates, rebels and punks",
+        "creator": "Hanna Moon",
+        "format":"chromogenic print",
+        "date": "May 2018",
+        "dimensions": "26 in. x 19 5/8 in.",
+        "collection": "Photographs Collection",
+        "source": "National Portrait Gallery",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -1066,7 +1106,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "past-future"]
+        "narratives": ["historical", "past-future", "made-by" ]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1176,7 +1216,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1286,7 +1326,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1506,7 +1546,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1616,7 +1656,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1946,7 +1986,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -2166,7 +2206,7 @@
         "year": "2025",
         "dimensions": "30x40 cm",
         "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -2275,7 +2315,7 @@
     "made-by": {
       "title": "Made by Vivienne narrative",
       "description": "This is the made by Vivienne narrative.",
-      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring"]
+      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring", "carrie"]
     },
     "past-future": {
       "title": "Past and Future narrative",
