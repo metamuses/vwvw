@@ -2268,17 +2268,17 @@
   },
   "narratives": {
     "historical": {
-      "title": "Historical narrative",
-      "description": "This is the historical narrative.",
+      "title": "Chronicles of Fashion",
+      "description": "Chronicles of Fashion unfolds as a chronological narrative that situates Vivienne Westwood’s work within a broader cultural and historical continuum. The collection begins with the French artistic and historical references that inspired her vision and then progresses through her most emblematic punk designs, to conclude with her presence in contemporary media and popular culture, from 'Sex & The City' and 'Nana' to significant examples of her public activism. Together, these works trace not only the evolution of a designer, but the establishment of an enduring cultural legacy.",
       "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
     },
     "made-by": {
-      "title": "Made by Vivienne narrative",
+      "title": "Made by Vivienne",
       "description": "This is the made by Vivienne narrative.",
       "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring"]
     },
     "past-future": {
-      "title": "Past and Future narrative",
+      "title": "Past and Future",
       "description": "This is the past and future narrative.",
       "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "david_painting", "dress",  "boucher_painting", "corset",  "petticoat", "underpants", "necklace", "ring", "trousers"]
     }
