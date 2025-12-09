@@ -117,7 +117,7 @@ export function initItemPage() {
               }
             });
 
-            rowOtherNarr.style.display = "";
+            rowOtherNarrative.style.display = "";
           }
         }
 
