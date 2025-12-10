@@ -62,12 +62,6 @@
           "link": "https://www.metmuseum.org/art/collection/search/149759"
         },
         {
-          "type": "article",
-          "source": "",
-          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
-          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
-        },
-        {
           "type": "image",
           "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
           "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
@@ -216,7 +210,7 @@
       "location": [360, 375],
       "metadata": {
         "title": "Top",
-        "date": {"made": "1976"},
+        "date":"1976",
         "creator": ["McLaren Malcolm", "Vivienne Westwood"],
         "materials":["Muslin", "Metal", "Printing"],
         "subject":"Elizabeth II (Queen of Great Britain)",
