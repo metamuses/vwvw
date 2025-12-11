@@ -303,7 +303,7 @@ body.narrative-page #map-section #map::after {
   pointer-events: none;
   z-index: 0;
   background-color: #0f1c2e;
-  background-image: url('../../img/hex.png');
+  background-image: url('../../img/themes/hex.png');
   background-repeat: repeat;
   background-position: center;
   background-size: auto;
@@ -316,7 +316,7 @@ body.narrative-page #map-section #map::after {
   border: 2px solid #C8C8C8;
   color: #C8C8C8;
   background-color: #0f1c2e;
-  background-image: url('../../img/hex.png');
+  background-image: url('../../img/themese/hex.png');
   background-repeat: repeat;
   background-position: center;
   background-size: auto;
