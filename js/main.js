@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const metadata = item.metadata || {};
 
           // Iterate over standard metadata keys
-          ["category", "author", "year", "dimensions", "source"].forEach(key => {
+          ["title", "creator", "date", "publisher", "type", "language", "materials and techniques", "subject", "director", "screenwriter", "star", "source"].forEach(key => {
             const row = metadataTable.querySelector(`tr[data-key="${key}"]`);
             if (row) {
               const value = metadata[key];

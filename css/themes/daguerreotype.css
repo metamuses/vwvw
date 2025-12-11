@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .item-card-hover {
-  background-color: #EFDFBA; 
+  background-color: #EFDFBA;
 }
 
 .item-card-hover p {
@@ -87,20 +87,20 @@ img {
 /* CARD STYLE FOR ALL PAGES */
 /*CARD for index and narrative page */
 .card.card-dynamic {
-  background: #EFDFBA; 
-  border: 1px solid #C7B08B; 
-  padding: 1.5rem;                
+  background: #EFDFBA;
+  border: 1px solid #C7B08B;
+  padding: 1.5rem;
   position: relative;
   border-radius: 0 !important;
-  overflow: hidden; 
+  overflow: hidden;
   clip-path: polygon(
-    10% 0, 90% 0, 100% 10%, 100% 90%, 
+    10% 0, 90% 0, 100% 10%, 100% 90%,
     90% 100%, 10% 100%, 0 90%, 0 10%
   );
-  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important; 
-  transition: 
-    filter 0.35s ease, 
-    transform 0.35s ease;  
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
   transform: none;
 }
 
@@ -108,11 +108,11 @@ img {
 .card-dynamic::before {
   content: "";
   position: absolute;
-  inset: 0.5rem; 
+  inset: 0.5rem;
   pointer-events: none;
   z-index: 1;
-  border: 3px solid #D4AF37; 
-  clip-path: inherit; 
+  border: 3px solid #D4AF37;
+  clip-path: inherit;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
 }
 
@@ -122,24 +122,24 @@ img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2; 
+  z-index: 2;
   background-image: url("/img/noise.png");
   background-size: cover;
   opacity: 0.16;
   mix-blend-mode: multiply;
   box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
-  clip-path: inherit; 
+  clip-path: inherit;
 }
 
 /* ??? ombra ma non funziona */
 .card.card-dynamic:hover {
-  transform: translate(-3px, -3px) !important; 
-  filter: drop-shadow(0 2rem 3.5rem rgba(0,0,0,0.65)) !important; 
+  transform: translate(-3px, -3px) !important;
+  filter: drop-shadow(0 2rem 3.5rem rgba(0,0,0,0.65)) !important;
 }
 
 .card-dynamic:nth-child(odd),
 .card-dynamic:nth-child(3n) {
-  transform: none; 
+  transform: none;
 }
 
 /* ??? rimuove eventuali conflitti residui */
@@ -149,30 +149,30 @@ img {
 
 /*CARD for item page - text and media sections- to avoid hover*/
 .card {
-  background: #EFDFBA; 
-  border: 1px solid #C7B08B; 
+  background: #EFDFBA;
+  border: 1px solid #C7B08B;
   clip-path: polygon(
-    3% 0, 97% 0, 100% 3%, 100% 97%, 
+    3% 0, 97% 0, 100% 3%, 100% 97%,
     97% 100%, 3% 100%, 0 97%, 0 3%
   );
-  padding: 1.25rem;               
+  padding: 1.25rem;
   position: relative;
-  overflow: hidden; 
-  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important; 
-  transition: 
-    filter 0.35s ease, 
+  overflow: hidden;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
+  transition:
+    filter 0.35s ease,
     transform 0.35s ease;
-  transform: none; 
+  transform: none;
 }
 
 .card::before {
   content: "";
   position: absolute;
-  inset: 0.5rem; 
+  inset: 0.5rem;
   pointer-events: none;
   z-index: 1;
-  border: 3px solid #D4AF37; 
-  clip-path: inherit; 
+  border: 3px solid #D4AF37;
+  clip-path: inherit;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
 }
 
@@ -181,23 +181,23 @@ img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2; 
+  z-index: 2;
   background-image: url("/img/noise.png");
   background-size: cover;
   opacity: 0.16;
   mix-blend-mode: multiply;
   box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
-  clip-path: inherit; 
+  clip-path: inherit;
 }
 
 .card:hover {
-  transform: none !important; 
-  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important; 
+  transform: none !important;
+  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
 }
 
 .card:nth-child(odd),
 .card:nth-child(3n) {
-  transform: none; 
+  transform: none;
 }
 
 
@@ -211,7 +211,7 @@ img {
   border-radius: 0 !important;
   overflow: hidden;
   clip-path: polygon(
-    10% 0, 90% 0, 100% 10%, 100% 90%, 
+    10% 0, 90% 0, 100% 10%, 100% 90%,
     90% 100%, 10% 100%, 0 90%, 0 10%
   );
   filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
@@ -275,7 +275,7 @@ img {
   padding: 5rem;
   border-width: 1px;
   border-style: solid;
-  border-color: transparent; 
+  border-color: transparent;
 }
 
 #metadata-table th,
@@ -296,14 +296,14 @@ img {
   z-index: 2;
   width: 5rem;
   height: 5rem;
-  background-image: url("/img/ghirigoro.png");
-  background-size: contain; 
+  background-image: url("/img/themes/ghirigoro.png");
+  background-size: contain;
   background-repeat: no-repeat;
-  top: -2.5rem; 
-  left: -2.5rem; 
+  top: -2.5rem;
+  left: -2.5rem;
   right: auto;
   bottom: auto;
-  transform: none; 
+  transform: none;
 }
 
 #metadata-table::after {
@@ -313,14 +313,14 @@ img {
   z-index: 2;
   width: 5rem;
   height: 5rem;
-  background-image: url("/img/ghirigoro.png");
+  background-image: url("/img/themes/ghirigoro.png");
   background-size: contain;
   background-repeat: no-repeat;
   top: auto;
   left: auto;
-  bottom: -2.5rem; 
-  right: -2.5rem; 
-  transform: scale(-1, -1); 
+  bottom: -2.5rem;
+  right: -2.5rem;
+  transform: scale(-1, -1);
 }
 
 
