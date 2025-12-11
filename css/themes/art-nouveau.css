@@ -5,7 +5,7 @@
 
 /* || BACKGROUNDS || */
 body {
-  background-color: #f0d2aa !important;
+  background-color: #f0d2aa;
 }
 
 /* Header, Footer & Navbar Backgrounds */
@@ -15,7 +15,7 @@ header.bg-light,
 header.bg-light nav.navbar,
 footer.bg-light,
 footer.bg-light .container {
-  background-color: #b9b981 !important;
+  background-color: #b9b981;
 }
 
 header,
@@ -44,7 +44,7 @@ footer {
 
 .navbar a.nav-link {
   display: block;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 1rem;
   border-radius: 0;
 }
 
@@ -70,7 +70,7 @@ footer {
 
 /* Navbar Toggler */
 .navbar-toggler {
-  border: 2px solid rgba(105, 52, 39, 0.5) !important;
+  border: 2px solid rgba(105, 52, 39, 0.5);
   border-radius: 6px;
 }
 
@@ -119,6 +119,10 @@ footer::before {
 .hero,
 #map-section {
   position: relative;
+}
+
+#map {
+  background-color: white!important;
 }
 
 .hero::before,
@@ -246,7 +250,7 @@ footer::before {
 /* Narrative Item & Team Card specific hover twist */
 #narrative-items .card:hover,
 #team .card:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2)!important;
   cursor: pointer;
 }
@@ -256,7 +260,7 @@ footer::before {
 #narrative-items .card .card-body *,
 #team .card .card-body,
 #team .card .card-body * {
-  color: #693427 !important;
+  color: #693427;
 }
 
 
@@ -272,7 +276,7 @@ footer::before {
 
 /* Tables */
 #metadata-table {
-  border-radius: 0 !important;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -289,51 +293,51 @@ footer::before {
 #adult-kid-buttons .btn-primary,
 #adult-kid-buttons .btn-secondary,
 #item-nav .btn-primary {
-  background-color: #b9b981 !important; /* Strong Olive */
-  border-color: #b9b981 !important;
-  color: #fff !important;
+  background-color: #b9b981; /* Strong Olive */
+  border-color: #b9b981;
+  color: #fff;
   opacity: 1;
 }
 /* Nav buttons text override */
-#item-nav .btn-primary { color: #000 !important; }
+#item-nav .btn-primary { color: #000; }
 
 /* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
 /* Muted/Pale */
 #adult-kid-buttons .btn-outline-primary,
 #adult-kid-buttons .btn-outline-secondary {
-  background-color: #e5e5d0 !important; /* Very Pale Olive */
-  border-color: #d6d6b8 !important;
-  color: #9ea085 !important;
+  background-color: #e5e5d0; /* Very Pale Olive */
+  border-color: #d6d6b8;
+  color: #9ea085;
 }
 #adult-kid-buttons .btn-outline-primary:hover,
 #adult-kid-buttons .btn-outline-secondary:hover {
-  background-color: #dbdbbf !important;
+  background-color: #dbdbbf;
 }
 
 /* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
 /* Vibrant Outline - Replaces Grey */
 #btn-decrease-difficulty,
 #btn-increase-difficulty {
-  border-color: #b9b981 !important;
-  color: #b9b981 !important;
-  background-color: transparent !important;
+  border-color: #b9b981;
+  color: #b9b981;
+  background-color: transparent;
 }
 
 #btn-decrease-difficulty:hover,
 #btn-increase-difficulty:hover {
-  background-color: #b9b981 !important;
-  color: #fff !important;
+  background-color: #b9b981;
+  color: #fff;
 }
 
 /* --- NAV BUTTON STATES --- */
 #item-nav .btn-primary:hover:not(:disabled) {
-  background-color: #a4a55f !important;
-  border-color: #a4a55f !important;
+  background-color: #a4a55f;
+  border-color: #a4a55f;
   transform: translateY(-1px);
 }
 #item-nav .btn-primary:disabled {
-  background-color: #d7d8ad !important;
-  border-color: #d7d8ad !important;
+  background-color: #d7d8ad;
+  border-color: #d7d8ad;
   color: #ccc;
 }
 
@@ -374,7 +378,7 @@ tr[data-key="other-narrative"] a:hover {
 #documentation h1,
 #disclaimer h1,
 #team h1 {
-  font-family: 'Amarante', cursive !important;
+  font-family: 'Amarante', cursive;
 }
 
 /* Family: Aubrey (Captions/Subtitles) */
@@ -383,7 +387,7 @@ tr[data-key="other-narrative"] a:hover {
 #team .card-title,
 #item-related-media .card-title,
 #map-section .item-card-hover p {
-  font-family: 'Aubrey', cursive !important;
+  font-family: 'Aubrey', cursive;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.2;
@@ -401,15 +405,15 @@ th,
 .card-text,
 .item-card-hover img + p,
 .card.path-card .card-body .card-text {
-  font-family: 'Glass Antiqua', serif !important;
+  font-family: 'Glass Antiqua', serif;
   font-weight: 400;
   line-height: 1.6;
-  font-size: 20px !important;
+  font-size: 20px;
 }
 
 /* Generic Headings */
 h2, h3, h4, h5, h6 {
-  font-family: 'Glass Antiqua', serif !important;
+  font-family: 'Glass Antiqua', serif;
   font-weight: 400;
 }
 

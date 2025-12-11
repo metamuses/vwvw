@@ -1,4 +1,4 @@
-/* navbar - TO FIX maiuscole?, stile box dropdown (no fascia illuminata per hover ma cambio colore testo), font size maggiore e più distanza tra li così dropdown ben distribuiti + vorrei FIXED*/
+/* navbar */
 .navbar .dropdown-toggle::after { /* per eliminare freccia di dropdown e fare apparire li a hover */
   display: none;
 }
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.img-header { /* è responsive su mobile? */
+.img-header {
   width: 30vw;
   height: auto;
   max-height: 10vh;
@@ -28,11 +28,11 @@
 }
 
 
-/* footer - TO FIX colori, font weight e size, centratura verticale e padding */
+/* footer */
 footer {
   background-color: #bfbcbd;
   color: black;
-  font-size: 1.5vw !important;
+  font-size: 1.5vw;
   text-align: center;
 }
 
@@ -59,7 +59,7 @@ footer {
   border: 1px solid white;
 }
 
-/* hero - TO FIX tutte misure, da giustificare e rendere responsive */
+/* hero */
 .hero {
   min-height: 70vh;
   display: flex;
@@ -213,8 +213,6 @@ footer {
 }
 
 
-
-
 /* ITEM IMAGE WRAPPER (around #item-image) */
 #item-image {
   width: 100%;
@@ -331,7 +329,6 @@ footer {
 }
 
 
-/*adding the following snippet cause the footer had fixed lenght meaning when the main is shorter than the viewport it didn't strech to the bottom of the "page"*/
 /* Full-height layout fix */
 html, body {
   height: 100%;
