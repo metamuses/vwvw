@@ -5,10 +5,11 @@
 
 /* || BACKGROUNDS || */
 body { background-color: white; }
-body.home-page { background-color: #3262b2 !important; }
+body.home-page { background-color: #3262b2; }
 body.narrative-page,
 body.item-page,
-body.info-page { background-color: white !important; }
+body.info-page { background-color: white; }
+.hero { background-color: #f39500;}
 
 /* || LAYOUT BASICS (Header/Footer) || */
 header,
@@ -17,7 +18,7 @@ header.bg-light,
 header.bg-light nav.navbar,
 footer.bg-light,
 footer.bg-light .container {
-  background-color: #3262b2 !important;
+  background-color: #3262b2;
 }
 
 header,
@@ -37,9 +38,9 @@ footer {
 /* || NAVBAR || */
 /* Links & Toggle */
 .navbar a.nav-link {
-  color: #fddb00 !important;
+  color: #fddb00;
   display: block;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 1rem;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -48,17 +49,17 @@ footer {
 .navbar .nav-link.active,
 .navbar .nav-link.show,
 .navbar .nav-link:focus {
-  color: #000 !important;
+  color: #000;
 }
 
 /* Hover States */
 .navbar a.nav-link:hover,
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #fff200 !important; /* brighter yellow */
-  color: #000 !important;
+  background-color: #fff200; /* brighter yellow */
+  color: #000;
 }
 .navbar a.nav-link:hover { border-radius: 6px; }
-.navbar .dropdown-menu .dropdown-item:hover { background-color: rgba(253, 219, 0, 0.3) !important; }
+.navbar .dropdown-menu .dropdown-item:hover { background-color: rgba(253, 219, 0, 0.3); }
 
 /* Dropdown Container */
 .navbar .dropdown-menu {
@@ -71,7 +72,7 @@ footer {
 
 /* Toggler */
 .navbar-toggler {
-  border: 2px solid rgba(247, 225, 61, 0.5) !important;
+  border: 2px solid rgba(247, 225, 61, 0.5);
   border-radius: 6px;
 }
 
@@ -196,14 +197,14 @@ footer::before { top: 0; height: 2px; }
 .card[data-narrative-id]:hover,
 #narrative-items .card:hover,
 #team .card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18)!important;
   cursor: pointer;
 }
 /* Narrative & Team card specific shadow override */
 #narrative-items .card:hover,
 #team .card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -216,7 +217,7 @@ footer::before { top: 0; height: 2px; }
   border-radius: 0;
   color: #000;
   text-align: center;
-  font-family: 'Comic Neue', cursive !important;
+  font-family: 'Comic Neue', cursive;
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 1.2;
@@ -269,41 +270,41 @@ footer::before { top: 0; height: 2px; }
 /* Both Adult (Primary) and Kid (Secondary) look Vibrant Yellow/Red when active */
 #adult-kid-buttons #btn-adult.btn-primary,
 #adult-kid-buttons #btn-kid.btn-secondary {
-  background-color: #fddb00 !important; /* Bright Yellow */
-  color: #000 !important;
-  border: 2px solid #de0313 !important; /* Bright Red */
+  background-color: #fddb00; /* Bright Yellow */
+  color: #000;
+  border: 2px solid #de0313; /* Bright Red */
 }
 
 /* 2. INACTIVE STATE (Unselected/Disabled look) */
 /* Both look Muted/Pale Yellow when inactive */
 #adult-kid-buttons #btn-adult.btn-outline-primary,
 #adult-kid-buttons #btn-kid.btn-outline-secondary {
-  background-color: #fff9cc !important; /* Washed out pale yellow */
-  color: #d6b300 !important;           /* Dimmed yellow-gold text */
-  border: 2px solid #edc2b3 !important; /* Pale red border */
+  background-color: #fff9cc; /* Washed out pale yellow */
+  color: #d6b300;           /* Dimmed yellow-gold text */
+  border: 2px solid #edc2b3; /* Pale red border */
 }
 
 /* Optional: Hover on Inactive */
 #adult-kid-buttons #btn-adult.btn-outline-primary:hover,
 #adult-kid-buttons #btn-kid.btn-outline-secondary:hover {
-  background-color: #fff2b3 !important; /* Slightly brighter on hover */
-  color: #de0313 !important;
+  background-color: #fff2b3; /* Slightly brighter on hover */
+  color: #de0313;
 }
 
 /* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
 /* Matches the Theme Style - Red Border, Red Text */
 #btn-decrease-difficulty,
 #btn-increase-difficulty {
-  border: 2px solid #de0313 !important;
-  color: #de0313 !important;
-  background-color: transparent !important;
+  border: 2px solid #de0313;
+  color: #de0313;
+  background-color: transparent;
 }
 
 /* Hover: Yellow Background (Like Nav/Adult Active) */
 #btn-decrease-difficulty:hover,
 #btn-increase-difficulty:hover {
-  background-color: #fddb00 !important;
-  color: #000 !important;
+  background-color: #fddb00;
+  color: #000;
 }
 
 /* --- TEXT LINKS --- */
@@ -332,10 +333,11 @@ tr[data-key="other-narrative"] a:hover {
   border: 2px solid black;
   border-radius: 0;
   overflow: hidden;
+  background-color: white !important;
 }
 
 #metadata-table {
-  border-radius: 0 !important;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -360,7 +362,7 @@ tr[data-key="other-narrative"] a:hover {
 #documentation h1,
 #disclaimer h1,
 #team h1 {
-  font-family: 'Bangers', cursive !important;
+  font-family: 'Bangers', cursive;
 }
 
 /* 2. Comic Neue (UI/Captions) */
@@ -369,7 +371,7 @@ tr[data-key="other-narrative"] a:hover {
 #team .card-title,
 #item-related-media .card-title,
 #map-section .item-card-hover p {
-  font-family: 'Comic Neue', cursive !important;
+  font-family: 'Comic Neue', cursive;
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
@@ -388,7 +390,7 @@ th,
 .card-text,
 .item-card-hover img + p,
 .card.path-card .card-body .card-text {
-  font-family: 'Comic Relief', cursive !important;
+  font-family: 'Comic Relief', cursive;
   font-weight: 400;
   line-height: 1.6;
   font-size: 15px;
@@ -396,7 +398,7 @@ th,
 }
 /* Heading overrides for Comic Relief base */
 h2, h3, h4, h5, h6 {
-  font-family: 'Comic Relief', cursive !important;
+  font-family: 'Comic Relief', cursive;
   font-weight: 400;
   font-size: 25px;
 }
@@ -406,8 +408,8 @@ h2, h3, h4, h5, h6 {
 .hero p.lead { font-weight: 700; font-size: 30px; line-height: 1.4; }
 .card-title { font-weight: 700; }
 #narrative-title { font-size: 5rem; line-height: 1.2; letter-spacing: 2px; }
-#metadata-table th { font-weight: 600; font-size: 20px !important; }
-#item-text-section h3, #item-related-media h5 { font-weight: 600; font-size: 30px !important; }
+#metadata-table th { font-weight: 600; font-size: 20px; }
+#item-text-section h3, #item-related-media h5 { font-weight: 600; font-size: 30px; }
 
 /* Outlined Text Effect (Hero) */
 .outlined {

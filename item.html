@@ -19,8 +19,8 @@
   </head>
   <body class="item-page">
     <!-- header con nav -->
-    <header class="bg-light">
-      <nav class="navbar navbar-expand-lg container-fluid bg-light">
+    <header>
+      <nav class="navbar navbar-expand-lg container-fluid">
         <div class="container-fluid">
           <a href="index.html" class="navbar-brand">
             <img src="img/logo/logo.svg" title="Logo" alt="Logo VWVW" class="img-header">
@@ -73,7 +73,6 @@
     <main class="container py-4">
 
       <!-- TITLE + DESCRIPTION -->
-      <!--added a section for architecture reasons-->
       <section id="item-header">
         <h2 id="item-title" class="mb-3">Item Title</h2>
         <p id="item-description" class="mb-4">
@@ -85,12 +84,12 @@
       <section class="row align-items-start mb-5" id="item-main">
         <!-- IMAGE COLUMN (left) -->
         <div class="col-md-6 text-center" id="item-image-column">
-          <div class="border rounded p-3 bg-white" id="item-image-wrapper">
+          <div class="p-3" id="item-image-wrapper">
             <!-- Placeholder image -->
             <img
               src="https://placehold.co/400x400/png"
               alt="Item Image"
-              class="img-fluid rounded mb-3"
+              class="img-fluid mb-3"
               id="item-image"
             />
 
@@ -166,7 +165,7 @@
       </section>
 
       <!-- ROW 2: TEXT SECTION -->
-      <section class="card mb-5 shadow-sm" id="item-text-section">
+      <section class="card mb-5" id="item-text-section">
         <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
           <!-- Top-left buttons: Adult / Kid -->
           <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
@@ -203,7 +202,7 @@
       </section>
 
       <!-- ROW 3: RELATED MEDIA SHELF -->
-      <div class="card shadow-sm border mb-5" id="item-related-media">
+      <div class="card mb-5" id="item-related-media">
         <div class="card-header">
           <h5 class="mb-0">Related Media</h5>
         </div>
