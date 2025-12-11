@@ -516,8 +516,9 @@ section[id] {
   width: 100%;
 }
 
-.info-page h1,
-.info-page h2,
-.info-page p {
+#documentation h1,
+#discaimer h2,
+#documentation p,
+#disclaimer p {
   text-align: justify;
 }
