@@ -338,13 +338,17 @@ footer::before {
 }
 
 /* --- TEXT LINKS --- */
+#documentation a,
+#disclaimer a,
 #text-content a,
 #text-content a#btn-toggle-length,
 tr[data-key="other-narrative"] a {
   color: #b9b981 !important;
-  text-decoration: none !important;
+  text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
+#documentation a,
+#disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {

@@ -6,11 +6,12 @@
       "image": "img/items/sex_pistols_single.jpg",
       "location": [485, 540],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "God save the queen / Sex Pistols",
+        "creator": ["Matlock Glen", "Cook Paul", "Jones Steve", "Lydon John", "Sex Pistols"],
+        "type": "Musical record",
+        "date": "1977",
+        "language": "English",
+        "source": "Istituto Centrale per i Beni Sonori ed Audiovisivi",
         "narratives":["historical", "past-future"]
       },
       "texts": {
@@ -61,12 +62,6 @@
           "link": "https://www.metmuseum.org/art/collection/search/149759"
         },
         {
-          "type": "article",
-          "source": "",
-          "caption": "Vivienne Westwood, Sex Pistols, and the Origins of Punk Fashion",
-          "link": "https://www.lofficielusa.com/fashion/vivienne-westwood-sex-pistols-punk-fashion-history"
-        },
-        {
           "type": "image",
           "source": "https://framemark.vam.ac.uk/collections/2006AT6643/full/2200,/0/default.jpg",
           "caption": "‘Super Elevated Gillie', Pair of Platform Shoes",
@@ -110,10 +105,10 @@
       "image": "img/items/tartan_macandreas.jpeg",
       "location": [360, 130],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "25x35 cm",
+        "title": "Westwood MacAndreas",
+        "creator": "Vivienne Westwood",
+        "date": "01/01/1993",
+        "source": "The Scottish Register of Tartans",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -214,10 +209,12 @@
       "image": "img/items/god_save_queen_top.jpg",
       "location": [360, 375],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "source": "Wikipedia",
+        "title": "Top",
+        "date":"1976",
+        "creator": ["McLaren Malcolm", "Vivienne Westwood"],
+        "materials":["Muslin", "Metal", "Printing"],
+        "subject":"Elizabeth II (Queen of Great Britain)",
+        "source": "Victoria & Albert Museum",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -317,9 +314,11 @@
       "image": "img/items/sex_earring.jpg",
       "location": [230, 480],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "source": "Wikipedia",
+        "title": "Earthling",
+        "date":"1992-1993",
+        "creator": "Vivienne Westwood",
+        "materials": ["Metal", "Suedette", "Nylon", "Casting", "Soldering", "Machine Sewing", "Printing"],
+        "source": "Victoria & Albert Museum",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -419,11 +418,11 @@
       "image": "img/items/angus_photo.jpg",
       "location": [500, 300],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Dame Vivienne Westwood",
+        "creator": "Angus McBean",
+        "materials and techniques":"Chromogenic print",
+        "date": "1988",
+        "source": "National Portrait Gallery",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -523,11 +522,11 @@
       "image": "img/items/shoes.jpg",
       "location": [95, 705],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Pair of shoes",
+        "date":"1974",
+        "creator": "Vivienne Westwood, Malcolm McLaren",
+        "materials and techniques": "Leather",
+        "source": "Victoria & Albert Museum",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -627,11 +626,11 @@
       "image": "img/items/destroy_tshirt.jpeg",
       "location": [360, 640],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "'Destroy' T-shirt",
+        "creator": ["Vivienne Westwood", "Malcom McLaren"],
+        "date": "1977",
+        "materials and techniques": "Cotton",
+        "source": "The Met",
         "narratives": ["historical", "made-by"]
       },
       "texts": {
@@ -731,11 +730,11 @@
       "image": "img/items/parr_photo.jpg",
       "location": [370, 1365],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Vivienne Westwood",
+        "creator": "Martin Parr",
+        "materials and techniques":"Pigment print",
+        "date": "2012",
+        "source": "National Portrait Gallery",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -841,11 +840,11 @@
       "image": "img/items/activism_photo.jpg",
       "location": [570, 1132],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Dame Vivienne Westwood and Andreas Kronthaler with a new generation of activists, advocates, rebels and punks",
+        "creator": "Hanna Moon",
+        "materials and techniques":"Chromogenic print",
+        "date": "May 2018",
+        "source": "National Portrait Gallery",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -945,18 +944,19 @@
         }
       ]
     },
-    "note": {
-      "title": "From 'Letters to Earth' speech given by Vivienne at Shakespeare's Globe.",
+    "book": {
+      "title": "100 days of active resistance",
       "description": "...",
-      "image": "img/items/sos_note.jpg",
+      "image": "img/items/bookcover.png",
       "location": [380, 1592],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "100 days of active resistance",
+        "creator": "Vivienne Westwood",
+        "pusblisher": "Damiani",
+        "year": "2011",
+        "subject":"Photographs",
+        "source": "Biblioteca Salaborsa",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1061,12 +1061,13 @@
       "image": "img/items/carrie.jpg",
       "location": [680, 1445],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "past-future"]
+        "title": "Sex and the City",
+        "date": "2008",
+        "director": "Micheal Patrick King",
+        "screenwriter":["Micheal Patrick King", "Candace Bushnell", "Darren Star"],
+        "start":["Sarah Jessica Parker", "Kim Cattrall", "Cynthia Nixon", "Kristin Davis"],
+        "source": "IMDB",
+        "narratives": ["historical", "past-future", "made-by" ]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1171,12 +1172,12 @@
       "image": "img/items/platform_shoes.jpeg",
       "location": [270, 1245],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "Shoes",
+        "creator": "Vivienne Westwood",
+        "date": "1986",
+        "materials and techniques":["Synthetic", "Wood", "Metal"],
+        "source": "The Met",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1281,12 +1282,12 @@
       "image": "img/items/tartan_trousers.jpeg",
       "location": [230, 1113],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "Suit",
+        "creator": "Vivienne Westwood",
+        "date": "Fall/Winter 1991-92",
+        "materials and techniques":["Wool", "Synthetic"],
+        "source": "The Met",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1391,11 +1392,10 @@
       "image": "img/items/armour_ring.jpg",
       "location": [210, 1465],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Armour Ring",
+        "creator": "Vivienne Westwood",
+        "date":"1988",
+        "source": "Vivienne Westwood website",
         "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
@@ -1501,12 +1501,12 @@
       "image": "img/items/necklace.jpg",
       "location": [280, 1932],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "Portrait",
+        "date": "1991",
+        "creator": "Vivienne Westwood",
+        "materials and techniques":"Pearls (imitation)",
+        "source": "Victoria & Albert Museum",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1611,12 +1611,13 @@
       "image": "img/items/corset.jpg",
       "location": [300, 2510],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "Corset",
+        "date": "1990",
+        "creator": "Vivienne Westwood",
+        "materials and techniques":["Polyamide", "Polyester", "Lycra", "Printing"],
+        "subject":["painting", "Boucher Francois"],
+        "source": "Victoria & Albert Museum",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -1716,16 +1717,16 @@
       ]
     },
     "boucher_painting": {
-      "title": "Daphins and Chloe painting",
+      "title": "Daphnis and Chloe painting",
       "description": "...",
       "image": "img/items/boucher_paint.jpeg",
       "location": [600, 2500],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Daphnis and Chloe",
+        "creator": "Francois Boucher",
+        "date": "1743",
+        "materials and techniques": "Oil on canvas",
+        "source": "The Wallace collection",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -1831,11 +1832,11 @@
       "image": "img/items/david_painting.jpg",
       "location": [620, 2060],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Portrait d'Henriette de Verninac, née Delacroix",
+        "date": "1798/1799",
+        "creator": "Jacques-Louis David",
+        "materials and techniques":"Oil on cavas",
+        "source": "Louvre",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -1941,12 +1942,12 @@
       "image": "img/items/underpants.jpeg",
       "location": [300, 2180],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "Underpants (Briefs)",
+        "creator": "Vivienne Westwood",
+        "date": "Fall/Winter 1995-96",
+        "materials and techniques":["Nylon", "Cotton", "Metal"],
+        "source": "The Met",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -2051,11 +2052,10 @@
       "image": "img/items/petticoat.jpg",
       "location": [390, 2290],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
+        "title": "Woman's Hoop Petticoat (Pannier)",
+        "date": "1750-1780",
+        "materials and techniques":"Linen",
+        "source": "LAMCA",
         "narratives": ["historical", "past-future"]
       },
       "texts": {
@@ -2161,12 +2161,12 @@
       "image": "img/items/dress.jpeg",
       "location": [390, 2055],
       "metadata": {
-        "category": "Fruit",
-        "author": "Nature",
-        "year": "2025",
-        "dimensions": "30x40 cm",
-        "source": "Wikipedia",
-        "narratives": ["historical", "made-by"]
+        "title": "Dress",
+        "creator": ["Vivienne Westwood", "Malcom McLaren"],
+        "date": "Fall/Winter 1981-82",
+        "materials and techniques": "Cotton",
+        "source": "The Met",
+        "narratives": ["historical", "made-by", "past-future"]
       },
       "texts": {
         "kid-amateur-short": "This is the kid-friendly amateur and short version of the text.",
@@ -2270,17 +2270,17 @@
     "historical": {
       "title": "Historical narrative",
       "description": "This is the historical narrative.",
-      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
+      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "book", "parr_photo", "moon_photo"]
     },
     "made-by": {
       "title": "Made by Vivienne narrative",
       "description": "This is the made by Vivienne narrative.",
-      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "note", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring"]
+      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "book", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring", "carrie"]
     },
     "past-future": {
       "title": "Past and Future narrative",
       "description": "This is the past and future narrative.",
-      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "david_painting", "dress",  "boucher_painting", "corset",  "petticoat", "underpants", "necklace", "ring", "trousers"]
+      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "david_painting", "dress",  "boucher_painting", "corset",  "petticoat", "underpants", "necklace", "ring", "trousers", "book"]
     }
   }
 }
