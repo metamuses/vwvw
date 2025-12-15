@@ -360,6 +360,17 @@ tr[data-key="other-narrative"] a:hover {
   transform: translateY(-1px);
 }
 
+/*|| MAP ||*/
+
+.leaflet-marker-icon.item-marker {
+  background-color: #baa073;
+  box-shadow: 0 0 0.2rem #baa073;
+}
+
+.item-marker.highlighted {
+  background-color: #693427;
+  box-shadow: 0 0 0.8rem #693427 !important;
+}
 /* || TYPOGRAPHY || */
 
 /* Family: Amarante (Titles) */

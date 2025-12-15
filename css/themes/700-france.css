@@ -451,10 +451,20 @@ tr[data-key="other-narrative"] a:hover {
   transform: translateY(-1px);
 }
 
-/* || TABLES || */
+/* || TABLES and MAP|| */
 #metadata-table {
   border-radius: 0;
   overflow: hidden;
+}
+
+.leaflet-marker-icon.item-marker {
+  background-color: #d4af37;
+  box-shadow: 0 0 0.2rem #d4af37;
+}
+
+.item-marker.highlighted {
+  background-color: #8c6e22;
+  box-shadow: 0 0 0.8rem #8c6e22 !important;
 }
 
 /* || TYPOGRAPHY || */

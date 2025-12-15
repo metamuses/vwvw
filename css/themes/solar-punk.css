@@ -374,6 +374,16 @@ body.home-page #map-section {
   border-radius: 12px;
 }
 
+.leaflet-marker-icon.item-marker {
+  background-color: #c2d574;
+  box-shadow: 0 0 0.2rem #c2d574;
+}
+
+.item-marker.highlighted {
+  background-color: #83482c;
+  box-shadow: 0 0 0.8rem #83482c !important;
+}
+
 /* Grass Blades Decoration */
 body.home-page #map-section::after {
   content: "";
