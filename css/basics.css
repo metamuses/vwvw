@@ -320,15 +320,6 @@ footer {
   margin-bottom: 0.25rem;
 }
 
-.card-body small,
-.card-body p {
-  font-size: 0.8rem;
-  color: #6c757d;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
 /* Full-height layout fix */
 html, body {
   height: 100%;
