@@ -952,7 +952,7 @@
         "title": "100 days of active resistance",
         "creator": "Vivienne Westwood",
         "pusblisher": "Damiani",
-        "year": "2011",
+        "date": "2011",
         "subject":"Photographs",
         "source": "Biblioteca Salaborsa",
         "narratives": ["historical", "made-by", "past-future"]
@@ -2269,7 +2269,7 @@
     "historical": {
       "title": "Chronicles of Fashion",
       "description": "Chronicles of Fashion unfolds as a chronological narrative that situates Vivienne Westwood’s work within a broader cultural and historical continuum. The collection begins with the French artistic and historical references that inspired her vision and then progresses through her most emblematic punk designs, to conclude with her presence in contemporary media and popular culture, from Sex & The City and Nana to significant examples of her public activism. Collectively, these works trace not only the evolution of a designer, but the establishment of an enduring cultural legacy.",
-      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
+      "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "book", "parr_photo", "moon_photo"]
     },
     "made-by": {
       "title": "Made by Vivienne",
