@@ -41,7 +41,7 @@ body.narrative-page #map-section {
 /* || HEADER & FOOTER || */
 header,
 header.bg-light nav.navbar {
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%) !important;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -52,6 +52,7 @@ header {
   box-sizing: border-box;
   position: relative;
   z-index: auto;
+  background-color: white;
 }
 
 footer {
@@ -79,7 +80,7 @@ footer {
   color: #83482c;
   transition: color 0.3s ease, background-color 0.3s ease;
   display: block;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 1rem;
   border-radius: 0;
 }
 
@@ -101,7 +102,7 @@ footer {
 }
 
 .navbar-toggler {
-  border: 2px solid rgba(131, 72, 44, 0.5) !important;
+  border: 2px solid rgba(131, 72, 44, 0.5);
   border-radius: 6px;
 }
 
@@ -147,7 +148,7 @@ footer::before { top: 0; }
 .hero,
 #narrative-info {
   position: relative;
-  background-color: #4b89c4 !important; /* base sky blue */
+  background-color: #4b89c4; /* base sky blue */
   background-image:
     radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
     radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
@@ -158,7 +159,7 @@ footer::before { top: 0; }
     radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
     radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
     radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%) !important;
+    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -173,7 +174,7 @@ footer::before { top: 0; }
 }
 
 #narrative-info {
-  margin: 0 !important;
+  margin: 0;
 }
 
 
@@ -200,7 +201,7 @@ footer::before { top: 0; }
 /* Narrative Map specific */
 #map-section #map {
   position: relative;
-  background: white;
+  background: white !important;
   border-radius: 16px;
   overflow: hidden;
   z-index: 1;
@@ -259,8 +260,8 @@ body.narrative-page #map-section #map::after {
 
 /* 4. Hover Effects */
 .card[data-narrative-id]:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg) !important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -316,7 +317,7 @@ body.narrative-page #map-section #map::after {
   border: 2px solid #C8C8C8;
   color: #C8C8C8;
   background-color: #0f1c2e;
-  background-image: url('../../img/themese/hex.png');
+  background-image: url('../../img/themes/hex.png');
   background-repeat: repeat;
   background-position: center;
   background-size: auto;
@@ -343,14 +344,14 @@ body.narrative-page #map-section #map::after {
 #team .card .card-body,
 #team .card .card-body *,
 #item-header > * {
-  color: #C8C8C8 !important;
+  color: #C8C8C8;
 }
 
 /* 5. Hover Effects */
 #narrative-items .card:hover,
 #team .card:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg)!important;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2)!important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -368,9 +369,19 @@ body.home-page #map-section {
 }
 
 #map-section #map {
-  background: white !important;
+  background: white;
   padding: 0;
   border-radius: 12px;
+}
+
+.leaflet-marker-icon.item-marker {
+  background-color: #c2d574;
+  box-shadow: 0 0 0.2rem #c2d574;
+}
+
+.item-marker.highlighted {
+  background-color: #83482c;
+  box-shadow: 0 0 0.8rem #83482c !important;
 }
 
 /* Grass Blades Decoration */
@@ -401,51 +412,51 @@ body.home-page #map-section::after {
 #adult-kid-buttons .btn-primary,
 #adult-kid-buttons .btn-secondary,
 #item-nav .btn-primary {
-  background-color: #7fb44e !important; /* Bright Green */
-  border-color: #7fb44e !important;
-  color: #fff !important;
+  background-color: #7fb44e; /* Bright Green */
+  border-color: #7fb44e;
+  color: #fff;
 }
 /* Nav text override */
-#item-nav .btn-primary { color: #000 !important; }
+#item-nav .btn-primary { color: #000; }
 
 /* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
 /* Muted/Pale */
 #adult-kid-buttons .btn-outline-primary,
 #adult-kid-buttons .btn-outline-secondary {
-  background-color: #dbe6cc !important; /* Pale Green */
-  border-color: #c9d8b8 !important;
-  color: #7d9668 !important;
+  background-color: #dbe6cc; /* Pale Green */
+  border-color: #c9d8b8;
+  color: #7d9668;
 }
 #adult-kid-buttons .btn-outline-primary:hover,
 #adult-kid-buttons .btn-outline-secondary:hover {
-  background-color: #cddcb8 !important;
-  color: #5e7845 !important;
+  background-color: #cddcb8;
+  color: #5e7845;
 }
 
 /* --- DIFFICULTY BUTTONS (Too Hard/Easy) --- */
 /* Vibrant Outline - Replaces Grey */
 #btn-decrease-difficulty,
 #btn-increase-difficulty {
-  border-color: #7fb44e !important;
-  color: #7fb44e !important;
-  background-color: transparent !important;
+  border-color: #7fb44e;
+  color: #7fb44e;
+  background-color: transparent;
 }
 
 #btn-decrease-difficulty:hover,
 #btn-increase-difficulty:hover {
-  background-color: #7fb44e !important;
-  color: #fff !important;
+  background-color: #7fb44e;
+  color: #fff;
 }
 
 /* --- NAV BUTTON STATES --- */
 #item-nav .btn-primary:hover:not(:disabled) {
-  background-color: #69963c !important;
-  border-color: #69963c !important;
+  background-color: #69963c;
+  border-color: #69963c;
   transform: translateY(-1px);
 }
 #item-nav .btn-primary:disabled {
-  background-color: #b7d3a1 !important;
-  border-color: #b7d3a1 !important;
+  background-color: #b7d3a1;
+  border-color: #b7d3a1;
   color: #ccc;
 }
 
@@ -464,7 +475,7 @@ tr[data-key="other-narrative"] a {
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="other-narrative"] a:hover {
-  color: #69963c !important;
+  color: #69963c!important;
   transform: translateY(-1px);
 }
 
@@ -474,14 +485,14 @@ tr[data-key="other-narrative"] a:hover {
 /* 1. Rubik Glitch Pop (Titles) */
 .hero h1,
 #narrative-title {
-  font-family: 'Rubik Glitch Pop', cursive !important;
-  font-size: 3.5rem !important;
+  font-family: 'Rubik Glitch Pop', cursive;
+  font-size: 3.5rem;
   line-height: 1.1;
   letter-spacing: 5px;
   margin-bottom: 1rem;
   text-align: center;
 }
-.hero h1 { font-size: 6rem !important; }
+.hero h1 { font-size: 6rem; }
 
 /* 2. Orbitron (Subtitles/Captions) */
 .hero p.lead,
@@ -494,7 +505,7 @@ tr[data-key="other-narrative"] a:hover {
 #documentation h1,
 #disclaimer h1,
 #team h1 {
-  font-family: 'Orbitron', sans-serif !important;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -509,14 +520,14 @@ th,
 #text-content,
 .card-text,
 .item-card-hover img + p {
-  font-family: 'Courier Prime' !important;
+  font-family: 'Courier Prime';
   font-weight: 400;
   line-height: 1.6;
   font-size: 15px;
 }
 
 #metadata-table {
-  border-radius: 0 !important;
+  border-radius: 0;
   overflow: hidden;
 }
 

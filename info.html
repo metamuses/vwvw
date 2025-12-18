@@ -19,8 +19,8 @@
   </head>
   <body class="info-page">
 
-    <header class="bg-light py-2">
-      <nav class="navbar navbar-expand-lg container-fluid bg-light">
+    <header class="py-2">
+      <nav class="navbar navbar-expand-lg container-fluid">
         <div class="container-fluid">
           <a href="index.html" class="navbar-brand">
             <img src="img/logo/logo.svg" title="Logo" alt="Logo VWVW" class="img-header">
@@ -71,17 +71,23 @@
 
     <main class="container py-5">
 
-      <section id="documentation" class="card shadow-sm mb-5 border">
+      <section id="documentation" class="card border">
         <div class="card-body p-5">
-          <h1 class="display-5 fw-bold mb-4">Documentation</h1>
-          <p class="lead text-muted">Project structure, stylistic choices, and technical implementation details.</p>
+          <h1 class="display-5 mb-4">Documentation</h1>
+          <p class="lead">Project structure, stylistic choices, and technical implementation details.</p>
           <hr class="my-4">
           <h2>The (virtual) museum content</h2>
           <p>
             The project design started with the research and selection of the museum collection.
-            Starting from a previous university course project, called <a href="https://metamuses.github.io/lod-save-the-queen/" alt="Lod save the queen project">"Lod save the queen"</a>, for which we had already selected various cultural heritage object related to Vivienne Westwood,
-            we focused on three different area of works related to the famous english designer's world: the punk heritage from the 70s, XVIII century France inspiration and Nana, the manga and anime inheritance.
-            Moving from these three main area, each of us select 7 items related in some way to the chosen theme. The 21 selected item make up the whole museum and potentially could be organized in three separate rooms. Ideally a in-person visitor would visit the museum by browsing each room and grasping the variety of Vivienne's art.</p>
+            We focused on three different area of works related to the famous english designer's world:</p>
+            <ul>
+              <li>the punk heritage from the 70s;</li>
+              <li>XVIII century France inspiration and Nana,</li>
+              <li>the manga and anime inheritance.</li>
+            </ul>
+            <p>
+            Moving from these three main area, each of us select 7 items related to the chosen theme. The 21 selected item make up the whole museum and potentially could be organized in three separate rooms. Ideally a in-person visitor would visit the museum by browsing each room and grasping the variety of Vivienne's art.
+            </p>
             <br>
             <img src="img/moodboard/content_moodboard.png" class="card-img-top d-block mx-auto" alt=""><br>
             <p>From the item selection we moved onto the project/museum name brainstorming. Inspired by the MMMM title and concept, Multimedia Museum Meta Mirror,
@@ -156,6 +162,8 @@
           <h2>Code revision and cleanup</h2>
           <p>
             Took care of the restructuring of the code, both css and javascript.
+            A first step was the restructuring of the css themes. During the css development we worked on a "hmtl-page level" and we ended having lines of code applying the same rules to multiple structure, useful to orienting ourself in a process-step but confunsing for long term maintenment. With the help of LLM the css files have been cleaned up, re-organized on a type-of-rules level and overall stripped down by avoiding rules repetition.<br>
+            In the beginning of the website development, bootstrap classes have been leveraged to create a basic layout. Classes such as "bg-light" have been applied to various section in html. In css we started custom trying to override it using !important. As a second step of the restructuring of the code, again leveragin LLM functionalities, the useless classes in boostrap have been stripped and the !important rule in css have been removed where not needed anymore.
           </p>
           <h2>Multimedia, metadata and text production</h2>
           <p>
@@ -167,10 +175,10 @@
         </div>
       </section>
 
-      <section id="disclaimer" class="card shadow-sm mb-5 border">
+      <section id="disclaimer" class="card border">
         <div class="card-body p-5">
-          <h1 class="display-5 fw-bold mb-4">Disclaimer</h1>
-          <p class="lead text-muted">Legal notes and educational purpose statement.</p>
+          <h1 class="display-5 mb-4">Disclaimer</h1>
+          <p class="lead">Legal notes and educational purpose statement.</p>
           <hr class="my-4">
           <p>
             The purpose of this web site is to explore various types of typographic and
@@ -203,44 +211,45 @@
               <li>Woman's Hoop Petticoat: <a href="https://collections.lacma.org/node/214714"> LAMCA- Los Angeles County Museum of Art</a></li>
               <li>Dress:<a href="https://www.metmuseum.org/art/collection/search/692441"> The Met Museum</a></li>
             </ul>
+            <p>
             All copyrights and related rights on the content remain with their original owners.<br>
             All copyright on the typographic and layout choices are 2025 © Martina Uccheddu, Nicol d'Amelio, Tommaso Barbato.
           </p>
         </div>
       </section>
 
-      <section id="team" class="card shadow-sm mb-5 border">
+      <section id="team" class="card mb-5">
         <div class="card-body p-5">
-          <h1 class="display-5 fw-bold mb-4">The Team</h1>
-          <p class="lead text-muted mb-5">The students behind the Vivienne Westwood Virtual World.</p>
+          <h1 class="display-5 mb-4">The Team</h1>
+          <p class="lead mb-5">The students behind the Vivienne Westwood Virtual World.</p>
 
           <div class="row g-4">
 
             <div class="col-12 col-md-4">
-              <a href="https://github.com/nicoldamelio" target="_blank" class="card h-100 border shadow-sm text-decoration-none text-dark">
-                <img src="https://placehold.co/400x400/png?text=Nicol" class="card-img-top team-img" alt="Nicol D'Amelio">
+              <a href="https://github.com/nicoldamelio" target="_blank" class="card h-100 text-decoration-none">
+                <img src="img/team/nic.png" class="card-img-top team-img" alt="Nicol D'Amelio">
                 <div class="card-body text-center">
-                  <h5 class="card-title fw-bold">Nicol D'Amelio</h5>
+                  <h5 class="card-title">Nicol D'Amelio</h5>
                   <p class="card-text small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Creative direction and layout.</p>
                 </div>
               </a>
             </div>
 
             <div class="col-12 col-md-4">
-              <a href="https://github.com/epistrephein" target="_blank" class="card h-100 border shadow-sm text-decoration-none text-dark">
-                <img src="https://placehold.co/400x400/png?text=Tommaso" class="card-img-top team-img" alt="Tommaso Barbato">
+              <a href="https://github.com/epistrephein" target="_blank" class="card h-100 text-decoration-none">
+                <img src="img/team/tom.jpg" class="card-img-top team-img" alt="Tommaso Barbato">
                 <div class="card-body text-center">
-                  <h5 class="card-title fw-bold">Tommaso Barbato</h5>
+                  <h5 class="card-title">Tommaso Barbato</h5>
                   <p class="card-text small">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Data structuring.</p>
                 </div>
               </a>
             </div>
 
             <div class="col-12 col-md-4">
-              <a href="https://github.com/martinaucch" target="_blank" class="card h-100 border shadow-sm text-decoration-none text-dark">
-                <img src="https://placehold.co/400x400/png?text=Martina" class="card-img-top team-img" alt="Martina Uccheddu">
+              <a href="https://github.com/martinaucch" target="_blank" class="card h-100 text-decoration-none">
+                <img src="img/team/marti.jpg" class="card-img-top team-img" alt="Martina Uccheddu">
                 <div class="card-body text-center">
-                  <h5 class="card-title fw-bold">Martina Uccheddu</h5>
+                  <h5 class="card-title">Martina Uccheddu</h5>
                   <p class="card-text small">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Narrative flow.</p>
                 </div>
               </a>
