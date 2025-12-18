@@ -452,31 +452,37 @@ document.addEventListener("DOMContentLoaded", function () {
           // Handle Other Narrative links
           const rowOtherNarrative = metadataTable.querySelector(`tr[data-key="other-narrative"]`);
           if (rowOtherNarrative) {
-            const narratives = metadata.narratives || [];
-            const otherNarratives = narratives.filter(n => n !== activeNarrative);
+            const narrativeKeys = metadata.narratives || [];
+            const otherNarrativeKeys = narrativeKeys.filter(n => n !== activeNarrative);
 
-            if (otherNarratives.length) {
+            if (otherNarrativeKeys.length) {
               const td = rowOtherNarrative.querySelector("td");
               td.innerHTML = ""; // clear previous content
 
-              otherNarratives.forEach((narr, index) => {
+              otherNarrativeKeys.forEach((narrKey, index) => {
                 const link = document.createElement("a");
-                link.href = "#"; // keep page, no full reload
-                link.textContent = narr.replace(/-/g, " ");
+                link.href = "#";
+
+                // If the key doesn't exist in narratives, fallback to the key with dashes replaced
+                const displayTitle = data.narratives[narrKey]
+                  ? data.narratives[narrKey].title
+                  : narrKey.replace(/-/g, " ");
+
+                link.textContent = displayTitle;
                 link.classList.add("text-decoration-none");
 
                 link.addEventListener("click", (e) => {
                   e.preventDefault();
-                  console.log("Switching to narrative:", narr);
-                  localStorage.setItem("activeNarrative", narr);
-                  activeNarrative = narr; // update current narrative in JS
+                  console.log("Switching to narrative key:", narrKey);
+                  localStorage.setItem("activeNarrative", narrKey);
+                  activeNarrative = narrKey; // update current narrative in JS
 
                   // Regenerate the item page in the new narrative
-                  loadItem(); // call your existing loadItem() function
+                  loadItem();
                 });
 
                 td.appendChild(link);
-                if (index < otherNarratives.length - 1) {
+                if (index < otherNarrativeKeys.length - 1) {
                   td.appendChild(document.createTextNode(", "));
                 }
               });
