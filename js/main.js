@@ -381,11 +381,9 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.hash = activeItem;
           }
 
-          // update title and description
+          // update title
           var title = document.getElementById("item-title");
-          var desc = document.getElementById("item-description");
           title.textContent = item.title;
-          desc.textContent = item.description;
 
            // update image
           var img = document.getElementById("item-image");
