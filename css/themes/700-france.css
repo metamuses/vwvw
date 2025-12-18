@@ -173,16 +173,19 @@ footer::before,
 #item-image-wrapper,
 #item-text-section,
 #item-related-media,
-#metadata-table-wrapper,
-#documentation,
-#disclaimer,
-#team {
+#metadata-table-wrapper {
   position: relative;
   border-radius: 12px;
   overflow: visible;
   background: white;
   z-index: 1;
   padding: 12px;
+}
+
+#documentation,
+#disclaimer,
+#team {
+  margin-bottom: 2rem; /* Increase spacing to accommodate gold frames */
 }
 
 /* Specific margins for item sections */
