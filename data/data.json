@@ -2269,7 +2269,7 @@
   "narratives": {
     "historical": {
       "title": "Chronicles of Fashion",
-      "description": "Chronicles of Fashion unfolds as a chronological narrative that situates Vivienne Westwood’s work within a broader cultural and historical continuum. The collection begins with the French artistic and historical references that inspired her vision and then progresses through her most emblematic punk designs, to conclude with her presence in contemporary media and popular culture, from 'Sex & The City' and 'Nana' to significant examples of her public activism. Collectively, these works trace not only the evolution of a designer, but the establishment of an enduring cultural legacy.",
+      "description": "Chronicles of Fashion unfolds as a chronological narrative that situates Vivienne Westwood’s work within a broader cultural and historical continuum. The collection begins with the French artistic and historical references that inspired her vision and then progresses through her most emblematic punk designs, to conclude with her presence in contemporary media and popular culture, from Sex & The City and Nana to significant examples of her public activism. Collectively, these works trace not only the evolution of a designer, but the establishment of an enduring cultural legacy.",
       "items": ["boucher_painting", "petticoat","david_painting", "shoes", "top", "single", "t-shirt", "dress", "platform_shoes", "angus_photo", "ring","corset", "trousers", "necklace", "earring", "tartan", "underpants", "carrie", "parr_photo", "moon_photo", "note"]
     },
     "made-by": {
@@ -2279,8 +2279,8 @@
     },
     "past-future": {
       "title": "Past and Future",
-      "description": "Past and Future traces the interplay of references that shaped Vivienne Westwood’s distinctive vision, bringing together the works that informed her creativity, the designs that emerged from those influences, and the cultural echoes her style continues to generate. Starting with the French historical and artistic references that nourished her imagination, the collection moves into the garments and accessories that exemplify her transformative approach to tradition, before closing with the many afterlives of her designs in contemporary media and popular culture, from the iconic wedding gown worn by Carrie Bradshaw in Sex and the City to the striking appearances of Westwood’s creations in Nana, alongside records that  witness her public activism. Overall, the collection aims at revealing the continuous exchange between past reference and future expression within Westwood’s creative universe.",
-      "items": ["single", "angus_photo", "parr_photo", "moon_photo", "carrie", "david_painting", "dress",  "boucher_painting", "corset",  "petticoat", "underpants", "necklace", "ring", "trousers", "book"]
+      "description": "Past and Future traces the interplay of references that shaped Vivienne Westwood’s distinctive vision, bringing together the works that informed her creativity, the designs that emerged from those influences, and the cultural echoes her style continues to generate. Starting with the historical and artistic references that nourished her imagination, the collection moves into the garments and accessories that exemplify her transformative approach to tradition, before closing with the many afterlives of her designs in contemporary media and popular culture, from the iconic wedding gown worn by Carrie Bradshaw in Sex and the City to the striking appearances of Westwood’s creations in Nana, alongside records that witness her public activism and irreverence. Overall, the collection aims at revealing the continuous exchange between past reference and future expression within Westwood’s creative universe.",
+      "items": ["single", "david_painting",  "boucher_painting", "petticoat", "corset", "underpants", "dress", "carrie", "necklace", "ring", "trousers", "angus_photo", "book", "parr_photo", "moon_photo"]
     }
   }
 }
