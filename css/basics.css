@@ -341,6 +341,11 @@ footer {
 }
 
 
+/*NARRATIVE DESCRIPTION */
+#narrative-description {
+  text-align: justify;
+}
+
 /* ================================
    NARRATIVE ITEM CARDS
    ================================ */
