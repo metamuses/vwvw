@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // --- column wrapper (Bootstrap grid) ---
         const col = document.createElement("div");
-        col.className = "col-12 col-md-6 col-lg-4";
+        col.className = "col-6 col-md-6 col-lg-4";
 
         // --- wrapper (matching your media-shelf pattern) ---
         const wrapper = document.createElement("div");
