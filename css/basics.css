@@ -95,7 +95,7 @@ footer {
   padding: 0.5rem;          /* Optional: Adds a small internal margin like in narrative.html */
 }
 
-.card-body {
+.home-page .card-body {
   text-align: center;
 }
 
