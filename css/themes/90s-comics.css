@@ -476,9 +476,12 @@ h2, h3, h4, h5, h6 {
 
 /* || RESPONSIVE || */
 @media (max-width: 768px) {
-  #narrative-info {
-    width: 95%;
-    padding: 1rem 1.5rem;
+  #narrative-info,
+  #narrative-title {
+    display: flex;
+    justify-content: center; /* Aligns horizontally */
+    text-align: center;      /* Ensures text lines wrap centered */
+    width: 100%;             /* Ensures it takes up the full width */
   }
 
   #item-header {
