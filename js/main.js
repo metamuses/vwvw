@@ -236,6 +236,33 @@ async function initializeMuseumMap() {
 
 // on page load logic
 document.addEventListener("DOMContentLoaded", function () {
+  // === SMART STICKY HEADER LOGIC ===
+  const header = document.querySelector("header");
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    // 1. Shrink Logic: Shrink logo if scrolled more than 50px
+    if (currentScrollY > 50) {
+      header.classList.add("header-scrolled");
+    } else {
+      header.classList.remove("header-scrolled");
+    }
+
+    // 2. Hide/Show Logic:
+    // Show if scrolling up, Hide if scrolling down (after passing 200px)
+    if (currentScrollY > lastScrollY && currentScrollY > 200) {
+      // Scrolling Down
+      header.classList.add("header-hidden");
+    } else {
+      // Scrolling Up
+      header.classList.remove("header-hidden");
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
   // === MAP LOGIC ===
   // initialize map if  div 'map' exist (in index.html and narratives)
   if (document.getElementById('map')) {

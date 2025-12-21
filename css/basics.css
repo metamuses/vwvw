@@ -27,6 +27,46 @@
   display: block;
 }
 
+/* --- Smart Sticky Transitions --- */
+header {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
+  z-index: 1100 !important;
+  transition: transform 0.4s ease-in-out, padding 0.3s ease, background-color 0.3s ease;
+}
+
+/* State: Hidden when scrolling down */
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* basics.css */
+
+/* Normal state: Ensure the logo has a clean transition */
+.img-header {
+  transition: transform 0.3s ease, height 0.3s ease;
+  transform-origin: left center; /* Keeps the logo from shifting right when shrinking */
+}
+
+/* Scrolled state: Shrink the header container and the logo */
+.header-scrolled {
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-scrolled .img-header {
+  /* Scale the logo to 70% of whatever its current size is */
+  transform: scale(0.7);
+}
+
+/* Mobile specific adjustment to prevent the logo from getting too tiny */
+@media (max-width: 768px) {
+  .header-scrolled .img-header {
+    transform: scale(0.8); /* Slightly larger on mobile for readability */
+  }
+}
 
 /* footer */
 footer {
@@ -321,25 +361,23 @@ footer {
 }
 
 /* Full-height layout fix */
+/* Updated layout fix */
 html, body {
-  height: 100%;
+  /* REMOVE 'height: 100%' - it kills sticky behavior */
+  min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Let main take up available vertical space */
+/* Ensure the document can actually scroll */
 main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  flex: 1 0 auto;
 }
 
-/* Footer stays at bottom */
 footer {
   flex-shrink: 0;
 }
-
 
 /* ================================
    NARRATIVE ITEM CARDS
