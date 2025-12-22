@@ -81,21 +81,18 @@ footer {
   }
 }
 
-/* || LIBERTY DECORATIONS (Header/Footer) || */
-header::after,
-footer::before {
+/* || LIBERTY DECORATIONS (Header) || */
+/* Header Bottom Decoration - The Fixed Combined Version */
+header::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
-  height: 26px;
-  pointer-events: none;
-}
-
-/* Header Bottom Decoration */
-header::after {
-  top: 100%;
+  /* Anchor to bottom so it moves UP with the header when hidden */
+  bottom: -25px;
+  height: 25px;
   z-index: 1;
+  pointer-events: none;
   background:
     repeating-radial-gradient(circle at 10% 120%, rgba(0,0,0,0.20) 0, rgba(0,0,0,0.20) 4px, transparent 4px, transparent 12px),
     repeating-radial-gradient(circle at 90% 120%, rgba(0,0,0,0.20) 0, rgba(0,0,0,0.20) 4px, transparent 4px, transparent 12px),
@@ -103,30 +100,22 @@ header::after {
   box-shadow: inset 0 2px 3px rgba(255,255,255,0.25), inset 0 -3px 5px rgba(0,0,0,0.4);
 }
 
-/* Footer Top Decoration (Mirrored) */
-footer::before {
-  top: 0;
-  background:
-    repeating-radial-gradient(circle at 10% -20%, rgba(0,0,0,0.20) 0, rgba(0,0,0,0.20) 4px, transparent 4px, transparent 12px),
-    repeating-radial-gradient(circle at 90% -20%, rgba(0,0,0,0.20) 0, rgba(0,0,0,0.20) 4px, transparent 4px, transparent 12px),
-    linear-gradient(to top, #ebab8e 0%, #baa073 45%, #c7c3ac 100%);
-  box-shadow: inset 0 -2px 3px rgba(255,255,255,0.25), inset 0 3px 5px rgba(0,0,0,0.4);
-}
-
-/* || SEPARATORS (Hero & Map) || */
+/* || SEPARATORS (Hero, Map & Footer) || */
 .hero,
-#map-section {
+#map-section,
+footer {        /* ADDED footer here */
   position: relative;
 }
 
 #map {
-  background-color: white!important;
+  background-color: white !important;
 }
 
 .hero::before,
 .hero::after,
 #map-section::before,
-#map-section::after {
+#map-section::after,
+footer::before { /* ADDED footer::before here */
   content: "";
   position: absolute;
   left: 0;
@@ -134,11 +123,19 @@ footer::before {
   height: 6px;
   background: #693427;
   opacity: 0.9;
+  z-index: 10;   /* Ensure it sits above background colors */
 }
 
-.hero::before, #map-section::before { top: 0; }
-.hero::after, #map-section::after { bottom: 0; }
+.hero::before,
+#map-section::before,
+footer::before { /* Anchors the line to the top of the footer */
+  top: 0;
+}
 
+.hero::after,
+#map-section::after {
+  bottom: 0;
+}
 
 /* || FRAMES: DOUBLE BORDER STYLE || */
 /* Shared logic for Index Cards, Narrative Cards, Item Sections, Info Sections, and Team Cards */

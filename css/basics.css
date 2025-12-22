@@ -38,7 +38,8 @@ header {
 
 /* State: Hidden when scrolling down */
 .header-hidden {
-  transform: translateY(-100%);
+  /* Extra 30px ensures the Art Nouveau decoration is fully off-screen */
+  transform: translateY(calc(-100% - 30px));
 }
 
 /* basics.css */
