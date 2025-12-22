@@ -1,3 +1,10 @@
+/* basics.css */
+html, body {
+  overflow-x: hidden; /* Prevents horizontal wiggle */
+  width: 100%;
+  position: relative;
+}
+
 /* navbar */
 .navbar .dropdown-toggle::after { /* per eliminare freccia di dropdown e fare apparire li a hover */
   display: none;
@@ -32,6 +39,7 @@ header {
   position: -webkit-sticky !important;
   position: sticky !important;
   top: 0;
+  width: 100%;
   z-index: 1100 !important;
   transition: transform 0.4s ease-in-out, padding 0.3s ease, background-color 0.3s ease;
 }
