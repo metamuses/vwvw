@@ -40,6 +40,7 @@ footer.bg-light .container {
 
 header,
 footer {
+  position: relative; /* ADD THIS LINE */
   overflow: visible;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;

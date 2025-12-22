@@ -1,8 +1,17 @@
-/* basics.css */
-html, body {
-  overflow-x: hidden; /* Prevents horizontal wiggle */
+/* Remove overflow-x from html to keep sticky working */
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* This prevents horizontal wiggle while allowing sticky children */
+  overflow-x: hidden;
   width: 100%;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* navbar */
@@ -39,9 +48,12 @@ header {
   position: -webkit-sticky !important;
   position: sticky !important;
   top: 0;
-  width: 100%;
+  /* PIN TO BOTH SIDES to prevent background peeking */
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important; /* Use viewport width for maximum coverage */
   z-index: 1100 !important;
-  transition: transform 0.4s ease-in-out, padding 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.4s ease-in-out, padding 0.3s ease;
 }
 
 /* State: Hidden when scrolling down */
