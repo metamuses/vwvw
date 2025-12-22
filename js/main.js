@@ -243,6 +243,18 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
+    // Select the div that has the 'collapse' class
+    const navbarCollapse = document.getElementById("navbarNavDropdown");
+
+    // Check if it is currently open (Bootstrap adds the 'show' class)
+    if (navbarCollapse.classList.contains('show')) {
+      // Get the Bootstrap instance and hide it
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
+    }
+
     // 1. Shrink Logic: Shrink logo if scrolled more than 50px
     if (currentScrollY > 50) {
       header.classList.add("header-scrolled");
