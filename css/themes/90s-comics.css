@@ -492,3 +492,28 @@ h2, h3, h4, h5, h6 {
     left: 0; right: 0;
   }
 }
+
+@media (max-width: 768px) {
+  /* Shrink the bubble and the text */
+  #narrative-items .card-title,
+  #team .card-title {
+    font-size: 1rem;      /* Way smaller to fit 2-column grid */
+    padding: 0.3rem 0.6rem;  /* Reduce internal bubble space */
+    border-radius: 8px;      /* Slightly sharper corners for smaller scale */
+    border-width: 1.5px;     /* Thinner border looks better when small */
+    margin-top: 10px;        /* Space between image and bubble triangle */
+  }
+
+  /* Adjust the triangle (speech bubble pointer) to be smaller */
+  #narrative-items .card-title::before,
+  #team .card-title::before {
+    top: -8px;
+    border-width: 0 6px 8px 6px;
+  }
+
+  #narrative-items .card-title::after,
+  #team .card-title::after {
+    top: -6px;
+    border-width: 0 5px 6px 5px;
+  }
+}
