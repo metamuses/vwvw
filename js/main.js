@@ -471,7 +471,11 @@ document.addEventListener("DOMContentLoaded", function () {
           const metadataBody = document.getElementById("metadata-body");
           const metadata = item.metadata || {};
 
-          // Clear previous metadata
+          // Set RDF global attributes on the tbody
+          metadataBody.setAttribute("xmlns:dc", "http://purl.org/dc/elements/1.1/");
+          metadataBody.setAttribute("about", `https://https://metamuses.github.io/vwvw/item.html#${activeItem}`);
+
+          // Clear previous metadata content
           metadataBody.innerHTML = "";
 
           // Iterate over the keys actually present in the metadata object
