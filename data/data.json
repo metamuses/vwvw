@@ -942,9 +942,9 @@
       "metadata": {
         "title": "100 days of active resistance",
         "creator": "Vivienne Westwood",
-        "pusblisher": "Damiani",
+        "publisher": "Damiani",
         "date": "2011",
-        "subject":"Photographs",
+        "subject": "Photographs",
         "source": "Biblioteca Salaborsa",
         "narratives": ["historical", "made-by", "past-future"]
       },
@@ -1054,7 +1054,7 @@
         "date": "2008",
         "director": "Micheal Patrick King",
         "screenwriter":["Micheal Patrick King", "Candace Bushnell", "Darren Star"],
-        "start":["Sarah Jessica Parker", "Kim Cattrall", "Cynthia Nixon", "Kristin Davis"],
+        "starring":["Sarah Jessica Parker", "Kim Cattrall", "Cynthia Nixon", "Kristin Davis"],
         "source": "IMDB",
         "narratives": ["historical", "past-future", "made-by" ]
       },
