@@ -468,67 +468,70 @@ document.addEventListener("DOMContentLoaded", function () {
           };
 
           // --- METADATA POPULATION ---
-          const metadataTable = document.getElementById("metadata-table");
-          const metadataRows = metadataTable.querySelectorAll("tbody tr");
+          const metadataBody = document.getElementById("metadata-body");
           const metadata = item.metadata || {};
 
-          // Iterate over standard metadata keys
-          ["title", "creator", "date", "publisher", "type", "language", "materials and techniques", "subject", "director", "screenwriter", "star", "source"].forEach(key => {
-            const row = metadataTable.querySelector(`tr[data-key="${key}"]`);
-            if (row) {
-              const value = metadata[key];
-              if (value) {
-                row.querySelector("td").textContent = value;
-                row.style.display = ""; // show row
-              } else {
-                row.style.display = "none"; // hide if missing
+          // Clear previous metadata
+          metadataBody.innerHTML = "";
+
+          // Iterate over the keys actually present in the metadata object
+          Object.entries(metadata).forEach(([key, value]) => {
+            if (value) {
+              // If this is the "narratives" key, we only want the ones that aren't active
+              let displayValue = value;
+              if (key === "narratives") {
+                displayValue = value.filter((n) => n !== activeNarrative);
               }
+
+              // Assign data-key attribute to allow CSS targeting
+              const tr = document.createElement("tr");
+              tr.setAttribute("data-key", key);
+
+              const th = document.createElement("th");
+              th.style.width = "35%";
+
+              // Label Logic: use "Other Collection" for narratives, otherwise capitalize
+              if (key === "narratives") {
+                th.textContent = "Other collections";
+              } else {
+                th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+              }
+
+              const td = document.createElement("td");
+              td.style.width = "65%";
+
+              // 3. Narrative Link Logic vs. Standard Text Logic
+              if (key === "narratives") {
+                displayValue.forEach((narrKey, index) => {
+                  const link = document.createElement("a");
+                  link.href = "#";
+                  link.classList.add("text-decoration-none");
+
+                  link.textContent = data.narratives[narrKey].title;
+                  link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    localStorage.setItem("activeNarrative", narrKey);
+                    activeNarrative = narrKey;
+                    loadItem(); // Reloads the item view
+                  });
+
+                  td.appendChild(link);
+
+                  // Add comma separator
+                  if (index < displayValue.length - 1) {
+                    td.appendChild(document.createTextNode(", "));
+                  }
+                });
+              } else {
+                // Standard handling for strings or arrays
+                td.textContent = Array.isArray(value) ? value.join(", ") : value;
+              }
+
+              tr.appendChild(th);
+              tr.appendChild(td);
+              metadataBody.appendChild(tr);
             }
           });
-
-          // Handle Other Narrative links
-          const rowOtherNarrative = metadataTable.querySelector(`tr[data-key="other-narrative"]`);
-          if (rowOtherNarrative) {
-            const narrativeKeys = metadata.narratives || [];
-            const otherNarrativeKeys = narrativeKeys.filter(n => n !== activeNarrative);
-
-            if (otherNarrativeKeys.length) {
-              const td = rowOtherNarrative.querySelector("td");
-              td.innerHTML = ""; // clear previous content
-
-              otherNarrativeKeys.forEach((narrKey, index) => {
-                const link = document.createElement("a");
-                link.href = "#";
-
-                // If the key doesn't exist in narratives, fallback to the key with dashes replaced
-                const displayTitle = data.narratives[narrKey]
-                  ? data.narratives[narrKey].title
-                  : narrKey.replace(/-/g, " ");
-
-                link.textContent = displayTitle;
-                link.classList.add("text-decoration-none");
-
-                link.addEventListener("click", (e) => {
-                  e.preventDefault();
-                  console.log("Switching to narrative key:", narrKey);
-                  localStorage.setItem("activeNarrative", narrKey);
-                  activeNarrative = narrKey; // update current narrative in JS
-
-                  // Regenerate the item page in the new narrative
-                  loadItem();
-                });
-
-                td.appendChild(link);
-                if (index < otherNarrativeKeys.length - 1) {
-                  td.appendChild(document.createTextNode(", "));
-                }
-              });
-
-              rowOtherNarrative.style.display = ""; // show row
-            } else {
-              rowOtherNarrative.style.display = "none";
-            }
-          }
 
           // === MULTI-AXIS TEXT LOGIC ===
           const btnAdult = document.getElementById("btn-adult");
