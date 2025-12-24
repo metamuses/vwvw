@@ -472,7 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const metadata = item.metadata || {};
 
           // Set RDF global attributes on the tbody
-          metadataBody.setAttribute("xmlns:dc", "http://purl.org/dc/elements/1.1/");
+          metadataBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
           metadataBody.setAttribute("about", `https://https://metamuses.github.io/vwvw/item.html#${activeItem}`);
 
           // Clear previous metadata content
