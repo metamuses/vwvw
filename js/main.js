@@ -527,8 +527,24 @@ document.addEventListener("DOMContentLoaded", function () {
                   }
                 });
               } else {
-                // Standard handling for strings or arrays
-                td.textContent = Array.isArray(value) ? value.join(", ") : value;
+                // Create the span wrapper
+                const span = document.createElement("span");
+
+                // Map specific keys to dcterms properties
+                const propertyMap = {
+                  title: "dcterms:title",
+                  creator: "dcterms:creator",
+                  date: "dcterms:date",
+                  source: "dcterms:source",
+                };
+
+                if (propertyMap[key]) {
+                  span.setAttribute("property", propertyMap[key]);
+                }
+
+                // Set content and append to td
+                span.textContent = Array.isArray(value) ? value.join(", ") : value;
+                td.appendChild(span);
               }
 
               tr.appendChild(th);
