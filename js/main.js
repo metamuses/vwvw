@@ -473,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Set RDF global attributes on the tbody
           metadataBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
-          metadataBody.setAttribute("about", `https://https://metamuses.github.io/vwvw/item.html#${activeItem}`);
+          metadataBody.setAttribute("about", `https://metamuses.github.io/vwvw/item.html#${activeItem}`);
 
           // Clear previous metadata content
           metadataBody.innerHTML = "";
