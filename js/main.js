@@ -474,30 +474,30 @@ document.addEventListener("DOMContentLoaded", function () {
             if (nextItem) window.location.hash = nextItem;
           };
 
-          // --- METADATA POPULATION ---
+          // === METADATA POPULATION ===
           const metadata = item.metadata || {};
           const metadataTableBody = document.getElementById("metadata-table-body");
 
-          // Set global RDF attributes on the tbody
+          // set global RDF attributes on the tbody
           metadataTableBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
           metadataTableBody.setAttribute("about", `https://metamuses.github.io/vwvw/item.html#${activeItem}`);
 
-          // Clear previous metadata content
+          // clear previous metadata content
           metadataTableBody.innerHTML = "";
 
-          // Iterate over the metadata object and create table rows
+          // iterate over the metadata object and create table rows
           Object.entries(metadata).forEach(([key, value]) => {
-            // If this is the "narratives" key, we only want the ones that aren't active
+            // if this is the "narratives" key, we only want the ones that aren't active
             let displayValue = value;
             if (key === "narratives") {
               displayValue = value.filter((n) => n !== activeNarrative);
             }
 
-            // Assign data-key attribute with metadata key (e.g. title) to the table row
+            // assign data-key attribute with metadata key (e.g. title) to the table row
             const tr = document.createElement("tr");
             tr.setAttribute("data-key", key);
 
-            // Create table header, using custom label for narratives and capitalization for others
+            // create table header, using custom label for narratives and capitalization for others
             const th = document.createElement("th");
             th.style.width = "35%";
 
@@ -507,11 +507,11 @@ document.addEventListener("DOMContentLoaded", function () {
               th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
             }
 
-            // Create table data cell
+            // create table data cell
             const td = document.createElement("td");
             td.style.width = "65%";
 
-            // For other narratives, create links to switch narrative
+            // for other narratives, create links to switch narrative
             if (key === "narratives") {
               displayValue.forEach((narrKey, index) => {
                 const link = document.createElement("a");
@@ -534,10 +534,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
             } else {
-              // For all other metadata fields, create a span with RDF property
+              // for all other metadata fields, create a span with RDF property
               const span = document.createElement("span");
 
-              // Map specific keys to dcterms properties
+              // map specific keys to dcterms properties
               const propertyMap = {
                 title: "dcterms:title",
                 creator: "dcterms:creator",
@@ -545,17 +545,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 source: "dcterms:source",
               };
 
-              // Assign property attribute if applicable
+              // assign property attribute if applicable
               if (propertyMap[key]) {
                 span.setAttribute("property", propertyMap[key]);
               }
 
-              // Set text content and append to td, handling arrays
+              // set text content and append to td, handling arrays
               span.textContent = Array.isArray(value) ? value.join(", ") : value;
               td.appendChild(span);
             }
 
-            // Append th and td to the row, then to the table body
+            // append th and td to the row, then to the table body
             tr.appendChild(th);
             tr.appendChild(td);
             metadataTableBody.appendChild(tr);
@@ -572,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // itemTexts taken from item
           const itemTexts = item.texts || {};
 
-          // Load last settings or defaults
+          // load last settings or defaults
           let tone = localStorage.getItem("activeTone") || "kid"; // (kid/adult)
           let competence = localStorage.getItem("activeCompetence") || "amateur"; // (amateur/expert)
           let length = localStorage.getItem("activeLength") || "short"; // (short/long)
@@ -581,14 +581,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const key = `${tone}-${competence}-${length}`;
             const value = itemTexts[key] || "No text available for this version.";
 
-            // Build inline Read More / Read Less link (recreated each render)
+            // build inline Read More / Read Less link (recreated each render)
             const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${length === "short" ? "Read More" : "Read Less"}</a>`;
 
-            // Set title and paragraph (use innerHTML because we need the inline link)
+            // set title and paragraph (use innerHTML because we need the inline link)
             textTitle.textContent = `${tone.charAt(0).toUpperCase() + tone.slice(1)} Text`;
             textContent.innerHTML = `${value}${readMoreHtml}`;
 
-            // Highlight active audience/tone button (only Adult/Kid highlighted)
+            // highlight active audience/tone button (only Adult/Kid highlighted)
             if (tone === "adult") {
               btnAdult.classList.remove("btn-outline-primary");
               btnAdult.classList.add("btn-primary");
@@ -601,11 +601,11 @@ document.addEventListener("DOMContentLoaded", function () {
               btnAdult.classList.add("btn-outline-primary");
             }
 
-            // Show correct competence (difficulty) button
+            // show correct competence (difficulty) button
             btnIncreaseCompetence.style.display = competence === "amateur" ? "block" : "none";
             btnDecreaseCompetence.style.display = competence === "expert" ? "block" : "none";
 
-            // Attach click handler to newly rendered inline toggle link
+            // attach click handler to newly rendered inline toggle link
             const btnToggleLength = document.getElementById("btn-toggle-length");
             if (btnToggleLength) {
               // remove previous listeners by cloning (defensive) to avoid duplicates
@@ -618,13 +618,13 @@ document.addEventListener("DOMContentLoaded", function () {
               });
             }
 
-            // Save current state under the renamed keys
+            // save current state under the renamed keys
             localStorage.setItem("activeTone", tone);
             localStorage.setItem("activeCompetence", competence);
             localStorage.setItem("activeLength", length);
           }
 
-          // Button handlers (use renamed vars)
+          // button handlers (use renamed vars)
           btnAdult.onclick = () => {
             tone = "adult";
             updateTextDisplay();
@@ -642,10 +642,10 @@ document.addEventListener("DOMContentLoaded", function () {
             updateTextDisplay();
           };
 
-          // Initialize display on load
+          // initialize display on load
           updateTextDisplay();
 
-          // --- Media shelf logic ---
+          // === MEDIA SHELF LOGIC ===
           const mediaShelf = document.getElementById("related-media-shelf");
           mediaShelf.innerHTML = ""; // clear old content
 
@@ -682,7 +682,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
           }
 
-          // Scroll arrows
+          // scroll arrows
           document.querySelector(".shelf-arrow.left").addEventListener("click", () => {
             mediaShelf.scrollBy({ left: -250, behavior: "smooth" });
           });
@@ -690,7 +690,6 @@ document.addEventListener("DOMContentLoaded", function () {
             mediaShelf.scrollBy({ left: 250, behavior: "smooth" });
           });
         })
-
         .catch(function (error) {
           console.log("Error loading item:", error);
           document.getElementById("item-title").textContent = "Error loading item";
