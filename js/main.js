@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // shrink Logic: shrink logo if scrolled more than 50px
+    // shrink logic: shrink logo if scrolled more than 50px
     if (currentScrollY > 50) {
       header.classList.add("header-scrolled");
     } else {
@@ -280,16 +280,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // === MAP LOGIC ===
-  // initialize map if  div 'map' exist (in index.html and narratives)
+  // initialize map if div 'map' exist (in index.html and narratives)
   if (document.getElementById('map')) {
     initializeMuseumMap();
   }
+
   // === THEME LOGIC ===
-  var defaultTheme = "70s-punk";
-  var activeTheme = localStorage.getItem("activeTheme");
+  const defaultTheme = "70s-punk";
+  let activeTheme = localStorage.getItem("activeTheme");
 
   // add click listeners for dropdown items
-  var themeMenuItems = document.querySelectorAll("#theme-menu .dropdown-item");
+  let themeMenuItems = document.querySelectorAll("#theme-menu .dropdown-item");
   themeMenuItems.forEach(function (item) {
     item.addEventListener("click", function (e) {
       e.preventDefault();
@@ -297,25 +298,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // apply the active theme or default
   switchTheme(activeTheme || defaultTheme);
 
   // === NARRATIVE LOGIC ===
   // add click listeners for dropdown items
-  var narrativeMenuItems = document.querySelectorAll("#narrative-menu .dropdown-item");
+  let narrativeMenuItems = document.querySelectorAll("#narrative-menu .dropdown-item");
   narrativeMenuItems.forEach(function (item) {
     item.addEventListener("click", function (e) {
-      var narrative = e.target.dataset.narrative;
+      let narrative = e.target.dataset.narrative;
       localStorage.setItem("activeNarrative", narrative);
       console.log("Narrative '" + narrative + "' selected.");
       window.location.href = "narrative.html";
     });
   });
-  // === CARD CLICK LOGIC (INDEX.HTML) ===
-  var narrativeCards = document.querySelectorAll(".path-card");
+
+  // add click listeners for narrative cards
+  let narrativeCards = document.querySelectorAll(".path-card");
   narrativeCards.forEach(function (card) {
     card.addEventListener("click", function (e) {
-      e.preventDefault(); // evita che il link # faccia scrollare in alto
-      var narrative = card.dataset.narrativeId;
+      e.preventDefault(); // avoid default # link behavior
+      let narrative = card.dataset.narrativeId;
       localStorage.setItem("activeNarrative", narrative);
       console.log("Narrative from card:", narrative);
       window.location.href = "narrative.html";
@@ -325,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // execute code only in narrative.html
   if (window.location.pathname.endsWith("narrative.html")) {
     // read narrative from localStorage or default to "historical"
-    var activeNarrative = localStorage.getItem("activeNarrative") || "historical";
+    let activeNarrative = localStorage.getItem("activeNarrative") || "historical";
     console.log("Active narrative: " + activeNarrative);
 
     // load json data
@@ -344,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
         description.textContent = narrative.description;
 
         // populate items card
-        // Load items inside narrative page
+        // load items inside narrative page
         const itemsContainer = document.getElementById("narrative-items");
         itemsContainer.innerHTML = ""; // clear old items
 
@@ -352,26 +355,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const item = data.items[itemKey];
         if (!item) return;
 
-        // --- column wrapper (Bootstrap grid) ---
+        // column wrapper (bootstrap grid)
         const col = document.createElement("div");
         col.className = "col-12 col-md-6 col-lg-4";
 
-        // --- wrapper (matching your media-shelf pattern) ---
+        //wrapper (matching your media-shelf pattern)
         const wrapper = document.createElement("div");
         wrapper.className = "path-card-wrapper h-100"; // you can style this if you want
 
-        // --- Create card ---
+        // create card
         const card = document.createElement("a");
         card.href = "item.html#" + itemKey;
         card.className = "card card-dynamic h-100 border-0 shadow-sm text-decoration-none text-dark";
 
-        // --- IMAGE ---
+        // image
         const img = document.createElement("img");
         img.src = item.image || "https://placehold.co/400x400/png";
         img.alt = item.title || "Placeholder image";
         img.className = "card-img-top";
 
-        // --- CARD BODY ---
+        // card body
         const body = document.createElement("div");
         body.className = "card-body";
 
@@ -379,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title.className = "card-title fw-bold";
         title.textContent = item.title;
 
-        // Append items
+        // append items
         body.appendChild(title);
         card.appendChild(img);
         card.appendChild(body);
