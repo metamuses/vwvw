@@ -575,9 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const value = itemTexts[key] || "No text available for this version.";
 
             // Build inline Read More / Read Less link (recreated each render)
-            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${
-              length === "short" ? "Read More" : "Read Less"
-            }</a>`;
+            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${length === "short" ? "Read More" : "Read Less"}</a>`;
 
             // Set title and paragraph (use innerHTML because we need the inline link)
             textTitle.textContent = `${tone.charAt(0).toUpperCase() + tone.slice(1)} Text`;
@@ -654,9 +652,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 mediaElement = `<iframe src="${media.source}" title="${media.caption}" allowfullscreen></iframe>`;
               } else if (media.type === "article") {
                 // API call to Microlink to generate a screenshot of the external site
-                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(
-                  media.link
-                )}&screenshot=true&meta=false&embed=screenshot.url`;
+                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(media.link)}&screenshot=true&meta=false&embed=screenshot.url`;
                 mediaElement = `<img src="${previewUrl}" alt="Preview of ${media.caption}">`;
               }
 
