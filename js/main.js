@@ -1,4 +1,8 @@
-// function to switch themes
+// ------------------------------------------
+// ====== FUNCTIONS =========================
+// ------------------------------------------
+
+// === SWITCH THEME FUNCTION ===
 function switchTheme(themeName) {
   // find the old link tag if it exists
   var oldLink = document.getElementById("theme-css");
@@ -24,7 +28,7 @@ function switchTheme(themeName) {
     items.forEach(function (item) {
       if (item.dataset.theme === themeName) {
         item.style.fontWeight = "bold";
-        // Faux bold: adds a small shadow to thicken the font
+        // faux bold: adds a small shadow to thicken the font
         item.style.textShadow = "0.4px 0 0 currentColor";
       } else {
         item.style.fontWeight = "normal";
@@ -40,8 +44,7 @@ function switchTheme(themeName) {
   }
 }
 
-
-// === leaflet map function  ===
+// === LEAFLET MAP FUNCTION  ===
 async function initializeMuseumMap() {
   try {
     // load JSON data
@@ -49,7 +52,7 @@ async function initializeMuseumMap() {
     const data = await response.json();
     const items = data.items;
 
-    // dimensioni reali immagine
+    // real image dimensions
     const imageWidth = 2718;
     const imageHeight = 1109;
     const mapBounds = [[0, 0], [imageHeight, imageWidth]];
@@ -71,11 +74,11 @@ async function initializeMuseumMap() {
       const isMobile = window.innerWidth <= 768;
 
       if (!isMobile) {
-        // DESKTOP → mostra tutta l’immagine
+        // DESKTOP: show full image
         map.fitBounds(mapBounds, { padding: [0, 0] });
         map.setMaxBounds(mapBounds);
       } else {
-        // MOBILE → mostra il centro dentro al quadrato
+        // MOBILE: show the center inside the square
         const center = [imageHeight / 2, imageWidth / 2];
         map.setView(center, -1.2, { animate: false });
         map.setMaxBounds([
@@ -91,7 +94,7 @@ async function initializeMuseumMap() {
       map.invalidateSize(true);
     }
 
-    // 1) When map is ready
+    // when map is ready
     map.whenReady(() => {
       requestAnimationFrame(() => {
         forceProperLayout();
@@ -102,14 +105,14 @@ async function initializeMuseumMap() {
       });
     });
 
-    // 2) When overlay image loads (covers slow image / cache edge cases)
+    // when overlay image loads (covers slow image / cache edge cases)
     image.once("load", () => {
       requestAnimationFrame(() => {
         forceProperLayout();
       });
     });
 
-    // 3) As a last fallback, after full window load
+    // as a last fallback, after full window load
     window.addEventListener(
       "load",
       () => {
@@ -139,7 +142,7 @@ async function initializeMuseumMap() {
       iconAnchor: [6, 6],
     });
 
-    // --- 2. add marker for 21 items ---
+    // add markers for all items
     Object.entries(items).forEach(([itemId, item]) => {
       // skip items with no position or narrative
       if (!item.location || !item.metadata || !item.metadata.narratives) {
@@ -162,7 +165,7 @@ async function initializeMuseumMap() {
         narratives: item.metadata.narratives
       })
         .addTo(map)
-        // Hover: use bindTooltip for card
+        // hover: use bindTooltip for card
         .bindTooltip(tooltipContent, {
           permanent: false,
           sticky: true,
@@ -174,7 +177,7 @@ async function initializeMuseumMap() {
 
       marker.itemId = itemId;
 
-      // Mobile: gestisce tap singolo e doppio tap
+      // mobile: handle single and double tap
       let lastTap = 0;
       const isMobile = window.innerWidth <= 768;
 
@@ -185,7 +188,7 @@ async function initializeMuseumMap() {
         }
         const now = Date.now();
         if (now - lastTap < 300) {
-          // doppio tap → redirect
+          // double tap: redirect
           window.location.href = `item.html#${itemId}`;
           lastTap = 0;
           return;
@@ -198,7 +201,7 @@ async function initializeMuseumMap() {
       itemMarkers.push(marker);
     });
 
-    // --- 3. on card hover the path lights up ---
+    // on card hover the path lights up
     const narrativeCards = document.querySelectorAll('.path-card');
 
     function highlightMarkersForNarrative(narrativeId, addClass) {
@@ -228,13 +231,15 @@ async function initializeMuseumMap() {
         highlightMarkersForNarrative(narrativeId, false);
       });
     });
-
   } catch (error) {
     console.error("Error loading map data or initializing map:", error);
   }
 }
 
-// on page load logic
+// ------------------------------------------
+// ====== ON PAGE LOAD LOGIC ================
+// ------------------------------------------
+
 document.addEventListener("DOMContentLoaded", function () {
   // === SMART STICKY HEADER LOGIC ===
   const header = document.querySelector("header");
@@ -243,32 +248,31 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    // Select the div that has the 'collapse' class
+    // select the div that has the 'collapse' class
     const navbarCollapse = document.getElementById("navbarNavDropdown");
 
-    // Check if it is currently open (Bootstrap adds the 'show' class)
-    if (navbarCollapse.classList.contains('show')) {
-      // Get the Bootstrap instance and hide it
+    // check if it is currently open (bootstrap adds the 'show' class)
+    if (navbarCollapse.classList.contains("show")) {
+      // get the Bootstrap instance and hide it
       const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
       if (bsCollapse) {
         bsCollapse.hide();
       }
     }
 
-    // 1. Shrink Logic: Shrink logo if scrolled more than 50px
+    // shrink Logic: shrink logo if scrolled more than 50px
     if (currentScrollY > 50) {
       header.classList.add("header-scrolled");
     } else {
       header.classList.remove("header-scrolled");
     }
 
-    // 2. Hide/Show Logic:
-    // Show if scrolling up, Hide if scrolling down (after passing 200px)
+    // hide/show logic: show if scrolling up, hide if scrolling down (after passing 200px)
     if (currentScrollY > lastScrollY && currentScrollY > 200) {
-      // Scrolling Down
+      // scrolling down
       header.classList.add("header-hidden");
     } else {
-      // Scrolling Up
+      // scrolling up
       header.classList.remove("header-hidden");
     }
 
@@ -695,6 +699,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // reload the item when browser back/forward changes the fragment
     window.addEventListener("hashchange", loadItem);
-
   }
 });
