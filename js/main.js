@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
           var title = document.getElementById("item-title");
           title.textContent = item.title;
 
-           // update image
+          // update image
           var img = document.getElementById("item-image");
           if (item.image && item.image.trim() !== "") {
             img.src = item.image; // from JSON: e.g. "img/items/apple.jpg"
@@ -468,89 +468,90 @@ document.addEventListener("DOMContentLoaded", function () {
           };
 
           // --- METADATA POPULATION ---
-          const metadataBody = document.getElementById("metadata-body");
           const metadata = item.metadata || {};
+          const metadataTableBody = document.getElementById("metadata-table-body");
 
-          // Set RDF global attributes on the tbody
-          metadataBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
-          metadataBody.setAttribute("about", `https://metamuses.github.io/vwvw/item.html#${activeItem}`);
+          // Set global RDF attributes on the tbody
+          metadataTableBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
+          metadataTableBody.setAttribute("about", `https://metamuses.github.io/vwvw/item.html#${activeItem}`);
 
           // Clear previous metadata content
-          metadataBody.innerHTML = "";
+          metadataTableBody.innerHTML = "";
 
-          // Iterate over the keys actually present in the metadata object
+          // Iterate over the metadata object and create table rows
           Object.entries(metadata).forEach(([key, value]) => {
-            if (value) {
-              // If this is the "narratives" key, we only want the ones that aren't active
-              let displayValue = value;
-              if (key === "narratives") {
-                displayValue = value.filter((n) => n !== activeNarrative);
-              }
-
-              // Assign data-key attribute to allow CSS targeting
-              const tr = document.createElement("tr");
-              tr.setAttribute("data-key", key);
-
-              const th = document.createElement("th");
-              th.style.width = "35%";
-
-              // Label Logic: use "Other Collection" for narratives, otherwise capitalize
-              if (key === "narratives") {
-                th.textContent = "Other collections";
-              } else {
-                th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-              }
-
-              const td = document.createElement("td");
-              td.style.width = "65%";
-
-              // 3. Narrative Link Logic vs. Standard Text Logic
-              if (key === "narratives") {
-                displayValue.forEach((narrKey, index) => {
-                  const link = document.createElement("a");
-                  link.href = "#";
-                  link.classList.add("text-decoration-none");
-
-                  link.textContent = data.narratives[narrKey].title;
-                  link.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    localStorage.setItem("activeNarrative", narrKey);
-                    activeNarrative = narrKey;
-                    loadItem(); // Reloads the item view
-                  });
-
-                  td.appendChild(link);
-
-                  // Add comma separator
-                  if (index < displayValue.length - 1) {
-                    td.appendChild(document.createTextNode(", "));
-                  }
-                });
-              } else {
-                // Create the span wrapper
-                const span = document.createElement("span");
-
-                // Map specific keys to dcterms properties
-                const propertyMap = {
-                  title: "dcterms:title",
-                  creator: "dcterms:creator",
-                  date: "dcterms:date",
-                  source: "dcterms:source",
-                };
-
-                if (propertyMap[key]) {
-                  span.setAttribute("property", propertyMap[key]);
-                }
-
-                // Set content and append to td
-                span.textContent = Array.isArray(value) ? value.join(", ") : value;
-                td.appendChild(span);
-              }
-
-              tr.appendChild(th);
-              tr.appendChild(td);
-              metadataBody.appendChild(tr);
+            // If this is the "narratives" key, we only want the ones that aren't active
+            let displayValue = value;
+            if (key === "narratives") {
+              displayValue = value.filter((n) => n !== activeNarrative);
             }
+
+            // Assign data-key attribute with metadata key (e.g. title) to the table row
+            const tr = document.createElement("tr");
+            tr.setAttribute("data-key", key);
+
+            // Create table header, using custom label for narratives and capitalization for others
+            const th = document.createElement("th");
+            th.style.width = "35%";
+
+            if (key === "narratives") {
+              th.textContent = "Other collections";
+            } else {
+              th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+            }
+
+            // Create table data cell
+            const td = document.createElement("td");
+            td.style.width = "65%";
+
+            // For other narratives, create links to switch narrative
+            if (key === "narratives") {
+              displayValue.forEach((narrKey, index) => {
+                const link = document.createElement("a");
+                link.href = "#";
+                link.classList.add("text-decoration-none");
+
+                link.textContent = data.narratives[narrKey].title;
+                link.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  localStorage.setItem("activeNarrative", narrKey);
+                  activeNarrative = narrKey;
+                  console.log("Active narrative: " + activeNarrative);
+                  loadItem();
+                });
+
+                td.appendChild(link);
+
+                if (index < displayValue.length - 1) {
+                  td.appendChild(document.createTextNode(", "));
+                }
+              });
+            } else {
+              // For all other metadata fields, create a span with RDF property
+              const span = document.createElement("span");
+
+              // Map specific keys to dcterms properties
+              const propertyMap = {
+                title: "dcterms:title",
+                creator: "dcterms:creator",
+                date: "dcterms:date",
+                source: "dcterms:source",
+              };
+
+              // Assign property attribute if applicable
+              if (propertyMap[key]) {
+                span.setAttribute("property", propertyMap[key]);
+              }
+
+              // Set text content and append to td, handling arrays
+              span.textContent = Array.isArray(value) ? value.join(", ") : value;
+              td.appendChild(span);
+            }
+
+            // Append th and td to the row, then to the table body
+            tr.appendChild(th);
+            tr.appendChild(td);
+            metadataTableBody.appendChild(tr);
           });
 
           // === MULTI-AXIS TEXT LOGIC ===
@@ -565,16 +566,18 @@ document.addEventListener("DOMContentLoaded", function () {
           const itemTexts = item.texts || {};
 
           // Load last settings or defaults
-          let tone = localStorage.getItem("activeTone") || "kid";            // (kid/adult)
+          let tone = localStorage.getItem("activeTone") || "kid"; // (kid/adult)
           let competence = localStorage.getItem("activeCompetence") || "amateur"; // (amateur/expert)
-          let length = localStorage.getItem("activeLength") || "short";     // (short/long)
+          let length = localStorage.getItem("activeLength") || "short"; // (short/long)
 
           function updateTextDisplay() {
             const key = `${tone}-${competence}-${length}`;
             const value = itemTexts[key] || "No text available for this version.";
 
             // Build inline Read More / Read Less link (recreated each render)
-            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${length === "short" ? "Read More" : "Read Less"}</a>`;
+            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${
+              length === "short" ? "Read More" : "Read Less"
+            }</a>`;
 
             // Set title and paragraph (use innerHTML because we need the inline link)
             textTitle.textContent = `${tone.charAt(0).toUpperCase() + tone.slice(1)} Text`;
@@ -642,7 +645,7 @@ document.addEventListener("DOMContentLoaded", function () {
           mediaShelf.innerHTML = ""; // clear old content
 
           if (item.media && item.media.length > 0) {
-            item.media.forEach(media => {
+            item.media.forEach((media) => {
               let mediaElement = "";
 
               if (media.type === "image") {
@@ -651,7 +654,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 mediaElement = `<iframe src="${media.source}" title="${media.caption}" allowfullscreen></iframe>`;
               } else if (media.type === "article") {
                 // API call to Microlink to generate a screenshot of the external site
-                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(media.link)}&screenshot=true&meta=false&embed=screenshot.url`;
+                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(
+                  media.link
+                )}&screenshot=true&meta=false&embed=screenshot.url`;
                 mediaElement = `<img src="${previewUrl}" alt="Preview of ${media.caption}">`;
               }
 
@@ -681,7 +686,6 @@ document.addEventListener("DOMContentLoaded", function () {
           document.querySelector(".shelf-arrow.right").addEventListener("click", () => {
             mediaShelf.scrollBy({ left: 250, behavior: "smooth" });
           });
-
         })
 
         .catch(function (error) {
