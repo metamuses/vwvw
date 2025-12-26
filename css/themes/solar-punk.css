@@ -456,7 +456,7 @@ body.home-page #map-section::after {
 #disclaimer a,
 #text-content a,
 #text-content a#btn-toggle-length,
-tr[data-key="other-narrative"] a {
+tr[data-key="narratives"] a {
   color: #7fb44e !important;
   text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -465,7 +465,7 @@ tr[data-key="other-narrative"] a {
 #disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
-tr[data-key="other-narrative"] a:hover {
+tr[data-key="narratives"] a:hover {
   color: #69963c!important;
   transform: translateY(-1px);
 }

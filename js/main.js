@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
           var title = document.getElementById("item-title");
           title.textContent = item.title;
 
-           // update image
+          // update image
           var img = document.getElementById("item-image");
           if (item.image && item.image.trim() !== "") {
             img.src = item.image; // from JSON: e.g. "img/items/apple.jpg"
@@ -468,67 +468,91 @@ document.addEventListener("DOMContentLoaded", function () {
           };
 
           // --- METADATA POPULATION ---
-          const metadataTable = document.getElementById("metadata-table");
-          const metadataRows = metadataTable.querySelectorAll("tbody tr");
           const metadata = item.metadata || {};
+          const metadataTableBody = document.getElementById("metadata-table-body");
 
-          // Iterate over standard metadata keys
-          ["title", "creator", "date", "publisher", "type", "language", "materials and techniques", "subject", "director", "screenwriter", "star", "source"].forEach(key => {
-            const row = metadataTable.querySelector(`tr[data-key="${key}"]`);
-            if (row) {
-              const value = metadata[key];
-              if (value) {
-                row.querySelector("td").textContent = value;
-                row.style.display = ""; // show row
-              } else {
-                row.style.display = "none"; // hide if missing
-              }
+          // Set global RDF attributes on the tbody
+          metadataTableBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
+          metadataTableBody.setAttribute("about", `https://metamuses.github.io/vwvw/item.html#${activeItem}`);
+
+          // Clear previous metadata content
+          metadataTableBody.innerHTML = "";
+
+          // Iterate over the metadata object and create table rows
+          Object.entries(metadata).forEach(([key, value]) => {
+            // If this is the "narratives" key, we only want the ones that aren't active
+            let displayValue = value;
+            if (key === "narratives") {
+              displayValue = value.filter((n) => n !== activeNarrative);
             }
-          });
 
-          // Handle Other Narrative links
-          const rowOtherNarrative = metadataTable.querySelector(`tr[data-key="other-narrative"]`);
-          if (rowOtherNarrative) {
-            const narrativeKeys = metadata.narratives || [];
-            const otherNarrativeKeys = narrativeKeys.filter(n => n !== activeNarrative);
+            // Assign data-key attribute with metadata key (e.g. title) to the table row
+            const tr = document.createElement("tr");
+            tr.setAttribute("data-key", key);
 
-            if (otherNarrativeKeys.length) {
-              const td = rowOtherNarrative.querySelector("td");
-              td.innerHTML = ""; // clear previous content
+            // Create table header, using custom label for narratives and capitalization for others
+            const th = document.createElement("th");
+            th.style.width = "35%";
 
-              otherNarrativeKeys.forEach((narrKey, index) => {
+            if (key === "narratives") {
+              th.textContent = "Other collections";
+            } else {
+              th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+            }
+
+            // Create table data cell
+            const td = document.createElement("td");
+            td.style.width = "65%";
+
+            // For other narratives, create links to switch narrative
+            if (key === "narratives") {
+              displayValue.forEach((narrKey, index) => {
                 const link = document.createElement("a");
                 link.href = "#";
-
-                // If the key doesn't exist in narratives, fallback to the key with dashes replaced
-                const displayTitle = data.narratives[narrKey]
-                  ? data.narratives[narrKey].title
-                  : narrKey.replace(/-/g, " ");
-
-                link.textContent = displayTitle;
                 link.classList.add("text-decoration-none");
 
+                link.textContent = data.narratives[narrKey].title;
                 link.addEventListener("click", (e) => {
                   e.preventDefault();
-                  console.log("Switching to narrative key:", narrKey);
                   localStorage.setItem("activeNarrative", narrKey);
-                  activeNarrative = narrKey; // update current narrative in JS
-
-                  // Regenerate the item page in the new narrative
+                  activeNarrative = narrKey;
+                  console.log("Active narrative: " + activeNarrative);
                   loadItem();
                 });
 
                 td.appendChild(link);
-                if (index < otherNarrativeKeys.length - 1) {
+
+                if (index < displayValue.length - 1) {
                   td.appendChild(document.createTextNode(", "));
                 }
               });
-
-              rowOtherNarrative.style.display = ""; // show row
             } else {
-              rowOtherNarrative.style.display = "none";
+              // For all other metadata fields, create a span with RDF property
+              const span = document.createElement("span");
+
+              // Map specific keys to dcterms properties
+              const propertyMap = {
+                title: "dcterms:title",
+                creator: "dcterms:creator",
+                date: "dcterms:date",
+                source: "dcterms:source",
+              };
+
+              // Assign property attribute if applicable
+              if (propertyMap[key]) {
+                span.setAttribute("property", propertyMap[key]);
+              }
+
+              // Set text content and append to td, handling arrays
+              span.textContent = Array.isArray(value) ? value.join(", ") : value;
+              td.appendChild(span);
             }
-          }
+
+            // Append th and td to the row, then to the table body
+            tr.appendChild(th);
+            tr.appendChild(td);
+            metadataTableBody.appendChild(tr);
+          });
 
           // === MULTI-AXIS TEXT LOGIC ===
           const btnAdult = document.getElementById("btn-adult");
@@ -542,16 +566,18 @@ document.addEventListener("DOMContentLoaded", function () {
           const itemTexts = item.texts || {};
 
           // Load last settings or defaults
-          let tone = localStorage.getItem("activeTone") || "kid";            // (kid/adult)
+          let tone = localStorage.getItem("activeTone") || "kid"; // (kid/adult)
           let competence = localStorage.getItem("activeCompetence") || "amateur"; // (amateur/expert)
-          let length = localStorage.getItem("activeLength") || "short";     // (short/long)
+          let length = localStorage.getItem("activeLength") || "short"; // (short/long)
 
           function updateTextDisplay() {
             const key = `${tone}-${competence}-${length}`;
             const value = itemTexts[key] || "No text available for this version.";
 
             // Build inline Read More / Read Less link (recreated each render)
-            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${length === "short" ? "Read More" : "Read Less"}</a>`;
+            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${
+              length === "short" ? "Read More" : "Read Less"
+            }</a>`;
 
             // Set title and paragraph (use innerHTML because we need the inline link)
             textTitle.textContent = `${tone.charAt(0).toUpperCase() + tone.slice(1)} Text`;
@@ -619,7 +645,7 @@ document.addEventListener("DOMContentLoaded", function () {
           mediaShelf.innerHTML = ""; // clear old content
 
           if (item.media && item.media.length > 0) {
-            item.media.forEach(media => {
+            item.media.forEach((media) => {
               let mediaElement = "";
 
               if (media.type === "image") {
@@ -628,7 +654,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 mediaElement = `<iframe src="${media.source}" title="${media.caption}" allowfullscreen></iframe>`;
               } else if (media.type === "article") {
                 // API call to Microlink to generate a screenshot of the external site
-                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(media.link)}&screenshot=true&meta=false&embed=screenshot.url`;
+                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(
+                  media.link
+                )}&screenshot=true&meta=false&embed=screenshot.url`;
                 mediaElement = `<img src="${previewUrl}" alt="Preview of ${media.caption}">`;
               }
 
@@ -658,7 +686,6 @@ document.addEventListener("DOMContentLoaded", function () {
           document.querySelector(".shelf-arrow.right").addEventListener("click", () => {
             mediaShelf.scrollBy({ left: 250, behavior: "smooth" });
           });
-
         })
 
         .catch(function (error) {

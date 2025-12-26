@@ -341,7 +341,7 @@ footer::before { /* Anchors the line to the top of the footer */
 #disclaimer a,
 #text-content a,
 #text-content a#btn-toggle-length,
-tr[data-key="other-narrative"] a {
+tr[data-key="narratives"] a {
   color: #b9b981 !important;
   text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -350,7 +350,7 @@ tr[data-key="other-narrative"] a {
 #disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
-tr[data-key="other-narrative"] a:hover {
+tr[data-key="narratives"] a:hover {
   color: #a4a55f !important;
   transform: translateY(-1px);
 }
