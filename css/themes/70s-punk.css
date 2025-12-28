@@ -167,7 +167,7 @@ footer img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url("/img/themes/noise.png");
+  background-image: url("../../img/themes/noise.png");
   background-size: cover;
   opacity: 0.16;
   mix-blend-mode: multiply;
@@ -192,7 +192,7 @@ footer img {
   left: -0.625rem;
   width: 4.375rem;
   height: 4.375rem;
-  background-image: url("/img/themes/safetypin.png");
+  background-image: url("../../img/themes/safetypin.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -219,8 +219,8 @@ footer img {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/img/themes/noise.png");
   background-size: 18.75rem; 
+  background-image: url("../../img/themes/noise.png");
   background-repeat: repeat;
   opacity: 0.12; 
   pointer-events: none;
