@@ -400,6 +400,12 @@ footer {
   flex-shrink: 0;
 }
 
+
+/*NARRATIVE DESCRIPTION */
+#narrative-description {
+  text-align: justify;
+}
+
 /* ================================
    NARRATIVE ITEM CARDS
    ================================ */
@@ -464,14 +470,28 @@ footer {
    (uguali a quelli delle card nell'index)
    =============================== */
 
-   @media (max-width: 768px) {
-
-    /* CARD nella Narrative Page */
-    .path-card-wrapper {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+  @media (max-width: 768px) {
+  /* 1. Ensure the image container has a large, fixed height area */
+  .path-card-wrapper .card-img-top {
+    height: 180px;         /* Adjust this to make the image area "bigger" */
+    object-fit: contain;   /* SHOWS THE WHOLE IMAGE (no cutting) */
+    background: #f0f0f0;   /* Fills the "empty" space with a light gray border/bg */
+    padding: 5px;          /* Optional: adds a little breathing room */
   }
+
+  /* 2. Shrink the text area to the absolute minimum */
+  .path-card-wrapper .card-body {
+    padding: 0.3rem !important;
+    flex-grow: 0;          /* Don't let the text area expand */
+  }
+
+  .path-card-wrapper .card-title {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+}
+
     /* =======================================
    ITEM PAGE — uniform mobile side margins
    Same horizontal spacing as index cards
