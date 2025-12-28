@@ -14,6 +14,13 @@ body {
   flex-direction: column;
 }
 
+main {
+  width: 100%;
+  overflow-x: hidden;
+  /* This keeps the overflow contained to the content area
+     while letting the header/nav (outside main) stay sticky to the body */
+}
+
 /* navbar */
 .navbar .dropdown-toggle::after { /* per eliminare freccia di dropdown e fare apparire li a hover */
   display: none;
