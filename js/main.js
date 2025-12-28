@@ -269,17 +269,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // === REMAINDER OF YOUR EXISTING LOGIC (Shrink/Hide) ===
+    // shrink logic: shrink logo if scrolled more than 50px
     if (currentScrollY > 50) {
       header.classList.add("header-scrolled");
     } else {
       header.classList.remove("header-scrolled");
     }
 
+    // hide/show logic: show if scrolling up, hide if scrolling down (after passing 200px)
     if (!navbarCollapse.classList.contains("show")) {
       if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        // scrolling down
         header.classList.add("header-hidden");
       } else {
+        // scrolling up
         header.classList.remove("header-hidden");
       }
     }
