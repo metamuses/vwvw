@@ -4,13 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap'); /* Body */
 
 /* || BACKGROUNDS || */
-/* Page Backgrounds */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 /* Narrative Page: Green Gradient */
 body.narrative-page {
   min-height: 100vh;
@@ -50,8 +43,6 @@ header {
   margin: 0;
   padding: 1.5rem 0;
   box-sizing: border-box;
-  position: relative;
-  z-index: auto;
   background-color: white;
 }
 
@@ -465,7 +456,7 @@ body.home-page #map-section::after {
 #disclaimer a,
 #text-content a,
 #text-content a#btn-toggle-length,
-tr[data-key="other-narrative"] a {
+tr[data-key="narratives"] a {
   color: #7fb44e !important;
   text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -474,7 +465,7 @@ tr[data-key="other-narrative"] a {
 #disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
-tr[data-key="other-narrative"] a:hover {
+tr[data-key="narratives"] a:hover {
   color: #69963c!important;
   transform: translateY(-1px);
 }

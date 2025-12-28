@@ -40,8 +40,7 @@ footer.bg-light .container {
 
 header,
 footer {
-  position: relative;
-  z-index: auto;
+  position: relative; /* ADD THIS LINE */
   overflow: visible;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -440,7 +439,7 @@ footer::before,
 #disclaimer a,
 #text-content a,
 #text-content a#btn-toggle-length,
-tr[data-key="other-narrative"] a {
+tr[data-key="narratives"] a {
   color: #d4af37 !important;
   text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -449,7 +448,7 @@ tr[data-key="other-narrative"] a {
 #disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
-tr[data-key="other-narrative"] a:hover {
+tr[data-key="narratives"] a:hover {
   color: #c49b30 !important;
   transform: translateY(-1px);
 }
