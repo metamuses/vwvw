@@ -1,13 +1,11 @@
 /* Remove overflow-x from html to keep sticky working */
-html {
-  margin: 0;
-  padding: 0;
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
-  /* This prevents horizontal wiggle while allowing sticky children */
-  overflow-x: hidden;
-  width: 100%;
   position: relative;
   min-height: 100vh;
   display: flex;
