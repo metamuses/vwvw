@@ -1,4 +1,8 @@
-// function to switch themes
+// ------------------------------------------
+// ====== FUNCTIONS =========================
+// ------------------------------------------
+
+// === SWITCH THEME FUNCTION ===
 function switchTheme(themeName) {
   // find the old link tag if it exists
   var oldLink = document.getElementById("theme-css");
@@ -24,7 +28,7 @@ function switchTheme(themeName) {
     items.forEach(function (item) {
       if (item.dataset.theme === themeName) {
         item.style.fontWeight = "bold";
-        // Faux bold: adds a small shadow to thicken the font
+        // faux bold: adds a small shadow to thicken the font
         item.style.textShadow = "0.4px 0 0 currentColor";
       } else {
         item.style.fontWeight = "normal";
@@ -40,8 +44,7 @@ function switchTheme(themeName) {
   }
 }
 
-
-// === leaflet map function  ===
+// === LEAFLET MAP FUNCTION  ===
 async function initializeMuseumMap() {
   try {
     // load JSON data
@@ -49,7 +52,7 @@ async function initializeMuseumMap() {
     const data = await response.json();
     const items = data.items;
 
-    // dimensioni reali immagine
+    // real image dimensions
     const imageWidth = 2718;
     const imageHeight = 1109;
     const mapBounds = [[0, 0], [imageHeight, imageWidth]];
@@ -71,11 +74,11 @@ async function initializeMuseumMap() {
       const isMobile = window.innerWidth <= 768;
 
       if (!isMobile) {
-        // DESKTOP → mostra tutta l’immagine
+        // DESKTOP: show full image
         map.fitBounds(mapBounds, { padding: [0, 0] });
         map.setMaxBounds(mapBounds);
       } else {
-        // MOBILE → mostra il centro dentro al quadrato
+        // MOBILE: show the center inside the square
         const center = [imageHeight / 2, imageWidth / 2];
         map.setView(center, -1.2, { animate: false });
         map.setMaxBounds([
@@ -91,7 +94,7 @@ async function initializeMuseumMap() {
       map.invalidateSize(true);
     }
 
-    // 1) When map is ready
+    // when map is ready
     map.whenReady(() => {
       requestAnimationFrame(() => {
         forceProperLayout();
@@ -102,14 +105,14 @@ async function initializeMuseumMap() {
       });
     });
 
-    // 2) When overlay image loads (covers slow image / cache edge cases)
+    // when overlay image loads (covers slow image / cache edge cases)
     image.once("load", () => {
       requestAnimationFrame(() => {
         forceProperLayout();
       });
     });
 
-    // 3) As a last fallback, after full window load
+    // as a last fallback, after full window load
     window.addEventListener(
       "load",
       () => {
@@ -139,7 +142,7 @@ async function initializeMuseumMap() {
       iconAnchor: [6, 6],
     });
 
-    // --- 2. add marker for 21 items ---
+    // add markers for all items
     Object.entries(items).forEach(([itemId, item]) => {
       // skip items with no position or narrative
       if (!item.location || !item.metadata || !item.metadata.narratives) {
@@ -162,7 +165,7 @@ async function initializeMuseumMap() {
         narratives: item.metadata.narratives
       })
         .addTo(map)
-        // Hover: use bindTooltip for card
+        // hover: use bindTooltip for card
         .bindTooltip(tooltipContent, {
           permanent: false,
           sticky: true,
@@ -174,7 +177,7 @@ async function initializeMuseumMap() {
 
       marker.itemId = itemId;
 
-      // Mobile: gestisce tap singolo e doppio tap
+      // mobile: handle single and double tap
       let lastTap = 0;
       const isMobile = window.innerWidth <= 768;
 
@@ -185,7 +188,7 @@ async function initializeMuseumMap() {
         }
         const now = Date.now();
         if (now - lastTap < 300) {
-          // doppio tap → redirect
+          // double tap: redirect
           window.location.href = `item.html#${itemId}`;
           lastTap = 0;
           return;
@@ -198,7 +201,7 @@ async function initializeMuseumMap() {
       itemMarkers.push(marker);
     });
 
-    // --- 3. on card hover the path lights up ---
+    // on card hover the path lights up
     const narrativeCards = document.querySelectorAll('.path-card');
 
     function highlightMarkersForNarrative(narrativeId, addClass) {
@@ -228,13 +231,15 @@ async function initializeMuseumMap() {
         highlightMarkersForNarrative(narrativeId, false);
       });
     });
-
   } catch (error) {
     console.error("Error loading map data or initializing map:", error);
   }
 }
 
-// on page load logic
+// ------------------------------------------
+// ====== ON PAGE LOAD LOGIC ================
+// ------------------------------------------
+
 document.addEventListener("DOMContentLoaded", function () {
   // === SMART STICKY HEADER LOGIC ===
   const header = document.querySelector("header");
@@ -243,32 +248,31 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    // Select the div that has the 'collapse' class
+    // select the div that has the 'collapse' class
     const navbarCollapse = document.getElementById("navbarNavDropdown");
 
-    // Check if it is currently open (Bootstrap adds the 'show' class)
-    if (navbarCollapse.classList.contains('show')) {
-      // Get the Bootstrap instance and hide it
+    // check if it is currently open (bootstrap adds the 'show' class)
+    if (navbarCollapse.classList.contains("show")) {
+      // get the Bootstrap instance and hide it
       const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
       if (bsCollapse) {
         bsCollapse.hide();
       }
     }
 
-    // 1. Shrink Logic: Shrink logo if scrolled more than 50px
+    // shrink logic: shrink logo if scrolled more than 50px
     if (currentScrollY > 50) {
       header.classList.add("header-scrolled");
     } else {
       header.classList.remove("header-scrolled");
     }
 
-    // 2. Hide/Show Logic:
-    // Show if scrolling up, Hide if scrolling down (after passing 200px)
+    // hide/show logic: show if scrolling up, hide if scrolling down (after passing 200px)
     if (currentScrollY > lastScrollY && currentScrollY > 200) {
-      // Scrolling Down
+      // scrolling down
       header.classList.add("header-hidden");
     } else {
-      // Scrolling Up
+      // scrolling up
       header.classList.remove("header-hidden");
     }
 
@@ -276,16 +280,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // === MAP LOGIC ===
-  // initialize map if  div 'map' exist (in index.html and narratives)
+  // initialize map if div 'map' exist (in index.html and narratives)
   if (document.getElementById('map')) {
     initializeMuseumMap();
   }
+
   // === THEME LOGIC ===
-  var defaultTheme = "70s-punk";
-  var activeTheme = localStorage.getItem("activeTheme");
+  const defaultTheme = "70s-punk";
+  let activeTheme = localStorage.getItem("activeTheme");
 
   // add click listeners for dropdown items
-  var themeMenuItems = document.querySelectorAll("#theme-menu .dropdown-item");
+  let themeMenuItems = document.querySelectorAll("#theme-menu .dropdown-item");
   themeMenuItems.forEach(function (item) {
     item.addEventListener("click", function (e) {
       e.preventDefault();
@@ -293,25 +298,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // apply the active theme or default
   switchTheme(activeTheme || defaultTheme);
 
   // === NARRATIVE LOGIC ===
   // add click listeners for dropdown items
-  var narrativeMenuItems = document.querySelectorAll("#narrative-menu .dropdown-item");
+  let narrativeMenuItems = document.querySelectorAll("#narrative-menu .dropdown-item");
   narrativeMenuItems.forEach(function (item) {
     item.addEventListener("click", function (e) {
-      var narrative = e.target.dataset.narrative;
+      let narrative = e.target.dataset.narrative;
       localStorage.setItem("activeNarrative", narrative);
       console.log("Narrative '" + narrative + "' selected.");
       window.location.href = "narrative.html";
     });
   });
-  // === CARD CLICK LOGIC (INDEX.HTML) ===
-  var narrativeCards = document.querySelectorAll(".path-card");
+
+  // add click listeners for narrative cards
+  let narrativeCards = document.querySelectorAll(".path-card");
   narrativeCards.forEach(function (card) {
     card.addEventListener("click", function (e) {
-      e.preventDefault(); // evita che il link # faccia scrollare in alto
-      var narrative = card.dataset.narrativeId;
+      e.preventDefault(); // avoid default # link behavior
+      let narrative = card.dataset.narrativeId;
       localStorage.setItem("activeNarrative", narrative);
       console.log("Narrative from card:", narrative);
       window.location.href = "narrative.html";
@@ -321,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // execute code only in narrative.html
   if (window.location.pathname.endsWith("narrative.html")) {
     // read narrative from localStorage or default to "historical"
-    var activeNarrative = localStorage.getItem("activeNarrative") || "historical";
+    let activeNarrative = localStorage.getItem("activeNarrative") || "historical";
     console.log("Active narrative: " + activeNarrative);
 
     // load json data
@@ -340,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
         description.textContent = narrative.description;
 
         // populate items card
-        // Load items inside narrative page
+        // load items inside narrative page
         const itemsContainer = document.getElementById("narrative-items");
         itemsContainer.innerHTML = ""; // clear old items
 
@@ -348,26 +355,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const item = data.items[itemKey];
         if (!item) return;
 
-        // --- column wrapper (Bootstrap grid) ---
+        // column wrapper (bootstrap grid)
         const col = document.createElement("div");
         col.className = "col-12 col-md-6 col-lg-4";
 
-        // --- wrapper (matching your media-shelf pattern) ---
+        //wrapper (matching your media-shelf pattern)
         const wrapper = document.createElement("div");
         wrapper.className = "path-card-wrapper h-100"; // you can style this if you want
 
-        // --- Create card ---
+        // create card
         const card = document.createElement("a");
         card.href = "item.html#" + itemKey;
         card.className = "card card-dynamic h-100 border-0 shadow-sm text-decoration-none text-dark";
 
-        // --- IMAGE ---
+        // image
         const img = document.createElement("img");
         img.src = item.image || "https://placehold.co/400x400/png";
         img.alt = item.title || "Placeholder image";
         img.className = "card-img-top";
 
-        // --- CARD BODY ---
+        // card body
         const body = document.createElement("div");
         body.className = "card-body";
 
@@ -375,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title.className = "card-title fw-bold";
         title.textContent = item.title;
 
-        // Append items
+        // append items
         body.appendChild(title);
         card.appendChild(img);
         card.appendChild(body);
@@ -467,30 +474,30 @@ document.addEventListener("DOMContentLoaded", function () {
             if (nextItem) window.location.hash = nextItem;
           };
 
-          // --- METADATA POPULATION ---
+          // === METADATA POPULATION ===
           const metadata = item.metadata || {};
           const metadataTableBody = document.getElementById("metadata-table-body");
 
-          // Set global RDF attributes on the tbody
+          // set global RDF attributes on the tbody
           metadataTableBody.setAttribute("xmlns:dcterms", "http://purl.org/dc/terms/");
           metadataTableBody.setAttribute("about", `https://metamuses.github.io/vwvw/item.html#${activeItem}`);
 
-          // Clear previous metadata content
+          // clear previous metadata content
           metadataTableBody.innerHTML = "";
 
-          // Iterate over the metadata object and create table rows
+          // iterate over the metadata object and create table rows
           Object.entries(metadata).forEach(([key, value]) => {
-            // If this is the "narratives" key, we only want the ones that aren't active
+            // if this is the "narratives" key, we only want the ones that aren't active
             let displayValue = value;
             if (key === "narratives") {
               displayValue = value.filter((n) => n !== activeNarrative);
             }
 
-            // Assign data-key attribute with metadata key (e.g. title) to the table row
+            // assign data-key attribute with metadata key (e.g. title) to the table row
             const tr = document.createElement("tr");
             tr.setAttribute("data-key", key);
 
-            // Create table header, using custom label for narratives and capitalization for others
+            // create table header, using custom label for narratives and capitalization for others
             const th = document.createElement("th");
             th.style.width = "35%";
 
@@ -500,11 +507,11 @@ document.addEventListener("DOMContentLoaded", function () {
               th.textContent = key.charAt(0).toUpperCase() + key.slice(1);
             }
 
-            // Create table data cell
+            // create table data cell
             const td = document.createElement("td");
             td.style.width = "65%";
 
-            // For other narratives, create links to switch narrative
+            // for other narratives, create links to switch narrative
             if (key === "narratives") {
               displayValue.forEach((narrKey, index) => {
                 const link = document.createElement("a");
@@ -527,10 +534,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
             } else {
-              // For all other metadata fields, create a span with RDF property
+              // for all other metadata fields, create a span with RDF property
               const span = document.createElement("span");
 
-              // Map specific keys to dcterms properties
+              // map specific keys to dcterms properties
               const propertyMap = {
                 title: "dcterms:title",
                 creator: "dcterms:creator",
@@ -538,17 +545,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 source: "dcterms:source",
               };
 
-              // Assign property attribute if applicable
+              // assign property attribute if applicable
               if (propertyMap[key]) {
                 span.setAttribute("property", propertyMap[key]);
               }
 
-              // Set text content and append to td, handling arrays
+              // set text content and append to td, handling arrays
               span.textContent = Array.isArray(value) ? value.join(", ") : value;
               td.appendChild(span);
             }
 
-            // Append th and td to the row, then to the table body
+            // append th and td to the row, then to the table body
             tr.appendChild(th);
             tr.appendChild(td);
             metadataTableBody.appendChild(tr);
@@ -565,7 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // itemTexts taken from item
           const itemTexts = item.texts || {};
 
-          // Load last settings or defaults
+          // load last settings or defaults
           let tone = localStorage.getItem("activeTone") || "kid"; // (kid/adult)
           let competence = localStorage.getItem("activeCompetence") || "amateur"; // (amateur/expert)
           let length = localStorage.getItem("activeLength") || "short"; // (short/long)
@@ -574,16 +581,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const key = `${tone}-${competence}-${length}`;
             const value = itemTexts[key] || "No text available for this version.";
 
-            // Build inline Read More / Read Less link (recreated each render)
-            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${
-              length === "short" ? "Read More" : "Read Less"
-            }</a>`;
+            // build inline Read More / Read Less link (recreated each render)
+            const readMoreHtml = ` <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">${length === "short" ? "Read More" : "Read Less"}</a>`;
 
-            // Set title and paragraph (use innerHTML because we need the inline link)
+            // set title and paragraph (use innerHTML because we need the inline link)
             textTitle.textContent = `${tone.charAt(0).toUpperCase() + tone.slice(1)} Text`;
             textContent.innerHTML = `${value}${readMoreHtml}`;
 
-            // Highlight active audience/tone button (only Adult/Kid highlighted)
+            // highlight active audience/tone button (only Adult/Kid highlighted)
             if (tone === "adult") {
               btnAdult.classList.remove("btn-outline-primary");
               btnAdult.classList.add("btn-primary");
@@ -596,11 +601,11 @@ document.addEventListener("DOMContentLoaded", function () {
               btnAdult.classList.add("btn-outline-primary");
             }
 
-            // Show correct competence (difficulty) button
+            // show correct competence (difficulty) button
             btnIncreaseCompetence.style.display = competence === "amateur" ? "block" : "none";
             btnDecreaseCompetence.style.display = competence === "expert" ? "block" : "none";
 
-            // Attach click handler to newly rendered inline toggle link
+            // attach click handler to newly rendered inline toggle link
             const btnToggleLength = document.getElementById("btn-toggle-length");
             if (btnToggleLength) {
               // remove previous listeners by cloning (defensive) to avoid duplicates
@@ -613,13 +618,13 @@ document.addEventListener("DOMContentLoaded", function () {
               });
             }
 
-            // Save current state under the renamed keys
+            // save current state under the renamed keys
             localStorage.setItem("activeTone", tone);
             localStorage.setItem("activeCompetence", competence);
             localStorage.setItem("activeLength", length);
           }
 
-          // Button handlers (use renamed vars)
+          // button handlers (use renamed vars)
           btnAdult.onclick = () => {
             tone = "adult";
             updateTextDisplay();
@@ -637,10 +642,10 @@ document.addEventListener("DOMContentLoaded", function () {
             updateTextDisplay();
           };
 
-          // Initialize display on load
+          // initialize display on load
           updateTextDisplay();
 
-          // --- Media shelf logic ---
+          // === MEDIA SHELF LOGIC ===
           const mediaShelf = document.getElementById("related-media-shelf");
           mediaShelf.innerHTML = ""; // clear old content
 
@@ -654,9 +659,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 mediaElement = `<iframe src="${media.source}" title="${media.caption}" allowfullscreen></iframe>`;
               } else if (media.type === "article") {
                 // API call to Microlink to generate a screenshot of the external site
-                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(
-                  media.link
-                )}&screenshot=true&meta=false&embed=screenshot.url`;
+                const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(media.link)}&screenshot=true&meta=false&embed=screenshot.url`;
                 mediaElement = `<img src="${previewUrl}" alt="Preview of ${media.caption}">`;
               }
 
@@ -679,7 +682,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
           }
 
-          // Scroll arrows
+          // scroll arrows
           document.querySelector(".shelf-arrow.left").addEventListener("click", () => {
             mediaShelf.scrollBy({ left: -250, behavior: "smooth" });
           });
@@ -687,7 +690,6 @@ document.addEventListener("DOMContentLoaded", function () {
             mediaShelf.scrollBy({ left: 250, behavior: "smooth" });
           });
         })
-
         .catch(function (error) {
           console.log("Error loading item:", error);
           document.getElementById("item-title").textContent = "Error loading item";
@@ -699,6 +701,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // reload the item when browser back/forward changes the fragment
     window.addEventListener("hashchange", loadItem);
-
   }
 });
