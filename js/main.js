@@ -247,33 +247,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
+    const scrollDifference = Math.abs(currentScrollY - lastScrollY);
 
-    // select the div that has the 'collapse' class
+    // === CLOSE ALL NAVIGATION ON SCROLL ===
+    // 1. Close Mobile Hamburger
     const navbarCollapse = document.getElementById("navbarNavDropdown");
-
-    // check if it is currently open (bootstrap adds the 'show' class)
-    if (navbarCollapse.classList.contains("show")) {
-      // get the Bootstrap instance and hide it
+    if (navbarCollapse.classList.contains("show") && scrollDifference > 10) {
       const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-      if (bsCollapse) {
-        bsCollapse.hide();
-      }
+      if (bsCollapse) bsCollapse.hide();
     }
 
-    // shrink logic: shrink logo if scrolled more than 50px
+    // 2. Close Desktop Dropdowns (Subnavigation)
+    // Find any dropdown menu that is currently visible
+    const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+    openDropdowns.forEach(menu => {
+      // Get the toggle element (the <a> or <button> that opened it)
+      const toggle = menu.parentElement.querySelector('.dropdown-toggle');
+      if (toggle && scrollDifference > 5) {
+        const bsDropdown = bootstrap.Dropdown.getInstance(toggle);
+        if (bsDropdown) bsDropdown.hide();
+      }
+    });
+
+    // === REMAINDER OF YOUR EXISTING LOGIC (Shrink/Hide) ===
     if (currentScrollY > 50) {
       header.classList.add("header-scrolled");
     } else {
       header.classList.remove("header-scrolled");
     }
 
-    // hide/show logic: show if scrolling up, hide if scrolling down (after passing 200px)
-    if (currentScrollY > lastScrollY && currentScrollY > 200) {
-      // scrolling down
-      header.classList.add("header-hidden");
-    } else {
-      // scrolling up
-      header.classList.remove("header-hidden");
+    if (!navbarCollapse.classList.contains("show")) {
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        header.classList.add("header-hidden");
+      } else {
+        header.classList.remove("header-hidden");
+      }
     }
 
     lastScrollY = currentScrollY;
