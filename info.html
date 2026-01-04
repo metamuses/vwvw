@@ -171,9 +171,13 @@
             <!--to be done/documented: javascript cleanup?-->
           <h2>Multimedia, metadata selection and texts production</h2>
           <p>
-            The related-media section reflects the curatorial logic of the imagined museum, as the grouping of related materials mirrors the item groupings defined within the museum’s exhibition rooms. By preserving these relationships, continuity is established between the physical institution and the virtual museum experience. <br>
-            Metadata were sourced from the original museum, library, and archive websites associated with each item, as well as from additional reference materials, all of which are carefully documented in the disclaimer section. <br>
-            To ensure consistency across the collection, metadata were standardized using the Dublin Core vocabulary, selected for its generality and wide adoption. The shared metadata fields were modeled as Linked Open Data; only those properties that were common to the entire collection were mapped using RDF namespaces.
+            The related-media section reflects the curatorial logic of the imagined museum, as the grouping of related materials mirrors the item groupings defined within the museum’s exhibition rooms. By preserving these relationships, continuity is established between the physical institution and the virtual museum experience.
+            <br>
+            Metadata were sourced from the original museum, library, and archive websites associated with each item, as well as from additional reference materials, all of which are carefully documented in the disclaimer section.
+            The metadata were then standardized using the Dublin Core Metadata Element Set to ensure interoperability.
+            The technical implementation utilizes RDFa to model these fields as Linked Open Data. A global namespace attribute, <code>xmlns:dcterms</code>, was defined on the table body to point to the official DCMI URI. A JavaScript <code>propertyMap</code> was then used to bridge the local JSON keys to their corresponding Dublin Core terms, such as <code>dcterms:title</code>.
+            As the table is dynamically populated, these terms are semantically embedded in the HMTL via the <code>property</code> attribute of <code>span</code> elements, effectively binding the museum's data to a machine-readable, standardized vocabulary.
+            Furthermore, the <code>about</code> attribute is used to define the URI of the resource being described, effectively establishing the subject of the RDF triples. By dynamically generating this URI using the item's unique ID, the code ensures that the metadata is explicitly linked to a specific resource, making the library's content compatible with the principles of Linked Open Data.
             <!--to be done/further documented if necessary: LOD-->
             <!--to be finished/documented text production: let them know if llm was used-->
           </p>
