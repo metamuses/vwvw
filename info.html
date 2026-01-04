@@ -178,7 +178,6 @@
             The technical implementation utilizes RDFa to model these fields as Linked Open Data. A global namespace attribute, <code>xmlns:dcterms</code>, was defined on the table body to point to the official DCMI URI. A JavaScript <code>propertyMap</code> was then used to bridge the local JSON keys to their corresponding Dublin Core terms, such as <code>dcterms:title</code>.
             As the table is dynamically populated, these terms are semantically embedded in the HMTL via the <code>property</code> attribute of <code>span</code> elements, effectively binding the museum's data to a machine-readable, standardized vocabulary.
             Furthermore, the <code>about</code> attribute is used to define the URI of the resource being described, effectively establishing the subject of the RDF triples. By dynamically generating this URI using the item's unique ID, the code ensures that the metadata is explicitly linked to a specific resource, making the library's content compatible with the principles of Linked Open Data.
-            <!--to be done/further documented if necessary: LOD-->
             <!--to be finished/documented text production: let them know if llm was used-->
           </p>
         </div>
