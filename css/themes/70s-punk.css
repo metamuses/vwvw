@@ -6,7 +6,6 @@
 body {
   background-color: #fafafa;
   color: #494949 !important;
-  font-family: 'Special Elite';
 }
 
 #map {
@@ -18,46 +17,33 @@ body {
 /* Header, Footer & Navbar Backgrounds */
 header,
 footer,
-nav.navbar,
-header.bg-light,
-header.bg-light nav.navbar,
-footer.bg-light,
-footer.bg-light .container {
-  background-color: #FC6392 !important;
-  font-family: 'Special Elite';
-}
+nav.navbar {
+  background-color: #FC6392; 
+} 
 
 header,
 footer {
   position: relative;
   overflow: visible;
-  /* Height matched to Standard CSS */
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
 /* || NAVBAR || */
 
-/* Top-level links (collections, info, styles) */
+/* General Link Styling */
 .navbar a.nav-link.dropdown-toggle {
   color: black;
   transition: color 0.3s ease;
 }
 
-/* Top-level hover: ONLY text remains white, no background color change */
+/* Hover States */
 .navbar .nav-item:hover > a.nav-link.dropdown-toggle,
 .navbar a.nav-link.dropdown-toggle:hover {
   background-color: transparent !important;
   color: #ffffff !important;
 }
 
-/* Dropdown Menu Container */
-.navbar .dropdown-menu {
-  border: 2px solid #000;
-  border-radius: 0;
-}
-
-/* Dropdown items hover: Yellow background, Black text */
 .navbar .dropdown-menu .dropdown-item {
   color: black;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -65,6 +51,12 @@ footer {
 
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: #E3F041 !important;
+}
+
+/* Dropdown Container */
+.navbar .dropdown-menu {
+  border: 2px solid #000;
+  border-radius: 0;
 }
 
 /* || MOULDING & DECORATIONS || */
@@ -82,17 +74,16 @@ iframe {
   filter: none !important;
 }
 
-/* Responsive Footer Icon: Uses % to maintain size independently of text shrinking */
+/* Footer Icon Styling */
 footer img {
-  height: 80%; /* Adjusted from 1.5em to a percentage of the container height */
-  max-height: 2.5rem; /* Safety cap to ensure it doesn't get excessively large */
+  height: 80%;
+  max-height: 2.5rem;
   width: auto;
   filter: grayscale(100%) contrast(150%);
   vertical-align: middle;
 }
 
 /* || PUNK FRAME CONTAINERS || */
-/* Applied to Index Cards, Narrative Items, and Item Sections */
 
 .card[data-narrative-id],
 #narrative-items .card, 
@@ -109,18 +100,16 @@ footer img {
   transform: rotate(-2deg);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   overflow: visible !important;
-  /* Static shadow restored from original */
   box-shadow: 0 0.75rem 1.1rem rgba(0,0,0,0.30) !important;
 }
 
-/* NEW: Increased spacing between Info Page sections (Mapped from Standard CSS) */
 #documentation,
 #disclaimer,
 #team {
-  margin-bottom: 3rem !important; /* Increased from the standard 2rem to 5rem */
+  margin-bottom: 3rem !important;
 }
 
-/* Specific rotation rules from original */
+/* Rotation Rules */
 .card[data-narrative-id]:nth-child(odd),
 #narrative-items .card:nth-child(odd) {
   transform: rotate(1.5deg);
@@ -131,23 +120,13 @@ footer img {
   transform: rotate(-3deg);
 }
 
-/* Hover Effect for interactive cards */
-.card[data-narrative-id]:hover,
-#narrative-items .card:hover,
-#team .card:hover {
-  transform: rotate(0deg) translateY(-0.375rem) !important;
-  box-shadow: 0 1.125rem 1.75rem rgba(0,0,0,0.45) !important;
-  cursor: pointer;
-}
-
-/* Reset rotation for Text Section and Metadata Table only */
+/* Non-rotating overrides */
 #item-text-section,
 #metadata-table-wrapper,
 #item-related-media {
   transform: rotate(0deg) !important;
 }
 
-/* Ensure hover effect is also disabled for these non-rotating sections if you don't want them to move when the mouse is over them */
 #item-text-section:hover,
 #metadata-table-wrapper:hover,
 #item-related-media:hover {
@@ -155,26 +134,7 @@ footer img {
   cursor: default;
 }
 
-/* Noise & Safety Pins (Standardized pseudo-elements) */
-.card[data-narrative-id]::after,
-#narrative-items .card::after,
-#item-image-wrapper::after,
-#item-text-section::after,
-#item-related-media::after,
-#metadata-table-wrapper::after,
-#team .card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("../../img/themes/noise.png");
-  background-size: cover;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-  z-index: 1;
-}
-
-/* Adjusted the global before rule to ensure high z-index */
+/* Pins and Noise for punk style */
 .card[data-narrative-id]::before,
 #narrative-items .card::before,
 #item-image-wrapper::before,
@@ -198,11 +158,37 @@ footer img {
   background-position: center;
   transform: rotate(-10deg);
   pointer-events: none;
-  /* Increased z-index and ensuring it is visible */
   z-index: 100; 
 }
 
-/* || PLAQUE STYLING (Item Wrapper) || */
+.card[data-narrative-id]::after,
+#narrative-items .card::after,
+#item-image-wrapper::after,
+#item-text-section::after,
+#item-related-media::after,
+#metadata-table-wrapper::after,
+#team .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("../../img/themes/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* Hover Effects on cards */
+.card[data-narrative-id]:hover,
+#narrative-items .card:hover,
+#team .card:hover {
+  transform: rotate(0deg) translateY(-0.375rem) !important;
+  box-shadow: 0 1.125rem 1.75rem rgba(0,0,0,0.45) !important;
+  cursor: pointer;
+}
+
+/* || ITEM WRAPPER || */
 #item-image-wrapper {
   position: relative;
   background: #ffffff !important;
@@ -210,11 +196,9 @@ footer img {
   padding: 3.5rem 1.56rem 1.56rem 1.56rem !important;
   box-shadow: 0.5rem 0.75rem 1.25rem rgba(0,0,0,0.35);
   transform: rotate(-2deg);
-  /* CHANGED: overflow must be visible to show the pin */
   overflow: visible !important; 
 }
 
-/* Updated After: Noise effect logic */
 #item-image-wrapper::after { 
   content: "";
   position: absolute;
@@ -225,18 +209,17 @@ footer img {
   opacity: 0.12; 
   pointer-events: none;
   z-index: 1;
-  /* This ensures the noise doesn't bleed out even if the parent is visible */
   border-radius: inherit; 
 }
 
-/* Updated Before: Specific safety pin positioning for image wrapper */
 #item-image-wrapper::before { 
-  top: -1.7rem; /* Adjusted to sit higher and avoid clipping */
+  top: -1.7rem;
   left: -2rem; 
   width: 5rem; 
   height: 5rem; 
-  z-index: 101; /* Highest priority */
+  z-index: 101;
 }
+
 /* || BUTTONS & LINKS || */
 
 .btn {
@@ -254,7 +237,7 @@ footer img {
   border-color: #E3F041 !important;
 }
 
-/* Active Button States: Keeps Pink background while hover is the swap */
+/* Active Button States */
 #btn-adult.btn-primary,
 #btn-kid.btn-secondary {
   color: #E3F041 !important;
@@ -274,14 +257,13 @@ footer img {
   color: #FC6392 !important;
 }
 
-/* NEW: Specific Link color for Documentation Page */
 #disclaimer a {
-  color: #f89bb7 !important; /* The same pink as the header/footer */
+  color: #f89bb7 !important;
   text-decoration: underline;
 }
 
 #disclaimer a:hover {
-  color: #FC6392 !important; /* Lighter pink on hover */
+  color: #FC6392 !important;
 }
 
 /* || TABLES and MAP || */
@@ -305,6 +287,7 @@ footer img {
 
 /* || TYPOGRAPHY || */
 
+/* Font Families for Titles and Body */
 h1, h2, h3, h4, h5, h6,
 .hero h1,
 #map-section h2,
@@ -318,11 +301,11 @@ p,
 td,
 #item-description,
 #text-content,
-#narrative-description,
 .card-text {
   font-family: 'Special Elite';
 }
 
+/* Specific Typography Rules */
 #narrative-description {
   font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
   font-family: 'Special Elite';
@@ -339,11 +322,9 @@ td,
 
 /* || RESPONSIVENESS || */
 
-/* This rule works on all screen sizes as you shrink the window */
+/* Fluid Footer Text */
 footer p, 
-footer span, 
 footer a {
-  /* Fluid font: min 12px, preferred 1vw, max 15px */
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
 }
 
@@ -352,7 +333,6 @@ footer a {
     margin-bottom: 2rem;
   }
 
-  /* Ensure the footer elements stack nicely when very narrow */
   footer .container {
     display: flex;
     flex-direction: column;
@@ -361,7 +341,6 @@ footer a {
     text-align: center;
   }
 
-  /* Make the GitHub icon responsive but capped */
   footer img {
     max-width: 25px; 
   }
