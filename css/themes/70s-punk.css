@@ -278,7 +278,6 @@ footer img {
 
 /* || TYPOGRAPHY || */
 
-/* Font Families for Titles and Body */
 h1, h2, h3, h4, h5, h6,
 .hero h1,
 #map-section h2,
@@ -296,7 +295,6 @@ td,
   font-family: 'Special Elite';
 }
 
-/* Specific Typography Rules */
 #narrative-description {
   font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
   font-family: 'Special Elite';

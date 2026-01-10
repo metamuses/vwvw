@@ -29,6 +29,15 @@ footer {
   padding-bottom: 1.5rem;
 }
 
+/* making everything more centered according to style */
+main {
+  max-width: 80% !important; 
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 /* || NAVBAR || */
 
 /* Hover States */
@@ -394,6 +403,12 @@ body, p, td, th, #text-content, .item-card-hover p {
   margin-right: auto !important;
 } 
 
+#text-content {
+  text-align: justify;
+  line-height: 1.5;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 /* || RESPONSIVENESS || */
 /* Fluid Footer Text */
@@ -431,6 +446,12 @@ footer a {
   #disclaimer,
   #team {
     width: 90% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  main {
+    max-width: 95% !important;
   }
 }
 
