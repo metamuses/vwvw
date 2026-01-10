@@ -376,13 +376,24 @@ body, p, td, th, #text-content, .item-card-hover p {
   color: #2B1C0E !important;
 }
 
-#narrative-description {
+#narrative-description, #documentation p, #disclaimer p, #team p {
   font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
   line-height: 1.5;
-  max-width: 70%;
   margin-left: auto;
   margin-right: auto;
+  text-align: justify;
 }
+
+#narrative-description {
+  max-width: 70%;
+}
+
+#documentation, #disclaimer, #team {
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+} 
+
 
 /* || RESPONSIVENESS || */
 /* Fluid Footer Text */
@@ -406,6 +417,20 @@ footer a {
 
   footer img {
     max-width: 25px; 
+  }
+
+  #documentation,
+  #disclaimer,
+  #team {
+    width: 95% !important; 
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #documentation,
+  #disclaimer,
+  #team {
+    width: 90% !important;
   }
 }
 

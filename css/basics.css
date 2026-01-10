@@ -585,10 +585,3 @@ section[id] {
   height: 250px;
   width: 100%;
 }
-
-#documentation h1,
-#discaimer h2,
-#documentation p,
-#disclaimer p {
-  text-align: justify;
-}
