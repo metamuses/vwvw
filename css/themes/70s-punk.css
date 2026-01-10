@@ -1,253 +1,227 @@
+/* || GENERAL STYLES || */
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 
-/* GENERAL RULES */
+/* || BACKGROUND || */
 body {
   background-color: #fafafa;
   color: #494949 !important;
-  font-family: 'Special Elite';
 }
 
-footer, header, nav.navbar {
-  background-color: #FC6392 !important;
-  font-family: 'Special Elite';
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gloria Hallelujah' !important;
-}
-
-.lead {
-  font-family: 'Gloria Hallelujah' !important;
-  color: #494949 !important;
-}
-
-/* navbar */
-.dropdown-item:hover {
-  background-color: #E3F041;
-}
-
-/*map section*/
 #map {
   background-color: #E3F041 !important;
 }
 
-.leaflet-marker-icon.item-marker {
-  background-color: #f89bb7;
-  box-shadow: 0 0 0.2rem #f89bb7;
+/* || SHARED LAYOUT & COLORS || */
+
+/* Header, Footer & Navbar Backgrounds */
+header,
+footer,
+nav.navbar {
+  background-color: #FC6392; 
+} 
+
+header,
+footer {
+  position: relative;
+  overflow: visible;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
-.item-marker.highlighted {
-  background-color: #FC6392;
-  box-shadow: 0 0 0.8rem #FC6392 !important;
+/* || NAVBAR || */
+
+/* General Link Styling */
+.navbar a.nav-link.dropdown-toggle {
+  color: black;
+  transition: color 0.3s ease;
 }
 
-.item-card-hover p {
-  font-family: 'Gloria Hallelujah';
-  background-color: #fafafa;
+/* Hover States */
+.navbar .nav-item:hover > a.nav-link.dropdown-toggle,
+.navbar a.nav-link.dropdown-toggle:hover {
+  background-color: transparent !important;
+  color: #ffffff !important;
 }
 
-/* all images made fanzine style*/
-img {
-  filter:
-    grayscale(100%)
-    contrast(180%)
-    brightness(100%)
-    saturate(20%);
+.navbar .dropdown-menu .dropdown-item {
+  color: black;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #E3F041 !important;
+}
+
+/* Dropdown Container */
+.navbar .dropdown-menu {
+  border: 2px solid #000;
+  border-radius: 0;
+}
+
+/* || MOULDING & DECORATIONS || */
+
+img,
+video,
+iframe {
+  filter: grayscale(100%) contrast(180%) brightness(100%) saturate(20%);
   width: 100%;
   height: auto;
   position: relative;
 }
 
+#documentation img {
+  filter: none !important;
+}
 
-/*CARD STYLE FOR ALL PAGES*/
-/*CARD for index and narrative page */
-.card-dynamic {
+/* Footer Icon Styling */
+footer img {
+  height: 80%;
+  max-height: 2.5rem;
+  width: auto;
+  filter: grayscale(100%) contrast(150%);
+  vertical-align: middle;
+}
+
+/* || PUNK FRAME CONTAINERS || */
+
+.card[data-narrative-id],
+#narrative-items .card, 
+#item-text-section,
+#item-related-media,
+#related-media-shelf .card,
+#metadata-table-wrapper,
+#team .card {
   background: #ffffff;
   border: none;
   padding: 1.25rem;
   position: relative;
   border-radius: 0 !important;
   transform: rotate(-2deg);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-  box-shadow: 0 0.75rem 1.1rem rgba(0,0,0,0.30)!important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   overflow: visible !important;
+  box-shadow: 0 0.75rem 1.1rem rgba(0,0,0,0.30) !important;
 }
 
-.card-dynamic:nth-child(odd) {
+#documentation,
+#disclaimer,
+#team {
+  margin-bottom: 3rem !important;
+}
+
+/* Rotation Rules */
+.card[data-narrative-id]:nth-child(odd),
+#narrative-items .card:nth-child(odd) {
   transform: rotate(1.5deg);
 }
 
-.card-dynamic:nth-child(3n) {
+.card[data-narrative-id]:nth-child(3n),
+#narrative-items .card:nth-child(3n) {
   transform: rotate(-3deg);
 }
 
-.card-dynamic:hover {
+/* Non-rotating overrides */
+#item-text-section,
+#metadata-table-wrapper,
+#item-related-media {
+  transform: rotate(0deg) !important;
+}
+
+#item-text-section:hover,
+#metadata-table-wrapper:hover,
+#item-related-media:hover {
+  transform: rotate(0deg) !important;
+  cursor: default;
+}
+
+/* Pins and Noise for punk style */
+.card[data-narrative-id]::before,
+#narrative-items .card::before,
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#related-media-shelf .card::before,
+#metadata-table-wrapper::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
+  content: "";
+  position: absolute;
+  top: -1.75rem;
+  left: -0.625rem;
+  width: 4.375rem;
+  height: 4.375rem;
+  background-image: url("../../img/themes/safetypin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-10deg);
+  pointer-events: none;
+  z-index: 100; 
+}
+
+.card[data-narrative-id]::after,
+#narrative-items .card::after,
+#item-image-wrapper::after,
+#item-text-section::after,
+#item-related-media::after,
+#metadata-table-wrapper::after,
+#team .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("../../img/themes/noise.png");
+  background-size: cover;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* Hover Effects on cards */
+.card[data-narrative-id]:hover,
+#narrative-items .card:hover,
+#team .card:hover {
   transform: rotate(0deg) translateY(-0.375rem) !important;
   box-shadow: 0 1.125rem 1.75rem rgba(0,0,0,0.45) !important;
+  cursor: pointer;
 }
 
-/*noise effect*/
-.card-dynamic::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background-image: url("/img/themes/noise.png");
-  background-size: cover;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-}
-
-/*safety pin on top*/
-.card-dynamic::before {
-  content: "";
-  position: absolute;
-  top: -1.75rem;
-  left: -0.625rem;
-  width: 4.375rem;
-  height: 4.375rem;
-  background-image: url("/img/themes/safetypin.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: rotate(-10deg);
-  pointer-events: none;
-}
-
-/*CARD for item page - text and media sections- to avoid hover*/
-.card {
-  background: #ffffff;
-  border: none;
-  padding: 1.25rem;
-  position: relative;
-  border-radius: 0 !important;
-  transform: rotate(-2deg);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-  overflow: visible !important;
-}
-
-.card:nth-child(odd) {
-  transform: rotate(1.5deg);
-}
-
-.card:nth-child(3n) {
-  transform: rotate(-3deg);
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("/img/themes/noise.png");
-  background-size: cover;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: -1.75rem;
-  left: -0.625rem;
-  width: 4.375rem;
-  height: 4.375rem;
-  background-image: url("/img/themes/safetypin.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: rotate(-10deg);
-  pointer-events: none;
-}
-
-/* increase margin for item-image-column on sm/xs devices*/
-@media (max-width: 767.98px) {
-  #item-image-column {
-    margin-bottom: 2rem;
-  }
-}
-
-
-/*NARRATIVE PAGE*/
-#narrative-description {
-  font-family: 'Special Elite' !important;
-}
-
-
-/*ITEM PAGE*/
-/*ITEM wrapper*/
+/* || ITEM WRAPPER || */
 #item-image-wrapper {
   position: relative;
   background: #ffffff !important;
   border-radius: 0 !important;
-  overflow: visible !important;
-  padding: 1.56rem !important;
+  padding: 3.5rem 1.56rem 1.56rem 1.56rem !important;
   box-shadow: 0.5rem 0.75rem 1.25rem rgba(0,0,0,0.35);
   transform: rotate(-2deg);
-  overflow: hidden;
+  overflow: visible !important; 
 }
 
-/*soft noise*/
-#item-image-wrapper::after {
+#item-image-wrapper::after { 
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/img/themes/noise.png");
-  background-size: 18.75rem;
+  background-size: 18.75rem; 
+  background-image: url("../../img/themes/noise.png");
   background-repeat: repeat;
-  opacity: 0.12;
+  opacity: 0.12; 
   pointer-events: none;
   z-index: 1;
+  border-radius: inherit; 
 }
 
-/*safety pin*/
-#item-image-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -1.375rem;
-  left: -1.375rem;
-  width: 5.625rem;
-  height: 5.625rem;
-  background-image: url("/img/themes/safetypin.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 3;
-  pointer-events: none;
+#item-image-wrapper::before { 
+  top: -1.7rem;
+  left: -2rem; 
+  width: 5rem; 
+  height: 5rem; 
+  z-index: 101;
 }
 
-/*METADATA wrapper*/
-#metadata-table-wrapper th {
-  font-family: 'Gloria Hallelujah';
-}
-#metadata-table-wrapper td {
-  font-family: 'Special Elite';
-}
+/* || BUTTONS & LINKS || */
 
-#metadata-table-wrapper td a {
-  color: #f89bb7;
-}
-
-#metadata-table-wrapper td a:hover {
-  color: #FC6392;
-}
-
-#metadata-table, #metadata-table th, #metadata-table td {
-  border: 2px solid black;
-  border-radius: 2px;
-  box-shadow:
-    1px 1px 0 #000,
-    -1px 2px 0 #111,
-    2px -1px 0 #222;
-}
-
-
-/*BUTTONS*/
 .btn {
   font-family: 'Gloria Hallelujah' !important;
   color: #FC6392 !important;
@@ -261,37 +235,113 @@ img {
   color: #E3F041 !important;
   background-color: #FC6392 !important;
   border-color: #E3F041 !important;
-  box-shadow: 0.25em 0.25em 0.625em rgba(0, 0, 0, 0.25);
 }
 
-/* active adult btn */
-#btn-adult.btn-primary {
-  color: #E3F041 !important;
-  background-color: #FC6392 !important;
-  border-color: #E3F041 !important;
-  box-shadow: none !important;
-}
-
-/*active kid btn*/
+/* Active Button States */
+#btn-adult.btn-primary,
 #btn-kid.btn-secondary {
   color: #E3F041 !important;
-  background-color: #FC6392 !important;
+  background-color: #e34675 !important;
   border-color: #E3F041 !important;
   box-shadow: none !important;
 }
 
-/*text-content*/
-#text-content {
-  font-family: 'Special Elite';
-}
-
-#text-content a {
+/* Text Links */
+#text-content a,
+#metadata-table-wrapper td a {
   color: #f89bb7 !important;
 }
 
-#text-content a:hover {
+#text-content a:hover,
+#metadata-table-wrapper td a:hover {
   color: #FC6392 !important;
 }
 
+#disclaimer a {
+  color: #f89bb7 !important;
+  text-decoration: underline;
+}
 
+#disclaimer a:hover {
+  color: #FC6392 !important;
+}
 
+/* || TABLES and MAP || */
+#metadata-table, 
+#metadata-table th, 
+#metadata-table td {
+  border: 2px solid black;
+  border-radius: 2px;
+  box-shadow: 1px 1px 0 #000, -1px 2px 0 #111, 2px -1px 0 #222;
+}
+
+.leaflet-marker-icon.item-marker {
+  background-color: #f89bb7;
+  box-shadow: 0 0 0.2rem #f89bb7;
+}
+
+.item-marker.highlighted {
+  background-color: #FC6392;
+  box-shadow: 0 0 0.8rem #FC6392 !important;
+}
+
+/* || TYPOGRAPHY || */
+
+/* Font Families for Titles and Body */
+h1, h2, h3, h4, h5, h6,
+.hero h1,
+#map-section h2,
+#metadata-table th,
+.lead {
+  font-family: 'Gloria Hallelujah' !important;
+}
+
+body,
+p,
+td,
+#item-description,
+#text-content,
+.card-text {
+  font-family: 'Special Elite';
+}
+
+/* Specific Typography Rules */
+#narrative-description {
+  font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
+  font-family: 'Special Elite';
+  line-height: 1.5;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item-card-hover p {
+  font-family: 'Gloria Hallelujah';
+  background-color: #fafafa;
+}
+
+/* || RESPONSIVENESS || */
+
+/* Fluid Footer Text */
+footer p, 
+footer a {
+  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
+}
+
+@media (max-width: 768px) {
+  #item-image-column {
+    margin-bottom: 2rem;
+  }
+
+  footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  footer img {
+    max-width: 25px; 
+  }
+}
