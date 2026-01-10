@@ -243,50 +243,88 @@ async function initializeMuseumMap() {
 document.addEventListener("DOMContentLoaded", function () {
   // === SMART STICKY HEADER LOGIC ===
   const header = document.querySelector("header");
-  let lastScrollY = window.scrollY;
+  const navbarCollapse = document.getElementById("navbarNavDropdown");
+  const toggler = document.querySelector(".navbar-toggler");
+  const dropdownToggles = document.querySelectorAll(".navbar .dropdown-toggle");
 
+  // track last scroll position and if a menu click is happening
+  let lastScrollY = window.scrollY;
+  let isToggling = false;
+
+  // function for temporary pausing scroll logic to prevent menu closing glitches
+  function activateToggleGuard() {
+    isToggling = true;
+    setTimeout(() => {
+      isToggling = false;
+    }, 500); // 500ms allows time for the dropdown animation to finish
+  }
+
+  // if hamburger exist, activate function for temporary pausing
+  if (toggler) {
+    toggler.addEventListener("click", activateToggleGuard);
+  }
+  // when dropdown clicked, activate function for temporary pausing
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener("click", activateToggleGuard);
+  });
+
+  // scroll listener
   window.addEventListener("scroll", () => {
+    // stop if a menu button is clicked
+    if (isToggling) return;
+
+    // get current scroll position and how much we moved
     const currentScrollY = window.scrollY;
     const scrollDifference = Math.abs(currentScrollY - lastScrollY);
 
-    // === CLOSE ALL NAVIGATION ON SCROLL ===
-    // 1. Close Mobile Hamburger
-    const navbarCollapse = document.getElementById("navbarNavDropdown");
-    if (navbarCollapse.classList.contains("show") && scrollDifference > 10) {
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-      if (bsCollapse) bsCollapse.hide();
+    // === close logic (if actually open) ===
+    if (navbarCollapse.classList.contains("show")) {
+      // Only close if scrolling DOWN significantly (>15px)
+      if (currentScrollY > lastScrollY && scrollDifference > 15) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) bsCollapse.hide();
+      }
     }
 
-    // 2. Close Desktop Dropdowns (Subnavigation)
-    // Find any dropdown menu that is currently visible
+    // close Desktop Dropdowns
     const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
     openDropdowns.forEach(menu => {
-      // Get the toggle element (the <a> or <button> that opened it)
       const toggle = menu.parentElement.querySelector('.dropdown-toggle');
-      if (toggle && scrollDifference > 5) {
+      // Only close desktop dropdowns, if mobile menu allow scroll
+      if (toggle && scrollDifference > 10 && !navbarCollapse.classList.contains("show")) {
         const bsDropdown = bootstrap.Dropdown.getInstance(toggle);
         if (bsDropdown) bsDropdown.hide();
       }
     });
 
-    // shrink logic: shrink logo if scrolled more than 50px
-    if (currentScrollY > 50) {
+    // === shrink logic ===
+    // if more then >100 px down, shrink
+    if (currentScrollY > 100) {
       header.classList.add("header-scrolled");
-    } else {
+    }
+    // Only expand if we are really close to top (< 50px)
+    else if (currentScrollY < 50) {
       header.classList.remove("header-scrolled");
     }
+    // If between 50px and 100px, stay in current state
 
-    // hide/show logic: show if scrolling up, hide if scrolling down (after passing 200px)
-    if (!navbarCollapse.classList.contains("show")) {
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        // scrolling down
+    // === hide/show logic ===
+    // check if menu is animating or fully open
+    const isAnimating = navbarCollapse.classList.contains("collapsing");
+    const isOpen = navbarCollapse.classList.contains("show");
+
+    // only hide/show header if menu is fully closed and not moving
+    if (!isOpen && !isAnimating) {
+      if (currentScrollY > lastScrollY && currentScrollY > 200 && scrollDifference > 5) {
+        // scrolling down: hide header
         header.classList.add("header-hidden");
-      } else {
-        // scrolling up
+      } else if (currentScrollY < lastScrollY || currentScrollY < 50) {
+        // scrolling up or at top: show header
         header.classList.remove("header-hidden");
       }
     }
 
+    // update last scroll position
     lastScrollY = currentScrollY;
   });
 
