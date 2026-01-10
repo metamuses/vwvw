@@ -83,6 +83,12 @@ footer img {
   vertical-align: middle;
 }
 
+#documentation,
+#disclaimer,
+#team {
+  margin-bottom: 3rem !important;
+}
+
 /* || PUNK FRAME CONTAINERS || */
 
 .card[data-narrative-id],
@@ -101,12 +107,6 @@ footer img {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   overflow: visible !important;
   box-shadow: 0 0.75rem 1.1rem rgba(0,0,0,0.30) !important;
-}
-
-#documentation,
-#disclaimer,
-#team {
-  margin-bottom: 3rem !important;
 }
 
 /* Rotation Rules */
@@ -134,7 +134,7 @@ footer img {
   cursor: default;
 }
 
-/* Pins and Noise for punk style */
+/* Pins and Noise pseudo-elements */
 .card[data-narrative-id]::before,
 #narrative-items .card::before,
 #item-image-wrapper::before,
@@ -163,7 +163,6 @@ footer img {
 
 .card[data-narrative-id]::after,
 #narrative-items .card::after,
-#item-image-wrapper::after,
 #item-text-section::after,
 #item-related-media::after,
 #metadata-table-wrapper::after,
@@ -210,14 +209,6 @@ footer img {
   pointer-events: none;
   z-index: 1;
   border-radius: inherit; 
-}
-
-#item-image-wrapper::before { 
-  top: -1.7rem;
-  left: -2rem; 
-  width: 5rem; 
-  height: 5rem; 
-  z-index: 101;
 }
 
 /* || BUTTONS & LINKS || */
@@ -318,6 +309,10 @@ td,
 .item-card-hover p {
   font-family: 'Gloria Hallelujah';
   background-color: #fafafa;
+}
+
+#documentation p, #disclaimer p, #team p {
+  text-align: left;
 }
 
 /* || RESPONSIVENESS || */
