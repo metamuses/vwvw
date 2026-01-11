@@ -258,6 +258,17 @@ footer img {
 }
 
 /* || TABLES and MAP || */
+#metadata-table-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#metadata-table {
+  width: 100%;
+  max-width: 100%; 
+}
+
 #metadata-table, 
 #metadata-table th, 
 #metadata-table td {
@@ -338,4 +349,37 @@ footer a {
   footer img {
     max-width: 25px; 
   }
+
+  .item-title-target.h3 {
+    font-size: 7vw !important; 
+    text-align: center !important;
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+    display: block;
+    width: 100%;
+  }
 }
+
+@media (min-width: 768px) {
+  #item-metadata-column {
+    justify-content: center !important; 
+  }
+
+  #metadata-table-wrapper {
+    margin-top: 1.5em !important; 
+  }
+
+  .item-title-target.d-md-block {
+    font-size: 4vw !important; 
+    line-height: 1.1;
+    margin-bottom: 0.5em !important;
+    text-align: center; 
+  }
+}
+
+@media (min-width: 992px) {
+  #card-index .card .card-body h5 {
+    font-size: 1.8vw !important; 
+  }
+}
+
