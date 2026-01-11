@@ -302,6 +302,11 @@ footer img {
 }
 
 /* || TABLES and MAP || */
+#metadata-table-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 #metadata-table {
   background: #EFDFBA !important;
@@ -313,6 +318,8 @@ footer img {
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+  width: 100%;
+  max-width: 100%;
 }
 
 #metadata-table th,
@@ -457,6 +464,15 @@ footer a {
   #team {
     width: 95% !important; 
   }
+
+  .item-title-target.h3 {
+    font-size: 7vw !important; 
+    text-align: center !important;
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+    display: block;
+    width: 100%;
+  }
 }
 
 /* page shrinking */
@@ -539,6 +555,24 @@ footer a {
   #back-button, #forward-button {
     padding: 0.4rem 0.8rem !important;
     font-size: 0.9rem !important;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  #item-metadata-column {
+    justify-content: center !important; 
+  }
+
+  #metadata-table-wrapper {
+    margin-top: 1.5em !important; 
+  }
+
+  .item-title-target.d-md-block {
+    font-size: 4vw !important; 
+    line-height: 1.1;
+    margin-bottom: 0.5em !important;
+    text-align: center; 
   }
 }
 
