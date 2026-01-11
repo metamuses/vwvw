@@ -354,8 +354,8 @@ footer::before,
 #narrative-info {
   display: block;
   margin: 4rem auto;
-  max-width: 700px;
-  width: 90%;
+  max-width: 1000px;
+  width: 100%;
 }
 
 /* Side Bumps */
@@ -525,6 +525,14 @@ th,
   font-size: 15px;
 }
 
+.card-text,
+#text-content,
+#documentation,
+#diclaimer,
+#team {
+  text-align:justify;
+}
+
 /* Headings default weight */
 h2, h3, h4, h5, h6 {
   font-family: 'Source Serif 4', serif;
@@ -532,11 +540,12 @@ h2, h3, h4, h5, h6 {
 }
 
 /* Specific Typography Adjustments */
-.hero h1 { letter-spacing: 1px; }
-.hero p.lead { font-size: 1.3rem; font-weight: 400; }
+.hero h1 { letter-spacing: 1px;}
+.hero p.lead { font-size: 1.3rem; font-weight: 400;}
+.hero .intro-text {text-align: justify;}
 .card-title, #map-section h2, #metadata-table th, #item-text-section h3, #item-related-media h5, .item-title-target h2 { font-weight: 700; }
 #narrative-title { font-weight: 400; }
-#narrative-description { font-size: 1.2rem; font-weight: 400; }
+#narrative-description { font-size: 1.2rem; font-weight: 400; text-align: justify;}
 #item-header h2 { font-weight: 600; }
 #metadata-table th { font-weight: 600; }
 #item-text-section h3, #item-related-media h5 { font-weight: 600; }
@@ -545,10 +554,17 @@ h2, h3, h4, h5, h6 {
 /* || RESPONSIVENESS || */
 @media (max-width: 768px) {
   #narrative-info {
-    width: 95%;
+    /* 1. Reduce width to make the "centering" visually obvious */
+    width: 85%;
+
+    /* 2. Increase top/bottom margin for "more space" */
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem 1.5rem;
+
+    /* 3. Add more internal padding so text doesn't feel cramped */
+    padding: 2rem 1.5rem;
   }
 
   #item-header {

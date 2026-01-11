@@ -279,6 +279,13 @@ footer::before { /* Anchors the line to the top of the footer */
   overflow: hidden;
 }
 
+/* || NARRATIVE PAGE SPECIFICS || */
+#narrative-description {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
 /* || BUTTONS & LINKS || */
 
 /* --- SHARED DEFAULTS --- */
@@ -431,7 +438,7 @@ h2, h3, h4, h5, h6 {
 .hero p.lead { font-size: 1.3rem; font-weight: 400; }
 .card-title, #map-section h2 { font-weight: 700; }
 #narrative-title { font-weight: 400; }
-#narrative-description { font-size: 1.2rem; font-weight: 400; }
+#narrative-description { font-size: 1.2rem; font-weight: 400;}
 .item-title-target { font-weight: 600; }
 #metadata-table th { font-weight: 600; }
 #item-text-section h3, #item-related-media h5 { font-weight: 600; }
