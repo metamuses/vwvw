@@ -8,6 +8,10 @@ body {
   background-color: #f0d2aa;
 }
 
+body.item-page main {
+  margin-top: 1rem;
+}
+
 /* Header, Footer & Navbar Backgrounds */
 header,
 footer,
@@ -260,12 +264,12 @@ footer::before { /* Anchors the line to the top of the footer */
 
 
 /* || ITEM PAGE SPECIFICS || */
-#item-header {
+.item-title-target {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-#item-header h2 {
+.item-title-target {
   margin-top: 2rem;
 }
 
@@ -376,8 +380,7 @@ tr[data-key="narratives"] a:hover {
 #map-section h2,
 #narrative-title,
 #narrative-description,
-#item-header h2,
-#item-header p,
+.item-title-target,
 #metadata-table th,
 #item-text-section h3,
 #item-related-media h5,
@@ -429,7 +432,7 @@ h2, h3, h4, h5, h6 {
 .card-title, #map-section h2 { font-weight: 700; }
 #narrative-title { font-weight: 400; }
 #narrative-description { font-size: 1.2rem; font-weight: 400; }
-#item-header h2 { font-weight: 600; }
+.item-title-target { font-weight: 600; }
 #metadata-table th { font-weight: 600; }
 #item-text-section h3, #item-related-media h5 { font-weight: 600; }
 

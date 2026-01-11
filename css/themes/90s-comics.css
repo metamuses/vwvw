@@ -209,7 +209,7 @@ footer::before { top: 0; height: 2px; }
 
 /* || YELLOW BOX COMPONENTS || */
 /* Shared style for Item Header and Map Title */
-#item-header,
+.item-title-target,
 #map-section h2 {
   background-color: #f7e13d;
   border: 3px solid black;
@@ -224,9 +224,9 @@ footer::before { top: 0; height: 2px; }
   display: block;
 }
 
-#item-header {
+.item-title-target {
   position: relative;
-  width: 48%;
+  width: 100%;
   margin: 2rem 0;
   padding: 1rem 0;
 }
@@ -393,7 +393,6 @@ li,
 td,
 th,
 #narrative-description,
-#item-header p,
 #item-description,
 #text-content,
 .card-text,
@@ -483,7 +482,7 @@ h2, h3, h4, h5, h6 {
     width: 100%;             /* Ensures it takes up the full width */
   }
 
-  #item-header {
+  .item-title-target{
     width: 100%;
     max-width: 700px;
     margin: 2rem auto;

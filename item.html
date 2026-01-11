@@ -72,25 +72,20 @@
     <!-- main -->
     <main class="container py-4">
 
-      <!-- TITLE + DESCRIPTION -->
-      <section id="item-header">
-        <h2 id="item-title" class="mb-3">Item Title</h2>
-      </section>
+      <div class="d-block d-md-none mb-3">
+        <h2 class="item-title-target h3">Item Title</h2>
+      </div>
 
-      <!-- ROW 1: Metadata + Image -->
-      <section class="row align-items-start mb-5" id="item-main">
-        <!-- IMAGE COLUMN (left) -->
-        <div class="col-md-6 text-center" id="item-image-column">
+      <section class="row mb-5" id="item-main">
+
+        <div class="col-md-6 text-center d-flex flex-column justify-content-end mb-4 mb-md-0" id="item-image-column">
           <div class="p-3" id="item-image-wrapper">
-            <!-- Placeholder image -->
             <img
               src="https://placehold.co/400x400/png"
               alt="Item Image"
               class="img-fluid mb-3"
               id="item-image"
             />
-
-            <!-- NAVIGATION BUTTONS under the image -->
             <div id="item-nav" class="d-flex justify-content-between">
               <button type="button" class="btn btn-primary" id="back-button">Back</button>
               <button type="button" class="btn btn-primary" id="forward-button">Next</button>
@@ -98,77 +93,45 @@
           </div>
         </div>
 
-        <!-- METADATA COLUMN (right) -->
-        <div class="col-md-6" id="item-metadata-column">
-          <div id="metadata-table-wrapper">
+        <div class="col-md-6 d-flex flex-column" id="item-metadata-column">
+
+          <h2 class="item-title-target mb-3 d-none d-md-block">Item Title</h2>
+
+          <div id="metadata-table-wrapper" class="mt-auto">
             <table class="table table-bordered" id="metadata-table">
               <tbody id="metadata-table-body"></tbody>
             </table>
           </div>
+
         </div>
       </section>
 
-      <!-- ROW 2: TEXT SECTION -->
       <section class="card mb-5" id="item-text-section">
         <div class="card-body flex-grow-1 position-relative pt-5 d-flex flex-column" id="text-card-body">
-          <!-- Top-left buttons: Adult / Kid -->
           <div class="position-absolute top-0 start-0 p-3 d-flex gap-2" id="adult-kid-buttons">
             <button type="button" class="btn btn-outline-primary btn-sm" id="btn-adult">Adult</button>
             <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-kid">Kid</button>
           </div>
-
-          <!-- Text Content -->
           <h3 class="h5 mb-3" id="text-title">Kid Text</h3>
           <p id="text-content">
             This is the kid-friendly version of the text. Click Adult to switch.
             <a href="#" id="btn-toggle-length" class="text-primary text-decoration-none ms-1">Read More</a>
           </p>
-
-          <!-- Bottom control buttons: Difficulty -->
           <div class="d-flex justify-content-end gap-2 mt-3">
-            <button
-              type="button"
-              class="btn btn-outline-secondary btn-sm"
-              id="btn-decrease-difficulty"
-              style="display:none;"
-            >
-              Too Hard
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-secondary btn-sm"
-              id="btn-increase-difficulty"
-            >
-              Too Easy
-            </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-decrease-difficulty" style="display:none;">Too Hard</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-increase-difficulty">Too Easy</button>
           </div>
         </div>
       </section>
 
-      <!-- ROW 3: RELATED MEDIA SHELF -->
       <div class="card mb-5" id="item-related-media">
         <div class="card-header">
           <h5 class="mb-0">Related Media</h5>
         </div>
         <div class="card-body position-relative py-4">
-          <button
-            class="btn btn-outline-secondary shelf-arrow left position-absolute top-50 start-0 translate-middle-y ms-2"
-            aria-label="Scroll left"
-          >
-            ←
-          </button>
-
-          <!-- Scroll container -->
-          <div class="shelf-container d-flex gap-3 px-5 py-5 overflow-auto" id="related-media-shelf">
-            <!-- Cards injected here -->
-          </div>
-
-          <button
-            class="btn btn-outline-secondary shelf-arrow right position-absolute top-50 end-0 translate-middle-y me-2"
-            aria-label="Scroll right"
-          >
-            →
-          </button>
+          <button class="btn btn-outline-secondary shelf-arrow left position-absolute top-50 start-0 translate-middle-y ms-2" aria-label="Scroll left">←</button>
+          <div class="shelf-container d-flex gap-3 px-5 py-5 overflow-auto" id="related-media-shelf"></div>
+          <button class="btn btn-outline-secondary shelf-arrow right position-absolute top-50 end-0 translate-middle-y me-2" aria-label="Scroll right">→</button>
         </div>
       </div>
     </main>
