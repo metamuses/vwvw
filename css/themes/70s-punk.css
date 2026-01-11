@@ -376,3 +376,10 @@ footer a {
     text-align: center; 
   }
 }
+
+@media (min-width: 992px) {
+  #card-index .card .card-body h5 {
+    font-size: 1.8vw !important; 
+  }
+}
+

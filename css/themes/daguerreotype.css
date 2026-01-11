@@ -576,6 +576,25 @@ footer a {
   }
 }
 
+@media (min-width: 992px) {
+  #narrative-items .card .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-grow: 1 !important;
+    min-height: 8em !important; 
+  }
+
+  #narrative-items .card .card-body h5,
+  #narrative-items .card .card-body .card-title,
+  #card-index .card .card-body h5 {
+    font-size: 1.8vw !important; 
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    font-family: 'UnifrakturMaguntia' !important;
+  }
+}
 
 
 
