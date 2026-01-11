@@ -107,6 +107,23 @@ footer img {
   margin: 10px;
 }
 
+/* vertical centering narrative cards text */
+#narrative-items .card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#narrative-items .card .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important; 
+  align-items: center !important;     
+  flex-grow: 1 !important;            
+  text-align: center !important;
+  padding: 1em 0.5em !important; 
+  min-height: 5em !important; 
+}
+
 /* CARD for item page - text and media sections, less rounded*/
 #item-text-section,
 #item-related-media {
@@ -487,18 +504,6 @@ footer a {
     display: block;
   }
 
-  #narrative-items .card .card-body {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important; 
-    align-items: center !important;   
-    flex-grow: 1 !important;            
-    min-height: 80px !important;        
-    text-align: center !important;
-    padding: 0.5rem 0 !important;
-    width: 90%;
-  }
-
   #item-image-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -536,6 +541,8 @@ footer a {
     font-size: 0.9rem !important;
   }
 }
+
+
 
 
 
