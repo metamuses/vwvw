@@ -408,10 +408,6 @@ footer {
 }
 
 
-/*NARRATIVE DESCRIPTION */
-#narrative-description {
-  text-align: justify;
-}
 
 /* ================================
    NARRATIVE ITEM CARDS
@@ -588,11 +584,4 @@ section[id] {
   object-fit: cover;
   height: 250px;
   width: 100%;
-}
-
-#documentation h1,
-#discaimer h2,
-#documentation p,
-#disclaimer p {
-  text-align: justify;
 }

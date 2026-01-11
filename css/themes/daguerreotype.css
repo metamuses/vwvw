@@ -1,69 +1,62 @@
+/* || GENERAL STYLES || */
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
-/* GENERAL RULES */
+/* || BACKGROUND || */
 body {
   background-color: #EFDFBA !important;
   color: #2B1C0E !important;
-  font-family: 'Libre Baskerville';
 }
 
-footer, header, nav.navbar {
-  background-color: #B33A2E !important;
-  font-family: 'Libre Baskerville';
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'UnifrakturMaguntia' !important;
-}
-
-.lead {
-  font-family: 'Libre Baskerville' !important;
-  color: #2B1C0E !important;
-}
-
-/* navbar */
-.dropdown-item:hover {
-  background-color: #EFDFBA;
-}
-
-/*map section*/
 #map-section {
   background-color: #EFDFBA !important;
 }
 
-.leaflet-marker-icon.item-marker {
-  background-color: #B33A2E;
-  box-shadow: 0 0 0.2rem #B33A2E;
+/* || SHARED LAYOUT & COLORS || */
+
+/* Header, Footer & Navbar Backgrounds */
+header, 
+footer, 
+nav.navbar {
+  background-color: #B33A2E !important;
 }
 
-.item-marker.highlighted {
-  background-color: #712620;
-  box-shadow: 0 0 0.8rem #712620 !important;
+header,
+footer {
+  position: relative;
+  overflow: visible;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
-/* background color for cards on hover - need to assign same color to external container */
-.item-custom-tooltip {
-  background-color: #EFDFBA !important;
+/* making everything more centered according to style */
+main {
+  max-width: 80% !important; 
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.item-custom-tooltip .leaflet-tooltip-tip {
-  background: transparent !important;
-  border: none !important;
+/* || NAVBAR || */
+
+/* Hover States */
+.navbar a.nav-link.dropdown-toggle:hover {
+  color: #EFDFBA !important;
 }
 
-.item-card-hover {
+.navbar .dropdown-menu .dropdown-item:hover {
   background-color: #EFDFBA;
 }
 
-.item-card-hover p {
-  font-family: 'Libre Baskerville';
-}
+/* || MOULDING & DECORATIONS || */
 
-/* all images made daguerrotype style*/
-img {
+img,
+video,
+iframe {
   max-width: 100%;
   height: auto;
+  background: transparent !important;
   filter:
     grayscale(100%)
     sepia(85%)
@@ -72,83 +65,51 @@ img {
     saturate(120%);
 }
 
-.card img {
-  background: transparent !important;
-  display: block;
-  max-width: 100%;
-  height: auto;
+#documentation img {
+  filter: none !important;
 }
 
-.card {
-  background-color: transparent;
+/* Footer Icon Styling */
+footer img {
+  height: 80%;
+  max-height: 2.5rem;
+  width: auto;
+  filter: grayscale(100%) contrast(150%);
+  vertical-align: middle;
 }
 
+#documentation,
+#disclaimer,
+#team {
+  margin-bottom: 3rem !important;
+}
 
-/* CARD STYLE FOR ALL PAGES */
-/*CARD for index and narrative page */
-.card.card-dynamic {
+/* || DAGUERREOTYPE FRAME CONTAINERS || */
+
+/* Base CARD */
+.card[data-narrative-id],
+#narrative-items .card,
+#related-media-shelf .card, 
+#team .card {
   background: #EFDFBA;
   border: 1px solid #C7B08B;
   padding: 1.5rem;
   position: relative;
   border-radius: 0 !important;
-  overflow: hidden;
+  overflow: visible !important;
   clip-path: polygon(
     10% 0, 90% 0, 100% 10%, 100% 90%,
     90% 100%, 10% 100%, 0 90%, 0 10%
   );
-  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
-  transition:
-    filter 0.35s ease,
-    transform 0.35s ease;
-  transform: none;
+  filter: drop-shadow(0 0.5rem 0.6rem rgba(0,0,0,0.35)) !important;
+  transition: filter 0.35s ease, transform 0.35s ease;
+  transform: scale(1);
+  margin: 10px;
 }
 
-/* golden frame */
-.card-dynamic::before {
-  content: "";
-  position: absolute;
-  inset: 0.5rem;
-  pointer-events: none;
-  z-index: 1;
-  border: 3px solid #D4AF37;
-  clip-path: inherit;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
-}
-
-/* noise and vignetting */
-.card-dynamic::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  background-image: url("../../img/themes/noise.png");
-  background-size: cover;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
-  box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
-  clip-path: inherit;
-}
-
-/* ??? ombra ma non funziona */
-.card.card-dynamic:hover {
-  transform: translate(-3px, -3px) !important;
-  filter: drop-shadow(0 2rem 3.5rem rgba(0,0,0,0.65)) !important;
-}
-
-.card-dynamic:nth-child(odd),
-.card-dynamic:nth-child(3n) {
-  transform: none;
-}
-
-/* ??? rimuove eventuali conflitti residui */
-.card.card-dynamic.shadow-sm {
-  box-shadow: none !important;
-}
-
-/*CARD for item page - text and media sections- to avoid hover*/
-.card {
+/* CARD for item page - text and media sections, less rounded*/
+#item-text-section,
+#item-related-media {
   background: #EFDFBA;
   border: 1px solid #C7B08B;
   clip-path: polygon(
@@ -159,13 +120,21 @@ img {
   position: relative;
   overflow: hidden;
   filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
-  transition:
-    filter 0.35s ease,
-    transform 0.35s ease;
-  transform: none;
+  transition: filter 0.35s ease, transform 0.35s ease;
+  transform: scale(1);
 }
 
-.card::before {
+/* Golden frame (Pseudo-element) */
+.card[data-narrative-id]::before,
+#narrative-items .card::before,
+#item-image-wrapper::before,
+#item-text-section::before,
+#item-related-media::before,
+#related-media-shelf .card::before,
+#documentation::before,
+#disclaimer::before,
+#team::before,
+#team .card::before {
   content: "";
   position: absolute;
   inset: 0.5rem;
@@ -176,33 +145,52 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) inset;
 }
 
-.card::after {
+/* Noise + Fading shadow border */
+.card[data-narrative-id]::after,
+#narrative-items .card::after,
+#item-image-wrapper::after,
+#item-text-section::after,
+#item-related-media::after,
+#related-media-shelf .card::after,
+#team .card::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 2;
-  background-image: url("../../img/themes/noise.png");
+  background-image: 
+    linear-gradient(to top, rgba(43, 28, 14, 0) 0%, transparent 15%),
+    url("../../img/themes/noise.png");
   background-size: cover;
   opacity: 0.16;
   mix-blend-mode: multiply;
   box-shadow: inset 0 0 40px 10px rgba(0, 0, 0, 0.5);
   clip-path: inherit;
+  transition: background-image 0.35s ease, opacity 0.35s ease;
 }
 
-.card:hover {
-  transform: none !important;
-  filter: drop-shadow(0 0.5rem 1rem rgba(0,0,0,0.25)) !important;
+/* Hover behaviors with enlargement */
+.card[data-narrative-id]:hover,
+#narrative-items .card:hover,
+#related-media-shelf .card:hover, 
+#team .card:hover {
+  transform: scale(1.02) translateY(-0.25rem) !important;
+  cursor: pointer;
 }
 
-.card:nth-child(odd),
-.card:nth-child(3n) {
-  transform: none;
+/* Soft Hover Shadow Border */
+.card[data-narrative-id]:hover::after,
+#narrative-items .card:hover::after,
+#related-media-shelf .card:hover::after, 
+#team .card:hover::after {
+  opacity: 0.25; 
+  background-image: 
+    linear-gradient(to top, rgba(43, 28, 14, 0.3) 0%, transparent 10%),
+    url("../../img/themes/noise.png");
 }
 
+/* || ITEM WRAPPER || */
 
-/* ITEM PAGE*/
-/*ITEM wrapper*/
 #item-image-wrapper {
   position: relative;
   background: #EFDFBA !important;
@@ -246,15 +234,35 @@ img {
   clip-path: inherit;
 }
 
+/* || BUTTONS & LINKS || */
 
-/*METADATA wrapper*/
-#metadata-table-wrapper th {
-  font-family: 'Libre Baskerville';
-  font-weight: 1000 !important;
+.btn {
+  font-family: 'Libre Baskerville' !important;
+  color: #EFDFBA !important;
+  background-color: #B33A2E !important;
+  border-color: #EFDFBA !important;
+  border-radius: 0 !important;
+  box-shadow: 0.125em 0.125em 0.3125em rgba(0, 0, 0, 0.2);
 }
 
-#metadata-table-wrapper td {
-  font-family: 'Libre Baskerville';
+.btn:hover {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: 0.25em 0.25em 0.625em rgba(0, 0, 0, 0.25);
+}
+
+#btn-adult.btn-primary,
+#btn-kid.btn-secondary {
+  color: #EFDFBA !important;
+  background-color: #712620 !important;
+  border-color: #712620 !important;
+  box-shadow: none !important;
+}
+
+#text-content a {
+  color: #B33A2E !important;
+  font-weight: 700;
 }
 
 #metadata-table-wrapper td a {
@@ -262,9 +270,21 @@ img {
   font-weight: 600;
 }
 
+#text-content a:hover,
 #metadata-table-wrapper td a:hover {
-  color: #712620;
+  color: #712620 !important;
 }
+
+#disclaimer a {
+  color: #B33A2E !important;
+  text-decoration: underline;
+}
+
+#disclaimer a:hover {
+  color: #712620 !important;
+}
+
+/* || TABLES and MAP || */
 
 #metadata-table {
   background: #EFDFBA !important;
@@ -301,9 +321,6 @@ img {
   background-repeat: no-repeat;
   top: -2.5rem;
   left: -2.5rem;
-  right: auto;
-  bottom: auto;
-  transform: none;
 }
 
 #metadata-table::after {
@@ -316,63 +333,126 @@ img {
   background-image: url("../../img/themes/ghirigoro.png");
   background-size: contain;
   background-repeat: no-repeat;
-  top: auto;
-  left: auto;
   bottom: -2.5rem;
   right: -2.5rem;
   transform: scale(-1, -1);
 }
 
-
-/*BUTTONS*/
-.btn {
-  font-family: 'Libre Baskerville' !important;
-  color: #EFDFBA !important;
-  background-color: #B33A2E !important;
-  border-color: #EFDFBA !important;
-  border-radius: 0 !important;
-  box-shadow: 0.125em 0.125em 0.3125em rgba(0, 0, 0, 0.2);
+.leaflet-marker-icon.item-marker {
+  background-color: #B33A2E;
+  box-shadow: 0 0 0.2rem #B33A2E;
 }
 
-.btn:hover {
-  color: #EFDFBA !important;
-  background-color: #712620 !important;
-  border-color: #712620 !important;
-  box-shadow: 0.25em 0.25em 0.625em rgba(0, 0, 0, 0.25);
+.item-marker.highlighted {
+  background-color: #712620;
+  box-shadow: 0 0 0.8rem #712620 !important;
 }
 
-/* active adult btn */
-#btn-adult.btn-primary {
-  color: #EFDFBA !important;
-  background-color: #712620 !important;
-  border-color: #712620 !important;
-  box-shadow: none !important;
+.item-custom-tooltip {
+  background-color: #EFDFBA !important;
 }
 
-/*active kid btn*/
-#btn-kid.btn-secondary {
-  color: #EFDFBA !important;
-  background-color: #712620 !important;
-  border-color: #712620 !important;
-  box-shadow: none !important;
+.item-custom-tooltip .leaflet-tooltip-tip {
+  background: transparent !important;
+  border: none !important;
 }
 
-/*text-content*/
-#text-content {
+/* || TYPOGRAPHY || */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'UnifrakturMaguntia' !important;
+}
+
+body, p, td, th, #text-content, .item-card-hover p {
   font-family: 'Libre Baskerville';
-  color: #2B1C0E;
 }
 
-#text-content a {
-  color: #B33A2E !important;
-  font-weight: 700;
+.item-card-hover {
+  background-color: #EFDFBA;
 }
 
-#text-content a:hover {
-  color: #712620 !important;
+#related-media-shelf h6 {
+  font-family: 'Libre Baskerville' !important;
+  text-align: center;
 }
 
+#metadata-table-wrapper th {
+  font-weight: 1000 !important;
+}
 
+.lead {
+  font-family: 'Libre Baskerville' !important;
+  color: #2B1C0E !important;
+}
 
+#narrative-description, #documentation p, #disclaimer p, #team p {
+  font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+#narrative-description {
+  max-width: 70%;
+}
+
+#documentation, #disclaimer, #team {
+  width: 80%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+} 
+
+#text-content {
+  text-align: justify;
+  line-height: 1.5;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* || RESPONSIVENESS || */
+/* Fluid Footer Text */
+footer p, 
+footer a {
+  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
+}
+
+@media (max-width: 768px) {
+  #item-image-column {
+    margin-bottom: 2rem;
+  }
+
+  footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  footer img {
+    max-width: 25px; 
+  }
+
+  #documentation,
+  #disclaimer,
+  #team {
+    width: 95% !important; 
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #documentation,
+  #disclaimer,
+  #team {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  main {
+    max-width: 95% !important;
+  }
+}
 
 
