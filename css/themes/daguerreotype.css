@@ -417,6 +417,7 @@ footer a {
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
 }
 
+/* tablets and mobiles */
 @media (max-width: 768px) {
   #item-image-column {
     margin-bottom: 2rem;
@@ -441,65 +442,69 @@ footer a {
   }
 }
 
+/* page shrinking */
 @media (min-width: 768px) and (max-width: 991px) {
   #documentation,
   #disclaimer,
   #team {
     width: 90% !important;
   }
-}
 
-@media (max-width: 991px) {
   main {
     max-width: 95% !important;
   }
 }
 
+/* mobiles */
 @media (max-width: 575px) {
   main {
     max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;   
+    padding-right: 0 !important;  
+    margin-left: 0 !important;    
+    margin-right: 0 !important;
   }
   
   #narrative-items .card {
-    /* 1. Use a much smaller fixed clip (10px) to maximize internal width */
     clip-path: polygon(
       10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), 
       calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px
     ) !important;
-    
-    /* 2. Drastically reduce padding to stop the 'long' vertical stretching */
     padding: 0.5rem !important;      
     margin: 0.5rem 0 !important;  
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: auto !important; /* Prevents cards from stretching too long */
+    min-height: auto !important; 
   }
 
   #narrative-items .card img {
-    /* 3. Use 90% width to fill the frame better than the current 75% */
     width: 90% !important;
     height: auto !important;
     max-width: 100% !important;
     margin: 0.25rem auto !important;
     display: block;
-    /* Remove any filters that might be darkening the image too much on mobile */
-    
   }
 
-  /* 4. Ensure the title text below the image is compact */
   #narrative-items .card .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; 
+    align-items: center !important;   
+    flex-grow: 1 !important;            
+    min-height: 80px !important;        
+    text-align: center !important;
     padding: 0.5rem 0 !important;
     width: 90%;
-    text-align: center;
   }
 
   #item-image-wrapper {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important; /* Forces everything to the mathematical center */
+    align-items: center !important; 
     justify-content: center !important;
-    padding: 1.5rem 0 !important; /* Vertical padding only */
+    padding: 1.5rem 0 !important; 
     width: 100% !important;
     margin: 0 auto !important;
     box-sizing: border-box;
@@ -507,23 +512,19 @@ footer a {
   }
 
   #item-image-wrapper img {
-    /* Use 75% width to stay inside the diagonal clipped corners */
     width: 75% !important; 
     height: auto !important;
-    margin: 0 auto 1.25rem auto !important; /* Centered with bottom spacing */
+    margin: 0 auto 1.25rem auto !important; 
     display: block;
     border-radius: 4px;
   }
 
   #item-nav {
-    /* Match the 75% width of the image to stay in the 'safe zone' */
     width: 75% !important; 
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding-bottom: 0.5rem !important; /* Lifts buttons above bottom clip */
-    
-    /* Zero out margins to prevent the rightward shift */
+    padding-bottom: 0.5rem !important;
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 0 !important;
