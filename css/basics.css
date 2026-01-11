@@ -564,6 +564,12 @@ footer {
     margin-top: 0.5rem;
   }
 
+/* Apply only on screens smaller than 768px (Bootstrap's mobile/tablet break) */
+@media (max-width: 767.98px) {
+  #item-metadata-column {
+    margin-top: 3em; /* Adds spacing between image nav and table */
+  }
+}
 /* =======================================
    INFO PAGE & UTILITIES
    ======================================= */
