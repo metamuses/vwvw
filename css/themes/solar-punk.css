@@ -302,7 +302,7 @@ body.narrative-page #map-section #map::after {
 }
 
 /* Applied directly for Item Header */
-#item-header {
+.item-title-target {
   position: relative;
   border-radius: 12px;
   border: 2px solid #C8C8C8;
@@ -313,7 +313,7 @@ body.narrative-page #map-section #map::after {
   background-position: center;
   background-size: auto;
   display: block;
-  width: 48%;
+  width: 100%;
   margin: 2rem 0;
   padding: 1.2rem 2rem;
   z-index: 1;
@@ -324,7 +324,7 @@ body.narrative-page #map-section #map::after {
 #narrative-items .card > .card-body,
 #team .card > img,
 #team .card > .card-body,
-#item-header > * {
+.item-title-target > * {
   position: relative;
   z-index: 2;
 }
@@ -334,7 +334,7 @@ body.narrative-page #map-section #map::after {
 #narrative-items .card .card-body *,
 #team .card .card-body,
 #team .card .card-body *,
-#item-header > * {
+.item-title-target > * {
   color: #C8C8C8;
 }
 
@@ -524,7 +524,7 @@ th,
 
 /* || RESPONSIVE || */
 @media (max-width: 768px) {
-  #item-header {
+  .item-title-target {
     width: 100%;
     max-width: 700px;
     margin: 2rem auto;

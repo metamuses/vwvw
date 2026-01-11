@@ -477,8 +477,13 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           // update title
-          var title = document.getElementById("item-title");
-          title.textContent = item.title;
+          // We select ALL elements with the class .item-title-target
+          var titles = document.querySelectorAll(".item-title-target");
+
+          // Loop through them and update the text for both Mobile and Desktop versions
+          titles.forEach(function(element) {
+             element.textContent = item.title;
+          });
 
           // update image
           var img = document.getElementById("item-image");
