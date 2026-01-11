@@ -461,26 +461,37 @@ footer a {
   }
   
   #narrative-items .card {
+    /* 1. Use a much smaller fixed clip (10px) to maximize internal width */
     clip-path: polygon(
-      20px 0%, calc(100% - 20px) 0%, 100% 20px, 100% calc(100% - 20px), 
-      calc(100% - 20px) 100%, 20px 100%, 0% calc(100% - 20px), 0% 20px
+      10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), 
+      calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px
     ) !important;
-    padding: 1rem !important;      
+    
+    /* 2. Drastically reduce padding to stop the 'long' vertical stretching */
+    padding: 0.5rem !important;      
     margin: 0.5rem 0 !important;  
-    overflow: visible !important;
-  }
-
-  #narrative-items .card::before,
-  #narrative-items .card::after {
-    clip-path: inherit !important;
-    inset: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto !important; /* Prevents cards from stretching too long */
   }
 
   #narrative-items .card img {
-    width: 100% !important;
+    /* 3. Use 90% width to fill the frame better than the current 75% */
+    width: 90% !important;
     height: auto !important;
     max-width: 100% !important;
+    margin: 0.25rem auto !important;
     display: block;
+    /* Remove any filters that might be darkening the image too much on mobile */
+    
+  }
+
+  /* 4. Ensure the title text below the image is compact */
+  #narrative-items .card .card-body {
+    padding: 0.5rem 0 !important;
+    width: 90%;
+    text-align: center;
   }
 
   #item-image-wrapper {
