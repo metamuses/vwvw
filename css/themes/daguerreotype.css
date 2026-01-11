@@ -455,4 +455,88 @@ footer a {
   }
 }
 
+@media (max-width: 575px) {
+  main {
+    max-width: 100% !important;
+  }
+  
+  #narrative-items .card {
+    /* 1. Use a much smaller fixed clip (10px) to maximize internal width */
+    clip-path: polygon(
+      10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), 
+      calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px
+    ) !important;
+    
+    /* 2. Drastically reduce padding to stop the 'long' vertical stretching */
+    padding: 0.5rem !important;      
+    margin: 0.5rem 0 !important;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto !important; /* Prevents cards from stretching too long */
+  }
+
+  #narrative-items .card img {
+    /* 3. Use 90% width to fill the frame better than the current 75% */
+    width: 90% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0.25rem auto !important;
+    display: block;
+    /* Remove any filters that might be darkening the image too much on mobile */
+    
+  }
+
+  /* 4. Ensure the title text below the image is compact */
+  #narrative-items .card .card-body {
+    padding: 0.5rem 0 !important;
+    width: 90%;
+    text-align: center;
+  }
+
+  #item-image-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Forces everything to the mathematical center */
+    justify-content: center !important;
+    padding: 1.5rem 0 !important; /* Vertical padding only */
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    overflow: hidden !important;
+  }
+
+  #item-image-wrapper img {
+    /* Use 75% width to stay inside the diagonal clipped corners */
+    width: 75% !important; 
+    height: auto !important;
+    margin: 0 auto 1.25rem auto !important; /* Centered with bottom spacing */
+    display: block;
+    border-radius: 4px;
+  }
+
+  #item-nav {
+    /* Match the 75% width of the image to stay in the 'safe zone' */
+    width: 75% !important; 
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-bottom: 0.5rem !important; /* Lifts buttons above bottom clip */
+    
+    /* Zero out margins to prevent the rightward shift */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #back-button, #forward-button {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+
+
+
 
