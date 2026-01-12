@@ -107,6 +107,23 @@ footer img {
   margin: 10px;
 }
 
+/* vertical centering narrative cards text */
+#narrative-items .card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#narrative-items .card .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important; 
+  align-items: center !important;     
+  flex-grow: 1 !important;            
+  text-align: center !important;
+  padding: 1em 0.5em !important; 
+  min-height: 5em !important; 
+}
+
 /* CARD for item page - text and media sections, less rounded*/
 #item-text-section,
 #item-related-media {
@@ -285,6 +302,11 @@ footer img {
 }
 
 /* || TABLES and MAP || */
+#metadata-table-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 #metadata-table {
   background: #EFDFBA !important;
@@ -296,6 +318,8 @@ footer img {
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+  width: 100%;
+  max-width: 100%;
 }
 
 #metadata-table th,
@@ -417,6 +441,7 @@ footer a {
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
 }
 
+/* tablets and mobiles */
 @media (max-width: 768px) {
   #item-image-column {
     margin-bottom: 2rem;
@@ -439,20 +464,140 @@ footer a {
   #team {
     width: 95% !important; 
   }
+
+  .item-title-target.h3 {
+    font-size: 7vw !important; 
+    text-align: center !important;
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+    display: block;
+    width: 100%;
+  }
 }
 
+/* page shrinking */
 @media (min-width: 768px) and (max-width: 991px) {
   #documentation,
   #disclaimer,
   #team {
     width: 90% !important;
   }
-}
 
-@media (max-width: 991px) {
   main {
     max-width: 95% !important;
   }
 }
+
+/* mobiles */
+@media (max-width: 575px) {
+  main {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;   
+    padding-right: 0 !important;  
+    margin-left: 0 !important;    
+    margin-right: 0 !important;
+  }
+  
+  #narrative-items .card {
+    clip-path: polygon(
+      10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), 
+      calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px
+    ) !important;
+    padding: 0.5rem !important;      
+    margin: 0.5rem 0 !important;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto !important; 
+  }
+
+  #narrative-items .card img {
+    width: 90% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0.25rem auto !important;
+    display: block;
+  }
+
+  #item-image-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    padding: 1.5rem 0 !important; 
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    overflow: hidden !important;
+  }
+
+  #item-image-wrapper img {
+    width: 75% !important; 
+    height: auto !important;
+    margin: 0 auto 1.25rem auto !important; 
+    display: block;
+    border-radius: 4px;
+  }
+
+  #item-nav {
+    width: 75% !important; 
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-bottom: 0.5rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #back-button, #forward-button {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  #item-metadata-column {
+    justify-content: center !important; 
+  }
+
+  #metadata-table-wrapper {
+    margin-top: 1.5em !important; 
+  }
+
+  .item-title-target.d-md-block {
+    font-size: 4vw !important; 
+    line-height: 1.1;
+    margin-bottom: 0.5em !important;
+    text-align: center; 
+  }
+}
+
+@media (min-width: 992px) {
+  #narrative-items .card .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-grow: 1 !important;
+    min-height: 8em !important; 
+  }
+
+  #narrative-items .card .card-body h5,
+  #narrative-items .card .card-body .card-title,
+  #card-index .card .card-body h5 {
+    font-size: 1.8vw !important; 
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    font-family: 'UnifrakturMaguntia' !important;
+  }
+}
+
+
+
+
 
 
