@@ -65,7 +65,8 @@ async function initializeMuseumMap() {
       zoomControl: true,
       zoomSnap: 0.1,
       zoomDelta: 0.1,
-      dragging: true
+      dragging: true,
+      scrollWheelZoom: false
     });
 
     const image = L.imageOverlay("img/frontal_map_from_svg.png", mapBounds).addTo(map);
