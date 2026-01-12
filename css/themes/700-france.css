@@ -19,56 +19,38 @@ body {
       #b6cdd8 1.25rem);
 }
 
-body.item-page main {
-  margin-top: 1rem;
-}
-
 .hero,
 #map-section {
   background-color: white;
 }
 
 /* || SHARED LAYOUT & COLORS || */
-
-/* Header, Footer & Navbar Backgrounds */
-header,
-footer,
-header.bg-light,
-header.bg-light nav.navbar,
-footer.bg-light,
-footer.bg-light .container {
+/* Header, Footer Backgrounds */
+header {
   background-color: #b6cdd8;
+  overflow: visible;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
-header,
 footer {
+  background-color: #b6cdd8;
   position: relative;
-  /* ADD THIS LINE */
+  /* Anchor the decorative line */
   overflow: visible;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
 /* || NAVBAR || */
-
 /* General Link Styling */
 .navbar a.nav-link,
 .navbar .dropdown-toggle,
 .navbar .dropdown-menu .dropdown-item {
   color: #513c22;
-  /* Fallback / Base */
   transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar .dropdown-toggle,
-.navbar .dropdown-menu .dropdown-item {
-  color: #000;
-}
-
-.navbar a.nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  border-radius: 0;
 }
 
 /* Hover States */
@@ -97,18 +79,26 @@ footer {
   border-radius: 0.375rem;
 }
 
-/* Mobile Adjustments */
+/* navbar dropdown mobile adjustments */
 @media (max-width: 61.999em) {
   .navbar .dropdown-menu {
     position: static;
     width: 100%;
-    border-radius: 0;
   }
 }
 
 /* || MOULDING & DECORATIONS || */
-
 /* Shared Properties for Mouldings */
+#map-section {
+  position: relative;
+  overflow: visible;
+}
+
+.hero {
+  position: relative;
+  overflow: visible;
+}
+
 header::after,
 footer::before,
 .hero::after,
@@ -118,64 +108,38 @@ footer::before,
   position: absolute;
   left: 0;
   width: 100%;
-  pointer-events: none;
   background-blend-mode: overlay;
 }
 
-/* Header Bottom & Map Section Bottom */
+/* Header Bottom & Map Section Bottom & Hero Bottom */
 header::after,
-#map-section::after {
+#map-section::after,
+.hero::after {
   bottom: 0;
   height: 0.875rem;
   z-index: 1;
-  /* Header specific */
   background:
     repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 0.0625rem, rgba(255, 255, 255, 0.1) 0.0625rem, rgba(255, 255, 255, 0.1) 0.125rem, transparent 0.125rem, transparent 0.25rem),
     linear-gradient(to bottom, #d1b350 0%, #b89635 20%, #8c6e22 50%, #c3a041 75%, #4a3a12 100%);
   box-shadow: inset 0 0.125rem 0.125rem rgba(255, 255, 255, 0.3), inset 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.4), 0 0.125rem 0.375rem rgba(0, 0, 0, 0.3);
 }
 
-header::after {
-  bottom: -0.875rem;
+@media (max-width: 768px) {
+  header::after {
+    bottom: -0.875rem;
+  }
 }
-
-/* Map section z-index override */
-#map-section::after {
-  z-index: 2;
-}
-
 
 /* Footer Top & Map Section Top */
 footer::before,
 #map-section::before {
   top: 0;
   height: 0.875rem;
-  z-index: 2;
+  z-index: 1;
   background:
     repeating-linear-gradient(to top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 0.0625rem, rgba(255, 255, 255, 0.1) 0.0625rem, rgba(255, 255, 255, 0.1) 0.125rem, transparent 0.125rem, transparent 0.25rem),
     linear-gradient(to top, #d1b350 0%, #b89635 20%, #8c6e22 50%, #c3a041 75%, #4a3a12 100%);
   box-shadow: inset 0 -0.125rem 0.125rem rgba(255, 255, 255, 0.3), inset 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4), 0 -0.125rem 0.375rem rgba(0, 0, 0, 0.3);
-}
-
-/* Hero Section Specifics */
-.hero {
-  position: relative;
-  overflow: visible;
-}
-
-.hero::after {
-  bottom: 0;
-  height: 0.75rem;
-  z-index: 2;
-  background:
-    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 0.0625rem, rgba(255, 255, 255, 0.1) 0.0625rem, rgba(255, 255, 255, 0.1) 0.125rem, transparent 0.125rem, transparent 0.25rem),
-    linear-gradient(to bottom, #d1b350 0%, #b89635 20%, #8c6e22 50%, #c3a041 75%, #4a3a12 100%);
-  box-shadow: inset 0 0.0625rem 0.0625rem rgba(255, 255, 255, 0.3), inset 0 -0.0625rem 0.125rem rgba(0, 0, 0, 0.4), 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
-}
-
-#map-section {
-  position: relative;
-  overflow: visible;
 }
 
 /* || BAROQUE FRAME CONTAINERS || */
@@ -193,19 +157,16 @@ footer::before,
   padding: 0.75rem;
 }
 
+/* Specific margins for item sections */
+#item-image-wrapper {
+  margin-bottom: 1rem;
+}
+
 #documentation,
 #disclaimer,
 #team {
   margin-bottom: 2rem;
-  /* Increase spacing to accommodate gold frames */
-}
-
-/* Specific margins for item sections */
-#item-image-wrapper,
-#item-text-section,
-#item-related-media,
-#metadata-table-wrapper {
-  margin-bottom: 1rem;
+  /* Accommodate large baroque frames */
 }
 
 /* The Gold Baroque Frame Border */
@@ -220,7 +181,6 @@ footer::before,
   content: "";
   position: absolute;
   inset: 0;
-  /* shorthand for top/right/bottom/left: 0 */
   border-radius: 0.75rem;
   pointer-events: none;
   z-index: 0;
@@ -237,59 +197,6 @@ footer::before,
   /* inner light */
 }
 
-/* Inner Matting (White Background) */
-.card[data-narrative-id]::after,
-#item-image-wrapper::after,
-#item-text-section::after,
-#item-related-media::after,
-#metadata-table-wrapper::after,
-#documentation::after,
-#disclaimer::after,
-#team::after {
-  content: "";
-  position: absolute;
-  top: 0.375rem;
-  left: 0.375rem;
-  right: 0.375rem;
-  bottom: 0.375rem;
-  border-radius: 0.5rem;
-  background: white;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Note: Item page sections used z-index: 2 for content instead of ::after matting in original,
-   but structure suggests standardized matting is safer.
-   Overriding content z-index to ensuring text sits on top: */
-.card[data-narrative-id]>*,
-#item-image-wrapper>*,
-#item-text-section>*,
-#item-related-media>*,
-#metadata-table-wrapper>*,
-#documentation>*,
-#disclaimer>*,
-#team>* {
-  position: relative;
-  z-index: 2;
-}
-
-/* vertical centering narrative cards text */
-#narrative-items .card {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-#narrative-items .card .card-body {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  flex-grow: 1 !important;
-  text-align: center !important;
-  padding: 1em 0.5em !important;
-  min-height: 5em !important;
-}
-
 /* Hover Effect (Index Cards) */
 .card[data-narrative-id] {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -301,8 +208,26 @@ footer::before,
   cursor: pointer;
 }
 
-/* || NARRATIVE ITEMS & TEAM CARDS || */
-/* Applies to Narrative Page Items and Info Page Team Cards */
+/* || NARRATIVE ITEMS CARD & TEAM CARDS || */
+/* vertical centering narrative cards content */
+#narrative-items .card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/*inner text layout*/
+#narrative-items .card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1em 0.5em;
+  min-height: 5em;
+}
+
+/* main container */
 #narrative-items .card,
 #team .card {
   position: relative;
@@ -384,6 +309,7 @@ footer::before,
   display: block;
   width: 100%;
   margin: 2rem 0;
+  text-align: center;
 }
 
 #narrative-info {
@@ -391,6 +317,46 @@ footer::before,
   margin: 4rem auto;
   max-width: 62.5rem;
   width: 100%;
+}
+
+@media (max-width: 48em) {
+  #narrative-info {
+    width: 85%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 2rem 1.5rem;
+  }
+
+  #item-header {
+    width: 100%;
+    max-width: 43.75rem;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    left: 0;
+    right: 0;
+  }
+
+  /* Adjust bumps for smaller width */
+  #item-header::before,
+  #item-header::after,
+  #narrative-info::before,
+  #narrative-info::after {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  #item-header::before,
+  #narrative-info::before {
+    left: -0.5625rem;
+  }
+
+  #item-header::after,
+  #narrative-info::after {
+    right: -0.5625rem;
+  }
 }
 
 /* Side Bumps */
@@ -421,7 +387,6 @@ footer::before,
 }
 
 /* || BUTTONS & LINKS (Gold Theme) || */
-
 /* --- SHARED BUTTON DEFAULTS --- */
 #adult-kid-buttons .btn,
 #item-nav .btn,
@@ -437,7 +402,6 @@ footer::before,
 #adult-kid-buttons .btn-secondary,
 #item-nav .btn-primary {
   background-color: #d4af37;
-  /* Strong Gold */
   border-color: #d4af37;
   color: #fff;
   opacity: 1;
@@ -449,10 +413,8 @@ footer::before,
 #adult-kid-buttons .btn-outline-primary,
 #adult-kid-buttons .btn-outline-secondary {
   background-color: #f2e6c2;
-  /* Pale Gold */
   border-color: #e0d0a0;
   color: #a38f45;
-  /* Muted text */
   box-shadow: none;
 }
 
@@ -511,7 +473,7 @@ tr[data-key="narratives"] a:hover {
   transform: translateY(-0.0625rem);
 }
 
-/* || TABLES and MAP|| */
+/* || TABLES and MAP details|| */
 #metadata-table {
   border-radius: 0;
   overflow: hidden;
@@ -528,7 +490,6 @@ tr[data-key="narratives"] a:hover {
 }
 
 /* || TYPOGRAPHY || */
-
 /* Font Family: Libre Baskerville (Titles) */
 .hero h1,
 .hero p.lead,
@@ -557,11 +518,6 @@ tr[data-key="narratives"] a:hover {
   line-height: 1.2;
 }
 
-#narrative-items .card-title,
-#team .card-title {
-  font-size: 1.5rem;
-}
-
 /* Font Family: Source Serif 4 (Body) */
 body,
 p,
@@ -578,25 +534,17 @@ th,
   font-size: 0.9375rem;
 }
 
+/* Specific Typography Adjustments */
 .card-text,
 #text-content,
 #documentation,
 #diclaimer,
-#team {
+#team,
+.hero .intro-text,
+#narrative-description {
   text-align: justify;
 }
 
-/* Headings default weight */
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Source Serif 4', serif;
-  font-weight: 700;
-}
-
-/* Specific Typography Adjustments */
 .hero h1 {
   letter-spacing: 0.0625rem;
 }
@@ -606,88 +554,13 @@ h6 {
   font-weight: 400;
 }
 
-.hero .intro-text {
-  text-align: justify;
-}
-
-.card-title,
-#map-section h2,
-#metadata-table th,
-#item-text-section h3,
-#item-related-media h5,
-.item-title-target h2 {
-  font-weight: 700;
-}
-
-#narrative-title {
-  font-weight: 400;
-}
-
 #narrative-description {
-  font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
-  font-weight: 400;
+  font-size: clamp(1rem, 2vw + 0.5rem, 1rem);
   text-align: justify;
 }
 
-#item-header h2 {
-  font-weight: 600;
-}
-
-#metadata-table th {
-  font-weight: 600;
-}
-
+#metadata-table th,
 #item-text-section h3,
 #item-related-media h5 {
   font-weight: 600;
-}
-
-#map-section .item-card-hover p {
-  color: #333;
-  margin: 0;
-}
-
-/* || RESPONSIVENESS || */
-@media (max-width: 48em) {
-  #narrative-info {
-    /* 1. Reduce width to make the "centering" visually obvious */
-    width: 85%;
-
-    /* 2. Increase top/bottom margin for "more space" */
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    /* 3. Add more internal padding so text doesn't feel cramped */
-    padding: 2rem 1.5rem;
-  }
-
-  #item-header {
-    width: 100%;
-    max-width: 43.75rem;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    left: 0;
-    right: 0;
-  }
-
-  /* Adjust bumps for smaller width */
-  #item-header::before,
-  #item-header::after,
-  #narrative-info::before,
-  #narrative-info::after {
-    width: 1.125rem;
-    height: 1.125rem;
-  }
-
-  #item-header::before,
-  #narrative-info::before {
-    left: -0.5625rem;
-  }
-
-  #item-header::after,
-  #narrative-info::after {
-    right: -0.5625rem;
-  }
 }

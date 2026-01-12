@@ -480,7 +480,7 @@ h6 {
 
 .hero p.lead {
   font-weight: 700;
-  font-size: clamp(1.4rem, 1vw + 1.2rem, 1.875rem);
+  font-size: clamp(1.6rem, 1vw + 1.2rem, 1.875rem);
   line-height: 1.4;
 }
 
