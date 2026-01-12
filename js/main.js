@@ -186,24 +186,32 @@ async function initializeMuseumMap() {
       marker.itemId = itemId;
 
       // mobile: handle single and double tap
+      // mobile: handle single and double tap
       let lastTap = 0;
-      const isMobile = window.innerWidth <= 768;
 
-      marker.on('click', () => {
-        if (!isMobile) {
+      marker.on('click', (e) => {
+        // dynamic check of viewport width inside the handler
+        const isDeviceMobile = window.innerWidth <= 768;
+
+        if (!isDeviceMobile) {
+          // Desktop: single click -> go to page
           window.location.href = `item.html#${itemId}`;
           return;
         }
+
+        // Mobile: double tap logic
         const now = Date.now();
-        if (now - lastTap < 300) {
-          // double tap: redirect
+        const timeDiff = now - lastTap;
+
+        if (timeDiff < 400 && timeDiff > 0) {
+          // Double tap detected (within 400ms)
           window.location.href = `item.html#${itemId}`;
           lastTap = 0;
-          return;
+        } else {
+          // Single tap -> Open tooltip
+          marker.openTooltip();
+          lastTap = now;
         }
-        lastTap = now;
-        // singolo tap → mostra tooltip
-        marker.openTooltip();
       });
 
       itemMarkers.push(marker);
