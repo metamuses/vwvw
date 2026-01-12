@@ -35,7 +35,8 @@ footer {
 .navbar a.nav-link,
 .navbar .dropdown-toggle,
 .navbar .dropdown-menu .dropdown-item {
-  color: #693427; /* Base Brown */
+  color: #693427;
+  /* Base Brown */
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -58,26 +59,26 @@ footer {
 }
 
 .navbar a.nav-link:hover {
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 
 /* Dropdown Container */
 .navbar .dropdown-menu {
   position: absolute;
   z-index: 10;
-  border: 1px solid rgba(105, 52, 39, 0.3);
-  border-radius: 6px;
+  border: 0.0625rem solid rgba(105, 52, 39, 0.3);
+  border-radius: 0.375rem;
   background-color: #fff;
 }
 
 /* Navbar Toggler */
 .navbar-toggler {
-  border: 2px solid rgba(105, 52, 39, 0.5);
-  border-radius: 6px;
+  border: 0.125rem solid rgba(105, 52, 39, 0.5);
+  border-radius: 0.375rem;
 }
 
 /* Mobile Adjustments */
-@media (max-width: 991.98px) {
+@media (max-width: 61.999em) {
   .navbar .dropdown-menu {
     position: static;
     width: 100%;
@@ -93,21 +94,22 @@ header::after {
   left: 0;
   width: 100%;
   /* Anchor to bottom so it moves UP with the header when hidden */
-  bottom: -25px;
-  height: 25px;
+  bottom: -1.5625rem;
+  height: 1.5625rem;
   z-index: 1;
   pointer-events: none;
   background:
-    repeating-radial-gradient(circle at 10% 120%, rgba(0,0,0,0.20) 0, rgba(0,0,0,0.20) 4px, transparent 4px, transparent 12px),
-    repeating-radial-gradient(circle at 90% 120%, rgba(0,0,0,0.20) 0, rgba(0,0,0,0.20) 4px, transparent 4px, transparent 12px),
+    repeating-radial-gradient(circle at 10% 120%, rgba(0, 0, 0, 0.20) 0, rgba(0, 0, 0, 0.20) 0.25rem, transparent 0.25rem, transparent 0.75rem),
+    repeating-radial-gradient(circle at 90% 120%, rgba(0, 0, 0, 0.20) 0, rgba(0, 0, 0, 0.20) 0.25rem, transparent 0.25rem, transparent 0.75rem),
     linear-gradient(to bottom, #ebab8e 0%, #baa073 45%, #c7c3ac 100%);
-  box-shadow: inset 0 2px 3px rgba(255,255,255,0.25), inset 0 -3px 5px rgba(0,0,0,0.4);
+  box-shadow: inset 0 0.125rem 0.1875rem rgba(255, 255, 255, 0.25), inset 0 -0.1875rem 0.3125rem rgba(0, 0, 0, 0.4);
 }
 
 /* || SEPARATORS (Hero, Map & Footer) || */
 .hero,
 #map-section,
-footer {        /* ADDED footer here */
+footer {
+  /* ADDED footer here */
   position: relative;
 }
 
@@ -119,20 +121,23 @@ footer {        /* ADDED footer here */
 .hero::after,
 #map-section::before,
 #map-section::after,
-footer::before { /* ADDED footer::before here */
+footer::before {
+  /* ADDED footer::before here */
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
-  height: 6px;
+  height: 0.375rem;
   background: #693427;
   opacity: 0.9;
-  z-index: 10;   /* Ensure it sits above background colors */
+  z-index: 10;
+  /* Ensure it sits above background colors */
 }
 
 .hero::before,
 #map-section::before,
-footer::before { /* Anchors the line to the top of the footer */
+footer::before {
+  /* Anchors the line to the top of the footer */
   top: 0;
 }
 
@@ -154,11 +159,12 @@ footer::before { /* Anchors the line to the top of the footer */
 #team,
 #team .card {
   position: relative;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   overflow: visible;
   background: white;
   z-index: 1;
-  padding: 12px; /* Inner spacing to prevent line overlap */
+  padding: 0.75rem;
+  /* Inner spacing to prevent line overlap */
 }
 
 /* Specific styling for Narrative Items & Team Cards (Links/Block) */
@@ -192,9 +198,10 @@ footer::before { /* Anchors the line to the top of the footer */
 #team .card::before {
   content: "";
   position: absolute;
-  inset: 0; /* top/right/bottom/left: 0 */
-  border-radius: 12px;
-  border: 2px solid #5b6156;
+  inset: 0;
+  /* top/right/bottom/left: 0 */
+  border-radius: 0.75rem;
+  border: 0.125rem solid #5b6156;
   pointer-events: none;
   z-index: 0;
 }
@@ -212,29 +219,29 @@ footer::before { /* Anchors the line to the top of the footer */
 #team .card::after {
   content: "";
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 16px;
-  border: 2px solid #5b6156;
+  top: -0.25rem;
+  left: -0.25rem;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  border-radius: 1rem;
+  border: 0.125rem solid #5b6156;
   pointer-events: none;
   z-index: 0;
 }
 
 /* Content z-index fix */
-.card[data-narrative-id] > *,
-#narrative-items .card > img,
-#narrative-items .card > .card-body,
-#team .card > img,
-#team .card > .card-body,
-#item-image-wrapper > *,
-#item-text-section > *,
-#item-related-media > *,
-#metadata-table-wrapper > *,
-#documentation > *,
-#disclaimer > *,
-#team > * {
+.card[data-narrative-id]>*,
+#narrative-items .card>img,
+#narrative-items .card>.card-body,
+#team .card>img,
+#team .card>.card-body,
+#item-image-wrapper>*,
+#item-text-section>*,
+#item-related-media>*,
+#metadata-table-wrapper>*,
+#documentation>*,
+#disclaimer>*,
+#team>* {
   position: relative;
   z-index: 2;
 }
@@ -258,16 +265,16 @@ footer::before { /* Anchors the line to the top of the footer */
 
 /* Hover Effects (Index Cards) */
 .card[data-narrative-id]:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35), inset 0 0 12px rgba(0,0,0,0.18);
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.35), inset 0 0 0.75rem rgba(0, 0, 0, 0.18);
   cursor: pointer;
 }
 
 /* Narrative Item & Team Card specific hover twist */
 #narrative-items .card:hover,
 #team .card:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2)!important;
+  transform: translateY(-0.25rem) rotateX(1deg) rotateY(1deg);
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.4), inset 0 0 0.75rem rgba(0, 0, 0, 0.2) !important;
   cursor: pointer;
 }
 
@@ -298,8 +305,8 @@ footer::before { /* Anchors the line to the top of the footer */
 
 /* || NARRATIVE PAGE SPECIFICS || */
 #narrative-description {
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 
@@ -309,29 +316,35 @@ footer::before { /* Anchors the line to the top of the footer */
 #adult-kid-buttons .btn,
 #item-nav .btn-primary,
 #item-text-section .btn {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* --- ACTIVE / PRIMARY BUTTONS --- */
 #adult-kid-buttons .btn-primary,
 #adult-kid-buttons .btn-secondary,
 #item-nav .btn-primary {
-  background-color: #b9b981; /* Strong Olive */
+  background-color: #b9b981;
+  /* Strong Olive */
   border-color: #b9b981;
   color: #fff;
   opacity: 1;
 }
+
 /* Nav buttons text override */
-#item-nav .btn-primary { color: #000; }
+#item-nav .btn-primary {
+  color: #000;
+}
 
 /* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
 /* Muted/Pale */
 #adult-kid-buttons .btn-outline-primary,
 #adult-kid-buttons .btn-outline-secondary {
-  background-color: #e5e5d0; /* Very Pale Olive */
+  background-color: #e5e5d0;
+  /* Very Pale Olive */
   border-color: #d6d6b8;
   color: #9ea085;
 }
+
 #adult-kid-buttons .btn-outline-primary:hover,
 #adult-kid-buttons .btn-outline-secondary:hover {
   background-color: #dbdbbf;
@@ -356,8 +369,9 @@ footer::before { /* Anchors the line to the top of the footer */
 #item-nav .btn-primary:hover:not(:disabled) {
   background-color: #a4a55f;
   border-color: #a4a55f;
-  transform: translateY(-1px);
+  transform: translateY(-0.0625rem);
 }
+
 #item-nav .btn-primary:disabled {
   background-color: #d7d8ad;
   border-color: #d7d8ad;
@@ -374,13 +388,14 @@ tr[data-key="narratives"] a {
   text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
+
 #documentation a,
 #disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="narratives"] a:hover {
   color: #a4a55f !important;
-  transform: translateY(-1px);
+  transform: translateY(-0.0625rem);
 }
 
 /*|| MAP ||*/
@@ -394,6 +409,7 @@ tr[data-key="narratives"] a:hover {
   background-color: #693427;
   box-shadow: 0 0 0.8rem #693427 !important;
 }
+
 /* || TYPOGRAPHY || */
 
 /* Family: Amarante (Titles) */
@@ -436,31 +452,73 @@ th,
 #item-description,
 #text-content,
 .card-text,
-.item-card-hover img + p,
+.item-card-hover img+p,
 .card.path-card .card-body .card-text {
   font-family: 'Glass Antiqua', serif;
   font-weight: 400;
   line-height: 1.6;
-  font-size: 20px !important;
+  font-size: 1.25rem !important;
 }
 
 /* Generic Headings */
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Glass Antiqua', serif;
   font-weight: 400;
 }
 
 /* Specific Adjustments */
-.hero h1 { letter-spacing: 1px; }
-.hero p.lead { font-size: 1.3rem; font-weight: 400; }
-.card-title, #map-section h2 { font-weight: 700; }
-#narrative-title { font-weight: 400; }
-#narrative-description { font-size: 1.2rem; font-weight: 400;}
-.item-title-target { font-weight: 600; }
-#metadata-table th { font-weight: 600; }
-#item-text-section h3, #item-related-media h5 { font-weight: 600; }
+.hero h1 {
+  letter-spacing: 0.0625rem;
+}
+
+.hero p.lead {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.card-title,
+#map-section h2 {
+  font-weight: 700;
+}
+
+#narrative-title {
+  font-weight: 400;
+}
+
+#narrative-description {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.item-title-target {
+  font-weight: 600;
+}
+
+#metadata-table th {
+  font-weight: 600;
+}
+
+#item-text-section h3,
+#item-related-media h5 {
+  font-weight: 600;
+}
 
 /* Aubrey sizes */
-#narrative-items .card-title, #team .card-title { font-size: 1.5rem; }
-#item-related-media .card-title { font-size: 1rem; }
-#map-section .item-card-hover p { font-size: 1.4rem; color: #333; margin: 0; }
+#narrative-items .card-title,
+#team .card-title {
+  font-size: 1.5rem;
+}
+
+#item-related-media .card-title {
+  font-size: 1rem;
+}
+
+#map-section .item-card-hover p {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0;
+}
