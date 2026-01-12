@@ -313,11 +313,6 @@ tr[data-key="narratives"] a:hover {
   box-shadow: 0 0 0.8rem #de0313 !important;
 }
 
-#metadata-table {
-  border-radius: 0;
-  overflow: hidden;
-}
-
 /* || TYPOGRAPHY || */
 /* 1. Bangers (Headings) */
 .hero h1,

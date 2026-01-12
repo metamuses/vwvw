@@ -279,12 +279,6 @@ footer::before {
   text-align: center;
 }
 
-/* Tables */
-#metadata-table {
-  border-radius: 0;
-  overflow: hidden;
-}
-
 /* || NARRATIVE PAGE SPECIFICS || */
 #narrative-description {
   margin-left: 2.5rem;

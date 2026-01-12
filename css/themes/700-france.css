@@ -473,12 +473,7 @@ tr[data-key="narratives"] a:hover {
   transform: translateY(-0.0625rem);
 }
 
-/* || TABLES and MAP details|| */
-#metadata-table {
-  border-radius: 0;
-  overflow: hidden;
-}
-
+/* || MAP details|| */
 .leaflet-marker-icon.item-marker {
   background-color: #d4af37;
   box-shadow: 0 0 0.2rem #d4af37;

@@ -33,21 +33,39 @@ body.narrative-page #map-section {
   /* Soft grey base */
 }
 
-.container-fluid.py-5 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+/* map section home-page*/
+body.home-page #map-section {
+  overflow: hidden;
+  background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
 }
 
-
-/* || HEADER & FOOTER || */
-header,
-header.bg-light nav.navbar {
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(249, 217, 4, 0.8) 60%, #f9d904 100%);
+/* Grass Blades Decoration */
+body.home-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8.125rem;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse 0.875rem 5.9375rem at 5% 100%, #4f7d2f 0%, transparent 70%),
+    radial-gradient(ellipse 1rem 6.875rem at 18% 100%, #3d6b24 0%, transparent 70%),
+    radial-gradient(ellipse 0.75rem 5.3125rem at 32% 100%, #4a752b 0%, transparent 70%),
+    radial-gradient(ellipse 0.625rem 4.375rem at 48% 100%, #5f8e38 0%, transparent 70%),
+    radial-gradient(ellipse 0.75rem 4.6875rem at 63% 100%, #6aa744 0%, transparent 70%),
+    radial-gradient(ellipse 0.5rem 3.4375rem at 78% 100%, #527f33 0%, transparent 70%),
+    radial-gradient(ellipse 0.6875rem 4.0625rem at 92% 100%, #3f6c25 0%, transparent 70%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
+/* || HEADER & FOOTER || */
 header {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(249, 217, 4, 0.8) 60%, #f9d904 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 0;
   padding: 1.5rem 0;
   box-sizing: border-box;
@@ -89,15 +107,6 @@ footer {
   border-radius: 0.375rem;
 }
 
-.navbar .dropdown-toggle,
-.navbar .dropdown-menu .dropdown-item {
-  color: #000;
-}
-
-.navbar .dropdown-menu .dropdown-item {
-  transition: background-color 0.3s ease;
-}
-
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: rgba(131, 72, 44, 0.3);
   color: #000;
@@ -120,11 +129,14 @@ footer {
   .navbar .dropdown-menu {
     position: static;
     width: 100%;
-    border-radius: 0;
   }
 }
 
 /* || SEPARATORS (Black Lines) || */
+#map-section {
+  position: relative;
+}
+
 header::after,
 footer::before,
 .hero::before,
@@ -140,24 +152,17 @@ body.narrative-page #map-section::after {
   z-index: 1;
 }
 
-header::after {
+header::after,
+footer::before,
+.hero::after,
+body.narrative-page #map-section::after {
   bottom: 0;
-}
-
-footer::before {
-  top: 0;
 }
 
 .hero::before,
 #map-section::before {
   top: 0;
 }
-
-.hero::after,
-body.narrative-page #map-section::after {
-  bottom: 0;
-}
-
 
 /* || SKY BACKGROUNDS (Hero & Narrative Info) || */
 .hero,
@@ -184,19 +189,8 @@ body.narrative-page #map-section::after {
   justify-content: center;
 }
 
-.hero {
-  min-height: 60vh;
-  text-align: center;
-}
-
-#narrative-info {
-  margin: 0;
-}
-
-
 /* || FRAMES: LEAFY STYLE (Green Gradient) || */
 /* Used for: Index Cards, Item Sections, Narrative Map Wrapper, and Info Sections */
-
 /* 1. Base Container Styling */
 .card[data-narrative-id],
 #item-image-wrapper,
@@ -304,7 +298,6 @@ body.narrative-page #map-section #map::after {
 #disclaimer,
 #team {
   margin-bottom: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #narrative-description {
@@ -365,6 +358,7 @@ body.narrative-page #map-section #map::after {
   padding: 1.2rem 2rem;
   z-index: 1;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* 3. Content Visibility */
@@ -396,19 +390,7 @@ body.narrative-page #map-section #map::after {
 }
 
 /* || MAP SECTION || */
-/* Added position: relative to fix missing/misplaced separator lines */
-#map-section {
-  position: relative;
-}
-
-body.home-page #map-section {
-  overflow: hidden;
-  /* Grass Gradient */
-  background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
-}
-
 #map-section #map {
-  background: white;
   padding: 0;
   border-radius: 0.75rem;
 }
@@ -423,31 +405,7 @@ body.home-page #map-section {
   box-shadow: 0 0 0.8rem #83482c !important;
 }
 
-/* Grass Blades Decoration */
-body.home-page #map-section::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 8.125rem;
-  pointer-events: none;
-  z-index: 1;
-  background-image:
-    radial-gradient(ellipse 0.875rem 5.9375rem at 5% 100%, #4f7d2f 0%, transparent 70%),
-    radial-gradient(ellipse 1rem 6.875rem at 18% 100%, #3d6b24 0%, transparent 70%),
-    radial-gradient(ellipse 0.75rem 5.3125rem at 32% 100%, #4a752b 0%, transparent 70%),
-    radial-gradient(ellipse 0.625rem 4.375rem at 48% 100%, #5f8e38 0%, transparent 70%),
-    radial-gradient(ellipse 0.75rem 4.6875rem at 63% 100%, #6aa744 0%, transparent 70%),
-    radial-gradient(ellipse 0.5rem 3.4375rem at 78% 100%, #527f33 0%, transparent 70%),
-    radial-gradient(ellipse 0.6875rem 4.0625rem at 92% 100%, #3f6c25 0%, transparent 70%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-
 /* || BUTTONS & LINKS (Nature Green) || */
-
 /* --- ACTIVE / PRIMARY BUTTONS --- */
 #adult-kid-buttons .btn-primary,
 #adult-kid-buttons .btn-secondary,
@@ -529,7 +487,6 @@ tr[data-key="narratives"] a:hover {
 
 
 /* || TYPOGRAPHY || */
-
 /* 1. Rubik Glitch Pop (Titles) */
 .hero h1,
 #narrative-title {
@@ -541,7 +498,7 @@ tr[data-key="narratives"] a:hover {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw + 1rem, 6rem);
+  font-size: clamp(5rem, 6vw + 1rem, 6rem);
 }
 
 /* 2. Orbitron (Subtitles/Captions) */
@@ -576,26 +533,11 @@ th,
   font-size: clamp(0.85rem, 1vw + 0.5rem, 0.9375rem);
 }
 
-#metadata-table {
-  border-radius: 0;
-  overflow: hidden;
-}
-
 /* || RESPONSIVE || */
 @media (max-width: 48em) {
-  .item-title-target {
-    width: 100%;
-    max-width: 43.75rem;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    left: 0;
-    right: 0;
-  }
-
   #narrative-description {
     margin-left: 2rem;
     margin-right: 2rem;
     font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
   }
-
 }
