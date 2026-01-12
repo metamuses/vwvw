@@ -124,14 +124,21 @@ async function initializeMuseumMap() {
     );
 
     // debounce resize
+    // debounce resize
     let resizeTimer;
-    window.addEventListener("resize", () => {
+    // Use ResizeObserver to handle container size changes (fixes visibility issue on first load)
+    const resizeObserver = new ResizeObserver(() => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         map.invalidateSize();
         applyResponsiveFit();
-      }, 200);
+      }, 100);
     });
+    // Start observing the map div immediately
+    const mapDiv = document.getElementById("map");
+    if (mapDiv) {
+      resizeObserver.observe(mapDiv);
+    }
 
     const itemMarkers = [];
 
