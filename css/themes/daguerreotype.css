@@ -409,17 +409,14 @@ body, p, td, th, #text-content, .item-card-hover p {
   color: #2B1C0E !important;
 }
 
-#narrative-description, #documentation p, #disclaimer p, #team p {
-  font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
+#narrative-description {
+  font-size: clamp(1.0rem, 1.3vw + 0.5rem, 1.25rem) !important;
+  max-width: 70%;
+  overflow: hidden;
   line-height: 1.5;
   margin-left: auto;
   margin-right: auto;
   text-align: justify;
-}
-
-#narrative-description {
-  max-width: 70%;
-  overflow: hidden;
 }
 
 #narrative-description::first-letter {
@@ -427,7 +424,8 @@ body, p, td, th, #text-content, .item-card-hover p {
   color: #B33A2E !important;
   font-size: clamp(4rem, 8vw, 6rem) !important;
   float: left;
-  line-height: 0.85;
+  line-height: 0.75;
+  margin-bottom: -0.1em !important;
   margin-right: 0.1em;
   margin-top: 0.12em;
   padding: 0 0.05em;
@@ -439,6 +437,23 @@ body, p, td, th, #text-content, .item-card-hover p {
   margin-left: auto !important;
   margin-right: auto !important;
 } 
+
+#documentation p:not(.lead), 
+#documentation li, 
+#disclaimer p:not(.lead), 
+#disclaimer li {
+  font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.info-page .lead,
+.info-page h1,
+.info-page h2 {
+  text-align: center;
+}
 
 #text-content {
   text-align: justify;
@@ -508,6 +523,13 @@ footer a {
     margin-bottom: -0.2em !important; 
     margin-top: 0.2em !important; 
     float: left !important;
+  }
+
+  #narrative-description::first-letter {
+    line-height: 0.55 !important; 
+    margin-bottom: -0.1em !important; 
+    margin-top: 0.4em !important; 
+    padding-bottom: 0 !important;
   }
 }
 
