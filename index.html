@@ -1,153 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VWVW</title>
-    <meta name="description" content="Website about Vivienne Westwood's heritage created as a group project for the Information Modeling and Web Technologies 2024/25 course at UniBo.">
-    <meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
-    <meta name="theme-color" content="#ffffff">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="img/logo/favicon.png" type="favicon">
+  <title>VWVW</title>
+  <meta name="description"
+    content="Website about Vivienne Westwood's heritage created as a group project for the Information Modeling and Web Technologies 2024/25 course at UniBo.">
+  <meta name="author" content="Nicol D'Amelio, Tommaso Barbato, Martina Uccheddu">
+  <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css"/>
-    <link rel="stylesheet" href="css/basics.css">
+  <link rel="icon" href="img/logo/favicon.png" type="favicon">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  </head>
-  <body class="home-page">
-    <!-- header con nav -->
-    <header>
-      <nav class="navbar navbar-expand-lg container-fluid">
-        <div class="container-fluid">
-          <a href="index.html" class="navbar-brand">
-            <img src="img/logo/logo.svg" title="Logo" alt="Logo VWVW" class="img-header">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown" >
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  collections
-                </a>
-                <ul class="dropdown-menu" id="narrative-menu">
-                  <li><a class="dropdown-item" data-narrative="historical" role="button">Chronicles of Fashion</a></li>
-                  <li><a class="dropdown-item" data-narrative="made-by" role="button">Made by Vivienne</a></li>
-                  <li><a class="dropdown-item" data-narrative="past-future" role="button">Past and Future</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  info
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="info.html#documentation">documentation</a></li>
-                  <li><a class="dropdown-item" href="info.html#disclaimer">disclaimer</a></li>
-                  <li><a class="dropdown-item" href="info.html#team">team</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  styles
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" id="theme-menu">
-                  <li><a class="dropdown-item" data-theme="700-france" role="button">1700: Sun King's France</a></li>
-                  <li><a class="dropdown-item" data-theme="daguerreotype" role="button">1840: At the Dawn of Photography</a></li>
-                  <li><a class="dropdown-item" data-theme="art-nouveau" role="button">Early XX cent: Art Nouveau</a></li>
-                  <li><a class="dropdown-item" data-theme="70s-punk" role="button">70s: British Punk</a></li>
-                  <li><a class="dropdown-item" data-theme="90s-comics" role="button">90s: Italian Comics</a></li>
-                  <li><a class="dropdown-item" data-theme="solar-punk" role="button">2035: Solar Punk</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" />
+  <link rel="stylesheet" href="css/basics.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="home-page">
+  <header>
+    <nav class="navbar navbar-expand-lg container-fluid">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/logo/logo.svg" title="Logo" alt="Logo VWVW" class="img-header">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                collections
+              </a>
+              <ul class="dropdown-menu" id="narrative-menu">
+                <li><a class="dropdown-item" data-narrative="historical" role="button">Chronicles of Fashion</a></li>
+                <li><a class="dropdown-item" data-narrative="made-by" role="button">Made by Vivienne</a></li>
+                <li><a class="dropdown-item" data-narrative="past-future" role="button">Past and Future</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                info
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="info.html#documentation">documentation</a></li>
+                <li><a class="dropdown-item" href="info.html#disclaimer">disclaimer</a></li>
+                <li><a class="dropdown-item" href="info.html#team">team</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                styles
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" id="theme-menu">
+                <li><a class="dropdown-item" data-theme="700-france" role="button">1700: Sun King's France</a></li>
+                <li><a class="dropdown-item" data-theme="daguerreotype" role="button">1840: At the Dawn of
+                    Photography</a></li>
+                <li><a class="dropdown-item" data-theme="art-nouveau" role="button">Early XX cent: Art Nouveau</a></li>
+                <li><a class="dropdown-item" data-theme="70s-punk" role="button">70s: British Punk</a></li>
+                <li><a class="dropdown-item" data-theme="90s-comics" role="button">90s: Italian Comics</a></li>
+                <li><a class="dropdown-item" data-theme="solar-punk" role="button">2035: Solar Punk</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
-
-    <!-- main -->
-    <main>
-      <!-- hero -->
-      <section class="hero d-flex align-items-center justify-content-center text-center">
-        <div class="container">
-          <h1 class="display-4 mb-3 outlined">VWVW</h1>
-          <p class="lead mb-4">Vivienne Westwood Virtual World</p>
-          <p class="intro-text mx-auto">
-            Where the museum meets the digital: a journey through the rebellious vision and lasting legacy of Vivienne Westwood, from punk origins to global cultural influence.
-          </p>
-        </div>
-      </section>
-
-
-      <!-- card narrative-->
-      <section class="container-fluid py-5">
-        <div class="container">
-          <div class="row g-4">
-
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card card-dynamic h-100 path-card" data-narrative-id="historical">
-                  <img src="img/chronicles_of_fashion.jpg" class="card-img-top d-block mx-auto" alt="Chronicles of Fashion">
-                  <div class="card-body">
-                    <h5 class="card-title">Chronicles of Fashion</h5>
-                    <p class="card-text">
-                      A timeline weaving together inspirations, creations, and cultural echoes to chart the evolution of Vivienne Westwood’s world.
-                    </p>
-                  </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card card-dynamic h-100 path-card" data-narrative-id="made-by">
-                  <img src="img/made_by_vivienne.jpg" class="card-img-top d-block mx-auto" alt="Made by Vivienne">
-                  <div class="card-body">
-                    <h5 class="card-title">Made by Vivienne</h5>
-                    <p class="card-text">
-                      Explore the craftsmanship, materials, and rebellious vision behind Westwood’s most iconic designs.
-                    </p>
-                  </div>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card card-dynamic h-100 path-card" data-narrative-id="past-future">
-                  <img src="img/enter_the_future.jpg" class="card-img-top d-block mx-auto" alt="Enter the Future">
-                  <div class="card-body">
-                    <h5 class="card-title">Past and Future</h5>
-                    <p class="card-text">
-                      Tracing the creative thread from historical inspiration to Westwood’s designs and their afterlife in pop culture.
-                    </p>
-                  </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- map section -->
-      <section id="map-section" class="container-fluid py-5">
-        <div class="container">
-          <h2 class="text-center fw-bold mb-4">Museum Map</h2>
-          <div id="map"></div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- footer -->
-    <footer class="container-fluid">
-      <div class="footer-cont"> <!-- lascerei questa classe, a cui tutti css assegneranno stesso colore sfondo e testo -->
-        <p>© VWVW 2025 <a href="https://github.com/metamuses/vwvw"><img src="img/logo/github.svg" alt="Github icon" class="github-icon"></a></p>
       </div>
-    </footer>
+    </nav>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <!-- main -->
+  <main>
+    <!-- hero -->
+    <section class="hero d-flex align-items-center justify-content-center text-center">
+      <div class="container">
+        <h1 class="display-4 mb-3 outlined">VWVW</h1>
+        <p class="lead mb-4">Vivienne Westwood Virtual World</p>
+        <p class="intro-text mx-auto">
+          Where the museum meets the digital: a journey through the rebellious vision and lasting legacy of Vivienne
+          Westwood, from punk origins to global cultural influence.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- card narrative-->
+    <section class="container-fluid py-5">
+      <div class="container">
+        <div class="row g-4">
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-dynamic h-100 path-card" data-narrative-id="historical">
+              <img src="img/chronicles_of_fashion.jpg" class="card-img-top d-block mx-auto" alt="Chronicles of Fashion">
+              <div class="card-body">
+                <h5 class="card-title">Chronicles of Fashion</h5>
+                <p class="card-text">
+                  A timeline weaving together inspirations, creations, and cultural echoes to chart the evolution of
+                  Vivienne Westwood’s world.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-dynamic h-100 path-card" data-narrative-id="made-by">
+              <img src="img/made_by_vivienne.jpg" class="card-img-top d-block mx-auto" alt="Made by Vivienne">
+              <div class="card-body">
+                <h5 class="card-title">Made by Vivienne</h5>
+                <p class="card-text">
+                  Explore the craftsmanship, materials, and rebellious vision behind Westwood’s most iconic designs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-dynamic h-100 path-card" data-narrative-id="past-future">
+              <img src="img/enter_the_future.jpg" class="card-img-top d-block mx-auto" alt="Enter the Future">
+              <div class="card-body">
+                <h5 class="card-title">Past and Future</h5>
+                <p class="card-text">
+                  Tracing the creative thread from historical inspiration to Westwood’s designs and their afterlife in
+                  pop culture.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- map section -->
+    <section id="map-section" class="container-fluid py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4">Museum Map</h2>
+        <div id="map"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="container-fluid">
+    <div class="footer-cont">
+      <p>© VWVW 2025 <a href="https://github.com/metamuses/vwvw"><img src="img/logo/github.svg" alt="Github icon"
+            class="github-icon"></a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
