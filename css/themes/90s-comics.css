@@ -200,6 +200,7 @@ footer::before {
 .item-title-target,
 #map-section h2 {
   width: 100%;
+  margin: 2rem 0;
   padding: 1rem 0;
 }
 
@@ -300,10 +301,6 @@ tr[data-key="narratives"] a:hover {
   border-radius: 0;
   overflow: hidden;
   background-color: white !important;
-}
-
-#map-section {
-  padding-top: 0.1rem;
 }
 
 .leaflet-marker-icon.item-marker {
