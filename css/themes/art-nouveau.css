@@ -239,6 +239,23 @@ footer::before { /* Anchors the line to the top of the footer */
   z-index: 2;
 }
 
+/* vertical centering narrative cards text */
+#narrative-items .card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#narrative-items .card .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-grow: 1 !important;
+  text-align: center !important;
+  padding: 1em 0.5em !important;
+  min-height: 5em !important;
+}
+
 /* Hover Effects (Index Cards) */
 .card[data-narrative-id]:hover {
   transform: translateY(-4px);

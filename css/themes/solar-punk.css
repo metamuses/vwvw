@@ -537,4 +537,10 @@ th,
     padding: 1rem 1.5rem;
     left: 0; right: 0;
   }
+
+  #narrative-description {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
 }

@@ -259,6 +259,23 @@ footer::before,
   z-index: 2;
 }
 
+/* vertical centering narrative cards text */
+#narrative-items .card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#narrative-items .card .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-grow: 1 !important;
+  text-align: center !important;
+  padding: 1em 0.5em !important;
+  min-height: 5em !important;
+}
+
 /* Hover Effect (Index Cards) */
 .card[data-narrative-id] {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
