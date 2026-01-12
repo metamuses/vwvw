@@ -2,6 +2,8 @@
 html {
   margin: 0;
   padding: 0;
+  /* FLUID TYPOGRAPHY: Scales all rem units relative to viewport */
+  font-size: clamp(14px, 0.5vw + 0.8rem, 18px);
 }
 
 body {
@@ -22,17 +24,20 @@ main {
 }
 
 /* navbar */
-.navbar .dropdown-toggle::after { /* per eliminare freccia di dropdown e fare apparire li a hover */
+.navbar .dropdown-toggle::after {
+  /* per eliminare freccia di dropdown e fare apparire li a hover */
   display: none;
 }
 
 .navbar .dropdown-menu {
-  right: 0; /* per li più a destra che superavano viewport*/
+  right: 0;
+  /* per li più a destra che superavano viewport*/
   left: auto;
 }
 
 .navbar {
-  padding-left: 0;   /* rimuove padding di default per align logo left*/
+  padding-left: 0;
+  /* rimuove padding di default per align logo left*/
   padding-right: 0;
 }
 
@@ -58,7 +63,8 @@ header {
   /* PIN TO BOTH SIDES to prevent background peeking */
   left: 0 !important;
   right: 0 !important;
-  width: 100vw !important; /* Use viewport width for maximum coverage */
+  width: 100vw !important;
+  /* Use viewport width for maximum coverage */
   z-index: 1100 !important;
   transition: transform 0.4s ease-in-out, padding 0.3s ease;
 }
@@ -74,14 +80,15 @@ header {
 /* Normal state: Ensure the logo has a clean transition */
 .img-header {
   transition: transform 0.3s ease, height 0.3s ease;
-  transform-origin: left center; /* Keeps the logo from shifting right when shrinking */
+  transform-origin: left center;
+  /* Keeps the logo from shifting right when shrinking */
 }
 
 /* Scrolled state: Shrink the header container and the logo */
 .header-scrolled {
   padding-top: 0.2rem !important;
   padding-bottom: 0.2rem !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-scrolled .img-header {
@@ -92,7 +99,8 @@ header {
 /* Mobile specific adjustment to prevent the logo from getting too tiny */
 @media (max-width: 768px) {
   .header-scrolled .img-header {
-    transform: scale(0.8); /* Slightly larger on mobile for readability */
+    transform: scale(0.8);
+    /* Slightly larger on mobile for readability */
   }
 }
 
@@ -157,10 +165,14 @@ footer {
 
 .path-card .card-img-top {
   width: 100%;
-  aspect-ratio: 1 / 1;      /* Forces the image area to be a perfect square */
-  object-fit: contain;      /* Shrinks image to fit INSIDE the square (no cropping) */
-  background-color: white;  /* Fills the empty space with white color */
-  padding: 0.5rem;          /* Optional: Adds a small internal margin like in narrative.html */
+  aspect-ratio: 1 / 1;
+  /* Forces the image area to be a perfect square */
+  object-fit: contain;
+  /* Shrinks image to fit INSIDE the square (no cropping) */
+  background-color: white;
+  /* Fills the empty space with white color */
+  padding: 0.5rem;
+  /* Optional: Adds a small internal margin like in narrative.html */
 }
 
 .home-page .card-body {
@@ -184,7 +196,8 @@ footer {
 /* MAPPA: si adatta al contenitore SENZA distorcersi */
 #map {
   width: 100%;
-  aspect-ratio: 29 / 12; /* mantiene proporzioni ORIGINALI */
+  aspect-ratio: 29 / 12;
+  /* mantiene proporzioni ORIGINALI */
   height: auto;
   border: 0.3rem solid #343a40;
   border-radius: 1rem;
@@ -225,7 +238,8 @@ footer {
   padding: 0.6rem;
   box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.25);
 
-  width: 12rem;        /* larghezza card */
+  width: 12rem;
+  /* larghezza card */
   max-width: 12rem;
   white-space: normal;
 }
@@ -249,10 +263,13 @@ footer {
 /* Immagine: sempre interamente visibile, non tagliata */
 .item-card-hover img {
   width: 100%;
-  max-height: 6rem;     /* Altezza massima | RELATIVA */
-  object-fit: contain;  /* Nessun taglio */
+  max-height: 6rem;
+  /* Altezza massima | RELATIVA */
+  object-fit: contain;
+  /* Nessun taglio */
   border-radius: 0.4rem;
-  background: transparent;  /* per evitare buchi se l’immagine non riempie */
+  background: transparent;
+  /* per evitare buchi se l’immagine non riempie */
 }
 
 .leaflet-tooltip.item-custom-tooltip {
@@ -263,8 +280,10 @@ footer {
 @media (max-width: 768px) {
   #map {
     width: 100%;
-    height: 100vw;   /* diventa quadrata */
-    aspect-ratio: unset; /* rimuove proporzione desktop */
+    height: 100vw;
+    /* diventa quadrata */
+    aspect-ratio: unset;
+    /* rimuove proporzione desktop */
     border-radius: 0.8rem;
   }
 
@@ -284,13 +303,18 @@ footer {
 /* ITEM IMAGE WRAPPER (around #item-image) */
 #item-image {
   width: 100%;
-  max-width: 400px; /* keep square size */
-  aspect-ratio: 1 / 1; /* force 1:1 ratio */
-  object-fit: contain; /* or 'cover' for full fill */
+  max-width: 400px;
+  /* keep square size */
+  aspect-ratio: 1 / 1;
+  /* force 1:1 ratio */
+  object-fit: contain;
+  /* or 'cover' for full fill */
   background-color: white;
-  border-radius: 0.5rem; /* match Bootstrap rounded */
+  border-radius: 0.5rem;
+  /* match Bootstrap rounded */
   display: block;
-  margin: 0 auto 1rem; /* center and space below */
+  margin: 0 auto 1rem;
+  /* center and space below */
 }
 
 
@@ -301,9 +325,11 @@ footer {
   opacity: 0.6;
   transition: opacity 0.2s;
 }
+
 .shelf-arrow:hover {
   opacity: 1;
 }
+
 /* --- SHELF CONTAINER --- */
 .shelf-container {
   display: flex;
@@ -329,10 +355,14 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 260px; /* fixed total height */
-  width: auto; /* adapt width as needed */
-  min-width: 220px; /* base width for square-ish items */
-  max-width: 320px; /* limit too-wide videos */
+  height: 260px;
+  /* fixed total height */
+  width: auto;
+  /* adapt width as needed */
+  min-width: 220px;
+  /* base width for square-ish items */
+  max-width: 320px;
+  /* limit too-wide videos */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -352,15 +382,18 @@ footer {
   align-items: center;
   overflow: hidden;
   background: #f8f9fa;
-  height: 70%; /* main area */
+  height: 70%;
+  /* main area */
 }
 
 /* image: fills entire area */
 .media-content img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /*or cover if we want them to expand to the card*/
-  background: #f8f9fa; /* optional neutral background behind transparent space */
+  object-fit: contain;
+  /*or cover if we want them to expand to the card*/
+  background: #f8f9fa;
+  /* optional neutral background behind transparent space */
 
 }
 
@@ -390,7 +423,8 @@ footer {
 
 /* Full-height layout fix */
 /* Updated layout fix */
-html, body {
+html,
+body {
   /* REMOVE 'height: 100%' - it kills sticky behavior */
   min-height: 100vh;
   margin: 0;
@@ -422,15 +456,18 @@ footer {
 
 /* Card: same hover animation as media shelf */
 .path-card-wrapper .card {
-  height: 280px; /* fixed height */
+  height: 280px;
+  /* fixed height */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0.5rem;
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;  /* same UX */
-  overflow: hidden; /* prevents stretched shadows */
+  cursor: pointer;
+  /* same UX */
+  overflow: hidden;
+  /* prevents stretched shadows */
 }
 
 /* Hover effect (same as media shelf) */
@@ -473,19 +510,25 @@ footer {
    (uguali a quelli delle card nell'index)
    =============================== */
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+
   /* 1. Ensure the image container has a large, fixed height area */
   .path-card-wrapper .card-img-top {
-    height: 180px;         /* Adjust this to make the image area "bigger" */
-    object-fit: contain;   /* SHOWS THE WHOLE IMAGE (no cutting) */
-    background: #f0f0f0;   /* Fills the "empty" space with a light gray border/bg */
-    padding: 5px;          /* Optional: adds a little breathing room */
+    height: 180px;
+    /* Adjust this to make the image area "bigger" */
+    object-fit: contain;
+    /* SHOWS THE WHOLE IMAGE (no cutting) */
+    background: #f0f0f0;
+    /* Fills the "empty" space with a light gray border/bg */
+    padding: 5px;
+    /* Optional: adds a little breathing room */
   }
 
   /* 2. Shrink the text area to the absolute minimum */
   .path-card-wrapper .card-body {
     padding: 0.3rem !important;
-    flex-grow: 0;          /* Don't let the text area expand */
+    flex-grow: 0;
+    /* Don't let the text area expand */
   }
 
   .path-card-wrapper .card-title {
@@ -495,11 +538,11 @@ footer {
   }
 }
 
-    /* =======================================
+/* =======================================
    ITEM PAGE — uniform mobile side margins
    Same horizontal spacing as index cards
    ======================================= */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
 
   /* Main wrapper margin */
   body .container,
@@ -520,6 +563,7 @@ footer {
     margin-right: 0 !important;
   }
 }
+
 /* MOBILE PADDING FIX — apply same horizontal spacing as index cards */
 @media (max-width: 576px) {
   /* narrative page cards → OK (già fatto) */
@@ -537,32 +581,47 @@ footer {
   }
 }
 
-  /* =======================================
+/* =======================================
    ITEM PAGE — space between buttons
    ======================================= */
 
-   /* Space between navigation buttons under item image */
-   #item-main #item-nav {
-    justify-content: space-between; /* already applied by Bootstrap, keeps buttons apart */
-    gap: 1rem; /* adds consistent space between buttons */
-    padding: 0 0.5rem; /* optional: add some padding so buttons aren't at container edges */
-  }
-  #item-main #item-nav button {
-    min-width: 120px;  /* ensures buttons don’t shrink too much */
-  }
+/* Space between navigation buttons under item image */
+#item-main #item-nav {
+  justify-content: space-between;
+  /* already applied by Bootstrap, keeps buttons apart */
+  gap: 1rem;
+  /* adds consistent space between buttons */
+  padding: 0 0.5rem;
+  /* optional: add some padding so buttons aren't at container edges */
+}
+
+#item-main #item-nav button {
+  min-width: 120px;
+  /* ensures buttons don’t shrink too much */
+}
+
 /* =======================================
    ITEM PAGE — space between adult/kid
    button and text
    ======================================= */
-  /* Add spacing between absolute buttons and content */
-  #item-text-section #text-title {
-    margin-top: 16px; /* push the title down from the top buttons */
-  }
+/* Add spacing between absolute buttons and content */
+#item-text-section #text-title {
+  margin-top: 16px;
+  /* push the title down from the top buttons */
+}
 
-  /* Optional: adjust paragraph spacing */
-  #item-text-section #text-content {
-    margin-top: 0.5rem;
+/* Optional: adjust paragraph spacing */
+#item-text-section #text-content {
+  margin-top: 0.5rem;
+}
+
+/* Apply only on screens smaller than 768px (Bootstrap's mobile/tablet break) */
+@media (max-width: 767.98px) {
+  #item-metadata-column {
+    margin-top: 3em;
+    /* Adds spacing between image nav and table */
   }
+}
 
 /* =======================================
    INFO PAGE & UTILITIES

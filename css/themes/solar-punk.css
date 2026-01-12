@@ -1,7 +1,10 @@
 /* || GENERAL STYLES ||*/
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap'); /* Titles */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');   /* Captions */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap'); /* Body */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap');
+/* Titles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+/* Captions */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap');
+/* Body */
 
 /* || BACKGROUNDS || */
 /* Narrative Page: Green Gradient */
@@ -26,20 +29,43 @@ body.info-page {
 /* Narrative Card Section Background (Index) */
 .container-fluid.py-5,
 body.narrative-page #map-section {
-  background-color: #d1d3d4; /* Soft grey base */
+  background-color: #d1d3d4;
+  /* Soft grey base */
 }
-.container-fluid.py-5 { padding-top: 4rem; padding-bottom: 4rem; }
 
+/* map section home-page*/
+body.home-page #map-section {
+  overflow: hidden;
+  background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
+}
 
-/* || HEADER & FOOTER || */
-header,
-header.bg-light nav.navbar {
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(249,217,4,0.8) 60%, #f9d904 100%);
+/* Grass Blades Decoration */
+body.home-page #map-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8.125rem;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse 0.875rem 5.9375rem at 5% 100%, #4f7d2f 0%, transparent 70%),
+    radial-gradient(ellipse 1rem 6.875rem at 18% 100%, #3d6b24 0%, transparent 70%),
+    radial-gradient(ellipse 0.75rem 5.3125rem at 32% 100%, #4a752b 0%, transparent 70%),
+    radial-gradient(ellipse 0.625rem 4.375rem at 48% 100%, #5f8e38 0%, transparent 70%),
+    radial-gradient(ellipse 0.75rem 4.6875rem at 63% 100%, #6aa744 0%, transparent 70%),
+    radial-gradient(ellipse 0.5rem 3.4375rem at 78% 100%, #527f33 0%, transparent 70%),
+    radial-gradient(ellipse 0.6875rem 4.0625rem at 92% 100%, #3f6c25 0%, transparent 70%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
+/* || HEADER & FOOTER || */
 header {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(249, 217, 4, 0.8) 60%, #f9d904 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin: 0;
   padding: 1.5rem 0;
   box-sizing: border-box;
@@ -55,13 +81,13 @@ footer {
   background-color: #83482c;
   /* Roots effect */
   background-image:
-    radial-gradient(ellipse 8px 90px at 5% 0%, #4b2e1f 0%, transparent 70%),
-    radial-gradient(ellipse 6px 50px at 15% 0%, #6e3f2a 0%, transparent 70%),
-    radial-gradient(ellipse 10px 100px at 25% 0%, #3f2617 0%, transparent 70%),
-    radial-gradient(ellipse 8px 70px at 40% 0%, #59341f 0%, transparent 70%),
-    radial-gradient(ellipse 6px 60px at 60% 0%, #6e3f2a 0%, transparent 70%),
-    radial-gradient(ellipse 10px 90px at 75% 0%, #4b2e1f 0%, transparent 70%),
-    radial-gradient(ellipse 8px 80px at 90% 0%, #59341f 0%, transparent 70%);
+    radial-gradient(ellipse 0.5rem 5.625rem at 5% 0%, #4b2e1f 0%, transparent 70%),
+    radial-gradient(ellipse 0.375rem 3.125rem at 15% 0%, #6e3f2a 0%, transparent 70%),
+    radial-gradient(ellipse 0.625rem 6.25rem at 25% 0%, #3f2617 0%, transparent 70%),
+    radial-gradient(ellipse 0.5rem 4.375rem at 40% 0%, #59341f 0%, transparent 70%),
+    radial-gradient(ellipse 0.375rem 3.75rem at 60% 0%, #6e3f2a 0%, transparent 70%),
+    radial-gradient(ellipse 0.625rem 5.625rem at 75% 0%, #4b2e1f 0%, transparent 70%),
+    radial-gradient(ellipse 0.5rem 5rem at 90% 0%, #59341f 0%, transparent 70%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -78,42 +104,39 @@ footer {
 .navbar a.nav-link:hover {
   color: #000;
   background-color: rgba(131, 72, 44, 0.3);
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 
-.navbar .dropdown-toggle,
-.navbar .dropdown-menu .dropdown-item {
-  color: #000;
-}
-
-.navbar .dropdown-menu .dropdown-item { transition: background-color 0.3s ease; }
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: rgba(131, 72, 44, 0.3);
   color: #000;
 }
 
 .navbar-toggler {
-  border: 2px solid rgba(131, 72, 44, 0.5);
-  border-radius: 6px;
+  border: 0.125rem solid rgba(131, 72, 44, 0.5);
+  border-radius: 0.375rem;
 }
 
 .navbar .dropdown-menu {
   position: absolute;
   z-index: 10;
-  border: 1px solid rgba(131, 72, 44, 0.3);
-  border-radius: 6px;
+  border: 0.0625rem solid rgba(131, 72, 44, 0.3);
+  border-radius: 0.375rem;
   background-color: #fff;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 61.999em) {
   .navbar .dropdown-menu {
     position: static;
     width: 100%;
-    border-radius: 0;
   }
 }
 
 /* || SEPARATORS (Black Lines) || */
+#map-section {
+  position: relative;
+}
+
 header::after,
 footer::before,
 .hero::before,
@@ -124,33 +147,40 @@ body.narrative-page #map-section::after {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 0.125rem;
   background-color: #000;
   z-index: 1;
 }
 
-header::after { bottom: 0; }
-footer::before { top: 0; }
-.hero::before, #map-section::before { top: 0; }
-.hero::after, body.narrative-page #map-section::after { bottom: 0; }
+header::after,
+.hero::after,
+body.narrative-page #map-section::after {
+  bottom: 0;
+}
 
+.hero::before,
+#map-section::before,
+footer::before {
+  top: 0;
+}
 
 /* || SKY BACKGROUNDS (Hero & Narrative Info) || */
 .hero,
 #narrative-info {
   position: relative;
-  background-color: #4b89c4; /* base sky blue */
+  background-color: #4b89c4;
+  /* base sky blue */
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 60%),
-    radial-gradient(circle at 70% 15%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 40% 30%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 85% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 60% 70%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 80% 75%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
-    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 50%),
-    radial-gradient(circle at 75% 85%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(circle at 70% 15%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 55%),
+    radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 85% 40%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 30% 60%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 55%),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 80% 75%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 55%),
+    radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 75% 85%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -159,19 +189,8 @@ footer::before { top: 0; }
   justify-content: center;
 }
 
-.hero {
-  min-height: 60vh;
-  text-align: center;
-}
-
-#narrative-info {
-  margin: 0;
-}
-
-
 /* || FRAMES: LEAFY STYLE (Green Gradient) || */
 /* Used for: Index Cards, Item Sections, Narrative Map Wrapper, and Info Sections */
-
 /* 1. Base Container Styling */
 .card[data-narrative-id],
 #item-image-wrapper,
@@ -182,18 +201,18 @@ footer::before { top: 0; }
 #disclaimer,
 #team {
   position: relative;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   overflow: visible;
   background: white;
   z-index: 1;
-  padding: 12px;
+  padding: 0.75rem;
 }
 
 /* Narrative Map specific */
 #map-section #map {
   position: relative;
   background: white !important;
-  border-radius: 16px;
+  border-radius: 1rem;
   overflow: hidden;
   z-index: 1;
 }
@@ -210,19 +229,25 @@ footer::before { top: 0; }
 body.narrative-page #map-section #map::before {
   content: "";
   position: absolute;
-  top: -4px; left: -4px; right: -4px; bottom: -4px;
-  border-radius: 16px;
+  top: -0.25rem;
+  left: -0.25rem;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  border-radius: 1rem;
   pointer-events: none;
   z-index: -1;
   background: linear-gradient(135deg, #aabf66 0%, #8ca343 40%, #c2d574 70%, #aabf66 100%);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3), inset 0 0.125rem 0.25rem rgba(255, 255, 255, 0.3);
 }
 
 /* Slight adjustment for map frame size */
 body.narrative-page #map-section #map::before {
-  top: -6px; left: -6px; right: -6px; bottom: -6px;
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25), inset 0 2px 4px rgba(255,255,255,0.3);
+  top: -0.375rem;
+  left: -0.375rem;
+  right: -0.375rem;
+  bottom: -0.375rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.25), inset 0 0.125rem 0.25rem rgba(255, 255, 255, 0.3);
 }
 
 /* 3. Inner White Matting (::after) */
@@ -237,22 +262,29 @@ body.narrative-page #map-section #map::before {
 body.narrative-page #map-section #map::after {
   content: "";
   position: absolute;
-  top: 6px; left: 6px; right: 6px; bottom: 6px;
-  border-radius: 8px;
+  top: 0.375rem;
+  left: 0.375rem;
+  right: 0.375rem;
+  bottom: 0.375rem;
+  border-radius: 0.5rem;
   background: white;
   z-index: -1;
   pointer-events: none;
 }
+
 /* Map matting specific */
 body.narrative-page #map-section #map::after {
-  top: 8px; left: 8px; right: 8px; bottom: 8px;
-  border-radius: 12px;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 0.75rem;
 }
 
 /* 4. Hover Effects */
 .card[data-narrative-id]:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.25rem) rotateX(1deg) rotateY(1deg);
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.4), inset 0 0 0.75rem rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -266,7 +298,12 @@ body.narrative-page #map-section #map::after {
 #disclaimer,
 #team {
   margin-bottom: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#narrative-description {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
 }
 
 
@@ -279,7 +316,7 @@ body.narrative-page #map-section #map::after {
   position: relative;
   display: block;
   z-index: 1;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   overflow: visible;
   text-decoration: none;
 }
@@ -290,8 +327,11 @@ body.narrative-page #map-section #map::after {
 #team .card::before {
   content: "";
   position: absolute;
-  top: -8px; left: -8px; right: -8px; bottom: -8px;
-  border-radius: 12px;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  border-radius: 0.75rem;
   pointer-events: none;
   z-index: 0;
   background-color: #0f1c2e;
@@ -304,8 +344,8 @@ body.narrative-page #map-section #map::after {
 /* Applied directly for Item Header */
 .item-title-target {
   position: relative;
-  border-radius: 12px;
-  border: 2px solid #C8C8C8;
+  border-radius: 0.75rem;
+  border: 0.125rem solid #C8C8C8;
   color: #C8C8C8;
   background-color: #0f1c2e;
   background-image: url('../../img/themes/hex.png');
@@ -317,14 +357,16 @@ body.narrative-page #map-section #map::after {
   margin: 2rem 0;
   padding: 1.2rem 2rem;
   z-index: 1;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* 3. Content Visibility */
-#narrative-items .card > img,
-#narrative-items .card > .card-body,
-#team .card > img,
-#team .card > .card-body,
-.item-title-target > * {
+#narrative-items .card>img,
+#narrative-items .card>.card-body,
+#team .card>img,
+#team .card>.card-body,
+.item-title-target>* {
   position: relative;
   z-index: 2;
 }
@@ -334,35 +376,23 @@ body.narrative-page #map-section #map::after {
 #narrative-items .card .card-body *,
 #team .card .card-body,
 #team .card .card-body *,
-.item-title-target > * {
+.item-title-target>* {
   color: #C8C8C8;
 }
 
 /* 5. Hover Effects */
 #narrative-items .card:hover,
 #team .card:hover {
-  transform: translateY(-4px) rotateX(1deg) rotateY(1deg);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 0, 0, 0.2)!important;
+  transform: translateY(-0.25rem) rotateX(1deg) rotateY(1deg);
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.4), inset 0 0 0.75rem rgba(0, 0, 0, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 /* || MAP SECTION || */
-/* Added position: relative to fix missing/misplaced separator lines */
-#map-section {
-  position: relative;
-}
-
-body.home-page #map-section {
-  overflow: hidden;
-  /* Grass Gradient */
-  background: linear-gradient(180deg, #b7d98a 0%, #9ac867 40%, #7fb44e 100%);
-}
-
 #map-section #map {
-  background: white;
   padding: 0;
-  border-radius: 12px;
+  border-radius: 0.75rem;
 }
 
 .leaflet-marker-icon.item-marker {
@@ -375,49 +405,32 @@ body.home-page #map-section {
   box-shadow: 0 0 0.8rem #83482c !important;
 }
 
-/* Grass Blades Decoration */
-body.home-page #map-section::after {
-  content: "";
-  position: absolute;
-  left: 0; bottom: 0;
-  width: 100%;
-  height: 130px;
-  pointer-events: none;
-  z-index: 1;
-  background-image:
-    radial-gradient(ellipse 14px 95px at 5% 100%,  #4f7d2f 0%, transparent 70%),
-    radial-gradient(ellipse 16px 110px at 18% 100%, #3d6b24 0%, transparent 70%),
-    radial-gradient(ellipse 12px 85px at 32% 100%, #4a752b 0%, transparent 70%),
-    radial-gradient(ellipse 10px 70px at 48% 100%, #5f8e38 0%, transparent 70%),
-    radial-gradient(ellipse 12px 75px at 63% 100%, #6aa744 0%, transparent 70%),
-    radial-gradient(ellipse 8px 55px at 78% 100%,  #527f33 0%, transparent 70%),
-    radial-gradient(ellipse 11px 65px at 92% 100%, #3f6c25 0%, transparent 70%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-
 /* || BUTTONS & LINKS (Nature Green) || */
-
 /* --- ACTIVE / PRIMARY BUTTONS --- */
 #adult-kid-buttons .btn-primary,
 #adult-kid-buttons .btn-secondary,
 #item-nav .btn-primary {
-  background-color: #7fb44e; /* Bright Green */
+  background-color: #7fb44e;
+  /* Bright Green */
   border-color: #7fb44e;
   color: #fff;
 }
+
 /* Nav text override */
-#item-nav .btn-primary { color: #000; }
+#item-nav .btn-primary {
+  color: #000;
+}
 
 /* --- INACTIVE TOGGLES (Adult/Kid Deselected) --- */
 /* Muted/Pale */
 #adult-kid-buttons .btn-outline-primary,
 #adult-kid-buttons .btn-outline-secondary {
-  background-color: #dbe6cc; /* Pale Green */
+  background-color: #dbe6cc;
+  /* Pale Green */
   border-color: #c9d8b8;
   color: #7d9668;
 }
+
 #adult-kid-buttons .btn-outline-primary:hover,
 #adult-kid-buttons .btn-outline-secondary:hover {
   background-color: #cddcb8;
@@ -443,8 +456,9 @@ body.home-page #map-section::after {
 #item-nav .btn-primary:hover:not(:disabled) {
   background-color: #69963c;
   border-color: #69963c;
-  transform: translateY(-1px);
+  transform: translateY(-0.0625rem);
 }
+
 #item-nav .btn-primary:disabled {
   background-color: #b7d3a1;
   border-color: #b7d3a1;
@@ -461,29 +475,31 @@ tr[data-key="narratives"] a {
   text-decoration: underline !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
+
 #documentation a,
 #disclaimer a,
 #text-content a:hover,
 #text-content a#btn-toggle-length:hover,
 tr[data-key="narratives"] a:hover {
-  color: #69963c!important;
-  transform: translateY(-1px);
+  color: #69963c !important;
+  transform: translateY(-0.0625rem);
 }
 
 
 /* || TYPOGRAPHY || */
-
 /* 1. Rubik Glitch Pop (Titles) */
 .hero h1,
 #narrative-title {
   font-family: 'Rubik Glitch Pop', cursive;
-  font-size: 3.5rem;
-  line-height: 1.1;
-  letter-spacing: 5px;
+  font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+  letter-spacing: clamp(0.1rem, 0.5vw, 0.3125rem);
   margin-bottom: 1rem;
   text-align: center;
 }
-.hero h1 { font-size: 6rem; }
+
+.hero h1 {
+  font-size: clamp(5rem, 6vw + 1rem, 6rem);
+}
 
 /* 2. Orbitron (Subtitles/Captions) */
 .hero p.lead,
@@ -510,25 +526,18 @@ th,
 #item-description,
 #text-content,
 .card-text,
-.item-card-hover img + p {
+.item-card-hover img+p {
   font-family: 'Courier Prime';
   font-weight: 400;
   line-height: 1.6;
-  font-size: 15px;
-}
-
-#metadata-table {
-  border-radius: 0;
-  overflow: hidden;
+  font-size: clamp(0.85rem, 1vw + 0.5rem, 0.9375rem);
 }
 
 /* || RESPONSIVE || */
-@media (max-width: 768px) {
-  .item-title-target {
-    width: 100%;
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    left: 0; right: 0;
+@media (max-width: 48em) {
+  #narrative-description {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
   }
 }
