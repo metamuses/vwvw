@@ -409,16 +409,27 @@ body, p, td, th, #text-content, .item-card-hover p {
   color: #2B1C0E !important;
 }
 
-#narrative-description, #documentation p, #disclaimer p, #team p {
-  font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
+#narrative-description {
+  font-size: clamp(1.0rem, 1.3vw + 0.5rem, 1.25rem) !important;
+  max-width: 70%;
+  overflow: hidden;
   line-height: 1.5;
   margin-left: auto;
   margin-right: auto;
   text-align: justify;
 }
 
-#narrative-description {
-  max-width: 70%;
+#narrative-description::first-letter {
+  font-family: 'UnifrakturMaguntia' !important;
+  color: #B33A2E !important;
+  font-size: clamp(4rem, 8vw, 6rem) !important;
+  float: left;
+  line-height: 0.75;
+  margin-bottom: -0.1em !important;
+  margin-right: 0.1em;
+  margin-top: 0.12em;
+  padding: 0 0.05em;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.15);
 }
 
 #documentation, #disclaimer, #team {
@@ -427,11 +438,42 @@ body, p, td, th, #text-content, .item-card-hover p {
   margin-right: auto !important;
 } 
 
+#documentation p:not(.lead), 
+#documentation li, 
+#disclaimer p:not(.lead), 
+#disclaimer li {
+  font-size: clamp(0.85rem, 1.2vw + 0.5rem, 1.1rem) !important;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.info-page .lead,
+.info-page h1,
+.info-page h2 {
+  text-align: center;
+}
+
 #text-content {
   text-align: justify;
   line-height: 1.5;
   margin-left: auto !important;
   margin-right: auto !important;
+  overflow: hidden;
+}
+
+#text-content::first-letter {
+  font-family: 'UnifrakturMaguntia', serif !important;
+  color: #B33A2E !important;
+  font-size: clamp(3rem, 5vw, 3.5rem) !important;
+  float: left;
+  line-height: 0.7 !important; 
+  margin-bottom: -0.1em !important;
+  margin-top: 0.1em !important;
+  margin-right: 0.1em;
+  padding: 0 0.05em;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.15);
 }
 
 /* || RESPONSIVENESS || */
@@ -472,6 +514,22 @@ footer a {
     margin-bottom: 0.5em !important;
     display: block;
     width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  #text-content::first-letter {
+    line-height: 0.6 !important; 
+    margin-bottom: -0.2em !important; 
+    margin-top: 0.2em !important; 
+    float: left !important;
+  }
+
+  #narrative-description::first-letter {
+    line-height: 0.55 !important; 
+    margin-bottom: -0.1em !important; 
+    margin-top: 0.4em !important; 
+    padding-bottom: 0 !important;
   }
 }
 
