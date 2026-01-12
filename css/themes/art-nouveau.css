@@ -14,16 +14,8 @@ body.item-page main {
 
 /* Header, Footer & Navbar Backgrounds */
 header,
-footer,
-header.bg-light,
-header.bg-light nav.navbar,
-footer.bg-light,
-footer.bg-light .container {
-  background-color: #b9b981;
-}
-
-header,
 footer {
+  background-color: #b9b981;
   overflow: visible;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
