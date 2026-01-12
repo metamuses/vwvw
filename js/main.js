@@ -246,6 +246,43 @@ async function initializeMuseumMap() {
       card.addEventListener('mouseleave', () => {
         highlightMarkersForNarrative(narrativeId, false);
       });
+
+      // Mobile Interaction Logic
+      let lastTap = 0;
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isMobile = window.innerWidth <= 768;
+
+        if (!isMobile) {
+          // Desktop: Click -> Go to page
+          localStorage.setItem("activeNarrative", narrativeId);
+          window.location.href = "narrative.html";
+        } else {
+          // Mobile: Double Tap Logic
+          const currentTime = new Date().getTime();
+          const tapLength = currentTime - lastTap;
+
+          if (tapLength < 400 && tapLength > 0) {
+            // Double Tap -> Go to page
+            localStorage.setItem("activeNarrative", narrativeId);
+            window.location.href = "narrative.html";
+          } else {
+            // Single Tap -> Show Route (Highlight)
+            // We toggle the highlight or just ensure it is on.
+            // Let's toggle it for better UX or just add it.
+            // Given the request "one click show the route", let's strictly show it.
+            // But we might want to clear others? The hover logic adds/removes.
+            // Let's simply trigger the highlight logic.
+            highlightMarkersForNarrative(narrativeId, true);
+
+            // Optional: Hide after some time? Or let user tap another?
+            // For now, let's just highlight.
+
+            // Update lastTap
+            lastTap = currentTime;
+          }
+        }
+      });
     });
   } catch (error) {
     console.error("Error loading map data or initializing map:", error);
@@ -378,17 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // add click listeners for narrative cards
-  let narrativeCards = document.querySelectorAll(".path-card");
-  narrativeCards.forEach(function (card) {
-    card.addEventListener("click", function (e) {
-      e.preventDefault(); // avoid default # link behavior
-      let narrative = card.dataset.narrativeId;
-      localStorage.setItem("activeNarrative", narrative);
-      console.log("Narrative from card:", narrative);
-      window.location.href = "narrative.html";
-    });
-  });
+
 
   // execute code only in narrative.html
   if (window.location.pathname.endsWith("narrative.html")) {
