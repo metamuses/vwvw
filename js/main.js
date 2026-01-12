@@ -401,44 +401,44 @@ document.addEventListener("DOMContentLoaded", function () {
         itemsContainer.innerHTML = ""; // clear old items
 
         narrative.items.forEach(itemKey => {
-        const item = data.items[itemKey];
-        if (!item) return;
+          const item = data.items[itemKey];
+          if (!item) return;
 
-        // column wrapper (bootstrap grid)
-        const col = document.createElement("div");
-        col.className = "col-6 col-md-6 col-lg-4";
+          // column wrapper (bootstrap grid)
+          const col = document.createElement("div");
+          col.className = "col-6 col-md-6 col-lg-4";
 
-        //wrapper (matching your media-shelf pattern)
-        const wrapper = document.createElement("div");
-        wrapper.className = "path-card-wrapper h-100"; // you can style this if you want
+          //wrapper (matching your media-shelf pattern)
+          const wrapper = document.createElement("div");
+          wrapper.className = "path-card-wrapper h-100"; // you can style this if you want
 
-        // create card
-        const card = document.createElement("a");
-        card.href = "item.html#" + itemKey;
-        card.className = "card card-dynamic h-100 border-0 shadow-sm text-decoration-none text-dark";
+          // create card
+          const card = document.createElement("a");
+          card.href = "item.html#" + itemKey;
+          card.className = "card card-dynamic h-100 border-0 shadow-sm text-decoration-none text-dark";
 
-        // image
-        const img = document.createElement("img");
-        img.src = item.image || "https://placehold.co/400x400/png";
-        img.alt = item.title || "Placeholder image";
-        img.className = "card-img-top";
+          // image
+          const img = document.createElement("img");
+          img.src = item.image || "https://placehold.co/400x400/png";
+          img.alt = item.title || "Placeholder image";
+          img.className = "card-img-top";
 
-        // card body
-        const body = document.createElement("div");
-        body.className = "card-body";
+          // card body
+          const body = document.createElement("div");
+          body.className = "card-body";
 
-        const title = document.createElement("h5");
-        title.className = "card-title fw-bold";
-        title.textContent = item.title;
+          const title = document.createElement("h5");
+          title.className = "card-title fw-bold";
+          title.textContent = item.title;
 
-        // append items
-        body.appendChild(title);
-        card.appendChild(img);
-        card.appendChild(body);
+          // append items
+          body.appendChild(title);
+          card.appendChild(img);
+          card.appendChild(body);
 
-        wrapper.appendChild(card);
-        col.appendChild(wrapper);
-        itemsContainer.appendChild(col);
+          wrapper.appendChild(card);
+          col.appendChild(wrapper);
+          itemsContainer.appendChild(col);
         });
       })
       .catch(function (error) {
@@ -481,8 +481,8 @@ document.addEventListener("DOMContentLoaded", function () {
           var titles = document.querySelectorAll(".item-title-target");
 
           // Loop through them and update the text for both Mobile and Desktop versions
-          titles.forEach(function(element) {
-             element.textContent = item.title;
+          titles.forEach(function (element) {
+            element.textContent = item.title;
           });
 
           // update image
