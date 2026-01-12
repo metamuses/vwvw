@@ -65,7 +65,8 @@ async function initializeMuseumMap() {
       zoomControl: true,
       zoomSnap: 0.1,
       zoomDelta: 0.1,
-      dragging: true
+      dragging: true,
+      scrollWheelZoom: false
     });
 
     const image = L.imageOverlay("img/frontal_map_from_svg.png", mapBounds).addTo(map);
@@ -124,14 +125,21 @@ async function initializeMuseumMap() {
     );
 
     // debounce resize
+    // debounce resize
     let resizeTimer;
-    window.addEventListener("resize", () => {
+    // Use ResizeObserver to handle container size changes (fixes visibility issue on first load)
+    const resizeObserver = new ResizeObserver(() => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         map.invalidateSize();
         applyResponsiveFit();
-      }, 200);
+      }, 100);
     });
+    // Start observing the map div immediately
+    const mapDiv = document.getElementById("map");
+    if (mapDiv) {
+      resizeObserver.observe(mapDiv);
+    }
 
     const itemMarkers = [];
 
@@ -178,24 +186,32 @@ async function initializeMuseumMap() {
       marker.itemId = itemId;
 
       // mobile: handle single and double tap
+      // mobile: handle single and double tap
       let lastTap = 0;
-      const isMobile = window.innerWidth <= 768;
 
-      marker.on('click', () => {
-        if (!isMobile) {
+      marker.on('click', (e) => {
+        // dynamic check of viewport width inside the handler
+        const isDeviceMobile = window.innerWidth <= 768;
+
+        if (!isDeviceMobile) {
+          // Desktop: single click -> go to page
           window.location.href = `item.html#${itemId}`;
           return;
         }
+
+        // Mobile: double tap logic
         const now = Date.now();
-        if (now - lastTap < 300) {
-          // double tap: redirect
+        const timeDiff = now - lastTap;
+
+        if (timeDiff < 400 && timeDiff > 0) {
+          // Double tap detected (within 400ms)
           window.location.href = `item.html#${itemId}`;
           lastTap = 0;
-          return;
+        } else {
+          // Single tap -> Open tooltip
+          marker.openTooltip();
+          lastTap = now;
         }
-        lastTap = now;
-        // singolo tap → mostra tooltip
-        marker.openTooltip();
       });
 
       itemMarkers.push(marker);
@@ -230,7 +246,57 @@ async function initializeMuseumMap() {
       card.addEventListener('mouseleave', () => {
         highlightMarkersForNarrative(narrativeId, false);
       });
+
+      // Mobile Interaction Logic
+      let lastTap = 0;
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        const isMobile = window.innerWidth <= 768;
+
+        if (!isMobile) {
+          // Desktop: Click -> Go to page
+          localStorage.setItem("activeNarrative", narrativeId);
+          window.location.href = "narrative.html";
+        } else {
+          // Mobile: Double Tap Logic
+          const currentTime = new Date().getTime();
+          const tapLength = currentTime - lastTap;
+
+          if (tapLength < 400 && tapLength > 0) {
+            // Double Tap -> Go to page
+            localStorage.setItem("activeNarrative", narrativeId);
+            window.location.href = "narrative.html";
+          } else {
+            // Single Tap -> Show Route (Highlight)
+            // We toggle the highlight or just ensure it is on.
+            // Let's toggle it for better UX or just add it.
+            // Given the request "one click show the route", let's strictly show it.
+            // But we might want to clear others? The hover logic adds/removes.
+            // Let's simply trigger the highlight logic.
+            highlightMarkersForNarrative(narrativeId, true);
+
+            // Optional: Hide after some time? Or let user tap another?
+            // For now, let's just highlight.
+
+            // Update lastTap
+            lastTap = currentTime;
+          }
+        }
+      });
     });
+
+    // Check if we are on the narrative page and highlight relevant markers
+    if (window.location.pathname.endsWith("narrative.html")) {
+      const activeNarrative = localStorage.getItem("activeNarrative") || "historical";
+      if (activeNarrative) {
+        // Validation: wait for markers to be rendered in the DOM
+        map.whenReady(() => {
+          setTimeout(() => {
+            highlightMarkersForNarrative(activeNarrative, true);
+          }, 100);
+        });
+      }
+    }
   } catch (error) {
     console.error("Error loading map data or initializing map:", error);
   }
@@ -362,17 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // add click listeners for narrative cards
-  let narrativeCards = document.querySelectorAll(".path-card");
-  narrativeCards.forEach(function (card) {
-    card.addEventListener("click", function (e) {
-      e.preventDefault(); // avoid default # link behavior
-      let narrative = card.dataset.narrativeId;
-      localStorage.setItem("activeNarrative", narrative);
-      console.log("Narrative from card:", narrative);
-      window.location.href = "narrative.html";
-    });
-  });
+
 
   // execute code only in narrative.html
   if (window.location.pathname.endsWith("narrative.html")) {

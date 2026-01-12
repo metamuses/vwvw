@@ -208,6 +208,8 @@ footer {
 /* evita il blocco nero se Leaflet inizializza in ritardo */
 .leaflet-container {
   background: transparent !important;
+  cursor: default !important;
+  /* Removes the 'grab' hand cursor */
 }
 
 /* MARKER */
