@@ -296,7 +296,6 @@ tr[data-key="narratives"] a:hover {
 /* || MAP & TABLES || */
 #map {
   width: 100%;
-  height: 37.5rem;
   border: 0.125rem solid black;
   border-radius: 0;
   overflow: hidden;
