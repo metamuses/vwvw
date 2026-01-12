@@ -652,6 +652,10 @@ footer a {
     line-height: 1.2 !important;
     font-family: 'UnifrakturMaguntia' !important;
   }
+
+  #item-text-section {
+    margin-top: 8% !important; 
+  }
 }
 
 
