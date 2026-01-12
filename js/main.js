@@ -284,6 +284,19 @@ async function initializeMuseumMap() {
         }
       });
     });
+
+    // Check if we are on the narrative page and highlight relevant markers
+    if (window.location.pathname.endsWith("narrative.html")) {
+      const activeNarrative = localStorage.getItem("activeNarrative") || "historical";
+      if (activeNarrative) {
+        // Validation: wait for markers to be rendered in the DOM
+        map.whenReady(() => {
+          setTimeout(() => {
+            highlightMarkersForNarrative(activeNarrative, true);
+          }, 100);
+        });
+      }
+    }
   } catch (error) {
     console.error("Error loading map data or initializing map:", error);
   }
