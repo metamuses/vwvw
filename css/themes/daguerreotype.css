@@ -460,7 +460,7 @@ footer a {
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
 }
 
-/* Tablets and Mobiles (Large-ish screens) */
+/* Tablets and Mobiles */
 @media (max-width: 768px) {
   #item-image-column {
     margin-bottom: 2rem;
@@ -547,7 +547,7 @@ footer a {
   }
 }
 
-/* Mobiles (Small) */
+/* Mobiles */
 @media (max-width: 575px) {
   main {
     max-width: 100% !important;
@@ -586,6 +586,7 @@ footer a {
     width: 100% !important;
     margin: 0 auto !important;
     box-sizing: border-box;
+
   }
 
   #item-image-wrapper img {
@@ -615,7 +616,7 @@ footer a {
   }
 }
 
-/* Desktop Styles */
+/* Desktop */
 @media (min-width: 768px) {
   #item-metadata-column {
     justify-content: center !important; 
@@ -635,23 +636,14 @@ footer a {
 
 @media (min-width: 992px) {
   #narrative-items .card .card-body {
-    /* REPEATING RULES: display/flex/grow/align already in general card rules */
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-grow: 1 !important;
     min-height: 8em !important; 
   }
 
-  #narrative-items .card .card-body h5,
-  #narrative-items .card .card-body .card-title,
+  #narrative-items .card .card-body h5, 
   #card-index .card .card-body h5 {
     font-size: 1.8vw !important; 
     margin: 0 !important;
     line-height: 1.2 !important;
-    /* REPEATING RULE: font-family already in general H headers rule */
-    font-family: 'UnifrakturMaguntia' !important;
   }
 
   #item-text-section {
