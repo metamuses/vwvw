@@ -419,6 +419,13 @@ body, p, td, th, #text-content, .item-card-hover p {
   text-align: center;
 }
 
+#team .card-body span {
+  font-size: clamp(0.75rem, 1vw + 0.4rem, 0.95rem) !important;
+  display: block;
+  word-break: break-all; 
+  margin-top: 0.25rem;
+}
+
 #text-content {
   text-align: justify;
   line-height: 1.5;
@@ -499,7 +506,7 @@ footer a {
 }
 
 /* REPEATING MEDIA QUERY RANGE: 768px-991px sub-range */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   #documentation,
   #disclaimer,
   #team {
@@ -508,6 +515,30 @@ footer a {
 
   main {
     max-width: 95% !important;
+  }
+
+  #team {
+    width: 98% !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #team .row {
+    --bs-gutter-x: 1rem !important; 
+  }
+
+  #team .card {
+    margin: 0.5rem !important; 
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #team .team-img {
+    height: auto !important; 
+    aspect-ratio: 1 / 1 !important; 
+    max-height: 10rem !important; 
+    width: 100%;
+    object-fit: cover;
   }
 }
 
