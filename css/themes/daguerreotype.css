@@ -500,8 +500,6 @@ footer a {
     line-height: 0.6 !important; 
     margin-bottom: -0.2em !important; 
     margin-top: 0.2em !important; 
-    /* REPEATING RULE: float is already set in general #text-content::first-letter */
-    float: left !important;
   }
 
   #narrative-description::first-letter {
@@ -561,16 +559,12 @@ footer a {
   }
   
   #narrative-items .card {
-    /* REPEATING RULE: clip-path here overrides general polygon with a more specific calc() version */
     clip-path: polygon(
       10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), 
       calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px
     ) !important;
     padding: 0.5rem !important;      
     margin: 0.5rem 0 !important;  
-    /* REPEATING RULE: display/flex-direction already set in general #narrative-items .card */
-    display: flex;
-    flex-direction: column;
     align-items: center;
     min-height: auto !important; 
   }
@@ -592,8 +586,6 @@ footer a {
     width: 100% !important;
     margin: 0 auto !important;
     box-sizing: border-box;
-    /* REPEATING RULE: overflow: hidden already in general #item-image-wrapper */
-    overflow: hidden !important;
   }
 
   #item-image-wrapper img {
