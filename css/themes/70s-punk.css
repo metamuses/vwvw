@@ -13,7 +13,6 @@ body {
 }
 
 /* || SHARED LAYOUT & COLORS || */
-
 /* Header, Footer & Navbar Backgrounds */
 header,
 footer,
@@ -30,7 +29,6 @@ footer {
 }
 
 /* || NAVBAR || */
-
 /* General Link Styling */
 .navbar a.nav-link.dropdown-toggle {
   color: black;
@@ -60,7 +58,6 @@ footer {
 }
 
 /* || MOULDING & DECORATIONS || */
-
 img,
 video,
 iframe {
@@ -90,7 +87,7 @@ footer img {
 }
 
 /* || PUNK FRAME CONTAINERS || */
-
+/* For Narrative, Item sections, and Metadata */
 .card[data-narrative-id],
 #narrative-items .card, 
 #item-text-section,
@@ -109,7 +106,7 @@ footer img {
   box-shadow: 0 0.75rem 1.1rem rgba(0,0,0,0.30) !important;
 }
 
-/* Rotation Rules */
+/* Rotation Rules & Overrides */
 .card[data-narrative-id]:nth-child(odd),
 #narrative-items .card:nth-child(odd) {
   transform: rotate(1.5deg);
@@ -120,21 +117,13 @@ footer img {
   transform: rotate(-3deg);
 }
 
-/* Non-rotating overrides */
 #item-text-section,
 #metadata-table-wrapper,
 #item-related-media {
   transform: rotate(0deg) !important;
 }
 
-#item-text-section:hover,
-#metadata-table-wrapper:hover,
-#item-related-media:hover {
-  transform: rotate(0deg) !important;
-  cursor: default;
-}
-
-/* Pins and Noise pseudo-elements */
+/* Safety Pin and Noise Decorations (Pseudo-elements) */
 .card[data-narrative-id]::before,
 #narrative-items .card::before,
 #item-image-wrapper::before,
@@ -178,13 +167,20 @@ footer img {
   z-index: 1;
 }
 
-/* Hover Effects on cards */
+/* Hover Effects */
 .card[data-narrative-id]:hover,
 #narrative-items .card:hover,
 #team .card:hover {
   transform: rotate(0deg) translateY(-0.375rem) !important;
   box-shadow: 0 1.125rem 1.75rem rgba(0,0,0,0.45) !important;
   cursor: pointer;
+}
+
+#item-text-section:hover,
+#metadata-table-wrapper:hover,
+#item-related-media:hover {
+  transform: rotate(0deg) !important;
+  cursor: default;
 }
 
 /* || ITEM WRAPPER || */
@@ -212,7 +208,6 @@ footer img {
 }
 
 /* || BUTTONS & LINKS || */
-
 .btn {
   font-family: 'Gloria Hallelujah' !important;
   color: #FC6392 !important;
@@ -228,7 +223,6 @@ footer img {
   border-color: #E3F041 !important;
 }
 
-/* Active Button States */
 #btn-adult.btn-primary,
 #btn-kid.btn-secondary {
   color: #E3F041 !important;
@@ -237,7 +231,6 @@ footer img {
   box-shadow: none !important;
 }
 
-/* Text Links */
 #text-content a,
 #metadata-table-wrapper td a {
   color: #f89bb7 !important;
@@ -288,7 +281,6 @@ footer img {
 }
 
 /* || TYPOGRAPHY || */
-
 h1, h2, h3, h4, h5, h6,
 .hero h1,
 #map-section h2,
@@ -329,8 +321,6 @@ td,
 }
 
 /* || RESPONSIVENESS || */
-
-/* Fluid Footer Text */
 footer p, 
 footer a {
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.2rem) !important;
@@ -383,6 +373,10 @@ footer a {
 @media (min-width: 992px) {
   #card-index .card .card-body h5 {
     font-size: 1.8vw !important; 
+  }
+
+  #item-text-section {
+    margin-top: 8% !important; 
   }
 }
 
