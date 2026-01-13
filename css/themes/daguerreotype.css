@@ -351,7 +351,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'UnifrakturMaguntia' !important;
 }
 
-body, p, td, th, #text-content, .item-card-hover p {
+body, 
+p, 
+td, 
+th, 
+#text-content, 
+.item-card-hover p {
   font-family: 'Libre Baskerville';
 }
 
@@ -396,7 +401,9 @@ body, p, td, th, #text-content, .item-card-hover p {
   text-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.15);
 }
 
-#documentation, #disclaimer, #team {
+#documentation, 
+#disclaimer, 
+#team {
   width: 80%;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -609,7 +616,8 @@ footer a {
     padding-right: 0 !important;
   }
 
-  #back-button, #forward-button {
+  #back-button, 
+  #forward-button {
     padding: 0.4rem 0.8rem !important;
     font-size: 0.9rem !important;
   }
