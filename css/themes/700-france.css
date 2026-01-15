@@ -20,7 +20,8 @@ body {
 }
 
 .hero,
-#map-section {
+.narrative-page #map-section,
+#card-index {
   background-color: white;
 }
 
@@ -101,7 +102,6 @@ footer {
 
 header::after,
 footer::before,
-.hero::after,
 #map-section::before,
 #map-section::after {
   content: "";
@@ -113,8 +113,7 @@ footer::before,
 
 /* Header Bottom & Map Section Bottom & Hero Bottom */
 header::after,
-#map-section::after,
-.hero::after {
+#map-section::after {
   bottom: 0;
   height: 0.875rem;
   z-index: 1;
@@ -290,7 +289,8 @@ footer::before,
 
 /* || PLAQUE STYLING (Item Header & Narrative Info) || */
 .item-title-target,
-#narrative-info {
+#narrative-info,
+#map-text {
   position: relative;
   padding: 1.2rem 2rem;
   border-radius: 0.75rem;
@@ -319,6 +319,37 @@ footer::before,
   width: 100%;
 }
 
+/* Side Bumps */
+.item-title-target::before,
+.item-title-target::after,
+#narrative-info::before,
+#narrative-info::after,
+#map-text::before,
+#map-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateY(-50%);
+  z-index: -1;
+  box-shadow: inset 0 0.125rem 0.25rem rgba(255, 255, 255, 0.5), inset 0 -0.125rem 0.375rem rgba(0, 0, 0, 0.4);
+}
+
+.item-title-target::before,
+#narrative-info::before,
+#map-text::before {
+  left: -0.75rem;
+}
+
+.item-title-target::after,
+#narrative-info::after,
+#map-text::after {
+  right: -0.75rem;
+}
+
 @media (max-width: 48em) {
   #narrative-info {
     width: 85%;
@@ -343,47 +374,24 @@ footer::before,
   #item-header::before,
   #item-header::after,
   #narrative-info::before,
-  #narrative-info::after {
+  #narrative-info::after,
+  #map-text::before,
+  #map-text::after {
     width: 1.125rem;
     height: 1.125rem;
   }
 
   #item-header::before,
-  #narrative-info::before {
+  #narrative-info::before,
+  #map-text::before {
     left: -0.5625rem;
   }
 
   #item-header::after,
-  #narrative-info::after {
+  #narrative-info::after,
+  #map-text::after {
     right: -0.5625rem;
   }
-}
-
-/* Side Bumps */
-.item-title-target::before,
-.item-title-target::after,
-#narrative-info::before,
-#narrative-info::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background: inherit;
-  transform: translateY(-50%);
-  z-index: -1;
-  box-shadow: inset 0 0.125rem 0.25rem rgba(255, 255, 255, 0.5), inset 0 -0.125rem 0.375rem rgba(0, 0, 0, 0.4);
-}
-
-.item-title-target::before,
-#narrative-info::before {
-  left: -0.75rem;
-}
-
-.item-title-target::after,
-#narrative-info::after {
-  right: -0.75rem;
 }
 
 /* || BUTTONS & LINKS (Gold Theme) || */
@@ -474,6 +482,10 @@ tr[data-key="narratives"] a:hover {
 }
 
 /* || MAP details|| */
+#map {
+  background-color: white !important;
+}
+
 .leaflet-marker-icon.item-marker {
   background-color: #d4af37;
   box-shadow: 0 0 0.2rem #d4af37;
