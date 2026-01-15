@@ -214,7 +214,7 @@ async function initializeMuseumMap() {
       }
     });
 
-    // on card hover the path lights up
+    // on card click the path lights up
     const narrativeCards = document.querySelectorAll('.path-card');
 
     function highlightMarkersForNarrative(narrativeId, addClass) {
@@ -232,37 +232,29 @@ async function initializeMuseumMap() {
       });
     }
 
+    let activeCardId = null;
+
     narrativeCards.forEach(card => {
       const narrativeId = card.getAttribute('data-narrative-id');
       if (!narrativeId) return;
 
-      card.addEventListener('mouseenter', () => {
-        highlightMarkersForNarrative(narrativeId, true);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        highlightMarkersForNarrative(narrativeId, false);
-      });
-
-      // Mobile Interaction Logic
-      let isFirstTap = true;
       card.addEventListener('click', function (e) {
         e.preventDefault();
-        const isDeviceTouch = window.innerWidth <= 1024;
-
-        if (!isDeviceTouch) {
-          // Desktop: Click -> Go to page
+        
+        // second click: check if this card is already the active one and go to narrative page 
+        if (activeCardId === narrativeId) {
           localStorage.setItem("activeNarrative", narrativeId);
           window.location.href = "narrative.html";
         } else {
-          // Mobile: Double Tap Logic
-          if (isFirstTap) {
-            highlightMarkersForNarrative(narrativeId, true);
-            isFirstTap = false; 
-          } else {
-            localStorage.setItem("activeNarrative", narrativeId);
-            window.location.href = "narrative.html";
-            isFirstTap = true; 
+          // first click: highlight path and scroll to map 
+          narrativeCards.forEach(c => highlightMarkersForNarrative(c.getAttribute('data-narrative-id'), false));
+          
+          highlightMarkersForNarrative(narrativeId, true);
+          activeCardId = narrativeId;
+
+          const mapSection = document.getElementById('map-section');
+          if (mapSection) {
+            mapSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
       });
