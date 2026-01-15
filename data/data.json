@@ -2254,12 +2254,12 @@
     "made-by": {
       "title": "Made by Vivienne",
       "description": "Made by Vivienne is a deep dive into the creative genius of Dame Vivienne Westwood, presenting only the works she personally conceived and brought into being. From the raw energy of punk rebellion to refined tailoring and historical reinterpretation, each item embodies her revolutionary approach to fashion, transforming traditional forms such as the corset and Scottish tartan into symbols of power and innovation. Beyond their aesthetic impact, these works also carry her enduring commitment to activism, integrating social and environmental protest into the very fabric of design. Together, they reveal a vision defined not just by garments, but by the principles and audacity that make every object unmistakably Made by Vivienne.",
-      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "book", "platform_shoes", "trousers", "necklace", "corset", "underpants", "dress", "ring", "carrie"]
+      "items": ["tartan", "earring", "top", "shoes", "t-shirt", "trousers", "platform_shoes", "ring", "book", "carrie", "necklace", "dress", "underpants", "corset"]
     },
     "past-future": {
       "title": "Past and Future",
       "description": "Past and Future traces the interplay of references that shaped Vivienne Westwood’s distinctive vision, bringing together the works that informed her creativity, the designs that emerged from those influences, and the cultural echoes her style continues to generate. Starting with the historical and artistic references that nourished her imagination, the collection moves into the garments and accessories that exemplify her transformative approach to tradition, before closing with the many afterlives of her designs in contemporary media and popular culture, from the iconic wedding gown worn by Carrie Bradshaw in Sex and the City to the striking appearances of Westwood’s creations in Nana, alongside records that witness her public activism and irreverence. Overall, the collection aims at revealing the continuous exchange between past reference and future expression within Westwood’s creative universe.",
-      "items": ["single", "david_painting",  "boucher_painting", "petticoat", "corset", "underpants", "dress", "carrie", "necklace", "ring", "trousers", "angus_photo", "book", "parr_photo", "moon_photo"]
+      "items": ["angus_photo", "single", "trousers", "platform_shoes", "moon_photo", "parr_photo", "carrie", "book", "ring", "necklace", "dress", "david_painting", "underpants", "petticoat", "boucher_painting", "corset"]
     }
   }
 }
