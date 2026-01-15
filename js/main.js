@@ -161,7 +161,7 @@ async function initializeMuseumMap() {
 
       // content of card on hover with name and image
       const tooltipContent = `
-        <div class="item-card-hover">
+        <div class="item-card-hover interactive-tooltip-card" data-item-id="${itemId}" style="cursor: pointer; pointer-events: auto;">
           <p class="m-0 fw-bold">${item.title}</p>
           <img src="${item.image || 'placeholder.jpg'}" alt="${item.title}" class="img-fluid">
         </div>
@@ -176,44 +176,42 @@ async function initializeMuseumMap() {
         // hover: use bindTooltip for card
         .bindTooltip(tooltipContent, {
           permanent: false,
-          sticky: true,
-          direction: "auto",
+          sticky: false,
+          direction: "top",
           className: "item-custom-tooltip",
           offset: [0, -10],
-          opacity: 1
+          opacity: 1,
+          interactive: true
         });
 
       marker.itemId = itemId;
 
-      // mobile: handle single and double tap
-      let lastTap = 0;
-
+      // handle single and double tap on touch devices
       marker.on('click', (e) => {
-        // dynamic check of viewport width inside the handler
         const isDeviceTouch = window.innerWidth <= 1024;
 
         if (!isDeviceTouch) {
-          // Desktop: single click -> go to page
+          // Desktop: single click on pin -> go to page
           window.location.href = `item.html#${itemId}`;
-          return;
-        }
-
-        // Mobile: double tap logic
-        const now = Date.now();
-        const timeDiff = now - lastTap;
-
-        if (timeDiff < 400 && timeDiff > 0) {
-          // Double tap detected (within 400ms)
-          window.location.href = `item.html#${itemId}`;
-          lastTap = 0;
         } else {
-          // Single tap -> Open tooltip
+          // Touch: Single tap on pin -> open the tooltip
           marker.openTooltip();
-          lastTap = now;
         }
       });
 
       itemMarkers.push(marker);
+    });
+
+    // global listener for map container to catch card taps 
+    map.getContainer().addEventListener('click', (e) => {
+      const isDeviceTouch = window.innerWidth <= 1024;
+      if (!isDeviceTouch) return;
+
+      const card = e.target.closest('.interactive-tooltip-card');
+      if (card) {
+        const id = card.getAttribute('data-item-id');
+        window.location.href = `item.html#${id}`;
+      }
     });
 
     // on card hover the path lights up
