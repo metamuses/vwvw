@@ -190,9 +190,9 @@ async function initializeMuseumMap() {
 
       marker.on('click', (e) => {
         // dynamic check of viewport width inside the handler
-        const isTouchDevice = window.innerWidth <= 1024;
+        const isDeviceTouch = window.innerWidth <= 1024;
 
-        if (!isTouchDevice) {
+        if (!isDeviceTouch) {
           // Desktop: single click -> go to page
           window.location.href = `item.html#${itemId}`;
           return;
@@ -247,38 +247,24 @@ async function initializeMuseumMap() {
       });
 
       // Mobile Interaction Logic
-      let lastTap = 0;
+      let isFirstTap = true;
       card.addEventListener('click', function (e) {
         e.preventDefault();
-        const isTouchDevice = window.innerWidth <= 1024;
+        const isDeviceTouch = window.innerWidth <= 1024;
 
-        if (!isTouchDevice) {
+        if (!isDeviceTouch) {
           // Desktop: Click -> Go to page
           localStorage.setItem("activeNarrative", narrativeId);
           window.location.href = "narrative.html";
         } else {
           // Mobile: Double Tap Logic
-          const currentTime = new Date().getTime();
-          const tapLength = currentTime - lastTap;
-
-          if (tapLength < 400 && tapLength > 0) {
-            // Double Tap -> Go to page
+          if (isFirstTap) {
+            highlightMarkersForNarrative(narrativeId, true);
+            isFirstTap = false; 
+          } else {
             localStorage.setItem("activeNarrative", narrativeId);
             window.location.href = "narrative.html";
-          } else {
-            // Single Tap -> Show Route (Highlight)
-            // We toggle the highlight or just ensure it is on.
-            // Let's toggle it for better UX or just add it.
-            // Given the request "one click show the route", let's strictly show it.
-            // But we might want to clear others? The hover logic adds/removes.
-            // Let's simply trigger the highlight logic.
-            highlightMarkersForNarrative(narrativeId, true);
-
-            // Optional: Hide after some time? Or let user tap another?
-            // For now, let's just highlight.
-
-            // Update lastTap
-            lastTap = currentTime;
+            isFirstTap = true; 
           }
         }
       });
