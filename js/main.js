@@ -186,14 +186,13 @@ async function initializeMuseumMap() {
       marker.itemId = itemId;
 
       // mobile: handle single and double tap
-      // mobile: handle single and double tap
       let lastTap = 0;
 
       marker.on('click', (e) => {
         // dynamic check of viewport width inside the handler
-        const isDeviceMobile = window.innerWidth <= 768;
+        const isTouchDevice = window.innerWidth <= 1024;
 
-        if (!isDeviceMobile) {
+        if (!isTouchDevice) {
           // Desktop: single click -> go to page
           window.location.href = `item.html#${itemId}`;
           return;
@@ -251,9 +250,9 @@ async function initializeMuseumMap() {
       let lastTap = 0;
       card.addEventListener('click', function (e) {
         e.preventDefault();
-        const isMobile = window.innerWidth <= 768;
+        const isTouchDevice = window.innerWidth <= 1024;
 
-        if (!isMobile) {
+        if (!isTouchDevice) {
           // Desktop: Click -> Go to page
           localStorage.setItem("activeNarrative", narrativeId);
           window.location.href = "narrative.html";
