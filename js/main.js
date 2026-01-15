@@ -89,7 +89,7 @@ async function initializeMuseumMap() {
       }
     }
 
-    // single function that does what your manual resize is doing
+    // function for viewport resizing
     function forceProperLayout() {
       applyResponsiveFit();
       map.invalidateSize(true);
@@ -124,7 +124,6 @@ async function initializeMuseumMap() {
       { once: true }
     );
 
-    // debounce resize
     // debounce resize
     let resizeTimer;
     // Use ResizeObserver to handle container size changes (fixes visibility issue on first load)
@@ -161,7 +160,7 @@ async function initializeMuseumMap() {
 
       // content of card on hover with name and image
       const tooltipContent = `
-        <div class="item-card-hover">
+        <div class="item-card-hover interactive-tooltip-card" data-item-id="${itemId}" style="cursor: pointer; pointer-events: auto;">
           <p class="m-0 fw-bold">${item.title}</p>
           <img src="${item.image || 'placeholder.jpg'}" alt="${item.title}" class="img-fluid">
         </div>
@@ -176,48 +175,45 @@ async function initializeMuseumMap() {
         // hover: use bindTooltip for card
         .bindTooltip(tooltipContent, {
           permanent: false,
-          sticky: true,
-          direction: "auto",
+          sticky: false,
+          direction: "top",
           className: "item-custom-tooltip",
           offset: [0, -10],
-          opacity: 1
+          opacity: 1,
+          interactive: true
         });
 
       marker.itemId = itemId;
 
-      // mobile: handle single and double tap
-      // mobile: handle single and double tap
-      let lastTap = 0;
-
+      // handle single and double tap on tooltips 
       marker.on('click', (e) => {
-        // dynamic check of viewport width inside the handler
-        const isDeviceMobile = window.innerWidth <= 768;
+        const isDeviceTouch = window.innerWidth <= 1024;
 
-        if (!isDeviceMobile) {
-          // Desktop: single click -> go to page
+        if (!isDeviceTouch) {
+          // Desktop: single click on pin -> go to page
           window.location.href = `item.html#${itemId}`;
-          return;
-        }
-
-        // Mobile: double tap logic
-        const now = Date.now();
-        const timeDiff = now - lastTap;
-
-        if (timeDiff < 400 && timeDiff > 0) {
-          // Double tap detected (within 400ms)
-          window.location.href = `item.html#${itemId}`;
-          lastTap = 0;
         } else {
-          // Single tap -> Open tooltip
+          // Touch: Single tap on pin -> open the tooltip
           marker.openTooltip();
-          lastTap = now;
         }
       });
 
       itemMarkers.push(marker);
     });
 
-    // on card hover the path lights up
+    // global listener for map container to catch card taps on touch devices
+    map.getContainer().addEventListener('click', (e) => {
+      const isDeviceTouch = window.innerWidth <= 1024;
+      if (!isDeviceTouch) return;
+
+      const card = e.target.closest('.interactive-tooltip-card');
+      if (card) {
+        const id = card.getAttribute('data-item-id');
+        window.location.href = `item.html#${id}`;
+      }
+    });
+
+    // on card click the path lights up on all devices
     const narrativeCards = document.querySelectorAll('.path-card');
 
     function highlightMarkersForNarrative(narrativeId, addClass) {
@@ -235,51 +231,29 @@ async function initializeMuseumMap() {
       });
     }
 
+    let activeCardId = null;
+
     narrativeCards.forEach(card => {
       const narrativeId = card.getAttribute('data-narrative-id');
       if (!narrativeId) return;
 
-      card.addEventListener('mouseenter', () => {
-        highlightMarkersForNarrative(narrativeId, true);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        highlightMarkersForNarrative(narrativeId, false);
-      });
-
-      // Mobile Interaction Logic
-      let lastTap = 0;
       card.addEventListener('click', function (e) {
         e.preventDefault();
-        const isMobile = window.innerWidth <= 768;
-
-        if (!isMobile) {
-          // Desktop: Click -> Go to page
+        
+        // second click: check if this card is already the active one and go to narrative page 
+        if (activeCardId === narrativeId) {
           localStorage.setItem("activeNarrative", narrativeId);
           window.location.href = "narrative.html";
         } else {
-          // Mobile: Double Tap Logic
-          const currentTime = new Date().getTime();
-          const tapLength = currentTime - lastTap;
+          // first click: highlight path and scroll to map 
+          narrativeCards.forEach(c => highlightMarkersForNarrative(c.getAttribute('data-narrative-id'), false));
+          
+          highlightMarkersForNarrative(narrativeId, true);
+          activeCardId = narrativeId;
 
-          if (tapLength < 400 && tapLength > 0) {
-            // Double Tap -> Go to page
-            localStorage.setItem("activeNarrative", narrativeId);
-            window.location.href = "narrative.html";
-          } else {
-            // Single Tap -> Show Route (Highlight)
-            // We toggle the highlight or just ensure it is on.
-            // Let's toggle it for better UX or just add it.
-            // Given the request "one click show the route", let's strictly show it.
-            // But we might want to clear others? The hover logic adds/removes.
-            // Let's simply trigger the highlight logic.
-            highlightMarkersForNarrative(narrativeId, true);
-
-            // Optional: Hide after some time? Or let user tap another?
-            // For now, let's just highlight.
-
-            // Update lastTap
-            lastTap = currentTime;
+          const mapSection = document.getElementById('map-section');
+          if (mapSection) {
+            mapSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }
       });
