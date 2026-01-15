@@ -89,7 +89,7 @@ async function initializeMuseumMap() {
       }
     }
 
-    // single function that does what your manual resize is doing
+    // function for viewport resizing
     function forceProperLayout() {
       applyResponsiveFit();
       map.invalidateSize(true);
@@ -124,7 +124,6 @@ async function initializeMuseumMap() {
       { once: true }
     );
 
-    // debounce resize
     // debounce resize
     let resizeTimer;
     // Use ResizeObserver to handle container size changes (fixes visibility issue on first load)
@@ -186,7 +185,7 @@ async function initializeMuseumMap() {
 
       marker.itemId = itemId;
 
-      // handle single and double tap on touch devices
+      // handle single and double tap on tooltips 
       marker.on('click', (e) => {
         const isDeviceTouch = window.innerWidth <= 1024;
 
@@ -202,7 +201,7 @@ async function initializeMuseumMap() {
       itemMarkers.push(marker);
     });
 
-    // global listener for map container to catch card taps 
+    // global listener for map container to catch card taps on touch devices
     map.getContainer().addEventListener('click', (e) => {
       const isDeviceTouch = window.innerWidth <= 1024;
       if (!isDeviceTouch) return;
@@ -214,7 +213,7 @@ async function initializeMuseumMap() {
       }
     });
 
-    // on card click the path lights up
+    // on card click the path lights up on all devices
     const narrativeCards = document.querySelectorAll('.path-card');
 
     function highlightMarkersForNarrative(narrativeId, addClass) {
