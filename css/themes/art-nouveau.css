@@ -376,8 +376,8 @@ tr[data-key="narratives"] a:hover {
 /*|| MAP ||*/
 
 .leaflet-marker-icon.item-marker {
-  background-color: #baa073;
-  box-shadow: 0 0 0.2rem #baa073;
+  background-color: #b9b981;
+  box-shadow: 0 0 0.2rem #b9b981;
 }
 
 .item-marker.highlighted {
