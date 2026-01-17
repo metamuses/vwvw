@@ -95,7 +95,6 @@ header::after {
 }
 
 /* || SEPARATORS (Hero, Map & Footer) || */
-.hero,
 #map-section,
 footer {
   position: relative;
@@ -105,8 +104,6 @@ footer {
   background-color: white !important;
 }
 
-.hero::before,
-.hero::after,
 #map-section::before,
 #map-section::after,
 footer::before {
@@ -120,13 +117,11 @@ footer::before {
   z-index: 10;
 }
 
-.hero::before,
 #map-section::before,
 footer::before {
   top: 0;
 }
 
-.hero::after,
 #map-section::after {
   bottom: 0;
 }
