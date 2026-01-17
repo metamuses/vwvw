@@ -194,9 +194,8 @@ footer::before {
 }
 
 /* || FRAMES: LEAFY STYLE (Green Gradient) || */
-/* Used for: Index Cards, Item Sections, Narrative Map Wrapper, and Info Sections */
+/* Used for: Item Sections, Narrative Map Wrapper, and Info Sections */
 /* 1. Base Container Styling */
-.card[data-narrative-id],
 #item-image-wrapper,
 #item-text-section,
 #metadata-table-wrapper,
@@ -222,7 +221,6 @@ footer::before {
 }
 
 /* 2. Outer Gradient Frame (::before) */
-.card[data-narrative-id]::before,
 #item-image-wrapper::before,
 #item-text-section::before,
 #metadata-table-wrapper::before,
@@ -255,7 +253,6 @@ footer::before {
 }
 
 /* 3. Inner White Matting (::after) */
-.card[data-narrative-id]::after,
 #item-image-wrapper::after,
 #item-text-section::after,
 #metadata-table-wrapper::after,
@@ -285,14 +282,6 @@ footer::before {
   border-radius: 0.75rem;
 }
 
-/* 4. Hover Effects */
-.card[data-narrative-id]:hover {
-  transform: translateY(-0.25rem) rotateX(1deg) rotateY(1deg);
-  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.4), inset 0 0 0.75rem rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
 /* Item/Info Specific Margins */
 #item-image-wrapper,
 #item-text-section,
@@ -310,11 +299,11 @@ footer::before {
   font-size: clamp(1rem, 2vw + 0.5rem, 1.2rem);
 }
 
-
 /* || FRAMES: SOLAR PANEL STYLE (Dark Blue + Hex) || */
-/* Used for: Narrative Items, Item Header, and Team Cards */
+/* Used for: Index Card, Narrative Items, Item Header, and Team Cards */
 
 /* 1. Card Wrappers */
+.card[data-narrative-id],
 #narrative-items .card,
 #team .card {
   position: relative;
@@ -327,6 +316,7 @@ footer::before {
 
 /* 2. Solar Background/Frame */
 /* Applied via ::before for Cards (to allow overflow/border effect) */
+.card[data-narrative-id]::before,
 #narrative-items .card::before,
 #team .card::before {
   content: "";
@@ -366,6 +356,8 @@ footer::before {
 }
 
 /* 3. Content Visibility */
+.card[data-narrative-id]>img,
+.card[data-narrative-id]>.card-body,
 #narrative-items .card>img,
 #narrative-items .card>.card-body,
 #team .card>img,
@@ -376,6 +368,7 @@ footer::before {
 }
 
 /* 4. Text Color Override */
+.card[data-narrative-id]>.card-body,
 #narrative-items .card .card-body,
 #narrative-items .card .card-body *,
 #team .card .card-body,
@@ -385,6 +378,7 @@ footer::before {
 }
 
 /* 5. Hover Effects */
+.card[data-narrative-id]:hover,
 #narrative-items .card:hover,
 #team .card:hover {
   transform: translateY(-0.25rem) rotateX(1deg) rotateY(1deg);
