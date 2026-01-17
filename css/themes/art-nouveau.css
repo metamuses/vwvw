@@ -369,15 +369,9 @@ tr[data-key="narratives"] a:hover {
 }
 
 /*|| MAP ||*/
-
-.leaflet-marker-icon.item-marker {
-  background-color: #b9b981;
-  box-shadow: 0 0 0.2rem #b9b981;
-}
-
 .item-marker.highlighted {
-  background-color: #693427;
-  box-shadow: 0 0 0.8rem #693427 !important;
+  background-color: #b9b981;
+  box-shadow: 0 0 0.8rem #b9b981 !important;
 }
 
 /* || TYPOGRAPHY || */

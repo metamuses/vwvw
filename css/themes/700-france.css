@@ -486,14 +486,9 @@ tr[data-key="narratives"] a:hover {
   background-color: white !important;
 }
 
-.leaflet-marker-icon.item-marker {
-  background-color: #d4af37;
-  box-shadow: 0 0 0.2rem #d4af37;
-}
-
 .item-marker.highlighted {
-  background-color: #b6cdd8;
-  box-shadow: 0 0 0.8rem #b6cdd8;
+  background-color: #c49b30;
+  box-shadow: 0 0 0.8rem #c49b30;
 }
 
 /* || TYPOGRAPHY || */
