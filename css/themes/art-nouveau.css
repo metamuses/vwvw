@@ -370,8 +370,8 @@ tr[data-key="narratives"] a:hover {
 
 /*|| MAP ||*/
 .item-marker.highlighted {
-  background-color: #b9b981;
-  box-shadow: 0 0 0.8rem #b9b981 !important;
+  background-color: black;
+  box-shadow: 0 0 0.8rem black !important;
 }
 
 /* || TYPOGRAPHY || */
