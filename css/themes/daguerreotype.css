@@ -327,14 +327,9 @@ footer img {
   transform: scale(-1, -1);
 }
 
-.leaflet-marker-icon.item-marker {
-  background-color: #B33A2E;
-  box-shadow: 0 0 0.2rem #B33A2E;
-}
-
 .item-marker.highlighted {
-  background-color: #712620;
-  box-shadow: 0 0 0.8rem #712620 !important;
+  background-color: #B33A2E;
+  box-shadow: 0 0 0.8rem #B33A2E !important;
 }
 
 .item-custom-tooltip {

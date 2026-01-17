@@ -270,11 +270,6 @@ footer img {
   box-shadow: 1px 1px 0 #000, -1px 2px 0 #111, 2px -1px 0 #222;
 }
 
-.leaflet-marker-icon.item-marker {
-  background-color: #f89bb7;
-  box-shadow: 0 0 0.2rem #f89bb7;
-}
-
 .item-marker.highlighted {
   background-color: #FC6392;
   box-shadow: 0 0 0.8rem #FC6392 !important;
