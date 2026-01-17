@@ -301,7 +301,6 @@ footer::before {
 
 /* || FRAMES: SOLAR PANEL STYLE (Dark Blue + Hex) || */
 /* Used for: Index Card, Narrative Items, Item Header, and Team Cards */
-
 /* 1. Card Wrappers */
 .card[data-narrative-id],
 #narrative-items .card,
